@@ -9,6 +9,10 @@
  * Forwards method, Content-Type, sid, status and body. No caching.
  *
  * Override the target with KOBOOL_API_TARGET to point at a different backend.
+ *
+ * The upstream TLS certificate is verified unless the caller passes
+ * rejectUnauthorized: false (tools/serve.js does, because local API hosts are
+ * often signed by a locally-installed CA that Node does not trust by default).
  */
 
 const http = require('http');
@@ -23,6 +27,11 @@ function createProxy(options) {
     const prefix = options.prefix || '/cgi-bin/';
     const allowlist = options.allowlist || null; // array of path prefixes, or null for all
     const transport = target.protocol === 'https:' ? https : http;
+    // Skip upstream TLS certificate verification when the caller opts in. The
+    // browser never talks to the upstream directly (this is a same-origin
+    // shim), and local API hosts often present a certificate signed by a
+    // locally-installed CA that Node does not trust by default.
+    const rejectUnauthorized = options.rejectUnauthorized !== false;
 
     return function proxy(req, res) {
         const url = new URL(req.url, 'http://localhost');
@@ -55,7 +64,8 @@ function createProxy(options) {
                 port: target.port || (target.protocol === 'https:' ? 443 : 80),
                 method: req.method,
                 path: upstreamPath,
-                headers
+                headers,
+                rejectUnauthorized
             },
             (upRes) => {
                 const outHeaders = {};

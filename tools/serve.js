@@ -7,6 +7,13 @@
  *
  * Serves dist/ at the root and proxies /cgi-bin/ to the API host so the
  * browser sees a single origin (no CORS in development).
+ *
+ * If the requested port is already in use, the server increments the port and
+ * retries until it finds a free one (default starts at 8080).
+ *
+ * The proxy skips upstream TLS certificate verification: local API hosts are
+ * often signed by a locally-installed CA (e.g. dev.kobool.com resolving to a
+ * Docker host) that Node does not trust by default.
  */
 
 const http = require('http');
@@ -43,7 +50,10 @@ function parseArgs(argv) {
 
 function createServer(options) {
     const root = options.root || path.join(__dirname, '..', 'dist');
-    const proxy = createProxy({ target: options.target || DEFAULT_TARGET });
+    const proxy = createProxy({
+        target: options.target || DEFAULT_TARGET,
+        rejectUnauthorized: false
+    });
 
     return http.createServer((req, res) => {
         if (req.url.startsWith('/cgi-bin/')) {
@@ -86,13 +96,28 @@ function createServer(options) {
     });
 }
 
+const MAX_PORT = 65535;
+
 if (require.main === module) {
     const args = parseArgs(process.argv);
     const server = createServer({});
-    server.listen(args.port, '127.0.0.1', () => {
-        console.log(`Serving dist/ at http://127.0.0.1:${args.port}`);
+    // Print once, whatever attempt ultimately binds (the per-listen callback
+    // would fire once per retry).
+    server.once('listening', () => {
+        const port = server.address().port;
+        console.log(`Serving dist/ at http://127.0.0.1:${port}`);
         console.log(`Proxying /cgi-bin/ -> ${DEFAULT_TARGET}/cgi-bin/`);
     });
+    server.on('error', (err) => {
+        if (err.code === 'EADDRINUSE' && args.port < MAX_PORT) {
+            console.warn(`Port ${args.port} is in use; trying ${args.port + 1}`);
+            args.port += 1;
+            server.listen(args.port, '127.0.0.1');
+        } else {
+            throw err;
+        }
+    });
+    server.listen(args.port, '127.0.0.1');
 }
 
 module.exports = { createServer, parseArgs };

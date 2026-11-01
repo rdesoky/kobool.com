@@ -36,6 +36,10 @@ const DIST = path.join(ROOT, 'dist');
 // dev uses the same-origin prefix, which tools/serve.js proxies to the API
 // host. staging and prod call the API host directly.
 //
+// At runtime, shared/config.js overrides apiBase back to /cgi-bin/ when the
+// page is served from localhost or 127.0.0.1, so a local preview of any
+// environment build stays same-origin and goes through the serve proxy.
+//
 // The base is scheme-relative (//dev.kobool.com) so it inherits the page's own
 // scheme: http today, https once TLS is terminated in front of the API host.
 // Switch to //api.kobool.com/cgi-bin/ once that host serves the CGI.

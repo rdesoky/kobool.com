@@ -388,6 +388,67 @@ test('validate: a CNAME in a subpath build is an error', () => {
     fs.rmSync(dir, { recursive: true, force: true });
 });
 
+function evalConfigForHost(host) {
+    const vm = require('vm');
+    const src = fs.readFileSync(path.join(ROOT, 'shared', 'config.js'), 'utf8');
+    // Simulate the build baking a cross-origin API base into the dist config.
+    const built = src.replace(/apiBase:\s*'[^']*'/, "apiBase: '//dev.kobool.com/cgi-bin/'");
+    const window = {
+        location: { hostname: host },
+        document: {
+            createElement() { return { setAttribute() {}, appendChild() {} }; },
+            head: {}
+        }
+    };
+    const sandbox = { window };
+    sandbox.globalThis = sandbox;
+    vm.createContext(sandbox);
+    vm.runInContext(built, sandbox);
+    return window.APP_CONFIG.apiBase;
+}
+
+test('config: localhost and 127.0.0.1 force the same-origin API base', () => {
+    assert.strictEqual(evalConfigForHost('localhost'), '/cgi-bin/');
+    assert.strictEqual(evalConfigForHost('127.0.0.1'), '/cgi-bin/');
+});
+
+test('config: other hosts keep the baked API base', () => {
+    assert.strictEqual(
+        evalConfigForHost('staging.kobool.com'),
+        '//dev.kobool.com/cgi-bin/'
+    );
+});
+
+test('validate: shared/config.js host detection is exempt from the localhost rule', () => {
+    const os = require('os');
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'kobool-hostcfg-'));
+    const distShared = path.join(dir, 'shared');
+    fs.mkdirSync(distShared, { recursive: true });
+    fs.writeFileSync(path.join(distShared, 'config.js'), [
+        'window.APP_CONFIG={apiBase:"//dev.kobool.com/cgi-bin/"};',
+        '(function(g){var h=g.location&&g.location.hostname;if(h==="localhost"||h==="127.0.0.1"){g.APP_CONFIG.apiBase="/cgi-bin/";}})(window);'
+    ].join('\n'));
+    fs.writeFileSync(path.join(dir, 'index.html'), '<html><head></head><body>hi</body></html>');
+
+    for (const env of ['staging', 'prod']) {
+        const res = validate({ env, dist: dir });
+        assert.ok(
+            !res.errors.some((e) => /Localhost reference/.test(e)),
+            `${env} must not flag config.js host detection: ${res.errors}`
+        );
+    }
+
+    // The rule still applies everywhere else.
+    fs.writeFileSync(path.join(dir, 'page.html'), '<a href="http://localhost:8080/x">x</a>');
+    const flagged = validate({ env: 'staging', dist: dir });
+    assert.ok(
+        flagged.errors.some((e) => /Localhost reference/.test(e)),
+        'a localhost literal outside config.js must still error'
+    );
+
+    fs.rmSync(dir, { recursive: true, force: true });
+});
+
 function mockReqRes(url, headers) {
     const req = {
         url,
