@@ -1,6 +1,7 @@
 var Http = {
 	cache:{},
-	cgiBase:"/cgi-bin/",
+	// Set from shared/config.js so the API host is environment-specific.
+	cgiBase:(window.APP_CONFIG && window.APP_CONFIG.apiBase) || "/cgi-bin/",
 	
 	activeReq:{},
 	xml2JS:function(xml){
