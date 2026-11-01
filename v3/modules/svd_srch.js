@@ -73,6 +73,7 @@ define(["jquery","dom-utils", "kui","utils","http","page-nav","top-tabs"],functi
 				var pval = params[pi];
 				if (_D(pval) && (pval != "0" || pi == "g") && pval != "") {
 					//var title = _S("filters_title." + pi,"") + kui.filterText(pi, pval,{});
+					_HSEP(filters);
 					kui.setAttrText({
 						el: _A(filters, "span"),
 						param: pi,
@@ -88,6 +89,7 @@ define(["jquery","dom-utils", "kui","utils","http","page-nav","top-tabs"],functi
 			_A(filters, "span", {}, _S("a.order") + ":");
 			_HS(_A(filters, "span"), "sort." + (params.ob || "rl"));
 			if (params.m) {
+				_HSEP(filters);
 				_HS(_A(filters, "span"), "sort.m");
 				params.m = "1";
 			}

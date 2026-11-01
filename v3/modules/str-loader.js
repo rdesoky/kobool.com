@@ -78,7 +78,8 @@ define(["js-promise","http","utils","shortcuts"],function(CPromise,http,$u,_){
 			_H(el,"&nbsp;");
 
 			function setTxt(txt){
-				switch(el.tagName){
+				// tagName is upper-case in HTML documents, so compare case-insensitively.
+				switch((el.tagName || "").toLowerCase()){
 					case "input":
 					case "textarea":
 						el.value = txt;

@@ -90,6 +90,10 @@
 		<unblock><![CDATA[
 			اعادة عرض هذا العضو في صفحتي والقوائم الخاصة بي.
 		]]></unblock>
+		<unaccept><![CDATA[
+			حذف هذا العضو من قائمة قبولك.<br/>
+			لن يتم ابلاغ العضو بهذا الإجراء.
+		]]></unaccept>
 	</tips>
 	<new_tips>
 		<sorting_header>ازرار التحكم في ترتيب نتائج البحث.</sorting_header>

@@ -143,6 +143,21 @@
         });
     }
 
+    // Returns the values of every key under a group prefix, in bundle order.
+    // Replaces the legacy hidden <div id="str:group"> nodes that the server
+    // used to render for callers that enumerated a string group.
+    function getGroup(strID) {
+        var parts = splitKey(strID);
+        var bundle = bundles[currentLang + ':' + parts.source];
+        var prefix = parts.key + '.';
+        var ret = [];
+        if (!bundle) return ret;
+        Object.keys(bundle).forEach(function (key) {
+            if (key.indexOf(prefix) === 0) ret.push(bundle[key]);
+        });
+        return ret;
+    }
+
     function requireArrayOfStrings(list, callback) {
         return Promise.all(list.map(function (item) { return requireStrings(item); }))
             .then(function () {
@@ -291,6 +306,7 @@
         onLanguageChange: onLanguageChange,
         loadBundle: loadBundle,
         getString: getString,
+        getGroup: getGroup,
         bind: bind,
         sessionState: sessionState,
         addQueryParam: addQueryParam

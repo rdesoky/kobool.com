@@ -180,9 +180,9 @@ function($,$tabs,$kui,$pgNav,$http,$u,CSelector,CCheckFrame) {
 
 			var sel = new CSelector();
 
-			$.each(_E("str:decline_msgs").childNodes, function (el) {
-				if (_D(el.innerHTML) && el.innerHTML.length) {
-					$fmsg_list.append("<li>" + el.innerHTML + "</li>").click(function(e){
+			$.each(window.KStrings.getGroup("str:decline_msgs"), function (msg) {
+				if (_D(msg) && msg.length) {
+					$fmsg_list.append("<li>" + msg + "</li>").click(function(e){
 						sel.select(e.target);
 					});
 				}

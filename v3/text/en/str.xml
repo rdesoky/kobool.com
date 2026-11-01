@@ -76,6 +76,8 @@
             <contact>Contact us</contact>
             <declines>Declines</declines>
             <decline>Decline</decline>
+            <help>Help</help>
+            <my_recent_q_answers>Answers to My Questions</my_recent_q_answers>
 		</pg_title>
 		<login_id>Login Name</login_id>
 		<sure>Are you sure?</sure>

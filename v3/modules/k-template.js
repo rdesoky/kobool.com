@@ -29,6 +29,15 @@ define(["jquery", "utils", "http","kui","js-promise","inline-edit","dom-utils"],
 	}
 	var templates = document.createDocumentFragment();
 	var cache = {};
+
+	// Assigning innerHTML re-creates descendant nodes, so [data-string]
+	// bindings must be (re)applied after any such assignment.
+	function bindStrings(root){
+		$("[data-string]", root).each( function( node ){
+			_HS(node, node.getAttribute("data-string"));
+		});
+	}
+
 	return module = {
 		render:function(info, actions){
 			if(!info.data){
@@ -142,11 +151,6 @@ define(["jquery", "utils", "http","kui","js-promise","inline-edit","dom-utils"],
 					});
 			});
 
-			$("[data-string]",ret).each( function( node ){
-				var strID = node.getAttribute("data-string");
-				_HS(node, strID);
-			});
-
 			$("[data-template]",ret).each( function( node ){
 				var tmpl_code = node.getAttribute("data-template");
 
@@ -169,9 +173,16 @@ define(["jquery", "utils", "http","kui","js-promise","inline-edit","dom-utils"],
 				node.removeAttribute("data-js-attr");
 
 				$.each(attr_list, function(attr){
-					module.setNodeAttr( node, attr, node[attr].replaceFields($d) );// use observable style for promised values					
+					// use observable style for promised values
+					module.setNodeAttr( node, attr, node[attr].replaceFields($d) );
 				});
 			});
+
+			// Must run after data-js-attr: assigning innerHTML re-creates the
+			// descendant [data-string] nodes, so binding them earlier would
+			// leave the detached originals filled and the live ones empty.
+			// Promised attributes re-run this from setNodeAttr once they land.
+			bindStrings(ret);
 
 			$("[data-exists-if]",ret).each( function( node ){
 				var scrpt = node.getAttribute("data-exists-if");
@@ -237,6 +248,9 @@ define(["jquery", "utils", "http","kui","js-promise","inline-edit","dom-utils"],
 				node[attr] = ".";
 				return val.then(function(v){
 					node[attr] = v;
+					// Re-parsing the new value dropped any [data-string]
+					// descendants, so bind them again.
+					bindStrings(node);
 				});
 			}else{
 				node[attr] = checkReviewMarks(val);
