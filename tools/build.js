@@ -120,7 +120,18 @@ function rewriteBase(dir, base) {
 }
 
 function cleanDist() {
-    fs.rmSync(DIST, { recursive: true, force: true });
+    // Windows can still hold handles on files just written by a previous
+    // build, which surfaces as ENOTEMPTY/EPERM. Retry briefly before failing.
+    for (let attempt = 0; ; attempt++) {
+        try {
+            fs.rmSync(DIST, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
+            break;
+        } catch (err) {
+            if (attempt >= 5) throw err;
+            const until = Date.now() + 200;
+            while (Date.now() < until) { /* brief backoff */ }
+        }
+    }
     fs.mkdirSync(DIST, { recursive: true });
 }
 
