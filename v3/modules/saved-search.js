@@ -83,6 +83,7 @@ define(["jquery", "utils", "kui", "dom-utils","page-nav","top-tabs"],function($,
 				var pval = params[pi];
 				if( _D(pval) && (pval!="0"||pi=="g") && pval != "" ){
 					//var title = _S("filters_title." + pi,"") + $kui.filterText(pi, pval,{});
+					_HSEP(filters);
 					$kui.setAttrText({ el:_A(filters, "span"), param:pi, dkey:pi, data:params, prefix:"filters_title." + pi });
 				}
 
@@ -92,6 +93,7 @@ define(["jquery", "utils", "kui", "dom-utils","page-nav","top-tabs"],function($,
 			_A( filters, "span",{}, _S("a.order") + ":" );
 			_HS(_A(filters, "span"), "sort." + (params.ob||"rl") );
 			if(params.m){
+				_HSEP(filters);
 				_HS(_A(filters, "span"), "sort.m");
 				params.m = "1";
 			}

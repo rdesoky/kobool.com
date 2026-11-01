@@ -68,6 +68,8 @@
             <contact>اتصل بالموقع</contact>
             <declines>الإنسحابات</declines>
             <decline>إنسحاب</decline>
+            <help>مساعدة</help>
+            <my_recent_q_answers>إجابات على أسئلتي</my_recent_q_answers>
         </pg_title>
 		<login_id>اسم الدخول</login_id>
 		<sure>هل أنت متأكد؟</sure>

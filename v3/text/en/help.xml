@@ -60,7 +60,7 @@
 		]]></featured_members>
 		<featured_footer><![CDATA[
 			<div class="left_align">Features Members' list shows (for free) the members who own unused 
-				<a href="#pg=cpoints">Contact&nbsp;Points</a>.<br/>
+				<a href="#pg=cp_buy">Contact&nbsp;Points</a>.<br/>
 				The larger the number of unused points the more frequent the profile appears in this list.
 			</div>
 		]]></featured_footer>
@@ -80,6 +80,10 @@
 		<unblock><![CDATA[
 			Unblock this member to appear in your personal pages.
 		]]></unblock>
+		<unaccept><![CDATA[
+			Remove this member from your 'Acceptance List'.<br/>
+			The member will not be notified about this action.
+		]]></unaccept>
 	</tips>
 	<new_tips>
 		<inactive><![CDATA[

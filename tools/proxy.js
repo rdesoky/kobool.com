@@ -20,7 +20,7 @@ const https = require('https');
 const { URL } = require('url');
 
 const DEFAULT_TARGET = process.env.KOBOOL_API_TARGET || 'https://dev.kobool.com';
-const FORWARDED_HEADERS = ['content-type', 'sid', 'accept', 'authorization', 'cookie'];
+const FORWARDED_HEADERS = ['content-type', 'content-length', 'sid', 'accept', 'authorization', 'cookie'];
 
 function createProxy(options) {
     const target = new URL(options.target || DEFAULT_TARGET);

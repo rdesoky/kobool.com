@@ -128,11 +128,14 @@ define(["jquery", "http", "utils", "dom-utils","kevents"],function($, $http, $u,
 		downloadPage:function( pageID, container, onLoad ){
 			currPage = pageID;
 
-			var pgTitle= _S("a.pg_title." + pageID);
+			// Unknown page ids (stale bookmarks, hand-typed URLs) have no
+			// pg_title entry; fall back to the site name instead of leaking
+			// a "[str:a.pg_title.x]" placeholder into the UI.
+			var pgTitle= _S("a.pg_title." + pageID, "");
 
 			$("#PageActions").html(pgTitle);
-			
-			document.title = _S("a.kobool") + " - " + pgTitle;
+
+			document.title = pgTitle ? _S("a.kobool") + " - " + pgTitle : _S("a.kobool");
 
 			var root = _CL(container);//_A( _CL(container), "div" );
 			_CL("PgHeader");
