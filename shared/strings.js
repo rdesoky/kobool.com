@@ -290,6 +290,14 @@
     global._PS = getStringAsync;
     global._HS = setHTML;
 
+    // Language switch links, shared by the v2 and v3 shells.
+    document.addEventListener('click', function (event) {
+        var el = event.target.closest ? event.target.closest('[data-lang-switch]') : null;
+        if (!el) return;
+        event.preventDefault();
+        setLanguage(el.getAttribute('data-lang-switch'));
+    });
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () { bind(document); });
     } else {

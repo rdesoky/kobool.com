@@ -75,7 +75,8 @@
                 <li id="Menu.ContactUs"><a href="#pg=contact" data-string="str:contact_us">Contact us</a></li>
                 <li id="Menu.Logout" data-on-click="require('kui').onBtnLogout()" data-string="str:a.logout">Logout</li>
                 <li onclick="require(['mem-ui'],function(imem){imem.refreshHeader(true)});return false;" data-string="str:refresh">Refresh</li>
-                <li data-lang-switch="en">English</li>
+                <li data-lang-switch="en" data-visible-if="ar">English</li>
+                <li data-lang-switch="ar" data-visible-if="en">عربي</li>
                 <li id="Menu.OldSite"><a href="/v2/" data-string="str:downgrade">Old site</a></li>
             </ul>
 
@@ -87,7 +88,8 @@
                 <li id="GuestMenu.qa"><a href="#pg=qa" data-string="str:QandA">Q&amp;A</a></li>
                 <li id="Menu.ContactUs"><a href="#pg=contact" data-string="str:contact_us">Contact us</a></li>
                 <li onclick="require(['mem-ui'],function(imem){imem.refreshHeader(true)});return false;" data-string="str:refresh">Refresh</li>
-                <li data-lang-switch="en">English</li>
+                <li data-lang-switch="en" data-visible-if="ar">English</li>
+                <li data-lang-switch="ar" data-visible-if="en">عربي</li>
                 <li id="GuestMenu.OldSite"><a href="/v2/" data-string="str:downgrade">Old site</a></li>
             </ul>
 
@@ -118,11 +120,11 @@
         <div>
             <a href="#pg=home" data-string="str:main_menu.home">Home</a>
             | <a href="#pg=contact" data-string="str:footer.contact_us">Contact us</a>
-            | <a href="#" data-lang-switch="en">English</a>
+            | <a href="#" data-lang-switch="en" data-visible-if="ar">English</a>
+            <a href="#" data-lang-switch="ar" data-visible-if="en">عربي</a>
         </div>
         <div data-string="str:copyright"></div>
     </div>
 
-    <div style="display:none" id="ClientStrings"></div>
 </body>
 </html>

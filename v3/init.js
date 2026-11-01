@@ -102,18 +102,8 @@
     };
 
     // PgVer is no longer needed: string bundles are fetched as JSON.
+    // Language switching is handled by shared/strings.js for both shells.
     window.PgVer = { ar: {}, en: {} };
-
-    // Language switch links rendered in the shell.
-    document.addEventListener('click', function (event) {
-        var el = event.target.closest('[data-lang-switch]');
-        if (!el) return;
-        event.preventDefault();
-        var lang = el.getAttribute('data-lang-switch');
-        if (window.KStrings) {
-            window.KStrings.setLanguage(lang);
-        }
-    });
 
     require(['app'], function (app) {
         app.run();
