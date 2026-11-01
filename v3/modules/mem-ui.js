@@ -18,7 +18,11 @@ define(["http","k-template","kevents","page-nav","utils","dom-utils","jquery"],f
 						}
 					);
 				}else{
-					this.logout();
+					// No session cookie: render the guest menu right away. The
+					// logout round-trip used to be the only thing that revealed
+					// the menu, so an unreachable API (offline, CORS, or mixed
+					// content on an https host) left both menus hidden.
+					this.renderLogin();
 				}
 			}
 		},
@@ -39,6 +43,9 @@ define(["http","k-template","kevents","page-nav","utils","dom-utils","jquery"],f
 			var headerBox = _CL("MemberBox");
 
 			if( ! SSN.id ){
+				_SH("GuestMenu");
+				_HI("MemberMenu,MemberSubmenu");
+
 				tmpl.loadTemplate( "#GuestBox" )
 					.done(function(el){
 						el = _A(headerBox, tmpl.renderTemplate( el ) );
@@ -76,17 +83,23 @@ define(["http","k-template","kevents","page-nav","utils","dom-utils","jquery"],f
 		},
 
 		logout:function(){
+			// Clear the local session and show the guest UI no matter what the
+			// server says. The request can fail (offline, CORS, mixed content),
+			// and the header must not stay stuck on the member menu.
+			function endSession(){
+				kevents.fire("onlogout",{id: _GC("id") });
+				$.each( ["id","sid","myinfo","hspg","qls"], function(v){
+					$u.delCookie(v);
+				});
+				SSN.reset();
+				module.renderLogin();
+			}
+
 			return http.post({
 				refresh:1,
 				scr:http.api.logout,
-				onload:function(){
-					kevents.fire("onlogout",{id: _GC("id") });
-					$.each( ["id","sid","myinfo","hspg","qls"], function(v){
-						$u.delCookie(v);
-					});
-					SSN.reset();
-					module.renderLogin();
-				}
+				onload:endSession,
+				onerror:endSession
 			});
 		},
 

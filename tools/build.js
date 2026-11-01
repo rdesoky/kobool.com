@@ -4,7 +4,7 @@
  * Build dist/ from the static source tree.
  *
  *   node tools/build.js [--env=dev|staging|prod] [--source=<private repo root>]
- *                       [--base=/subpath]
+ *                       [--base=/subpath] [--no-cname]
  *
  * Steps:
  *   1. clean dist/
@@ -18,6 +18,11 @@
  * on a GitHub Pages project site (https://<user>.github.io/<repo>/). Production
  * and staging use the default empty base, because they are served from a domain
  * root.
+ *
+ * --no-cname skips the CNAME file. A GitHub Pages project site is served from
+ * <user>.github.io/<repo>/ and must not claim a custom domain: a CNAME there
+ * makes Pages try to provision a TLS certificate for a host that has no HTTPS,
+ * which fails and leaves the site stuck on "certificate does not exist yet".
  */
 
 const fs = require('fs');
@@ -57,11 +62,13 @@ const BLOCKED_DIRS = new Set([
 const BLOCKED_NAMES = new Set(['Thumbs.db', 'desktop.ini', '.DS_Store', 'lib.php']);
 
 function parseArgs(argv) {
-    const args = { env: 'dev', source: null, base: '' };
+    const args = { env: 'dev', source: null, base: '', cname: true, apiBase: null };
     for (const arg of argv.slice(2)) {
         if (arg.startsWith('--env=')) args.env = arg.slice(6);
         else if (arg.startsWith('--source=')) args.source = arg.slice(9);
         else if (arg.startsWith('--base=')) args.base = arg.slice(7);
+        else if (arg.startsWith('--api-base=')) args.apiBase = arg.slice(11);
+        else if (arg === '--no-cname') args.cname = false;
     }
     if (!ENVIRONMENTS[args.env]) {
         throw new Error(`Unknown environment "${args.env}". Use dev, staging or prod.`);
@@ -69,6 +76,7 @@ function parseArgs(argv) {
     // Normalize to "" or "/sub/path" with no trailing slash.
     args.base = args.base.replace(/\/+$/, '');
     if (args.base && !args.base.startsWith('/')) args.base = '/' + args.base;
+    if (args.apiBase && !args.apiBase.endsWith('/')) args.apiBase += '/';
     return args;
 }
 
@@ -171,20 +179,21 @@ function copyTree(srcDir, destDir, relBase) {
     return count;
 }
 
-function writeConfig(env) {
+function writeConfig(env, apiBaseOverride) {
     const settings = ENVIRONMENTS[env];
+    const apiBase = apiBaseOverride || settings.apiBase;
     const source = fs.readFileSync(path.join(ROOT, 'shared', 'config.js'), 'utf8');
     const replaced = source.replace(
         /apiBase:\s*'[^']*'/,
-        `apiBase: '${settings.apiBase}'`
+        `apiBase: '${apiBase}'`
     );
     fs.mkdirSync(path.join(DIST, 'shared'), { recursive: true });
     fs.writeFileSync(path.join(DIST, 'shared', 'config.js'), replaced, 'utf8');
 }
 
-function writeCname(env) {
+function writeCname(env, enabled) {
     const settings = ENVIRONMENTS[env];
-    if (settings.cname) {
+    if (enabled !== false && settings.cname) {
         fs.writeFileSync(path.join(DIST, 'CNAME'), settings.cname + '\n', 'utf8');
     }
 }
@@ -306,8 +315,8 @@ async function build(options) {
         console.warn(`Data compile skipped: ${err.message}`);
     }
 
-    writeConfig(env);
-    writeCname(env);
+    writeConfig(env, options.apiBase);
+    writeCname(env, options.cname);
 
     // Rewrite before minifying so the minifier sees the final URLs.
     const rewritten = rewriteBase(DIST, options.base || '');

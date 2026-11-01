@@ -266,6 +266,51 @@ test('validate: staging/prod warn (not fail) on an http:// API base', () => {
     fs.rmSync(dir, { recursive: true, force: true });
 });
 
+test('build: --no-cname omits CNAME, default writes it', () => {
+    const { parseArgs } = require(path.join(TOOLS, 'build'));
+
+    assert.strictEqual(parseArgs(['node', 'build.js', '--env=staging']).cname, true);
+    assert.strictEqual(parseArgs(['node', 'build.js', '--env=staging', '--no-cname']).cname, false);
+});
+
+test('build: --api-base overrides the environment API base', () => {
+    const { parseArgs } = require(path.join(TOOLS, 'build'));
+
+    assert.strictEqual(parseArgs(['node', 'build.js']).apiBase, null);
+    // A trailing slash is normalized so callers can concatenate script names.
+    assert.strictEqual(
+        parseArgs(['node', 'build.js', '--api-base=https://api.kobool.com/cgi-bin']).apiBase,
+        'https://api.kobool.com/cgi-bin/'
+    );
+});
+
+test('validate: a CNAME in a subpath build is an error', () => {
+    const os = require('os');
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'kobool-cname-'));
+    fs.writeFileSync(path.join(dir, 'index.html'), '<html><head></head><body>hi</body></html>');
+
+    // A GitHub Pages project site is served from /<repo>/ over https and must
+    // not claim a custom domain: the CNAME makes Pages try to provision a
+    // certificate for a host without HTTPS, which fails and blocks the HTTPS
+    // setting.
+    fs.writeFileSync(path.join(dir, 'CNAME'), 'staging.kobool.com\n');
+    const withCname = validate({ env: 'staging', dist: dir, base: '/kobool.com' });
+    assert.ok(
+        withCname.errors.some((e) => /CNAME/.test(e)),
+        `subpath build with CNAME must error: ${withCname.errors}`
+    );
+
+    // The same artifact is fine for a domain-root deployment.
+    const rootBuild = validate({ env: 'staging', dist: dir });
+    assert.ok(!rootBuild.errors.some((e) => /CNAME/.test(e)), 'root build may keep its CNAME');
+
+    fs.rmSync(path.join(dir, 'CNAME'));
+    const noCname = validate({ env: 'staging', dist: dir, base: '/kobool.com' });
+    assert.ok(!noCname.errors.some((e) => /CNAME/.test(e)), 'subpath build without CNAME is valid');
+
+    fs.rmSync(dir, { recursive: true, force: true });
+});
+
 function mockReqRes(url, headers) {
     const req = {
         url,
@@ -358,4 +403,21 @@ test('smoke: dist builds and validates cleanly', { timeout: 120000 }, () => {
 
 test('LANGS exports both supported languages', () => {
     assert.deepStrictEqual(LANGS, ['ar', 'en']);
+});
+
+test('mem-ui: guest menu renders without a successful logout round-trip', () => {
+    // The side menu used to be revealed only by the logout response, so an
+    // unreachable API (offline, CORS, mixed content on https) left both menus
+    // hidden. The guest UI must be reachable locally.
+    const src = fs.readFileSync(path.join(ROOT, 'v3', 'modules', 'mem-ui.js'), 'utf8');
+
+    const refresh = src.slice(src.indexOf('refreshHeader:'), src.indexOf('renderLogin:'));
+    assert.match(refresh, /this\.renderLogin\(\)/, 'refreshHeader must render the guest menu locally');
+    assert.ok(!/this\.logout\(\)/.test(refresh), 'refreshHeader must not depend on the logout request');
+
+    const logout = src.slice(src.indexOf('logout:'), src.indexOf('login:function'));
+    assert.match(logout, /onerror\s*:\s*endSession/, 'logout must clear the session when the request fails');
+
+    const renderBox = src.slice(src.indexOf('renderBox:'), src.indexOf('logout:'));
+    assert.match(renderBox, /_SH\("GuestMenu"\)/, 'renderBox must reveal the guest menu for anonymous users');
 });

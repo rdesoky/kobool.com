@@ -206,6 +206,23 @@ function validate(options) {
         }
     }
 
+    // 5b. A subpath build targets a GitHub Pages project site
+    // (<user>.github.io/<repo>/), which is always served over https and must
+    // not claim a custom domain. A CNAME in the artifact makes Pages try to
+    // provision a TLS certificate for a host that has no HTTPS; that fails and
+    // leaves the site stuck on "certificate does not exist yet", which in turn
+    // blocks the HTTPS setting. Build with --no-cname for project sites.
+    if (base) {
+        const cnameFile = path.join(distDir, 'CNAME');
+        if (fs.existsSync(cnameFile)) {
+            const cname = fs.readFileSync(cnameFile, 'utf8').trim();
+            errors.push(
+                `CNAME "${cname}" in a subpath build: a GitHub Pages project site is served from ` +
+                `${base}/ and must not claim a custom domain. Rebuild with --no-cname.`
+            );
+        }
+    }
+
     // 6. JS syntax
     for (const file of files) {
         if (path.extname(file).toLowerCase() !== '.js') continue;

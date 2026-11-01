@@ -55,8 +55,23 @@ root-absolute (`/v3/css/base.css`). To preview a build under a subpath — for
 example a GitHub Pages project site at `/<repo>/` — pass `--base`:
 
 ```bash
-node tools/build.js --env=staging --base=/kobool.com
+node tools/build.js --env=staging --base=/kobool.com --no-cname
 node tools/validate.js --env=staging --base=/kobool.com
+```
+
+`--no-cname` is required for a project site. A GitHub Pages project site is
+served from `<user>.github.io/<repo>/` and must not claim a custom domain: a
+`CNAME` in the artifact makes Pages try to provision a TLS certificate for a
+host that has no HTTPS, which fails and leaves the site stuck on "certificate
+does not exist yet". `npm run check` fails a `--base` build that still contains
+a `CNAME`.
+
+`--api-base=<url>` overrides the environment's API base, for example to point a
+preview at an HTTPS API host:
+
+```bash
+node tools/build.js --env=staging --base=/kobool.com --no-cname \
+  --api-base=https://api.kobool.com/cgi-bin/
 ```
 
 `npm run serve` proxies `/cgi-bin/` to `http://dev.kobool.com` (override with `KOBOOL_API_TARGET`) so the browser
@@ -124,6 +139,7 @@ country and attribute selects no longer need a server round trip.
 - secrets (DB password, RDS host, private keys, AWS key ids)
 - ShareThis and PayPal markers
 - `localhost` / `127.0.0.1` in staging and production builds
+- a `CNAME` in a `--base` (GitHub Pages project site) build
 - `data-string` keys missing from both locale bundles
 - unresolved local `href`/`src` references
 - JavaScript syntax errors
@@ -136,8 +152,30 @@ GitHub Pages; pushes to `main` deploy staging, and a manual dispatch can target
 production.
 
 The Pages project site is served from `/<repo>/`, so the workflow builds
-staging with `--base="/<repo>"`. Production is served from a domain root and
-keeps the default empty base.
+staging with `--base="/<repo>" --no-cname`. Production is served from a domain
+root and keeps the default empty base and its `CNAME`.
+
+### HTTPS and mixed content
+
+GitHub Pages serves `github.io` project sites over HTTPS only; the
+`https_enforced` setting cannot be turned off for them. Because every
+`kobool.com` host is currently HTTP-only, API calls from the Pages preview are
+blocked as mixed active content:
+
+```
+Mixed Content: ... requested an insecure XMLHttpRequest endpoint
+'http://dev.kobool.com/cgi-bin/...'. This request has been blocked
+```
+
+The UI is written to survive this — the side menu renders from local state
+rather than waiting on an API response — but no data loads. To make the preview
+fully functional, either:
+
+- serve the preview over HTTP (a local `npm run serve`, or any HTTP host), or
+- point the build at an HTTPS API host with `--api-base=https://...`.
+
+`npm run check` reports the HTTP API base as a warning for staging and prod
+builds so this stays visible.
 
 ## License
 
