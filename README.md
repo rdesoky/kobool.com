@@ -157,10 +157,17 @@ root and keeps the default empty base and its `CNAME`.
 
 ### HTTPS and mixed content
 
-GitHub Pages serves `github.io` project sites over HTTPS only; the
-`https_enforced` setting cannot be turned off for them. Because every
-`kobool.com` host is currently HTTP-only, API calls from the Pages preview are
-blocked as mixed active content:
+GitHub Pages serves `github.io` project sites over HTTPS only. `http://` is
+answered with a `301` to `https://`, and the `https_enforced` setting cannot be
+turned off for a `github.io` site — the API rejects it:
+
+```
+PUT /repos/{owner}/{repo}/pages  {"https_enforced": false}
+404 {"message":"The certificate does not exist yet"}
+```
+
+Because every `kobool.com` host is currently HTTP-only, API calls from the
+Pages preview are blocked as mixed active content:
 
 ```
 Mixed Content: ... requested an insecure XMLHttpRequest endpoint
@@ -176,6 +183,11 @@ fully functional, either:
 
 `npm run check` reports the HTTP API base as a warning for staging and prod
 builds so this stays visible.
+
+Do not try to work around this by adding a `CNAME` for a `kobool.com` host to
+the Pages artifact. Pages would then try to provision a TLS certificate for a
+host that has no HTTPS; that fails, and the failure is what surfaces as
+"certificate does not exist yet" when changing the HTTPS setting.
 
 ## License
 
