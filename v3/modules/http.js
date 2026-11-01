@@ -162,7 +162,11 @@ define(["jquery","kevents","dom-utils","js-promise","utils"], function($, evt, $
 						}
 						promise.fulfill(response);
 
-					}else if( req.http.status ){// not abort
+					}else{
+						// status 0 means the request never reached the server
+						// (offline, DNS, CORS, connection refused). That is a
+						// failure, not an abort, so report it: callers rely on
+						// onError to clear their progress blockers.
 						for( i=0; i<req.onError.length; i++ ){
 							fn = req.onError[i];
 							if(_D(fn)){
@@ -171,21 +175,28 @@ define(["jquery","kevents","dom-utils","js-promise","utils"], function($, evt, $
 						}
 					}
 
-					if( req.http.status ){// not abort
-						delete activeReq[sURL];
-					}
+					delete activeReq[sURL];
 				}
 			};
 			var tmo = 30000;
 			var timeout = function(){
 				req.http.onreadystatechange = null;
 				if(req.retry>=10){
+					// Give up: report the failure so callers can clear their
+					// progress blockers instead of waiting forever.
 					for( var i=0; i<req.onTimeout.length; i++ ){
 						var fn = req.onTimeout[i];
 						if(_D(fn)){
 							fn();
 						}
 					}
+					for( i=0; i<req.onError.length; i++ ){
+						fn = req.onError[i];
+						if(_D(fn)){
+							fn();
+						}
+					}
+					delete activeReq[sURL];
 					return;
 				}
 				req.http.abort();
@@ -289,16 +300,30 @@ define(["jquery","kevents","dom-utils","js-promise","utils"], function($, evt, $
 			}
 
 			var pr = p.silent?undefined:$du.blockPr("Contents");
+
+			// The blocker must clear on every outcome. Leaving it up on a failed
+			// or timed-out request strands the page behind a spinner forever.
+			function unblock(){
+				if(!p.silent){
+					$du.unblockPr("Contents");
+				}
+			}
+
 			var ret = this.request(
 				p.scr,
 				function(res,xml){
-					$du.unblockPr("Contents");
+					unblock();
 					if(p.onload){
 						p.onload(res,xml);
 					}
 				},
 				null,
-				p.error,
+				function(){
+					unblock();
+					if(p.onerror){
+						p.onerror();
+					}
+				},
 				$u.hash2Query(p.data||{x:1})
 			);
 			if(p.refresh){

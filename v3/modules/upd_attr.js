@@ -33,7 +33,7 @@ define(["jquery", "top-tabs", "dom-utils", "http", "kui", "utils","page-nav"],fu
 				};
 				function showStates(country, state, city) {
 					var st = frm.state;
-					$http.get(PgLinks.geo + "&lang=" + $u.lang() + "&id=" + frm.country.value, function (res) {
+					$http.get(KStrings.addQueryParam(PgLinks.geo, "lang", $u.lang()) + "&id=" + frm.country.value, function (res) {
 						st.options.length = 1;
 						var r = JSN(res);
 						if (!_D(r)) {
@@ -59,7 +59,7 @@ define(["jquery", "top-tabs", "dom-utils", "http", "kui", "utils","page-nav"],fu
 				};
 				function showCities(country, state, city) {
 					var ci = frm.city;
-					$http.get(PgLinks.geo + "&lang=" + $u.lang() + "&id="
+					$http.get(KStrings.addQueryParam(PgLinks.geo, "lang", $u.lang()) + "&id="
 						+ country + "." + state,
 						function (res) {
 							_SH("CityEditor");

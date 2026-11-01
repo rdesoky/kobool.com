@@ -17,6 +17,13 @@ var PgNav = {
 	},
 	init:function(){
 		this.currPage=this.getSParam("pg","splash");
+		this.currCParams=this.getCParams();
+
+		// Render the landing page now. It used to appear only as a side effect
+		// of the session refresh callback, so an unreachable API left the page
+		// empty behind a spinner.
+		this.onPgChange();
+
 		setInterval(
 			function(){
 				PgNav.chkPage();
@@ -279,6 +286,11 @@ var PgNav = {
 					// declarative binder has to run on it explicitly.
 					window.KStrings.bind(root);
 					loadStrings();
+				},
+				null,
+				function(){
+					// A missing fragment must not leave the page spinning.
+					DU.removeClass(root, "progress_bg");
 				}
 			);
 		}else{

@@ -185,18 +185,23 @@ function validate(options) {
         }
     }
 
-    // 5. Mixed-content guard: a staging/prod config must never hardcode an
-    // http:// API base. The scheme-relative base (//host) inherits the page's
-    // scheme, so on an HTTPS page it becomes https:// — a literal http:// here
-    // would be blocked by browsers as mixed active content. This only applies
-    // to the runtime config; other bundles may legitimately contain http://
-    // links (e.g., CashU URLs inside string files).
+    // 5. Mixed-content notice: a staging/prod config that hardcodes an
+    // http:// API base will be blocked by the browser as mixed active content
+    // when the site itself is served over https (e.g. GitHub Pages). This is a
+    // warning rather than an error because the current API host
+    // (dev.kobool.com) is http-only and must be addressed with an explicit
+    // scheme. Move to an https API host before the site is served over https.
     if (env === 'prod' || env === 'staging') {
         const configFile = path.join(distDir, 'shared', 'config.js');
         if (fs.existsSync(configFile)) {
             const configContent = fs.readFileSync(configFile, 'utf8');
-            if (/apiBase\s*:\s*"http:\/\//.test(configContent)) {
-                errors.push(`Mixed content: ${env} config hardcodes an http:// API base; use the scheme-relative //host form so it upgrades to https on a secure page`);
+            const m = configContent.match(/apiBase\s*:\s*"(http:\/\/[^"]*)"/);
+            if (m) {
+                warnings.push(
+                    `Mixed content risk: ${env} config uses the http:// API base "${m[1]}"; ` +
+                    'browsers block it when the page is served over https. Serve the site over http ' +
+                    'or switch to an https API host.'
+                );
             }
         }
     }

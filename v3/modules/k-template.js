@@ -88,7 +88,7 @@ define(["jquery", "utils", "http","kui","js-promise","inline-edit","dom-utils"],
 				url = PgLinks["templates"];
 			}
 
-			return $http.get( url + "&lang=" + $u.lang() )
+			return $http.get( KStrings.addQueryParam( url, "lang", $u.lang() ) )
 				.then( function(res){
 					var doc = _AD( templates,{"data-turl":url}, res.responseText );
 					return doc.querySelector(sID) || _C("div",{},"Template " + sID + " not found");

@@ -55,7 +55,11 @@ var Http = {
 							fn( req.http.responseText, xml );
 						}
 					}
-				}else if( req.http.status ){// not abort
+				}else{
+					// status 0 means the request never reached the server
+					// (offline, DNS, CORS, connection refused). That is a
+					// failure, not an abort, so report it: callers rely on
+					// onError to clear their progress blockers.
 					for( var i=0; i<req.onError.length; i++ ){
 						var fn = req.onError[i];
 						if(_D(fn)){
@@ -64,21 +68,28 @@ var Http = {
 					}
 				}
 
-				if( req.http.status ){// not abort
-					delete Http.activeReq[sURL];
-				}
+				delete Http.activeReq[sURL];
 			}
 		};
 		var tmo = 30000;
 		var timeout = function(){
 			req.http.onreadystatechange = null;
 			if(req.retry>=10){
+				// Give up: report the failure so callers can clear their
+				// progress blockers instead of waiting forever.
 				for( var i=0; i<req.onTimeout.length; i++ ){
 					var fn = req.onTimeout[i];
 					if(_D(fn)){
 						fn();
 					}
 				}
+				for( i=0; i<req.onError.length; i++ ){
+					fn = req.onError[i];
+					if(_D(fn)){
+						fn();
+					}
+				}
+				delete Http.activeReq[sURL];
 				return;
 			}
 			req.http.abort();
@@ -193,16 +204,30 @@ var Http = {
 		}
 
 		var pr = p.silent?undef:DU.blockPr("Contents");
+
+		// The blocker must clear on every outcome. Leaving it up on a failed
+		// or timed-out request strands the page behind a spinner forever.
+		function unblock(){
+			if(!p.silent){
+				DU.unblockPr("Contents");
+			}
+		}
+
 		var ret = this.request( 
 			this.cgiBase + p.scr, 
 			function(res,xml){
-				DU.unblockPr("Contents");
+				unblock();
 				if(p.onload){
 					p.onload(res,xml);
 				}
 			}, 
 			null, 
-			p.error, 
+			function(){
+				unblock();
+				if(p.onerror){
+					p.onerror();
+				}
+			}, 
 			PgNav.hash2Query(p.data||{x:1})
 		);
 		if(p.refresh){

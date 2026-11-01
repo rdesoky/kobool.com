@@ -191,6 +191,42 @@ test('build: rewriteBase prefixes only real root-absolute URLs', () => {
     assert.match(out, /content="\/not-a-url"/);
 });
 
+test('strings: addQueryParam appends to bare and already-queried URLs', () => {
+    const vm = require('vm');
+    const code = fs.readFileSync(path.join(ROOT, 'shared', 'strings.js'), 'utf8');
+    const sandbox = {
+        window: {
+            location: { pathname: '/', search: '' },
+            APP_CONFIG: {},
+            navigator: { language: 'en-US', languages: ['en-US'] }
+        },
+        document: {
+            cookie: '',
+            documentElement: {},
+            addEventListener() {},
+            querySelectorAll() { return []; }
+        },
+        Promise,
+        RegExp,
+        URLSearchParams,
+        console
+    };
+    sandbox.globalThis = sandbox;
+    vm.createContext(sandbox);
+    vm.runInContext(code, sandbox);
+
+    // Static PgLinks carry no "?v=" cache-buster, so a bare path must get "?"
+    assert.strictEqual(
+        sandbox.window.KStrings.addQueryParam('/v3/pages/templates.html', 'lang', 'en'),
+        '/v3/pages/templates.html?lang=en'
+    );
+    // A legacy "?v=..." suffix must keep "&"
+    assert.strictEqual(
+        sandbox.window.KStrings.addQueryParam('/cgi-bin/geo.pl?v=1', 'lang', 'ar'),
+        '/cgi-bin/geo.pl?v=1&lang=ar'
+    );
+});
+
 test('strings binder: language resolution prefers cookie, falls back to default', () => {
     // detectLang() lives in shared/strings.js (IIFE); assert its static
     // expectations from source (config.js is a browser script, not loadable).
@@ -206,7 +242,7 @@ test('proxy: DEFAULT_TARGET points at the current CORS-enabled API host', () => 
     assert.strictEqual(DEFAULT_TARGET, 'http://dev.kobool.com');
 });
 
-test('validate: staging/prod config must not hardcode an http:// API base', () => {
+test('validate: staging/prod warn (not fail) on an http:// API base', () => {
     const os = require('os');
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'kobool-mixed-'));
     const distShared = path.join(dir, 'shared');
@@ -214,17 +250,18 @@ test('validate: staging/prod config must not hardcode an http:// API base', () =
     fs.writeFileSync(path.join(distShared, 'config.js'), 'window.APP_CONFIG={apiBase:"http://dev.kobool.com/cgi-bin/"};');
     fs.writeFileSync(path.join(dir, 'index.html'), '<html><head></head><body>hi</body></html>');
 
-    // env=dev should not trigger the mixed-content guard (local proxy uses a
-    // same-origin prefix; a literal http base is only banned for the site
-    // environments that are deployed over HTTPS).
+    // The current API host is http-only, so an explicit http:// base is valid
+    // for every environment; it must surface as a warning, never an error.
     const dev = validate({ env: 'dev', dist: dir });
-    assert.ok(!dev.errors.some((e) => /Mixed content/.test(e)), `dev must not flag mixed content: ${dev.errors}`);
+    assert.ok(!dev.warnings.some((w) => /Mixed content/.test(w)), `dev must not warn: ${dev.warnings}`);
 
     const staging = validate({ env: 'staging', dist: dir });
-    assert.ok(staging.errors.some((e) => /Mixed content/.test(e)), 'staging must flag http:// API base');
+    assert.ok(!staging.errors.some((e) => /Mixed content/.test(e)), 'staging must not error on http://');
+    assert.ok(staging.warnings.some((w) => /Mixed content/.test(w)), 'staging must warn on http://');
 
     const prod = validate({ env: 'prod', dist: dir });
-    assert.ok(prod.errors.some((e) => /Mixed content/.test(e)), 'prod must flag http:// API base');
+    assert.ok(!prod.errors.some((e) => /Mixed content/.test(e)), 'prod must not error on http://');
+    assert.ok(prod.warnings.some((w) => /Mixed content/.test(w)), 'prod must warn on http://');
 
     fs.rmSync(dir, { recursive: true, force: true });
 });

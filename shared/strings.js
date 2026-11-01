@@ -73,6 +73,18 @@
         return appRoot() + 'text/' + lang + '/' + source + '.json';
     }
 
+    /**
+     * Append a query parameter, preserving the existing query string.
+     *
+     * The legacy PgLinks entries carried a cache-busting "?v=..." suffix, so
+     * every call site appended with "&". Static PgLinks have no query string,
+     * which turned "/v3/pages/templates.html" + "&lang=en" into a broken URL.
+     */
+    function addQueryParam(url, name, value) {
+        var sep = url.indexOf('?') === -1 ? '?' : '&';
+        return url + sep + name + '=' + encodeURIComponent(value);
+    }
+
     function loadBundle(source, lang) {
         lang = lang || currentLang;
         var key = lang + ':' + source;
@@ -280,7 +292,8 @@
         loadBundle: loadBundle,
         getString: getString,
         bind: bind,
-        sessionState: sessionState
+        sessionState: sessionState,
+        addQueryParam: addQueryParam
     };
 
     global.KStrings = api;

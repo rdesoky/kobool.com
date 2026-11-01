@@ -29,19 +29,15 @@ const ROOT = path.join(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 
 // dev uses the same-origin prefix, which tools/serve.js proxies to the API
-// host. staging and prod call the CORS-enabled API host directly.
+// host. staging and prod call the API host directly.
 //
-// The API base is scheme-relative (//dev.kobool.com) so it inherits the
-// page's own scheme: http today (dev.kobool.com is http-served), https once
-// TLS is terminated in front of the API host. This avoids mixed content
-// either way and requires no config flip at cutover.
-//
-// NOTE: api.kobool.com is not ready yet; dev.kobool.com is the current API
-// host. Switch ENVIRONMENTS back to //api.kobool.com when it goes live.
+// The scheme is explicit (http://) rather than scheme-relative: dev.kobool.com
+// is http-only, so a scheme-relative base would inherit https on an https page
+// and fail. Switch to https://api.kobool.com once that host is live.
 const ENVIRONMENTS = {
     dev: { apiBase: '/cgi-bin/', cname: null },
-    staging: { apiBase: '//dev.kobool.com/cgi-bin/', cname: 'staging.kobool.com' },
-    prod: { apiBase: '//dev.kobool.com/cgi-bin/', cname: 'www.kobool.com' }
+    staging: { apiBase: 'http://dev.kobool.com/cgi-bin/', cname: 'staging.kobool.com' },
+    prod: { apiBase: 'http://dev.kobool.com/cgi-bin/', cname: 'www.kobool.com' }
 };
 
 // Never copied into dist/, regardless of where they appear.

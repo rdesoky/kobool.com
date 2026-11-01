@@ -27,7 +27,7 @@ var UpdateAttr = {
 			};
 			function showStates(country, state, city){
 				var st = frm.state;
-				Http.get(PgLinks.geo + "&lang=" + U.lang() + "&id=" + frm.country.value, function(res){
+				Http.get(KStrings.addQueryParam(PgLinks.geo, "lang", U.lang()) + "&id=" + frm.country.value, function(res){
 					st.options.length = 1;
 					var r = JSN(res);
 					if(!_D(r)){	return; }
@@ -51,7 +51,7 @@ var UpdateAttr = {
 			};
 			function showCities(country, state, city){
 				var ci = frm.city;
-				Http.get(PgLinks.geo + "&lang=" + U.lang() + "&id=" 
+				Http.get(KStrings.addQueryParam(PgLinks.geo, "lang", U.lang()) + "&id="
 							+ country + "." + state, 
 				function(res){
 					_SH("CityEditor");

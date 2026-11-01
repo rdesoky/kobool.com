@@ -4,7 +4,9 @@ Static frontend for kobool.com. Replaces the PHP-rendered `v2/` and `v3/`
 frontends with pre-built HTML, CSS and JavaScript served from a CDN.
 
 The API is unchanged: every dynamic call still goes to the Perl CGI backend
-under `/cgi-bin/`, now reached cross-origin at `//dev.kobool.com` (scheme-relative; http today, https once TLS is terminated). api.kobool.com is not ready yet; switch there when it goes live.
+under `/cgi-bin/`, now reached cross-origin at `http://dev.kobool.com`. The
+scheme is explicit because that host is http-only. Switch to the production
+API host in `tools/build.js` when it goes live.
 
 ## Source
 

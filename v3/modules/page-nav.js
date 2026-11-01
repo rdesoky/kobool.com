@@ -68,9 +68,16 @@ define(["jquery", "http", "utils", "dom-utils","kevents"],function($, $http, $u,
 		},
 		init:function(){
 			currPage=$u.getSParam("pg","home");
-			setTimeout(function(){
-				setInterval(chkPage,200);
-			},2000);
+				currCParams = $u.getCParams();
+
+				// Render the landing page now. It used to appear only as a side
+				// effect of the session refresh callback, so an unreachable API
+				// left the page empty behind a spinner.
+				onPgChange();
+
+				setTimeout(function(){
+					setInterval(chkPage,200);
+				},2000);
 
 			$kevt.listen("chgPage",function(info){
 				$http.post({
@@ -144,6 +151,12 @@ define(["jquery", "http", "utils", "dom-utils","kevents"],function($, $http, $u,
 
 			loadModule(function(pgModule){
 				require(["str-loader","js-promise"],function(strLoader,Promise){
+				// Always clear the progress state, including on failure, so a
+				// missing fragment or a dead API cannot strand the page.
+				var finish = function(){
+					$du.removeClass(root, "progress_bg");
+				};
+
 				$http.css.loadList(pgModule.requireCSS).then(function() {
 					if (_D(pageURL)) {
 						// pageURL is a static .html path, so the query string starts with "?".
@@ -162,7 +175,7 @@ define(["jquery", "http", "utils", "dom-utils","kevents"],function($, $http, $u,
 					}
 				}).done(function(){
 					var dataPr = pgModule.onload ? pgModule.onload(root) : null;
-					$du.removeClass(root, "progress_bg");
+					finish();
 					require(["k-template"],function(ktmpl){
 						if(dataPr && Promise.is(dataPr)){
 							dataPr.done(function(data){
@@ -173,7 +186,7 @@ define(["jquery", "http", "utils", "dom-utils","kevents"],function($, $http, $u,
 							ktmpl.processTemplateNode(root, {});
 						}
 					});
-				});
+				}, finish);
 				});
 			});
 		},
