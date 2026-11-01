@@ -30,10 +30,15 @@ const DIST = path.join(ROOT, 'dist');
 
 // dev uses the same-origin prefix, which tools/serve.js proxies to the API
 // host. staging and prod call the CORS-enabled API host directly.
+//
+// The API base is scheme-relative (//api.kobool.com) so it inherits the
+// page's own scheme: http on staging today (api.kobool.com is http-served),
+// https once TLS is terminated in front of the API host. This avoids mixed
+// content either way and requires no config flip at cutover.
 const ENVIRONMENTS = {
     dev: { apiBase: '/cgi-bin/', cname: null },
-    staging: { apiBase: 'https://api.kobool.com/cgi-bin/', cname: 'staging.kobool.com' },
-    prod: { apiBase: 'https://api.kobool.com/cgi-bin/', cname: 'www.kobool.com' }
+    staging: { apiBase: '//api.kobool.com/cgi-bin/', cname: 'staging.kobool.com' },
+    prod: { apiBase: '//api.kobool.com/cgi-bin/', cname: 'www.kobool.com' }
 };
 
 // Never copied into dist/, regardless of where they appear.

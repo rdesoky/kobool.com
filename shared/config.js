@@ -1,12 +1,14 @@
 /**
  * Runtime configuration. Loaded before any app script.
  *
- * The API backend is hosted in a local Docker container, exposed as
- * http://dev.kobool.com (see hosts file). The build replaces apiBase in
- * dist/ with environment-specific values:
+ * The build replaces apiBase in dist/ with environment-specific values:
  *   - dev:     /cgi-bin/ (same origin; tools/serve.js proxies to the API host)
- *   - staging: http://dev.kobool.com/cgi-bin/
- *   - prod:    http://dev.kobool.com/cgi-bin/
+ *   - staging: //api.kobool.com/cgi-bin/ (scheme-relative; http today)
+ *   - prod:    //api.kobool.com/cgi-bin/ (scheme-relative; https after TLS)
+ *
+ * The scheme-relative base inherits the page's scheme, so it matches the
+ * API host's current http-only serving and automatically upgrades to https
+ * once TLS is terminated in front of api.kobool.com.
  */
 window.APP_CONFIG = {
     apiBase: '/cgi-bin/',
