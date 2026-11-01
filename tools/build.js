@@ -4,6 +4,7 @@
  * Build dist/ from the static source tree.
  *
  *   node tools/build.js [--env=dev|staging|prod] [--source=<private repo root>]
+ *                       [--base=/subpath]
  *
  * Steps:
  *   1. clean dist/
@@ -12,6 +13,11 @@
  *   4. write environment-specific config.js
  *   5. minify JS/CSS/HTML
  *   6. write CNAME for the selected environment
+ *
+ * --base rewrites root-absolute URLs to a subpath so the build can be previewed
+ * on a GitHub Pages project site (https://<user>.github.io/<repo>/). Production
+ * and staging use the default empty base, because they are served from a domain
+ * root.
  */
 
 const fs = require('fs');
@@ -47,15 +53,70 @@ const BLOCKED_DIRS = new Set([
 const BLOCKED_NAMES = new Set(['Thumbs.db', 'desktop.ini', '.DS_Store', 'lib.php']);
 
 function parseArgs(argv) {
-    const args = { env: 'dev', source: null };
+    const args = { env: 'dev', source: null, base: '' };
     for (const arg of argv.slice(2)) {
         if (arg.startsWith('--env=')) args.env = arg.slice(6);
         else if (arg.startsWith('--source=')) args.source = arg.slice(9);
+        else if (arg.startsWith('--base=')) args.base = arg.slice(7);
     }
     if (!ENVIRONMENTS[args.env]) {
         throw new Error(`Unknown environment "${args.env}". Use dev, staging or prod.`);
     }
+    // Normalize to "" or "/sub/path" with no trailing slash.
+    args.base = args.base.replace(/\/+$/, '');
+    if (args.base && !args.base.startsWith('/')) args.base = '/' + args.base;
     return args;
+}
+
+// Top-level directories that are served from the site root. Restricting the
+// rewrite to these keeps it from touching unrelated strings that happen to
+// start with a slash.
+const BASE_ROOTS = ['v2', 'v3', 'shared', 'images'];
+
+/**
+ * Rewrite root-absolute URLs to a subpath.
+ *
+ * Only real URL positions are rewritten: `href="/x"`, `src="/x"`,
+ * `action="/x"`, `url(/x)`, and JS string literals that begin with one of the
+ * known top-level directories. Protocol-relative (`//host`) and absolute URLs
+ * are left alone. Used for GitHub Pages project-site previews.
+ */
+function rewriteBase(dir, base) {
+    if (!base) return 0;
+    const TEXT = new Set(['.html', '.js', '.css', '.json']);
+    const roots = BASE_ROOTS.join('|');
+    const patterns = [
+        // href="/v3/..."  src='/v2/...'  action="/shared/..."
+        new RegExp(`(\\b(?:href|src|action)=["'])/(?=(?:${roots})/)`, 'g'),
+        // url(/images/...)
+        new RegExp(`(url\\()/(?=(?:${roots})/)`, 'g'),
+        // "/v3/..." inside JS string literals
+        new RegExp(`(["'])/(?=(?:${roots})/)`, 'g')
+    ];
+    let changed = 0;
+
+    const walk = (current) => {
+        for (const entry of fs.readdirSync(current, { withFileTypes: true })) {
+            const full = path.join(current, entry.name);
+            if (entry.isDirectory()) {
+                walk(full);
+                continue;
+            }
+            if (!TEXT.has(path.extname(entry.name).toLowerCase())) continue;
+
+            const before = fs.readFileSync(full, 'utf8');
+            let after = before;
+            for (const pattern of patterns) {
+                after = after.replace(pattern, (match, lead) => lead + base + '/');
+            }
+            if (after !== before) {
+                fs.writeFileSync(full, after, 'utf8');
+                changed++;
+            }
+        }
+    };
+    walk(dir);
+    return changed;
 }
 
 function cleanDist() {
@@ -233,6 +294,12 @@ async function build(options) {
     writeConfig(env);
     writeCname(env);
 
+    // Rewrite before minifying so the minifier sees the final URLs.
+    const rewritten = rewriteBase(DIST, options.base || '');
+    if (rewritten) {
+        console.log(`Rewrote root-absolute URLs to base "${options.base}" in ${rewritten} files`);
+    }
+
     await minify();
     await minifyHtml();
 
@@ -246,4 +313,4 @@ if (require.main === module) {
     });
 }
 
-module.exports = { build, parseArgs, ENVIRONMENTS, isBlocked };
+module.exports = { build, parseArgs, rewriteBase, ENVIRONMENTS, isBlocked };

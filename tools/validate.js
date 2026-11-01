@@ -58,15 +58,19 @@ function rel(file) {
 }
 
 function parseArgs(argv) {
-    const args = { env: 'dev' };
+    const args = { env: 'dev', base: '' };
     for (const arg of argv.slice(2)) {
         if (arg.startsWith('--env=')) args.env = arg.slice(6);
+        else if (arg.startsWith('--base=')) args.base = arg.slice(7);
     }
+    args.base = args.base.replace(/\/+$/, '');
+    if (args.base && !args.base.startsWith('/')) args.base = '/' + args.base;
     return args;
 }
 
 function validate(options) {
     const env = options.env || 'dev';
+    const base = options.base || '';
     const errors = [];
     const warnings = [];
 
@@ -164,8 +168,13 @@ function validate(options) {
             if (ref.startsWith('/cgi-bin/') || ref.indexOf('{{') !== -1 || ref.indexOf('(?') !== -1) {
                 continue;
             }
-            const clean = ref.split('?')[0].split('#')[0];
+            let clean = ref.split('?')[0].split('#')[0];
             if (!clean) continue;
+            // A --base build prefixes root-absolute URLs with the subpath;
+            // strip it so the check still resolves against dist/.
+            if (base && clean.startsWith(base + '/')) {
+                clean = clean.slice(base.length);
+            }
             const target = clean.startsWith('/')
                 ? path.join(DIST, clean)
                 : path.join(path.dirname(file), clean);

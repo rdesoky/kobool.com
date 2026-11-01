@@ -48,6 +48,15 @@ npm run check         # validate dist/ before publishing
 npm run serve         # local server on :8080 with a /cgi-bin/ proxy
 ```
 
+Production and staging are served from a domain root, so URLs are
+root-absolute (`/v3/css/base.css`). To preview a build under a subpath — for
+example a GitHub Pages project site at `/<repo>/` — pass `--base`:
+
+```bash
+node tools/build.js --env=staging --base=/kobool.com
+node tools/validate.js --env=staging --base=/kobool.com
+```
+
 `npm run serve` proxies `/cgi-bin/` to `https://api.kobool.com` so the browser
 sees a single origin during development. Point it elsewhere with
 `KOBOOL_API_TARGET=http://localhost:8080`.
@@ -123,6 +132,10 @@ country and attribute selects no longer need a server round trip.
 push and pull request. `.github/workflows/deploy.yml` publishes `dist/` to
 GitHub Pages; pushes to `main` deploy staging, and a manual dispatch can target
 production.
+
+The Pages project site is served from `/<repo>/`, so the workflow builds
+staging with `--base="/<repo>"`. Production is served from a domain root and
+keeps the default empty base.
 
 ## License
 

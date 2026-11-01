@@ -162,6 +162,34 @@ test('page converter: strips the PHP prologue and reports leftovers', () => {
     assert.ok(notes.some((n) => /unconverted PHP/.test(n)));
 });
 
+test('build: rewriteBase prefixes only real root-absolute URLs', () => {
+    const os = require('os');
+    const { rewriteBase } = require(path.join(TOOLS, 'build'));
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'kobool-base-'));
+    const file = path.join(dir, 'page.html');
+    fs.writeFileSync(file, [
+        '<link href="/v3/css/base.css"/>',
+        '<script src="/shared/config.js"></script>',
+        '<a href="#pg=home">x</a>',
+        '<a href="//cdn.example.com/x.js">y</a>',
+        '<a href="https://example.com/z">z</a>',
+        '<meta content="/not-a-url"/>',
+        '<style>body{background:url(/images/x.gif)}</style>'
+    ].join('\n'));
+
+    rewriteBase(dir, '/repo');
+    const out = fs.readFileSync(file, 'utf8');
+    fs.rmSync(dir, { recursive: true, force: true });
+
+    assert.match(out, /href="\/repo\/v3\/css\/base\.css"/);
+    assert.match(out, /src="\/repo\/shared\/config\.js"/);
+    assert.match(out, /url\(\/repo\/images\/x\.gif\)/);
+    assert.match(out, /href="#pg=home"/);
+    assert.match(out, /href="\/\/cdn\.example\.com\/x\.js"/);
+    assert.match(out, /href="https:\/\/example\.com\/z"/);
+    assert.match(out, /content="\/not-a-url"/);
+});
+
 test('strings binder: language resolution prefers cookie, falls back to default', () => {
     // detectLang() lives in shared/strings.js (IIFE); assert its static
     // expectations from source (config.js is a browser script, not loadable).

@@ -45,11 +45,24 @@ jobs:
             echo "name=staging" >> "$GITHUB_OUTPUT"
           fi
 
+      # A GitHub Pages project site is served from /<repo>/, so the build has
+      # to rewrite root-absolute URLs. Production is served from a domain root
+      # and keeps the default empty base.
       - name: Build
-        run: npm run build:${{ steps.env.outputs.name }}
+        run: |
+          if [ "${{ steps.env.outputs.name }}" = "prod" ]; then
+            npm run build:prod
+          else
+            node tools/build.js --env=staging --base="/${GITHUB_REPOSITORY#*/}"
+          fi
 
       - name: Validate
-        run: npm run check -- --env=${{ steps.env.outputs.name }}
+        run: |
+          if [ "${{ steps.env.outputs.name }}" = "prod" ]; then
+            npm run check -- --env=prod
+          else
+            npm run check -- --env=staging --base="/${GITHUB_REPOSITORY#*/}"
+          fi
 
       - uses: actions/configure-pages@v5
 
