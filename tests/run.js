@@ -24,6 +24,7 @@ const { compileSourceFile, flatten, listXmlSources, LANGS } = require(path.join(
 const { buildCountries, buildOptions } = require(path.join(TOOLS, 'compile-data'));
 const { createProxy, DEFAULT_TARGET } = require(path.join(TOOLS, 'proxy'));
 const { convert } = require(path.join(TOOLS, 'convert-pages'));
+const { validate } = require(path.join(TOOLS, 'validate'));
 
 test('XML parser: elements, attributes, entities, CDATA', () => {
     const src = '<?xml version="1.0"?>\n<root>\n  <a x="1&amp;2">Hello &lt;world&gt;</a>\n' +
@@ -203,6 +204,29 @@ test('strings binder: language resolution prefers cookie, falls back to default'
 
 test('proxy: DEFAULT_TARGET points at the current CORS-enabled API host', () => {
     assert.strictEqual(DEFAULT_TARGET, 'http://dev.kobool.com');
+});
+
+test('validate: staging/prod config must not hardcode an http:// API base', () => {
+    const os = require('os');
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'kobool-mixed-'));
+    const distShared = path.join(dir, 'shared');
+    fs.mkdirSync(distShared, { recursive: true });
+    fs.writeFileSync(path.join(distShared, 'config.js'), 'window.APP_CONFIG={apiBase:"http://dev.kobool.com/cgi-bin/"};');
+    fs.writeFileSync(path.join(dir, 'index.html'), '<html><head></head><body>hi</body></html>');
+
+    // env=dev should not trigger the mixed-content guard (local proxy uses a
+    // same-origin prefix; a literal http base is only banned for the site
+    // environments that are deployed over HTTPS).
+    const dev = validate({ env: 'dev', dist: dir });
+    assert.ok(!dev.errors.some((e) => /Mixed content/.test(e)), `dev must not flag mixed content: ${dev.errors}`);
+
+    const staging = validate({ env: 'staging', dist: dir });
+    assert.ok(staging.errors.some((e) => /Mixed content/.test(e)), 'staging must flag http:// API base');
+
+    const prod = validate({ env: 'prod', dist: dir });
+    assert.ok(prod.errors.some((e) => /Mixed content/.test(e)), 'prod must flag http:// API base');
+
+    fs.rmSync(dir, { recursive: true, force: true });
 });
 
 function mockReqRes(url, headers) {

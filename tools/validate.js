@@ -71,14 +71,15 @@ function parseArgs(argv) {
 function validate(options) {
     const env = options.env || 'dev';
     const base = options.base || '';
+    const distDir = options.dist || DIST;
     const errors = [];
     const warnings = [];
 
-    if (!fs.existsSync(DIST)) {
+    if (!fs.existsSync(distDir)) {
         return { errors: ['dist/ does not exist; run npm run build first'], warnings };
     }
 
-    const files = walk(DIST);
+    const files = walk(distDir);
 
     // 1. Forbidden files
     for (const file of files) {
@@ -176,7 +177,7 @@ function validate(options) {
                 clean = clean.slice(base.length);
             }
             const target = clean.startsWith('/')
-                ? path.join(DIST, clean)
+                ? path.join(distDir, clean)
                 : path.join(path.dirname(file), clean);
             if (!fs.existsSync(target)) {
                 warnings.push(`Unresolved local reference "${ref}" in ${rel(file)}`);
@@ -184,7 +185,23 @@ function validate(options) {
         }
     }
 
-    // 5. JS syntax
+    // 5. Mixed-content guard: a staging/prod config must never hardcode an
+    // http:// API base. The scheme-relative base (//host) inherits the page's
+    // scheme, so on an HTTPS page it becomes https:// — a literal http:// here
+    // would be blocked by browsers as mixed active content. This only applies
+    // to the runtime config; other bundles may legitimately contain http://
+    // links (e.g., CashU URLs inside string files).
+    if (env === 'prod' || env === 'staging') {
+        const configFile = path.join(distDir, 'shared', 'config.js');
+        if (fs.existsSync(configFile)) {
+            const configContent = fs.readFileSync(configFile, 'utf8');
+            if (/apiBase\s*:\s*"http:\/\//.test(configContent)) {
+                errors.push(`Mixed content: ${env} config hardcodes an http:// API base; use the scheme-relative //host form so it upgrades to https on a secure page`);
+            }
+        }
+    }
+
+    // 6. JS syntax
     for (const file of files) {
         if (path.extname(file).toLowerCase() !== '.js') continue;
         const code = fs.readFileSync(file, 'utf8');
