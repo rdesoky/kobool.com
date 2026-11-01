@@ -24,11 +24,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
-          node-version: '20'
+          node-version: '24'
           cache: npm
 
       - run: npm ci
@@ -45,19 +45,16 @@ jobs:
             echo "name=staging" >> "$GITHUB_OUTPUT"
           fi
 
-      # A GitHub Pages project site is served from /<repo>/, so the build has
-      # to rewrite root-absolute URLs. Production is served from a domain root
-      # and keeps the default empty base.
-      #
-      # --no-cname: a project site must not claim a custom domain. A CNAME in
-      # the artifact makes Pages try to provision a TLS certificate for a host
-      # that has no HTTPS, which fails and blocks the HTTPS setting.
+      # The site is served from a domain root (staging.kobool.com), so URLs
+      # stay root-absolute and no --base rewrite is needed. The CNAME file
+      # claims the custom domain; HTTPS enforcement is off because every
+      # kobool.com host is http-only.
       - name: Build
         run: |
           if [ "${{ steps.env.outputs.name }}" = "prod" ]; then
             npm run build:prod
           else
-            node tools/build.js --env=staging --base="/${GITHUB_REPOSITORY#*/}" --no-cname
+            npm run build:staging
           fi
 
       - name: Validate
@@ -65,12 +62,12 @@ jobs:
           if [ "${{ steps.env.outputs.name }}" = "prod" ]; then
             npm run check -- --env=prod
           else
-            npm run check -- --env=staging --base="/${GITHUB_REPOSITORY#*/}"
+            npm run check -- --env=staging
           fi
 
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
@@ -82,4 +79,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

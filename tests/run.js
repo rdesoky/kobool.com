@@ -242,7 +242,7 @@ test('proxy: DEFAULT_TARGET points at the current CORS-enabled API host', () => 
     assert.strictEqual(DEFAULT_TARGET, 'http://dev.kobool.com');
 });
 
-test('validate: staging/prod warn (not fail) on an http:// API base', () => {
+test('validate: an http:// API base is expected and never reported', () => {
     const os = require('os');
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'kobool-mixed-'));
     const distShared = path.join(dir, 'shared');
@@ -250,18 +250,29 @@ test('validate: staging/prod warn (not fail) on an http:// API base', () => {
     fs.writeFileSync(path.join(distShared, 'config.js'), 'window.APP_CONFIG={apiBase:"http://dev.kobool.com/cgi-bin/"};');
     fs.writeFileSync(path.join(dir, 'index.html'), '<html><head></head><body>hi</body></html>');
 
-    // The current API host is http-only, so an explicit http:// base is valid
-    // for every environment; it must surface as a warning, never an error.
-    const dev = validate({ env: 'dev', dist: dir });
-    assert.ok(!dev.warnings.some((w) => /Mixed content/.test(w)), `dev must not warn: ${dev.warnings}`);
+    // The site is served over http:// (staging.kobool.com has HTTPS
+    // enforcement disabled), so an http:// API base is correct for every
+    // environment and must produce neither an error nor a warning.
+    for (const env of ['dev', 'staging', 'prod']) {
+        const res = validate({ env, dist: dir });
+        assert.ok(!res.errors.some((e) => /API base/.test(e)), `${env} must not error: ${res.errors}`);
+        assert.ok(!res.warnings.some((w) => /API base/.test(w)), `${env} must not warn: ${res.warnings}`);
+    }
+
+    fs.rmSync(dir, { recursive: true, force: true });
+});
+
+test('validate: an https:// API base warns because the hosts are http-only', () => {
+    const os = require('os');
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'kobool-https-'));
+    const distShared = path.join(dir, 'shared');
+    fs.mkdirSync(distShared, { recursive: true });
+    fs.writeFileSync(path.join(distShared, 'config.js'), 'window.APP_CONFIG={apiBase:"https://api.kobool.com/cgi-bin/"};');
+    fs.writeFileSync(path.join(dir, 'index.html'), '<html><head></head><body>hi</body></html>');
 
     const staging = validate({ env: 'staging', dist: dir });
-    assert.ok(!staging.errors.some((e) => /Mixed content/.test(e)), 'staging must not error on http://');
-    assert.ok(staging.warnings.some((w) => /Mixed content/.test(w)), 'staging must warn on http://');
-
-    const prod = validate({ env: 'prod', dist: dir });
-    assert.ok(!prod.errors.some((e) => /Mixed content/.test(e)), 'prod must not error on http://');
-    assert.ok(prod.warnings.some((w) => /Mixed content/.test(w)), 'prod must warn on http://');
+    assert.ok(!staging.errors.some((e) => /API base/.test(e)), 'https:// must not be an error');
+    assert.ok(staging.warnings.some((w) => /http-only/.test(w)), 'https:// must warn');
 
     fs.rmSync(dir, { recursive: true, force: true });
 });

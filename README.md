@@ -66,12 +66,14 @@ host that has no HTTPS, which fails and leaves the site stuck on "certificate
 does not exist yet". `npm run check` fails a `--base` build that still contains
 a `CNAME`.
 
-`--api-base=<url>` overrides the environment's API base, for example to point a
-preview at an HTTPS API host:
+The deployed site does **not** use `--base`: it is served from the domain root
+`http://staging.kobool.com/`, so URLs stay root-absolute and the build writes
+the `CNAME` that claims that domain.
+
+`--api-base=<url>` overrides the environment's API base:
 
 ```bash
-node tools/build.js --env=staging --base=/kobool.com --no-cname \
-  --api-base=https://api.kobool.com/cgi-bin/
+node tools/build.js --env=staging --api-base=http://dev.kobool.com/cgi-bin/
 ```
 
 `npm run serve` proxies `/cgi-bin/` to `http://dev.kobool.com` (override with `KOBOOL_API_TARGET`) so the browser
@@ -148,46 +150,40 @@ country and attribute selects no longer need a server round trip.
 
 `.github/workflows/ci.yml` runs tests, a staging build and validation on every
 push and pull request. `.github/workflows/deploy.yml` publishes `dist/` to
-GitHub Pages; pushes to `main` deploy staging, and a manual dispatch can target
-production.
+GitHub Pages on every push to `main`; a manual dispatch can target production.
 
-The Pages project site is served from `/<repo>/`, so the workflow builds
-staging with `--base="/<repo>" --no-cname`. Production is served from a domain
-root and keeps the default empty base and its `CNAME`.
+The site is served from the domain root `http://staging.kobool.com/`, so the
+build keeps root-absolute URLs and writes `CNAME` (`staging.kobool.com`). No
+`--base` rewrite is used.
 
-### HTTPS and mixed content
+Both workflows run on Node 24 and use the `node24` action releases
+(`checkout@v7`, `setup-node@v7`, `upload-artifact@v7`, `configure-pages@v6`,
+`upload-pages-artifact@v5`, `deploy-pages@v5`).
 
-GitHub Pages serves `github.io` project sites over HTTPS only. `http://` is
-answered with a `301` to `https://`, and the `https_enforced` setting cannot be
-turned off for a `github.io` site — the API rejects it:
+### HTTP, not HTTPS
 
-```
-PUT /repos/{owner}/{repo}/pages  {"https_enforced": false}
-404 {"message":"The certificate does not exist yet"}
-```
-
-Because every `kobool.com` host is currently HTTP-only, API calls from the
-Pages preview are blocked as mixed active content:
+Every `kobool.com` host is HTTP-only, so the Pages site runs with HTTPS
+enforcement **disabled**:
 
 ```
-Mixed Content: ... requested an insecure XMLHttpRequest endpoint
-'http://dev.kobool.com/cgi-bin/...'. This request has been blocked
+GET /repos/{owner}/{repo}/pages
+{"cname":"staging.kobool.com","https_enforced":false,
+ "https_certificate":{"state":"approved","domains":["staging.kobool.com"]}}
 ```
 
-The UI is written to survive this — the side menu renders from local state
-rather than waiting on an API response — but no data loads. To make the preview
-fully functional, either:
+`http://staging.kobool.com/` is served directly; there is no redirect to
+`https://`. This is what keeps the `http://dev.kobool.com` API reachable — an
+HTTPS page would block those calls as mixed active content.
 
-- serve the preview over HTTP (a local `npm run serve`, or any HTTP host), or
-- point the build at an HTTPS API host with `--api-base=https://...`.
+Consequences to keep in mind:
 
-`npm run check` reports the HTTP API base as a warning for staging and prod
-builds so this stays visible.
-
-Do not try to work around this by adding a `CNAME` for a `kobool.com` host to
-the Pages artifact. Pages would then try to provision a TLS certificate for a
-host that has no HTTPS; that fails, and the failure is what surfaces as
-"certificate does not exist yet" when changing the HTTPS setting.
+- Validation expects `http://`. `npm run check` does not report an `http://` API
+  base; it warns only if an `https://` base is used, because those hosts have no
+  TLS listener.
+- Do not re-enable HTTPS enforcement while the API is HTTP-only. It would
+  reintroduce the mixed-content block.
+- A `github.io` project site cannot disable HTTPS enforcement at all, which is
+  why the site uses the `staging.kobool.com` custom domain instead.
 
 ## License
 

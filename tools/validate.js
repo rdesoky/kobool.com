@@ -9,9 +9,14 @@
  *   - server-side or secret-bearing files
  *   - deprecated ShareThis / PayPal markers
  *   - localhost URLs in a production build
+ *   - a CNAME in a subpath (project-site) build
  *   - unresolved local href/src references
  *   - missing data-string keys
  *   - JS syntax errors
+ *
+ * The site is served over http://, so an http:// API base is expected and is
+ * not reported. An https:// API base is warned about, because the kobool.com
+ * hosts have no TLS listener.
  */
 
 const fs = require('fs');
@@ -185,33 +190,29 @@ function validate(options) {
         }
     }
 
-    // 5. Mixed-content notice: a staging/prod config that hardcodes an
-    // http:// API base will be blocked by the browser as mixed active content
-    // when the site itself is served over https (e.g. GitHub Pages). This is a
-    // warning rather than an error because the current API host
-    // (dev.kobool.com) is http-only and must be addressed with an explicit
-    // scheme. Move to an https API host before the site is served over https.
+    // 5. The site is served over http:// (staging.kobool.com has HTTPS
+    // enforcement disabled because every kobool.com host is http-only), so an
+    // http:// API base is correct and must not be reported. Only flag the
+    // inverse mistake: an https:// API base on a host that has no TLS.
     if (env === 'prod' || env === 'staging') {
         const configFile = path.join(distDir, 'shared', 'config.js');
         if (fs.existsSync(configFile)) {
             const configContent = fs.readFileSync(configFile, 'utf8');
-            const m = configContent.match(/apiBase\s*:\s*"(http:\/\/[^"]*)"/);
+            const m = configContent.match(/apiBase\s*:\s*"(https:\/\/[^"]*)"/);
             if (m) {
                 warnings.push(
-                    `Mixed content risk: ${env} config uses the http:// API base "${m[1]}"; ` +
-                    'browsers block it when the page is served over https. Serve the site over http ' +
-                    'or switch to an https API host.'
+                    `API base "${m[1]}" uses https:// but the kobool.com hosts are http-only; ` +
+                    'requests will fail to connect. Use an http:// API base.'
                 );
             }
         }
     }
 
     // 5b. A subpath build targets a GitHub Pages project site
-    // (<user>.github.io/<repo>/), which is always served over https and must
-    // not claim a custom domain. A CNAME in the artifact makes Pages try to
-    // provision a TLS certificate for a host that has no HTTPS; that fails and
-    // leaves the site stuck on "certificate does not exist yet", which in turn
-    // blocks the HTTPS setting. Build with --no-cname for project sites.
+    // (<user>.github.io/<repo>/), which must not claim a custom domain. A CNAME
+    // in the artifact makes Pages try to provision a TLS certificate for a host
+    // that has no HTTPS; that fails and leaves the site stuck on "certificate
+    // does not exist yet". Build with --no-cname for project sites.
     if (base) {
         const cnameFile = path.join(distDir, 'CNAME');
         if (fs.existsSync(cnameFile)) {
