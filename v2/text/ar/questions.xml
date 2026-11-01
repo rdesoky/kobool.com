@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<questions>
+	<question num="1">How many children do you have?</question>
+	<question num="2">Where do you live exactly?</question>
+	<question num="3">Do you own a residence?</question>
+	<question num="4">What is your horoscope?</question>
+	<question num="5">What is your hair color?</question>
+	<question num="6">What is your skin color?</question>
+	<question num="7">What is your eye color?</question>
+	<question num="8">What is you body type( normal, athletic, .. )?</question>
+	<question num="9">Do you wear glasses?</question>
+	<question num="10">What is your resident type ( apartment, house, .. )?</question>
+	<question num="11">Do you own a car?</question>
+	<question num="12">What is your profession exactly?</question>
+	<question num="13">What are your hoppy?</question>
+	<question num="14">How much do you memorize in Quran?</question>
+	<question num="15">Are you good cooker?</question>
+	<question num="16">How often do you watch TV and movies?</question>
+	<question num="17">How often do you pray in Masjid?</question>
+	<question num="18">Do you drink alcoholic beverages?</question>
+	<question num="19">Whom do you live with now?</question>
+	<question num="20">How many close friends do you have?</question>
+	<question num="21">How attractive are you?</question>
+	<question num="22">Do you have sense of humor?</question>
+	
+</questions>

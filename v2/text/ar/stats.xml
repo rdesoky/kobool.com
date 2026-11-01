@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <stats>
+      <page_title>إحصاءات الموقع</page_title>
+      <title>إحصاءات الموقع</title>
+      <intro>البيانات التالية توضح احصاءات موقع قبول من 1 يونيو 2004</intro>
+      <members>عدد الأعضاء (فعالين/غير فعالين)</members>
+      <visits>عدد زيارات الصفحات</visits>
+      <wishes>القبول (من طرف واحد)</wishes>
+      <male>الذكور</male>
+      <female>الإناث</female>
+      <total>المجموع</total>
+      <matched>عدد الأزواج الموفقين (بينهما أعلى قبول مشترك)</matched>
+      <date>تاريخ التوفيق</date>
+      <declined>عدد المنسحبين</declined>
+      <matching_results>نتائج توفيق القبول</matching_results>
+      <earlier>قبل ذلك</earlier>
+      <active>عدد المتصلين</active>
+   </stats>
+</root>

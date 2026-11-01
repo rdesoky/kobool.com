@@ -1,0 +1,46 @@
+<div class="pg_body">
+	<div class="pg_intro" data-string="profile:register.intro"></div>
+
+	<div id="StepOne">
+		<form id="S1RegForm" name="S1RegForm" class="form_frame" onsubmit="require('register').onsubmit();return false;">
+			<div class="form_field">
+				<select name="gender">
+					<option value="-1" data-string="profile:register.gender"></option>
+					<option value="0" data-string="profile:select_gender.v0"></option>
+					<option value="1" data-string="profile:select_gender.v1"></option>
+				</select>
+			</div>
+	        <div class="field_label"><span data-string="profile:register.login_name"></span>:</div>
+			<div class="form_field"><input type="text" name="lname" onblur="require('register').checkLoginName()"/></div>
+			<div id="LoginNameRow" style="display:none;">
+				<div class="user_exists_warning" id="LoginNameHelp"></div>
+			</div>
+	        <div class="field_label"><span data-string="profile:register.password"></span>:</div>
+			<div class="form_field"><input type="password" name="pw"/></div>
+	        <div class="field_label"><span data-string="profile:register.confirm_pw"></span>:</div>
+	        <div class="form_field"><input type="password" name="pw2"/></div>
+	        <div class="field_label"><span data-string="profile:register.email"></span>:</div>
+			<div class="form_field"><input type="text" name="email" style="direction:ltr;"/></div>
+			<div class="buttons_bar"><input id="BtnRegSubmit" type="submit" name="submt"  value="" data-string="profile:register.submit" data-string-attr="value" disabled></div>
+
+	    </form>
+	</div>
+
+	<div id="RegProcessing" style="display:none">
+		<span data-string="profile:register.processing"></span>
+	</div>
+	<div id="RegSuccess" class="box" style="display:none">
+		<div class="form_title" data-string="profile:register.success"></div>
+		<div class="right_align">
+			<input type="button"
+				id="idNext"
+				style="width:100px"
+				onclick="require('page-nav').open('upd_attr',{wz:1})"
+				value="" data-string="profile:register.next" data-string-attr="value"/>
+		</div>
+	</div>
+
+	<div id="BlackList" class="form_frame" style="display:none">
+		<div class="form_title" data-string="errors:error.blacklist_member"></div>
+	</div>
+</div>

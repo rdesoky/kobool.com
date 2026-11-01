@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<root>
+	<tell>
+		<link>tell a friend</link>
+		<page_title>Tell A Friend</page_title>
+		<intro></intro>
+		<form_title>Telling A Friend form</form_title>
+		<sender_name>Your Name</sender_name>
+		<sender_email>Your Email</sender_email>
+		<friend_name>Friend Name</friend_name>
+		<friend_email>Friend Email</friend_email>
+		<friend_type>Send to</friend_type>
+		<select_type>
+			<option value="1">Male Friend</option>
+			<option value="2">Female Friend</option>
+			<option value="3">Group of Friends</option>
+		</select_type>
+		<group_email>Enter each friend's email separated by , or ; </group_email>
+		<personal_msg>Your personal addition to the message</personal_msg>
+		<send>:: Send ::</send>
+		<self_copy>Send a copy to yourself</self_copy>
+		<enter_s_name>Please enter your name</enter_s_name>
+		<enter_s_email>Please enter your email address</enter_s_email>
+		<enter_f_email>Please enter your friend email address</enter_f_email>
+		<enter_g_email>Please enter the email address of at least one friend</enter_g_email>
+
+	<preview>Message Preview</preview>
+	</tell>
+</root>

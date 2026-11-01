@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<root>
+	<matching>
+		<page_title>Acceptance Matching</page_title>
+		<intro>To describe the process of Acceptance Matching we will use a real life example.</intro>
+		<life_example><![CDATA[
+			<p>Assume that a Matchmaker invites 5 men and 5 women for a dinner 
+			and then asks each of them to spend sometime with each of the 5 candidates 
+			to decide whom are acceptable for future marriage.</p>
+			<p>Then the matchmaker asks each of the 10 guests to secretly write down his/her wishlist sorted by the most desired candidates.</p>
+			<p>The Matchmaker figures out that the best way to process those wishlists is by putting them in a table similar to the one below.</p>
+		]]></life_example>
+		<results><![CDATA[
+		The Matchmaker studies this table and starts by marking mutual acceptances with red circles.<br/>
+		(8 mutually acceptanced couples were found).<br/>
+		There would be cases that one person would have more than one Mutual Acceptance.<br/>
+		To resolve these cases, Matchmaker assigns a score relative to the rank in the wishlists
+		then give each Mutual Acceptance case the sum of the two scores of the two wishes of that couple.<br/>
+		Then choose the highest scores and come up with the final Matchlist.
+		]]></results>
+		<still_looking><![CDATA[
+			Some guests won't find successful matches.<br/>
+			Those always have free invitation for the following Matching dinner to try again.
+		]]></still_looking>
+		<conclusion><![CDATA[
+			This is basically what KOBOOL does electronically every midnight (GMT).<br/>
+			As it processes hundreds of thousands of Acceptance Lists to connect whom have mutual acceptances for marriage.
+		]]></conclusion>
+	</matching>
+</root>

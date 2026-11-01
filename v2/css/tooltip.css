@@ -1,0 +1,35 @@
+.tipFrame{
+	position:absolute;
+	width:180px;
+	height:30px;
+}
+
+.tipArrow{
+	position:absolute;
+	width:160px;
+	height:7px;
+	z-index:13;
+	background-image:url(/images/tooltip_up_arrow.png);
+	background-repeat:no-repeat;
+	background-position: 10px bottom;
+}
+
+
+*[lang=ar] .tipArrow{
+	background-position: 140px top;
+}
+
+.tipContents{
+	position:absolute;
+	top:6px;
+	z-index:11;
+	width:172px;
+	border:solid 1px black;
+	border-width:1px 1px 2px 1px;
+	background-color:#FFFFFF;
+	padding:10px 5px;
+	color:Sienna;
+}
+.tipContents, .tipContents *{
+	font-size:8.5pt;
+}

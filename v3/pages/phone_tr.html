@@ -1,0 +1,46 @@
+<div id="VodafoneFormPanel">
+    <a href="#pg=cp_buy" class="voda_card_logo float_left payment_btn"></a>
+	<div data-string="cpoints:phone_tr.intro"></div>
+    <div class="subtitle" data-string="cpoints:phone_tr.form_title"></div>
+	<form class="form_frame" name="vodafoneForm">
+		<div class="field_label" data-string="cpoints:phone_tr.card_value"></div>
+		<div class="form_field">
+			<div><input type="radio" name="cval" id="cval25" value="25" checked><label for="cval25" data-string="cpoints:phone_tr.vf25"></label></div>
+			<div><input type="radio" name="cval" id="cval50" value="50"><label for="cval50" data-string="cpoints:phone_tr.vf50"></label></div>
+			<div><input type="radio" name="cval" id="cval100" value="100"><label for="cval100" data-string="cpoints:phone_tr.vf100"></label></div>
+		</div>
+		<div class="field_label"><span data-string="cpoints:phone_tr.card_num"></span> <span class="attr_title"><span data-string="cpoints:phone_tr.card_num_note"></span></span></div>
+
+		<div class="form_field"><input type="text" name="card_num"></div>
+
+		<div class="field_label"><span data-string="cpoints:phone_tr.email"></span> <span class="attr_title"><span data-string="cpoints:phone_tr.email_note"></span></span></div>
+		<div class="form_field"><input type="text" name="email"></div>
+
+		<div class="field_label"><span data-string="cpoints:phone_tr.notes"></span></div>
+		<div class="form_field"><textarea name="notes"></textarea></div>
+		<div class="attr_title" data-string="cpoints:phone_tr.submit_note"></div>
+		<div class="buttons_bar">
+			<input type="submit" value="" data-string="cpoints:phone_tr.preview" data-string-attr="value">
+		</div>
+	</form>
+
+</div>
+<div class="vodafone_card_preview" id="VodafoneCardPreview" style="display:none">
+	<div class="parag attr_title" data-string="cpoints:phone_tr.preview_title"></div>
+	<div class="center_align">
+		<div class="vodafone_card">
+			<div class="vodafone_card_value"></div>
+			<div class="vodafone_card_number"></div>
+		</div>
+	</div>
+	<div class="parag">
+		<input type="button" id="FinalSubmit" class="bold" value="" data-string="cpoints:phone_tr.submit" data-string-attr="value">
+		<input type="button" id="Edit" value="" data-string="cpoints:phone_tr.edit" data-string-attr="value">
+	</div>
+	<div class="parag attr_title" data-string="cpoints:phone_tr.preview_footer"></div>
+</div>
+<div class="vf_submit_success_response" id="PurchaseConfirmation" style="display:none">
+    <span data-string="cpoints:phone_tr.prepaid_card_submitted"></span><span id="ref_number"></span>
+    <div class="center_align"><input type="button" id="MoreCards" class="parag center_align" value="" data-string="cpoints:phone_tr.send_more" data-string-attr="value"></div>
+    <p data-string="cpoints:phone_tr.prepaid_card_submitted_footer"></p>
+</div>

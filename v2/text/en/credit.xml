@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<root>
+	<page_title>
+		Manage Kobool Cards
+	</page_title>
+	<page_intro>
+		Kobool service is free. We designed a payment system that will charge about $3 per each match.
+		However, the actual service payment will not start untill we make sure that it is easy for all the members to pay electronically without any hardship. 
+		So, until then we are inviting you to enjoy the service totally free.
+	</page_intro>
+
+	<available>Available Cards in your account</available>
+	<used_current>In order for you and %m% to communicate you and %m% have to spend 2 Kobool Cards. It is recommended that you each of you spend 1 Kobool Card. However, any of you may choose to spend 2 cards if the other person is unable to spend his part.</used_current>
+
+	<used>Total Spent Cards</used>
+	<pay_for_mate>Transfer to %m%</pay_for_mate>
+	
+	<add_Cards_form_title>Submit Card Number</add_Cards_form_title>
+
+	<buy>Get Kobool Card</buy>
+	<free_buy_form_title>Free Kobool Card Request</free_buy_form_title>
+	<free_buy_form_intro>Send your email address to recieve a free Kobool Card number</free_buy_form_intro>
+
+	<buy_help>To get free Kobool Card click on the "Get Kobool Card" button.</buy_help>
+
+	<buy_form_title>Request Free Kobool Card</buy_form_title>
+
+	<add_card_form_title>Enter Kobool Card</add_card_form_title>
+	
+	<report>Show History</report>
+	<credit>Cards</credit>
+	<pin_1>number part 1</pin_1>
+	<pin_2>number part 2</pin_2>
+	<pin_3>number part 3</pin_3>
+	<pin_4>number part 4</pin_4>
+	<submit>Submit</submit>
+	<success_free_buy>
+	Your Free Activation number has been created and sent to the email address you provided. 
+	Your confirmation number is: %n%. Keep this number to use in case of failure to recieve or use your activation number.
+	Click "Add Credit" and enter the activation number.
+	</success_free_buy>
+	<add>Add Card</add>
+	<spend>Spend 1 Card</spend>
+	<match_refundable>
+		The Cards you and %m% spent in this match will be refunded to your accounts in case of decline without sending and recieving messages and without decline final message</match_refundable>
+	<match_none_refundable>The cards you and %m% spent in this match can not be refunded to your accounts because messages were sent and recieved between you and your %m%</match_none_refundable>
+	<your_part>Your spending</your_part>
+	<mate_part>%m%'s spending</mate_part>
+	<email>Enter your e-mail address</email>
+
+	<your_msg>Your message to %m%</your_msg>
+	<mate_msg>%m% message to you</mate_msg>
+	<click2change>click here to change or email your message</click2change>
+	<select_a_message>Select one of the listed messages:</select_a_message>
+	<send_email>Change &amp; Send Email</send_email>
+	<change_msg>Change</change_msg>
+	<contact>Contact %m%</contact>
+	<refresh>Check status</refresh>
+	<success_add>You successfully added 1 Kobool Card to your account. You can spend now this card when needed to contact Kobool Match</success_add>
+	<match_not_paid>
+		You and %m% have not yet spent the required Kobool Cards to contact each others. Click on the Refresh button to check the latest status.
+	</match_not_paid>
+	<match_paid>
+		The required Kobool Cards to contact each others have been spent. Click on Contact button to open the Contact page.
+	</match_paid>
+</root>

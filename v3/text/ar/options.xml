@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<sfilters>
+		<g>
+			<option value="0">زوج</option>
+			<option value="1">زوجة</option>
+		</g>
+		<ms>
+			<option value="0"></option>
+			<option value="1">لم يسبق لي الزواج</option>
+			<option value="2">مطلق</option>
+			<option value="3">أرمل</option>
+			<option value="4">متزوج (لكن منفصل)</option>
+			<option value="5">متزوج</option>
+			<option value="6">خاطب</option>
+		</ms>
+		<ht>
+			<option value="0"></option>
+			<option value="1">135 سم</option>
+			<option value="2">138 سم</option>
+			<option value="3">140 سم</option>
+			<option value="4">143 سم</option>
+			<option value="5">145 سم</option>
+			<option value="6">148 سم</option>
+			<option value="7">150 سم</option>
+			<option value="8">153 سم</option>
+			<option value="9">155 سم</option>
+			<option value="10">158 سم</option>
+			<option value="11">160 سم</option>
+			<option value="12">163 سم</option>
+			<option value="13">165 سم</option>
+			<option value="14">168 سم</option>
+			<option value="15">170 سم</option>
+			<option value="16">173 سم</option>
+			<option value="17">175 سم</option>
+			<option value="18">178 سم</option>
+			<option value="19">180 سم</option>
+			<option value="20">183 سم</option>
+			<option value="21">185 سم</option>
+			<option value="22">188 سم</option>
+			<option value="23">190 سم</option>
+			<option value="24">193 سم</option>
+			<option value="25">195 سم</option>
+			<option value="26">198 سم</option>
+			<option value="27">200 سم</option>
+			<option value="28">203 سم</option>
+			<option value="29">205 سم</option>
+			<option value="30">208 سم</option>
+		</ht>
+		<wt>
+			<option value="0"></option>
+			<option value="1">36 كجم</option>
+			<option value="2">39 كجم</option>
+			<option value="3">41 كجم</option>
+			<option value="4">43 كجم</option>
+			<option value="5">45 كجم</option>
+			<option value="6">48 كجم</option>
+			<option value="7">50 كجم</option>
+			<option value="8">52 كجم</option>
+			<option value="9">55 كجم</option>
+			<option value="10">57 كجم</option>
+			<option value="11">59 كجم</option>
+			<option value="12">61 كجم</option>
+			<option value="13">64 كجم</option>
+			<option value="14">66 كجم</option>
+			<option value="15">68 كجم</option>
+			<option value="16">70 كجم</option>
+			<option value="17">73 كجم</option>
+			<option value="18">75 كجم</option>
+			<option value="19">77 كجم</option>
+			<option value="20">79 كجم</option>
+			<option value="21">82 كجم</option>
+			<option value="22">84 كجم</option>
+			<option value="23">86 كجم</option>
+			<option value="24">88 كجم</option>
+			<option value="25">91 كجم</option>
+			<option value="26">93 كجم</option>
+			<option value="27">95 كجم</option>
+			<option value="28">98 كجم</option>
+			<option value="29">100 كجم</option>
+			<option value="30">102 كجم</option>
+			<option value="31">104 كجم</option>
+			<option value="32">107 كجم</option>
+			<option value="33">109 كجم</option>
+			<option value="34">111 كجم</option>
+			<option value="35">113 كجم</option>
+			<option value="36">116 كجم</option>
+			<option value="37">118 كجم</option>
+			<option value="38">120 كجم</option>
+			<option value="39">122 كجم</option>
+			<option value="40">125 كجم</option>
+			<option value="41">127 كجم</option>
+		</wt>
+		<ch>
+			<option value="0"></option>
+			<option value="1">لا يوجد أولاد</option>
+			<option value="2">أولاد غير مقيمين معي</option>
+			<option value="3">أولاد مقيمين معي</option>
+		</ch>
+		<jb>
+			<option value="0"></option>
+			<option value="1">بدون عمل حاليا</option>
+			<option value="2">الحسابات</option>
+			<option value="3">الفنون</option>
+			<option value="4">الكمبيوتر</option>
+			<option value="5">استشاري</option>
+			<option value="6">خدمات العملاء</option>
+			<option value="7">التعليم</option>
+			<option value="8">الإدارة</option>
+			<option value="9">الهندسة</option>
+			<option value="10">حكومي</option>
+			<option value="11">عسكري</option>
+			<option value="12">قانوني</option>
+			<option value="13">التصنيع</option>
+			<option value="14">الطب</option>
+			<option value="15">التسويق والدعاية</option>
+			<option value="16">صاحب عمل تجاري</option>
+			<option value="17">فني</option>
+			<option value="18">زراعي</option>
+			<option value="100">عمل آخر</option>
+		</jb>
+		<nc>
+			<option value="0"></option>
+			<option value="1">لا يوجد دخل سنوي</option>
+			<option value="2">اقل من 5 آلاف دولار أمريكي</option>
+			<option value="3">من 5 الى 10 آلاف دولار أمريكي</option>
+			<option value="4">من 10 الى 20 ألف دولار أمريكي</option>
+			<option value="5">من 20 الى 30 ألف دولار أمريكي</option>
+			<option value="6">من 30 الى 40 ألف دولار أمريكي</option>
+			<option value="7">من 40 الى 50 ألف دولار أمريكي</option>
+			<option value="8">من 50 الى 60 ألف دولار أمريكي</option>
+			<option value="9">من 60 الى 70 ألف دولار أمريكي</option>
+			<option value="10">من 70 الى 80 ألف دولار أمريكي</option>
+			<option value="11">من 80 الى 90 ألف دولار أمريكي</option>
+			<option value="12">اكثر من 100 ألف دولار أمريكي</option>
+		</nc>
+		<la>
+			<option value="0"></option>
+			<option value="1">العربية</option>
+			<option value="2">البنغالية</option>
+			<option value="3">ملاوي</option>
+			<option value="4">الأندونيسية</option>
+			<option value="5">الصينية</option>
+			<option value="6">الهولندية</option>
+			<option value="7">الإنجليزية</option>
+			<option value="8">الفرنسية</option>
+			<option value="9">الألمانية</option>
+			<option value="10">الإيطالية</option>
+			<option value="11">اليابانية</option>
+			<option value="12">الفارسية</option>
+			<option value="13">البنجابية</option>
+			<option value="14">البشتونية</option>
+			<option value="15">الروسية</option>
+			<option value="16">الأسبانية</option>
+			<option value="17">التركية</option>
+			<option value="18">أردو</option>
+			<option value="19">لغة أخرى</option>
+		</la>
+		<rc>
+			<option value="0"></option>
+			<option value="1">أفريقي</option>
+			<option value="2">عربي</option>
+			<option value="3">آسيوي</option>
+			<option value="4">لاتينو</option>
+			<option value="5">أبيض/أوروبي</option>
+			<option value="100">عرق آخر</option>
+		</rc>
+		<ed>
+			<option value="0"></option>
+			<option value="1">المدرسة الثانوية</option>
+			<option value="2">مرحلة جامعية</option>
+			<option value="3">درجة البكالريوس</option>
+			<option value="4">دبلوم</option>
+			<option value="5">درجة الماجستير</option>
+			<option value="6">درجة الدكتوراه</option>
+			<option value="100">دراسة أخرى</option>
+		</ed>
+		<sm>
+			<option value="0"></option>
+			<option value="1">لا والتدخين يضايقني</option>
+			<option value="2">لا والتدخين لا يضايقني</option>
+			<option value="3">احيانا</option>
+			<option value="4">بصفة مستمرة</option>
+		</sm>
+		<re>
+			<option value="0"></option>
+			<option value="1">الإسلام</option>
+			<option value="11">المسيحية</option>
+			<option value="21">اليهودية</option>
+			<option value="31">الهندوسية</option>
+			<option value="32">البوذية</option>
+			<option value="100">ديانة أخرى</option>
+		</re>
+		<ds>
+			<option value="0"></option>
+			<option value="1">لا يوجد</option>
+			<option value="2">بنسبة 20%</option>
+			<option value="3">بنسبة 40%</option>
+			<option value="4">بنسبة 60%</option>
+			<option value="5">بنسبة 80%</option>
+		</ds>
+		<dt>
+			<option value="0"></option>
+			<option value="1">لا أتقيد بملابس معينة</option>
+			<option value="2">طرحة رأس</option>
+			<option value="3">واسعة بدون طرحة رأس</option>
+			<option value="4">واسعة مع طرحة رأس</option>
+			<option value="5">مختمرة ومتجلببة</option>
+			<option value="6">نقاب يظهر العينين فقط</option>
+			<option value="7">نقاب يغطي كامل الوجه</option>
+		</dt>
+		<sh>
+			<option value="0"></option>
+			<option value="1">متناسق ورياضي</option>
+			<option value="2">متناسق</option>
+			<option value="4">متوسط</option>
+			<option value="5">غير متناسق</option>
+		</sh>
+		<fc>
+			<option value="0"></option>
+			<option value="1">جذاب جدا</option>
+			<option value="2">جذاب الى حد ما</option>
+			<option value="4">مقبول</option>
+			<option value="5">غير جذاب</option>
+		</fc>
+		<dst>
+			<option value="0"></option>
+			<option value="1">راقية</option>
+			<option value="2">جيدة</option>
+			<option value="4">متوسطة</option>
+			<option value="5">شعبية</option>
+		</dst>
+		<po>
+			<option value="0"></option>
+			<option value="1">مقبول</option>
+			<option value="2">مقبول بشروط</option>
+			<option value="4">غير مقبول</option>
+		</po>
+
+		<ag>
+			<option value="0"></option>
+		</ag>
+		<o>
+			<option value="0"></option>
+		</o>
+		<c>
+			<option value="0"></option>
+		</c>
+		<st>
+			<option value="0"></option>
+		</st>
+		<ci>
+			<option value="0"></option>
+		</ci>
+	
+	</sfilters>
+
+	<select_all_polygamy>لا يهم التعدد</select_all_polygamy>
+	<select_polygamy>
+		<option value="0"/>
+		<option value="1">مقبول</option>
+		<option value="2">مقبول بشروط</option>
+		<option value="4">غير مقبول</option>
+	</select_polygamy>
+
+	<select_all_districts>لا يهم المنطقة السكنية</select_all_districts>
+	<select_district>
+		<option value="0"/>
+		<option value="1">راقية</option>
+		<option value="2">جيدة</option>
+		<option value="4">متوسطة</option>
+		<option value="5">شعبية</option>
+	</select_district>
+
+	<select_all_shapes>لا يهم القوام</select_all_shapes>
+	<select_shape>
+		<option value="0"/>
+		<option value="1">متناسق ورياضي</option>
+		<option value="2">متناسق</option>
+		<option value="4">متوسط</option>
+		<option value="5">غير متناسق</option>
+	</select_shape>
+
+	<select_all_facelooks>لا تهم الجاذبية</select_all_facelooks>
+	<select_facelook>
+		<option value="0"/>
+		<option value="1">جذاب جدا</option>
+		<option value="2">جذاب الى حد ما</option>
+		<option value="4">مقبول</option>
+		<option value="5">غير جذاب</option>
+	</select_facelook>
+
+	<select_all_dress_types>لا يهم نوع الملابس</select_all_dress_types>
+	<select_dress_type>
+		<option value="0"/>
+		<option value="1">لا أتقيد بملابس معينة</option>
+		<option value="2">طرحة رأس</option>
+		<option value="3">واسعة بدون طرحة رأس</option>
+		<option value="4">واسعة مع طرحة رأس</option>
+		<option value="5">مختمرة ومتجلببة</option>
+		<option value="6">نقاب يظهر العينين فقط</option>
+		<option value="7">نقاب يغطي كامل الوجه</option>
+	</select_dress_type>
+
+	<select_all_disabilities>لا تهم الإعاقة</select_all_disabilities>
+	<select_disability>
+		<option value="0"/>
+		<option value="1">لا يوجد</option>
+		<option value="2">بنسبة 20%</option>
+		<option value="3">بنسبة 40%</option>
+		<option value="4">بنسبة 60%</option>
+		<option value="5">بنسبة 80%</option>
+	</select_disability>
+
+	<select_gender>
+		<option value="0">زوج</option>
+		<option value="1">زوجة</option>
+	</select_gender>
+
+
+	<select_group_countries>
+		<option value="0"/>
+		<option value="1001">دول اسلامية</option>
+		<option value="1002">دول عربية</option>
+		<option value="1003">دول الخليج العربي</option>
+		<option value="1004">دول امريكا الشمالية</option>
+		<option value="1005">دول أوروبا</option>
+		<option value="1006">دول المغرب العربي</option>
+		<option value="1007">دول الشام</option>
+	</select_group_countries>
+
+	<select_sorting>
+		<option value="0">أحدث دخول بالموقع</option>
+		<option value="6">أحدث المشتركين بالموقع</option>
+		<option value="1">أكثر الزائرين لصفحتك</option>
+		<option value="9">أحدث الزائرين لصفحتك</option>
+		<option value="2">العمر</option>
+		<option value="3">بلد الإقامة</option>
+		<option value="4">بلد الأصل</option>
+		<option value="5">الدخل السنوي</option>
+		<option value="7">اسم الدخول</option>
+		<option value="10">آخر من قمت بزيارتهم</option>
+		<option value="11">أقل من قمت برد زيارتهم</option>
+	</select_sorting>
+
+
+	<order_by>
+		<rm>أحدث المشتركين</rm>
+		<rl>أحدث دخول</rl>
+		<ag>العمر</ag>
+		<rv>أحدث زيارة</rv>
+		<mv>أكثر الزيارات</mv>
+	</order_by>
+
+	<select_sorting_visitor>
+		<option value="0">أحدث دخول بالموقع</option>
+		<option value="6">أحدث المشتركين بالموقع</option>
+		<option value="2">السن</option>
+		<option value="3">بلد الإقامة</option>
+		<option value="4">بلد الأصل</option>
+		<option value="5">الدخل السنوي</option>
+		<option value="7">اسم الدخول</option>
+	</select_sorting_visitor>
+
+	<select_all_marital_status>أي حالة إجتماعية</select_all_marital_status>
+	<select_marital_status>
+		<option value="0"></option>
+		<option value="1">لم يسبق لي الزواج</option>
+		<option value="2">مطلق</option>
+		<option value="3">أرمل</option>
+		<option value="4">متزوج (لكن منفصل)</option>
+		<option value="5">متزوج</option>
+		<option value="6">خاطب</option>
+	</select_marital_status>
+
+	<select_all_children>لا يهم الأولاد</select_all_children>
+	<select_children>
+		<option value="0"></option>
+		<option value="1">لا يوجد أولاد</option>
+		<option value="2">أولاد غير مقيمين معي</option>
+		<option value="3">أولاد مقيمين معي</option>
+	</select_children>
+	<select_all_incomes>لا يهم الدخل</select_all_incomes>
+	<select_income>
+		<option value="0"></option>
+		<option value="1">لا يوجد دخل سنوي</option>
+		<option value="2">اقل من 5 آلاف دولار أمريكي</option>
+		<option value="3">من 5 الى 10 آلاف دولار أمريكي</option>
+		<option value="4">من 10 الى 20 ألف دولار أمريكي</option>
+		<option value="5">من 20 الى 30 ألف دولار أمريكي</option>
+		<option value="6">من 30 الى 40 ألف دولار أمريكي</option>
+		<option value="7">من 40 الى 50 ألف دولار أمريكي</option>
+		<option value="8">من 50 الى 60 ألف دولار أمريكي</option>
+		<option value="9">من 60 الى 70 ألف دولار أمريكي</option>
+		<option value="10">من 70 الى 80 ألف دولار أمريكي</option>
+		<option value="11">من 80 الى 90 ألف دولار أمريكي</option>
+		<option value="12">اكثر من 100 ألف دولار أمريكي</option>
+	</select_income>
+	<select_language>
+		<option value="0"></option>
+		<option value="1">العربية</option>
+		<option value="2">البنغالية</option>
+		<option value="3">ملاوي</option>
+		<option value="4">الأندونيسية</option>
+		<option value="5">الصينية</option>
+		<option value="6">الهولندية</option>
+		<option value="7">الإنجليزية</option>
+		<option value="8">الفرنسية</option>
+		<option value="9">الألمانية</option>
+		<option value="10">الإيطالية</option>
+		<option value="11">اليابانية</option>
+		<option value="12">الفارسية</option>
+		<option value="13">البنجابية</option>
+		<option value="14">البشتونية</option>
+		<option value="15">الروسية</option>
+		<option value="16">الأسبانية</option>
+		<option value="17">التركية</option>
+		<option value="18">أردو</option>
+		<option value="19">لغة أخرى</option>
+	</select_language>
+
+	<select_qa_language>
+		<option value="0"></option>
+		<option value="1">العربية</option>
+		<option value="7">الإنجليزية</option>
+		<option value="8">الفرنسية</option>
+		<option value="9">الألمانية</option>
+	</select_qa_language>
+
+	<select_all_educations>لا يهم التعليم</select_all_educations>
+	<select_education>
+		<option value="0"></option>
+		<option value="1">المدرسة الثانوية</option>
+		<option value="2">مرحلة جامعية</option>
+		<option value="3">درجة البكالريوس</option>
+		<option value="4">دبلوم</option>
+		<option value="5">درجة الماجستير</option>
+		<option value="6">درجة الدكتوراه</option>
+		<option value="100">دراسة أخرى</option>
+	</select_education>
+	<select_all_jobs>لا تهم الوظيفة</select_all_jobs>
+	<select_job>
+		<option value="0"></option>
+		<option value="1">بدون عمل حاليا</option>
+		<option value="2">الحسابات</option>
+		<option value="3">الفنون</option>
+		<option value="4">الكمبيوتر</option>
+		<option value="5">استشاري</option>
+		<option value="6">خدمات العملاء</option>
+		<option value="7">التعليم</option>
+		<option value="8">الإدارة</option>
+		<option value="9">الهندسة</option>
+		<option value="10">حكومي</option>
+		<option value="11">عسكري</option>
+		<option value="12">قانوني</option>
+		<option value="13">التصنيع</option>
+		<option value="14">الطب</option>
+		<option value="15">التسويق والدعاية</option>
+		<option value="16">صاحب عمل تجاري</option>
+		<option value="17">فني</option>
+		<option value="18">زراعي</option>
+		<option value="100">عمل آخر</option>
+	</select_job>
+
+	<select_all_heights>لا يهم الطول</select_all_heights>
+	<height_options>
+		<h0 ovalue="0"></h0>
+		<h1 ovalue="1-4">من 135 الى 143 سم</h1>
+		<h2 ovalue="5-9">من 145 الى 155 سم</h2>
+		<h3 ovalue="10-14">من 158 الى 168 سم </h3>
+		<h4 ovalue="15-19">من 170 الى 180 سم</h4>
+		<h5 ovalue="20-24">من 183 الى 193 سم</h5>
+		<h6 ovalue="25-30">من 195 الى 208 سم</h6>
+	</height_options>
+	<select_height>
+		<option value="0"></option>
+		<option value="1">135 سم (4' 6")</option>
+		<option value="2">138 سم (4' 7")</option>
+		<option value="3">140 سم (4' 8")</option>
+		<option value="4">143 سم (4' 9")</option>
+		<option value="5">145 سم (4' 10")</option>
+		<option value="6">148 سم (4' 11")</option>
+		<option value="7">150 سم (5' 0")</option>
+		<option value="8">153 سم (5' 1")</option>
+		<option value="9">155 سم (5' 2")</option>
+		<option value="10">158 سم (5' 3")</option>
+		<option value="11">160 سم (5' 4")</option>
+		<option value="12">163 سم (5' 5")</option>
+		<option value="13">165 سم (5' 6")</option>
+		<option value="14">168 سم (5' 7")</option>
+		<option value="15">170 سم (5' 8")</option>
+		<option value="16">173 سم (5' 9")</option>
+		<option value="17">175 سم (5' 10")</option>
+		<option value="18">178 سم (5' 11")</option>
+		<option value="19">180 سم (6' 0")</option>
+		<option value="20">183 سم (6' 1")</option>
+		<option value="21">185 سم (6' 2")</option>
+		<option value="22">188 سم (6' 3")</option>
+		<option value="23">190 سم (6' 4")</option>
+		<option value="24">193 سم (6' 5")</option>
+		<option value="25">195 سم (6' 6")</option>
+		<option value="26">198 سم (6' 7")</option>
+		<option value="27">200 سم (6' 8")</option>
+		<option value="28">203 سم (6' 9")</option>
+		<option value="29">205 سم (6' 10")</option>
+		<option value="30">208 سم (6' 11")</option>
+	</select_height>
+
+	<select_all_weights>لا يهم الوزن</select_all_weights>
+	<weight_options>
+		<w0 ovalue="0"></w0>
+		<w1 ovalue="1-4">من 36 الى 44 كجم</w1>
+		<w2 ovalue="5-9">من 45 الى 56 كجم</w2>
+		<w3 ovalue="10-14">من 57 الى 67 كجم</w3>
+		<w4 ovalue="15-19">من 68 الى 78 كجم</w4>
+		<w5 ovalue="20-24">من 79 الى 90 كجم</w5>
+		<w6 ovalue="25-29">من 91 الى 101 كجم</w6>
+		<w7 ovalue="30-34">من 102 الى 112 كجم</w7>
+		<w8 ovalue="35-39">من 113 الى 124 كجم</w8>
+		<w9 ovalue="40-41">أكثر من 125 كجم</w9>
+	</weight_options>
+	<select_body>
+		<option value="0"></option>
+		<option value="1">36 كجم (80 رطل)</option>
+		<option value="2">39 كجم (85 رطل)</option>
+		<option value="3">41 كجم (90 رطل)</option>
+		<option value="4">43 كجم (95 رطل)</option>
+		<option value="5">45 كجم (100 رطل)</option>
+		<option value="6">48 كجم (105 رطل)</option>
+		<option value="7">50 كجم (110 رطل)</option>
+		<option value="8">52 كجم (115 رطل)</option>
+		<option value="9">55 كجم (120 رطل)</option>
+		<option value="10">57 كجم (125 رطل)</option>
+		<option value="11">59 كجم (130 رطل)</option>
+		<option value="12">61 كجم (135 رطل)</option>
+		<option value="13">64 كجم (140 رطل)</option>
+		<option value="14">66 كجم (145 رطل)</option>
+		<option value="15">68 كجم (150 رطل)</option>
+		<option value="16">70 كجم (155 رطل)</option>
+		<option value="17">73 كجم (160 رطل)</option>
+		<option value="18">75 كجم (165 رطل)</option>
+		<option value="19">77 كجم (170 رطل)</option>
+		<option value="20">79 كجم (175 رطل)</option>
+		<option value="21">82 كجم (180 رطل)</option>
+		<option value="22">84 كجم (185 رطل)</option>
+		<option value="23">86 كجم (190 رطل)</option>
+		<option value="24">88 كجم (195 رطل)</option>
+		<option value="25">91 كجم (200 رطل)</option>
+		<option value="26">93 كجم (205 رطل)</option>
+		<option value="27">95 كجم (210 رطل)</option>
+		<option value="28">98 كجم (215 رطل)</option>
+		<option value="29">100 كجم (220 رطل)</option>
+		<option value="30">102 كجم (225 رطل)</option>
+		<option value="31">104 كجم (230 رطل)</option>
+		<option value="32">107 كجم (235 رطل)</option>
+		<option value="33">109 كجم (240 رطل)</option>
+		<option value="34">111 كجم (245 رطل)</option>
+		<option value="35">113 كجم (250 رطل)</option>
+		<option value="36">116 كجم (255 رطل)</option>
+		<option value="37">118 كجم (260 رطل)</option>
+		<option value="38">120 كجم (265 رطل)</option>
+		<option value="39">122 كجم (270 رطل)</option>
+		<option value="40">125 كجم (275 رطل)</option>
+		<option value="41">127 كجم (280 رطل)</option>
+	</select_body>
+	<select_yes_no>
+		<option value="0"></option>
+		<option value="1">نعم</option>
+		<option value="2">لا</option>
+	</select_yes_no>
+	<select_no_yes>
+		<option value="0"></option>
+		<option value="2">لا</option>
+		<option value="1">نعم</option>
+	</select_no_yes>
+	<select_all_smoker>لا يهم التدخين</select_all_smoker>
+	<select_smoker>
+		<option value="0"></option>
+		<option value="1">لا والتدخين يضايقني</option>
+		<option value="2">لا والتدخين لا يضايقني</option>
+		<option value="3">احيانا</option>
+		<option value="4">بصفة مستمرة</option>
+	</select_smoker>
+	<select_all_races>لا يهم العرق</select_all_races>
+	<select_race>
+		<option value="0"></option>
+		<option value="1">أفريقي</option>
+		<option value="2">عربي</option>
+		<option value="3">آسيوي</option>
+		<option value="4">لاتينو</option>
+		<option value="5">أبيض/أوروبي</option>
+		<option value="100">عرق آخر</option>
+	</select_race>
+	<title_religion>الديانة</title_religion>
+	<select_all_religions>لا تهم الديانة</select_all_religions>
+	<select_religion>
+		<option value="0"></option>
+		<option value="1">الإسلام</option>
+		<option value="11">المسيحية</option>
+		<option value="21">اليهودية</option>
+		<option value="31">الهندوسية</option>
+		<option value="32">البوذية</option>
+		<option value="100">ديانة أخرى</option>
+	</select_religion>
+
+	<select_feedback>
+		<option value="1">موقع ممتاز</option>
+		<option value="2">موقع جيد</option>
+		<option value="3">موقع جيد ولكن...</option>
+		<option value="4">لم أقيم الموقع بعد</option>
+		<option value="5">الموقع يحتاج الى تحسينات</option>
+		<option value="6">موقع غير جيد</option>
+	</select_feedback>
+	<add_wish>
+		<visible>اظهار القبول لهذا العضو (لا يؤثر إظهار أو إخفاء القبول في عملية التوفيق)</visible>
+		<invisible>اخفاء القبول (يمكنك تغير الإظهار والإخفاء في أي وقت تشاء فيما بعد )</invisible>
+	</add_wish>
+
+	<chat>
+		<msg value="1"><![CDATA[السلام عليكم]]></msg>
+		<msg value="2"><![CDATA[أشكرك على قبولك لي]]></msg>
+		<msg value="3"><![CDATA[أدعوا الله ان يوفقنا الى ما يحبه ويرضاه]]></msg>
+		<msg value="4"><![CDATA[هل والديك أو ولي أمرك موافقون على التعرف من خلال هذا الموقع؟]]></msg>
+		<msg value="5"><![CDATA[أنا لدي جدية كبيرة في أمر الزواج, هل أنت كذلك أيضا؟]]></msg>
+		<msg value="6"><![CDATA[أشكرك]]></msg>
+
+		<msg value="7"><![CDATA[ ]]></msg>
+
+		<msg value="8"><![CDATA[نعم]]></msg>
+		<msg value="9"><![CDATA[أود ذلك]]></msg>
+		<msg value="10"><![CDATA[لا يوجد مشكلة]]></msg>
+		<msg value="11"><![CDATA[مفهوم]]></msg>
+		<msg value="12"><![CDATA[لا بأس]]></msg>
+		<msg value="13"><![CDATA[وهو كذلك]]></msg>
+		<msg value="14"><![CDATA[حاضر]]></msg>
+		<msg value="15"><![CDATA[لما لا]]></msg>
+		<msg value="16"><![CDATA[جدا]]></msg>
+
+		<msg value="17"><![CDATA[ ]]></msg>
+
+		<msg value="18"><![CDATA[لا]]></msg>
+		<msg value="19"><![CDATA[أعتذر]]></msg>
+		<msg value="20"><![CDATA[لا أستطيع]]></msg>
+		<msg value="21"><![CDATA[ربما]]></msg>
+		<msg value="22"><![CDATA[لا تعليق]]></msg>
+		<msg value="23"><![CDATA[لماذا؟]]></msg>
+
+		<msg value="24"><![CDATA[ ]]></msg>
+
+		<msg value="25"><![CDATA[هل يمكنك شراء نقطة الإتصال الخاصة بك لكي نبدأ التحدث المباشر؟]]></msg>
+		<msg value="26"><![CDATA[لقد اشتريت نقطة الإتصال الخاصة بي وانتظر قيامك بنفس الشيء لكي نبدأ التحدث المباشر]]></msg>
+		<!--<msg value="27"><![CDATA[لقد قمت باهدائك نقطة إتصال, فضلا استخدم هذه النقطة لكي يمكننا التحدث المباشر]]></msg>-->
+		<msg value="28"><![CDATA[هل يمكنك شراء نقطة الإتصال الخاصة بي لعدم إستطاعتي ذلك؟]]></msg>
+		<msg value="29"><![CDATA[هل لديك مانع أن أشتري نقطة الإتصال الخاصة بك؟]]></msg>
+		<msg value="30"><![CDATA[أعطني مهلة حتى أتمكن من شراء نقطة الإتصال.]]></msg>
+		<msg value="31"><![CDATA[إجراءات الحصول على نقطة الإتصال ستستغرق بضعة أيام هل يمكنك الإنتظار؟]]></msg>
+		<msg value="32"><![CDATA[وسائل شراء نقاط الإتصال غير متاحة في البلد الذي أقيم فيه.]]></msg>
+		<msg value="33"><![CDATA[حاولت شراء نقطة الإتصال ولم أستطع, هل تقبل إعتذاري؟]]></msg>
+		<msg value="34"><![CDATA[سيقوم صديق لي بمساعدتي على شراء نقطة الإتصال.]]></msg>
+		<msg value="35"><![CDATA[ليس معي نقود كافية لشراء نقطة الإتصال.]]></msg>
+		<msg value="36"><![CDATA[عذرا, في حالة عدم تمكنك من شراء نقطة الإتصال سأضطر للإنسحاب.]]></msg>
+
+		<msg value="37"><![CDATA[ ]]></msg>
+
+		<msg value="38"><![CDATA[هل يمكنني مشاهدة صورة حديثة لك؟]]></msg>
+		<msg value="39"><![CDATA[يمكنك وضع صورتك بالموقع بحيث لا يشاهدها أحد سواي]]></msg>
+		<msg value="40"><![CDATA[يمكنك تحديد من يمكنه أن يرى صورك من صفحة "تعديل الصور"]]></msg>
+		<msg value="41"><![CDATA[لن يمكنني الإستمرار في الإتصال بك بدون مشاهدة صورك.]]></msg>
+		<msg value="42"><![CDATA[أعطني مهلة لكي أجهز صور رقمية حديثة لي.]]></msg>
+		<msg value="43"><![CDATA[هل يمكنني مشاهدة صور أخرى لك؟]]></msg>
+		<msg value="44"><![CDATA[هل يمكنني مشاهدة صور لك بكامل هيئتك؟]]></msg>
+		<msg value="45"><![CDATA[هل صورك المعروضة هي لك أم لشخص آخر؟]]></msg>
+		<msg value="46"><![CDATA[صوري المعروضة بالموقع هي صوري الحقيقية.]]></msg>
+		<msg value="47"><![CDATA[هل صورك المعروضة بالموقع حديثة؟]]></msg>
+		<msg value="48"><![CDATA[هل أعجبتك صورتي؟]]></msg>
+		<msg value="49"><![CDATA[لا يمكنني مشاهدة صورك.]]></msg>
+		<msg value="50"><![CDATA[الصور لازالت تحت المراجعة.]]></msg>
+		<msg value="51"><![CDATA[صوري الجديدة موجودة الآن يمكنك الذهاب الى صفحتي بالموقع لمشاهدتها.]]></msg>
+		<msg value="52"><![CDATA[هل تريد مني صور أخرى؟]]></msg>
+		<msg value="53"><![CDATA[صورتك جميلة.]]></msg>
+
+		<msg value="54"><![CDATA[ ]]></msg>
+
+		<msg value="55"><![CDATA[لقد أرسلت لك أسئلة جديدة في صفحتك, هل يمكنك الإجابة عليها؟]]></msg>
+		<msg value="56"><![CDATA[الإجابات لازالت تحت المراجعة.]]></msg>
+		<msg value="57"><![CDATA[يمكنك قرائة بياناتي وإجابات الأسئلة الجديدة في صفحتي الخاصة.]]></msg>
+		<msg value="58"><![CDATA[هل تستطيع القدوم الى محل إقامتي للتعرف المباشر؟]]></msg>
+
+	</chat>
+	<decline>
+		<msg value="1"><![CDATA[أعتذر عن إنسحابي لعدم تمكني من الحصول على نقطة الإتصال]]></msg>
+		<msg value="2"><![CDATA[أعتذر عن إنسحابي لعدم تمكنك من الحصول على نقطة الإتصال الخاص بك]]></msg>
+		<msg value="3"><![CDATA[أعتذر عن انسحابي لرفضك شراء نقطة الإتصال الخاص بي]]></msg>
+
+		<msg value="4"><![CDATA[أعتذر عن إنسحابي لأسباب أفضل عدم ذكرها]]></msg>
+		<msg value="5"><![CDATA[أعتذر عن إنسحابي لعدم حدوث قبول نهائي من طرفي]]></msg>
+		<msg value="6"><![CDATA[أعتذر عن إنسحابي لشعوري بعدم جديتك]]></msg>
+		<msg value="7"><![CDATA[أعتذر عن إنسحابي لرفضك عرض صورتك لي]]></msg>
+		<msg value="8"><![CDATA[أعتذر عن الإنسحاب لعدم قدرتك على المجيء الى محل إقامتي للتعارف المباشر]]></msg>
+		<msg value="9"><![CDATA[أعتذر عن الإنسحاب لتغيبك عن الموقع وهذا يوحي بعدم إهتمامك بأمر الزواج.]]></msg>
+	</decline>
+
+	<select_currency>
+		<option value="0">مجانا</option>
+		<option value="1">دولار أمريكي</option>
+		<option value="2">كاشيو</option>
+		<option value="3">ريال سعودي</option>
+		<option value="4">جنيه مصري</option>
+	</select_currency>
+
+	<payment_channels>
+		<option value="0">هدية</option>
+		<option value="2">كاشيو</option>
+		<option value="3">ArabCheckout</option>
+		<option value="4">ويسترن يونيون</option>
+		<option value="5">حوالة بريدية</option>
+		<option value="6">حوالة بنكية</option>
+		<option value="7">بطاقة إئتمان</option>
+		<option value="8">ون كارد</option>
+		<option value="9">تحويل تليفون</option>
+		<option value="10">فودافون كاش</option>
+
+	</payment_channels>
+
+</root>

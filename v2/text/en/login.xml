@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<root>
+	<login>
+		<login_required>This feature is available only for Kobool members, you need to login to continue.</login_required>
+		<page_title>Current Member Login</page_title>
+		<form_title>Please Enter Login Information</form_title>
+		<login_name>Login name</login_name>
+		<password>Password</password>
+		<login_notify>You have been logged in as member (%m%)</login_notify>
+		<submit>Login</submit>
+		<forgot>&lt;br&gt;Forgot Password?</forgot>
+		<forgot_pass>Can't remember your login name and password? Click here.</forgot_pass>
+		<new_member>Not a member yet? Click here to join for free.</new_member>
+		<auto>Auto Login</auto>
+	</login>
+</root>

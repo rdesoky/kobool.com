@@ -1,0 +1,43 @@
+<div class="pg_body">
+    <div id="PicsPrivacyOptions">
+        <div class="big_font" data-string="pics:pics.visibility_title"></div>
+        <div id="PrivacyEditor">
+            <div>
+                <div class="radio_frame" tip="pics:pics.visibility_help.v0">
+                    <input type="radio" name="pr" value="0" id="Vis0"><label for="Vis0" data-string="pics:select_matched_pics_visibility.v0"></label>
+                </div>
+                <div class="radio_frame" tip="pics:pics.visibility_help.v1">
+                    <input type="radio" name="pr" value="1" id="Vis1"><label for="Vis1" data-string="pics:select_matched_pics_visibility.v1"></label>
+                </div>
+                <div class="radio_frame" tip="pics:pics.visibility_help.v2">
+                    <input type="radio" name="pr" value="2" id="Vis2"><label for="Vis2" data-string="pics:select_matched_pics_visibility.v2"></label>
+                </div>
+                <div class="radio_frame" tip="pics:pics.visibility_help.v3">
+                    <input type="radio" name="pr" value="3" id="Vis3"><label for="Vis3" data-string="pics:select_matched_pics_visibility.v3"></label>
+                </div>
+                <div class="radio_frame" tip="pics:pics.visibility_help.v4">
+                    <input type="radio" name="pr" value="4" id="Vis4"><label for="Vis4" data-string="pics:select_matched_pics_visibility.v4"></label>
+                </div>
+            </div>
+            <div id="PrivacyHelp"></div>
+        </div>
+    </div>
+    <hr/>
+    <div id="PicUploaderFrame" class="form_frame"><div class="big_font" data-string="pics:pics.add_pic"></div>
+        <div id="UploadPic"><iframe name="upload_target" id="upload_target" style="height:60px;display:none"></iframe>
+            <form class="clear_left" name="uploader" method="post" enctype="multipart/form-data" encoding="multipart/form-data" target="upload_target" action="/cgi-bin/upload_pic.pl">
+                <input type="file" name="filename">
+                <input type="submit" name="submt" value="" data-string="pics:pics.upload" data-string-attr="value" disabled="true">
+            </form>
+        </div>
+    </div>
+    <hr/>
+    <div id="AlbumEditor">
+        <div class="big_font"><span data-string="pics:pics.update_pics"></span>:</div>
+        <div class="tn_frame"></div>
+        <div id="PicToolbar"></div>
+        <div id="ImageViewer"><!-- selected full size image --></div>
+    </div>
+    <hr/>
+    <p><input type="button" value="" data-string="pics:pics.finish" data-string-attr="value" id="DonePics"></p>
+</div>

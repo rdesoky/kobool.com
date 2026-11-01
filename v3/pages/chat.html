@@ -1,0 +1,37 @@
+<div class="chat_side">
+	<div class="chat_intro_text" data-string="contact:contact_m.intro"></div>
+</div>
+<div class="gifts_frame">
+    <div class="my_gift_msg gift_msg" data-js-attr="innerHTML">(?SSN.login_id?) <span data-string="contact:points.gift_msg"></span> (?SSN.mlogin?)</div>
+    <div class="mate_gift_msg gift_msg" data-js-attr="innerHTML">(?SSN.mlogin?) <span data-string="contact:points.gift_msg"></span> (?SSN.login_id?)</div>
+</div>
+<div id="ChatBody" class="chat_contents">
+	<div id="ThreadView"></div>
+</div>
+
+<form name="ChatEditor" id="ChatFooter">
+    <input type="hidden" name="live" value="0">
+    <input type="hidden" name="update" value="0">
+    <input type="hidden" name="msid" value="0">
+    <div id="ChatTypingBox" class="chat_editor">
+        <div id="TypingPanel" data-init="require('inline-edit').init" class="i-text">
+            <textarea rows="1" name="msg" placeholder="" data-string="contact:contact_m.msg_prompt" data-string-attr="placeholder"></textarea>
+            <button data-string="str:contact.submit"></button>
+        </div>
+        <div class="pdm_frame"></div>
+    </div>
+    <div id="ChatPointsStatus">
+        <div id="TypingCheck">
+            <input type="checkbox" name="rtm" value="0" id="chkTyping" data-on-click="require('chat').toggleTyping()"/><label for="chkTyping" data-string="contact:contact_m.written"></label>
+        </div>
+        <div id="UsePoints">
+            <a href="#pg=cp_report" class="button use_points" data-string="contact:points.goto_points"></a>
+            <a href="#pg=cp_report" class="button gift_points" data-string="contact:points.grant_point"></a>
+        </div>
+        <div class="points_monitor">
+            <a href="#pg=cp_report"><span data-string="contact:contact_m.points"></span>:</a>
+            <a href="#pg=mem&mem=(?SSN.id?)" class="mem_id" data-js-attr="innerHTML,href">(?SSN.login_id?)</a><span id="MyPointsCount" class="points_counter">0</span>
+            <a href="#pg=mem&mem=(?SSN.mate?)" class="mem_id" data-js-attr="innerHTML,href">(?SSN.mlogin?)</a><span id="MatePointsCount" class="points_counter">0</span>
+        </div>
+    </div>
+</form>

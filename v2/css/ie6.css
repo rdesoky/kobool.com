@@ -1,0 +1,20 @@
+
+#Menu span{
+	cursor:hand;
+}
+
+#Header{
+	position:static;
+}
+
+#Contents{
+	margin-top:0px;
+	height:200px;
+}
+
+#Footer{
+	position:static;
+	background-color:#EEEEEE;
+	width:100%;
+	text-align:center;
+}

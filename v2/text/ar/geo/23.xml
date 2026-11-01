@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<root>
+	<option value="0" name=""  />
+	<option ex="1" value="1" name="Alberta"  />
+	<option value="2" name="British Columbia"  />
+	<option value="3" name="Manitoba"  />
+	<option value="4" name="Nova Scotia"  />
+	<option value="5" name="New Brunswick"  />
+	<option value="6" name="Newfoundland"  />
+	<option value="7" name="Northwest Territories"  />
+	<option value="8" name="Nova Scotia"  />
+	<option value="9" name="Ontario"  />
+	<option value="10" name="Prince Edward Island"  />
+	<option value="11" name="Quebec"  />
+	<option value="12" name="Saskatchewan"  />
+	<option value="13" name="Yukon"  />
+</root>

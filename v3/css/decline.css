@@ -1,0 +1,58 @@
+#DeclineForm{
+	/* width:560px; */
+	padding: 10px;
+	background-color: lavender;
+	box-shadow: 0 0 7px;
+	max-width: 600px;
+	margin: 5px auto;
+}
+
+#DeclineForm textarea, #DeclineForm .box{
+	/* width:360px; */
+	height:160px;
+	overflow:auto;
+	padding:4px;
+	vertical-align: top;
+}
+
+#DeclineForm li{
+	padding:4px;
+}
+
+#DeclineForm .sel{
+	font-weight:normal;
+}
+.decline_pg #decline_fixed_msgs{
+	border:solid 1px silver;
+	background-color:white;
+	height: 160px;
+	overflow: auto;
+}
+.decline_pg .writing_on #decline_fixed_msgs{
+	display:none;
+}
+
+.decline_pg .writing_on #decline_written_msg{
+	display:block;
+}
+
+.decline_pg *{
+	line-height: 25px;
+}
+.decline_pg #written_msg_toggler{
+	display:none;
+}
+
+.decline_pg .can_write #written_msg_toggler{
+	display:block;
+}
+.decline_pg #decline_status, .decline_pg #decline_note{
+	background-color:lightyellow;
+	padding: 4px;
+	margin: 5px 0;
+}
+
+.decline_pg #decline_written_msg{
+	display: none;
+	/* vertical-align: top; */
+}

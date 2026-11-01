@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<root>
+	<option value="0" name=""  />
+	<option value="1" name="Agadir"  />
+	<option value="2" name="Alhoceima" />
+	<option value="3" name="Beni Ayash City"  />
+	<option value="4" name="Bou Arfa" />
+	<option value="5" name="Casablanca"  />
+	<option value="6" name="Ceuta Tetouan" />
+	<option value="7" name="El Jadida" />
+	<option value="8" name="Erfoud"  />
+	<option value="9" name="Fes"  />
+	<option value="10" name="Tangier"  />
+	<option value="11" name="Tarfaya" />
+	<option value="12" name="Kenitra" />
+	<option value="13" name="Larache" />
+	<option value="14" name="Marrakech"  />
+	<option value="15" name="Mazagan" />
+	<option value="16" name="Meknes"  />
+	<option value="17" name="Melilla" />
+	<option value="18" name="Mogador" />
+	<option value="19" name="Mohammedia" />
+	<option value="20" name="Oran" />
+	<option value="21" name="Ouarzazate" />
+	<option value="22" name="Ouezzane" />
+	<option value="23" name="Oujda" />
+	<option value="24" name="Port Lyautey" />
+	<option value="25" name="Rabat"  />
+	<option value="26" name="Safi" />
+	<option value="28" name="Tetwan" />
+	<option value="27" name="Wazzan" />
+	<option value="29" name="Nador" />
+</root>

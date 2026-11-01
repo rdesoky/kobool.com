@@ -1,0 +1,18 @@
+#DeclineForm{
+	width:560px;
+}
+
+#DeclineForm textarea, #DeclineForm .box{
+	width:360px;
+	height:160px;
+	overflow:auto;
+	padding:4px;
+}
+
+#DeclineForm li{
+	padding:4px;
+}
+
+#DeclineForm .sel{
+	font-weight:normal;
+}

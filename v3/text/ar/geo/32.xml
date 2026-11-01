@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<option value="0" name="" ></option>
+	<option value="4" name="الإسكندرية"></option>
+	<option ex="1" value="13" name="الإسماعيلية"></option>
+	<option ex="1" value="23" name="البحر الأحمر"></option>
+	<option ex="1" value="7" name="البحيرة"></option>
+	<option ex="1" value="12" name="الجيزة"></option>
+	<option ex="1" value="10" name="الدقهلية"></option>
+	<option ex="1" value="27" name="السويس"></option>
+	<option ex="1" value="3" name="الشرقية"></option>
+	<option ex="1" value="2" name="الغربية"></option>
+	<option ex="1" value="1" name="الفيوم"></option>
+	<option value="9" name="القاهرة"></option>
+	<option ex="1" value="21" name="القليوبية"></option>
+	<option ex="1" value="17" name="المنوفية"></option>
+	<option ex="1" value="18" name="المنيا"></option>
+	<option value="19" name="الوادي الجديد"></option>
+	<option ex="1" value="6" name="أسوان"></option>
+	<option value="5" name="أسيوط"></option>
+	<option ex="1" value="8" name="بني سويف"></option>
+	<option value="20" name="بورسعيد"></option>
+	<option ex="1" value="25" name="جنوب سيناء"></option>
+	<option ex="1" value="11" name="دمياط"></option>
+	<option ex="1" value="22" name="قنا"></option>
+	<option ex="1" value="14" name="كفر الشيخ"></option>
+	<option ex="1" value="26" name="سوهاج"></option>
+	<option ex="1" value="24" name="شمال سيناء"></option>
+	<option ex="1" value="16" name="مطروح"></option>
+</root>

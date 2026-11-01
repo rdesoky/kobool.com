@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<root>
+	<forgot>
+		<page_title>Retrieve Login Information</page_title>
+		<intro>Submit your e-mail address in the form below. KOBOOL will send you an e-mail message to that address containing your Login Name and password.</intro>
+		<form_title>Retrieve Login Information Form</form_title>
+		<email>e-mail Address</email>
+		<submit>Submit</submit>
+		<success>
+		%count% account(s) has been found associated with this e-mail address (%email%).&lt;p&gt;
+		An e-mail message has been sent successfully to this e-mail address containing the Login Information for the associated account(s).&lt;p&gt;
+		You should receive this message in your mailbox shortly.&lt;p&gt;
+		Please make sure the message was not forwarded to your Bulk Mail folder.
+		</success>
+		<login>Login</login>
+	</forgot>
+</root>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<kpic_alt>photo</kpic_alt>
+	<hi><![CDATA[Hi <b>$lname</b>]]></hi>
+	<ahi><![CDATA[Hi]]></ahi>
+	<regards>Have our best wishes</regards>
+	<years>years</years>
+	<click_here><![CDATA[
+		<a href="$click_href">Click here</a> to show the full list on kobool.com.
+	]]></click_here>
+	<list_footer><![CDATA[
+		To contact whom you have acceptance towards them for marriage, please visit their Kobool pages and click the "Acceptance" button.
+	Then, wait for the next "Acceptance Matching" to match you with one of whom you added to your "Acceptance List"
+	if he/she also added you to his/her "Acceptance List". It will pick the higher rank if multiple mutual acceptance were found.
+	]]></list_footer>	<new_questions>
+		<title>$lname, new questions waiting your answers</title>
+		<intro>Some Kobool members would like to know your answers for $total new questions to learn more about your personality.</intro>
+		<list_title>Here are the questions:</list_title>
+		<qid>Question ID</qid>
+		<qtext>Question Text</qtext>
+		<times_asked>Times Asked</times_asked>
+		<footer><![CDATA[
+		To answer these quesions, <a href="http://www.kobool.com/#pg=mem&mtab=TNewQ">click here</a> and sign in to your Kobool account.
+		]]></footer>
+
+	</new_questions>
+	<ramadan>
+		<title>Ramadan Mubarak</title>
+		<msg><![CDATA[<b>
+		As the cresent moon is sighted, And the holy month of Ramadan begins,
+		please accept best wishes from <a href="http://www.kobool.com/" target="_blank">kobool.com</a> website.
+		May Allah bless you with happiness and grace your home with warmth and peace!!
+		</b>]]></msg>
+	</ramadan>
+	<fitr>
+		<title>Eid Fitr Mubarak</title>
+		<msg><![CDATA[<b>
+			<p>Please accept Eid greetings from <a href="http://www.kobool.com/" target="_blank">kobool.com</a> website.<br/>
+			May Almighty Allah bless all of you & your family with innumerable Eid happiness!</a>
+		</b>]]></msg>
+	</fitr>
+	<adha>
+		<title>Eid Adha Mubarak</title>
+		<msg><![CDATA[
+			<p><b>HAPPY EID-UL-ADHA</b></p>
+			<p>May Almighty Allah bless all of you & your family with innumerable Eid happiness!</a>
+		]]></msg>
+	</adha>
+	<mowled>
+		<title>$lname, نهنئك بذكرى المولد النبوي</title>
+		<msg><![CDATA[
+		<b>بمناسبة ذكرى المولد النبوي نتقدم اليكم بأطيب التهاني وأجمل الأماني وأن يعيده الله علينا بالخير والبركة.</b>
+		]]></msg>
+	</mowled>
+	<new_year>
+		<title>$lname, happy new year</title>
+		<msg><![CDATA[
+			<p>Please accept our best wishes for you to have
+			all the success and happiness in this new year and all the years to come.
+			</a>
+		]]></msg>
+	</new_year>
+	<new_hijri>
+		<title>$lname, happy new Hijri year</title>
+		<msg><![CDATA[
+			<p>May God bless you and your family with success and happiness all the years to come.</a>
+		]]></msg>
+	</new_hijri>
+	<wls_answers>
+		<title>$lname, accepted members added new answers</title>
+		<intro>$total new questions have been answered by members you accepted on Kobool.</intro>
+		<list_title>Here are recent answers:</list_title>
+	</wls_answers>
+	<bkm_answers>
+		<title>$lname, there are new answers for you</title>
+		<intro>$total new questions have been answered by members you bookmarked on Kobool.</intro>
+		<list_title>Here are recent answers:</list_title>
+	</bkm_answers>
+	<new_answers>
+		<title>$lname, there are new answers for you</title>
+		<intro>$total of your questions you asked to Kobool members have been answered.</intro>
+		<list_title>Here are recent answers:</list_title>
+	</new_answers>
+	<back_visits>
+		<title>$lname, you have been visited back</title>
+		<intro>$total member(s) visited back your page.</intro>
+		<note>Important Note: Being visited by a member doesn't mean that you have been accepted by that member.
+		However, being visited frequently by that member could indicate that.</note>
+		<list_title>This is a list of who visited you back recently:</list_title>
+	</back_visits>
+	<welcome>
+		<title>Kobool welcomes $lname</title>
+		<msg><![CDATA[
+			<div>Kobool.com welcomes you as a new member</div>
+			<div>Your Login Name: <font color="red">$lname</font></div>
+			<div>Your Password: <font color="red">$pw</font></div>
+		]]></msg>
+		<regards>Have our best wishes finding your perfect match</regards>
+	</welcome>
+	<new_chat_msg>
+		<title>$lname, you've got ($total) new messages from $tname</title>
+		<intro><![CDATA[
+			<p>$tname sent you ($total) new messages through <a href="http://www.kobool.com/#pg=chat">Kobool Contact Page</a>.</p>
+			<p><i>Note: $tname could delete the new messages before you read them.</i></p>
+		]]></intro>
+	</new_chat_msg>
+	<new_wishers>
+		<title>$lname, new members accepted you.</title>
+		<intro>$total members have added you to their acceptance lists recently.</intro>
+		<note>Important Note: Detecting mutual acceptance with a member on Kobool doesn't lead for sure to being matched with that member.
+		Because there could be another mutual acceptance between that member and another member with a rank higher than yours.</note>
+		<list_title>Here are who chose to show their acceptance:</list_title>
+	</new_wishers>
+	<new_visitors>
+		<title>$lname, you've got *NEW* visitors</title>
+		<intro>$total new members have visited your page on kobool and you haven't visited their pages yet.</intro>
+		<note>Important Note: Being visited by a member doesn't mean that you have been accepted by that member.
+		However, being visited frequently by a member could indicate that.</note>
+		<list_title>Here is a lest of your recent new visitors:</list_title>
+	</new_visitors>
+	<daily_visitors>
+		<title>$lname, you've got visitors</title>
+		<intro>$total members have recently visited your page on Kobool.</intro>
+		<note>Important Note: Being visited by a member doesn't mean that you have been accepted by that member.
+		However, being visited frequently by a member could indicate that.</note>
+		<list_title>Here is a list of your recent visitors:</list_title>
+	</daily_visitors>
+</root>

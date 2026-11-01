@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<points>
+		<monitor>Used Contact Points</monitor>
+		<gift_msg><![CDATA[ gave a Contact Point as a gift to ]]></gift_msg>
+		<no_reuse>
+			warning: By sending a written decline message the Contact Points used for this match will not be re-usable.
+		</no_reuse>
+		<reuse_ok>
+			Upon this decline the Contact Points used for this match will be re-usable.
+		</reuse_ok>
+		<goto_points>Use Points</goto_points>
+	</points>
+
+	<contact_m>
+		<select_type>Message Type:</select_type>
+		<predefined>Predefined</predefined>
+		<written>Written</written>
+		<msg_title>Message</msg_title>
+		<msg_size>Size</msg_size>
+		<aya>
+			<![CDATA[Have you not considered how Allah sets forth a parable of a good word (being) like a good tree, whose root is firm and whose branches are in heaven (Ibrahim:24)]]>
+		</aya>
+		<mate_online>%m% is now online, your new message will be read as soon as you send it</mate_online>
+		<mate_typing>%m% is now writing a new message</mate_typing>
+		<mate_offline>%m% is now offline, your message will be read when %m% login to KOBOOL.</mate_offline>
+		<page_title>Contact %m%</page_title>
+		<intro>Use this page to chat or exchange messages with %m%. 
+		KOBOOL urges both of you to involve your family in this process and to keep in mind that God is watching you.
+		If you think that %m% is abusing you and is not serious about marriage, you can %h1%Decline%h0% from continuing this relationship.
+		</intro>
+		<notes>
+			<title>Notes</title>
+			<note_1>To chat directly with %m%, both of you need to open this page at the same time. 
+			You can contact with %m% outside KOBOOL, but KOBOOL takes no responsibility if %m% abused your personal information (unfortunately this has become very common).
+			</note_1>
+			<note_2>
+			Both of you can %h1%Add his picture%h0% and limit its' visibility to be for &lt;b&gt;Only the member who I matched with&lt;/b&gt;, so that you can see each other in a private way.
+			</note_2>
+		</notes>
+		<thread_title>Message History (GMT time stamp)</thread_title>
+		<recent_msgs>Last 10 Messages</recent_msgs>
+		<you>You</you>
+		<posted_on>said on</posted_on>
+		<read_on>read on</read_on>
+		<not_read>not read yet</not_read>
+		<form_title>Post a new message</form_title>
+		<submit>send message</submit>
+		<del_msg>Delete</del_msg>
+		<confirm_delete>The selected message will be deleted. Are you sure?</confirm_delete>
+		<show_all>Show All Messages</show_all>
+		<mate_last_login>%m% last login was on %d%</mate_last_login>
+		<modify>Modify</modify>
+		<no_msgs>No message has been sent so far</no_msgs>
+		<refresh>Refresh</refresh>
+		<loading>Loading Messages... please wait</loading>
+	</contact_m>
+
+	<decline>
+		<confirm>Please confirm your wish to decline from possible future relationship with the following final message:</confirm>
+		<title>Decline from possible relationship</title>
+		<form_title>Decline form</form_title>
+		<msg_type>Final Message Type</msg_type>
+		<written_msg>Written Message</written_msg>
+		<submit_title>Decline Now</submit_title>
+		<use_point>Use Contact Point</use_point>
+		<use_point4mate>Grant Contact Point</use_point4mate>
+		<used_points>You took advantage of the Points you used to communicate with your current match. They can't be used again with another match.</used_points>
+		<usable_points>You can reuse the Points you used to communicate with your current match to communicate with another match.</usable_points>
+		<lose_points>You will not be able to reuse the Points that you used to communicate with your current match.</lose_points>
+		<need_point>To send a written decline message, both you and your match have to use a Contact Point</need_point>
+		<mate_need_point>To send a written decline message, your match has to use a Contact Point.</mate_need_point>
+		<no_password>Please enter your password that you use to login to KOBOOL.</no_password>
+		<password>Your Profile Password:</password>
+		<msg_title>Final Message:</msg_title>
+		<intro><![CDATA[
+			<div>By submitting the following form, you declare that you withdraw form persuing a marriage relationship with %m%.</div>
+			<ol>
+				<div><b>As a result, KOBOOL will do the following:</b></div>
+				<li>Send an email to let %m% know about your action.</li>
+				<li>%m% will automatically be removed from your Acceptance List. however, you will not be automatically removed from %m%'s Acceptance List</li>
+				<li>Both of you will again participate in the next Acceptance Matching operation and you might match with another members.</li>
+			</ol>
+		]]></intro>
+		<note><![CDATA[
+			<div><b>Important Note:</b></div> 
+			<div>As soon as you submit the Decline form, both you and %m% will not be able to read the <span ref1>Messages</span> that you exchanged before. If you already sent a recent message that %m% hasn't read yet, that message will never reach  %m%. You can in this case write this message in the decline form's final message box, if you want to deliver it to %m%.
+			</div>
+		]]></note>
+		<warning><![CDATA[
+			<p>
+			<div><b>Important Warning:</b></div>
+			<div>
+			Some members misunderstand this step and think that the purpose of it is to withdraw from Kobool site
+			after being matched to continue the communication with whom they matched with outside Kobool.<br/>
+			If you want to just withdraw from Kobool site don't use this form and use the <span ref1>Stop Membership</span> form instead.<br/>
+			Because by declining via this form below you and %m% will participate in the next Acceptance Matching and both of you might match with other members from Kobool, and this is not recommended if you want to proceed with the marriage project with %m%.
+			</div>
+			</p>
+			<p>
+			Unfortunately, some members fully understand this step but they do it in order to be matched again with others so that they would be able to contact more than one candidate at the same time. That would mean that they are using Kobool service just for fun and that they are not serious.<br/>
+			We hope that this is not your in tension and that your Decline step is only because you don't accept %m% as a future spouse.
+			</p>
+		]]></warning>
+		<message><![CDATA[
+			Final Message to '%m%'.
+			<p>Please explain yours reasons for the decline in a nice way to avoid hurting '%m%''s feelings.</p>
+		]]></message>
+		<no_msg>Decline message is missing.</no_msg>
+		<msg_too_short>Decline Message is too short.</msg_too_short>
+		<done>Your decline was done successfully</done>
+	</decline>
+	<married>
+		<page_title>Declare Successful Relationship</page_title>
+		<intro>Submit the form below to declare that you and %m% had a successful marriage or engagement. 
+			&lt;br&gt;
+			This will hide your profile from other KOBOOL members.
+			&lt;p&gt;
+			Upon submit this form, no one (except %m%) will be able to view your profile.
+			&lt;p&gt;
+			%m% has to submit the same form in order for KOBOOL to register you two as a successfully connected couple.
+		</intro>
+		<form_title>Please Enter your Password</form_title>
+		<announce>Announce to &lt;br&gt;KOBOOL members?</announce>
+		<submit>Submit</submit>
+		<success>Thanks, your declaration was received successfully and have our congratulations and best wishes</success>
+	</married>
+	<contact>
+		<you_cant_read_msg><![CDATA[
+			<div class="mate_msg_note">
+				<div><b>You can't read this message.</b></div>
+				<div>you need to use one <span ref1> Contact Point</span> to be able to read it.</div>
+				<div>You may ask %m% to give you a Contact Point as a gift.</div>
+			</div>
+		]]></you_cant_read_msg>
+		
+		<mate_cant_read_msg><![CDATA[
+			<div class="my_msg_note">
+				<div><b>%m% may not be able to read this message.</b></div>
+				<div>%m% needs to use one <span ref1> Contact Point</span> to be able to read it.</div>
+				<div>Use "Predefined" messages to gurantee readability.</div>
+				<div>You may buy and give %m% a Contact Point as a gift.</div>
+			</div>
+		]]></mate_cant_read_msg>
+
+		<buycards>Get Contact Points</buycards>
+		<page_title>Contact US</page_title>
+		<intro>We would be pleased to hear from you. Feel free to send us your questions, comments, ideas to improve the service or even complains from the service.</intro>
+		<feedback>your opinion&lt;br&gt;about service</feedback>
+		<form_title>Contact Form</form_title>
+		<name>your name&lt;br/&gt;(optional)</name>
+		<email>your e-mail&lt;br/&gt;(for replying)</email>
+		<title>subject</title>
+		<msg>message text</msg>
+		<submit>:: send ::</submit>
+	</contact>
+	<feedback>
+		<page_title>Send Feedback</page_title>
+		<intro></intro>
+		<form_title>Feedback Form</form_title>
+	</feedback>
+
+</root>

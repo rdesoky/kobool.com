@@ -1,0 +1,145 @@
+<div class="pg_header title" data-string="profile:upd_attr.page_title"></div>
+<div id="UpdateAttr" class="pg_body" style="visibility:hidden">
+	<form name="updateAttrFrm" onsubmit="UpdateAttr.onsubmit(this);return false;">
+		<div class="float_left info_col">
+			<div class="attr_editor" id="ms_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.ms"></span>:</span>
+				<select name="marital_status" data-options="options" data-options-group="ms">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor" id="ch_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.ch"></span>:</span>
+				<select name="children" data-options="options" data-options-group="ch">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor" id="ht_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.ht"></span>:</span>
+				<select name="height" data-options="options" data-options-group="ht">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor" id="wt_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.wt"></span>:</span>
+				<select name="body" data-options="options" data-options-group="wt">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor" id="jb_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.jb"></span>:</span>
+				<select name="job" data-options="options" data-options-group="jb">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor" id="nc_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.nc"></span>:</span>
+				<select name="income" data-options="options" data-options-group="nc">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor" id="la_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.la"></span>:</span>
+				<select name="language" data-options="options" data-options-group="la">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor" id="rc_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.rc"></span>:</span>
+				<select name="race" data-options="options" data-options-group="rc">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor" id="ed_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.ed"></span>:</span>
+				<select name="education" data-options="options" data-options-group="ed">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor" id="sm_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.sm"></span>:</span>
+				<select name="smoker" data-options="options" data-options-group="sm">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor" id="dt_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.dt"></span>:</span>
+				<select name="dress_type" data-options="options" data-options-group="dt">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+		</div>
+		<div class="info_col">
+			<div class="attr_editor">
+				<span class="attr_title right_align"><span data-string="profile:profile.birth_year"></span>:</span>
+				<select name="birth_year" data-options="birth_years">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.o"></span>:</span>
+				<select name="origin_country" data-options="countries">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.c"></span>:</span>
+				<select name="country" data-options="countries">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="indent attr_editor" style="display:none" id="StateEditor">
+				<select name="state">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="indent">
+				<div class="indent attr_editor" style="display:none" id="CityEditor">
+					<select name="city">
+						<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+					</select>
+				</div>
+			</div>
+			<div class="attr_editor" id="re_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.re"></span>:</span>
+				<select name="religion" data-options="options" data-options-group="re">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor" id="sh_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.sh"></span>:</span>
+				<select name="shape" data-options="options" data-options-group="sh">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor" id="fc_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.fc"></span>:</span>
+				<select name="facelook" data-options="options" data-options-group="fc">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor" id="ds_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.ds"></span>:</span>
+				<select name="disability" data-options="options" data-options-group="ds">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor" id="po_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.po"></span>:</span>
+				<select name="polygamy" data-options="options" data-options-group="po">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+			<div class="attr_editor" id="dst_editor">
+				<span class="attr_title right_align"><span data-string="str:filters.dst"></span>:</span>
+				<select name="district" data-options="options" data-options-group="dst">
+					<option value="0" data-string="str:select" data-string-template="---{s}---"></option>
+				</select>
+			</div>
+		</div>
+		<div class="clear_left buttons_bar">
+			<input type="submit" name="save" value="" data-string="str:ok" data-string-attr="value"/>
+			<input type="button" value="" data-string="str:cancel" data-string-attr="value" onclick="PgNav.open('update',undefined,true)"/>
+		</div>
+	</form>
+</div>

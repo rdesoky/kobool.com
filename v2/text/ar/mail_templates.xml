@@ -1,0 +1,410 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<root>
+	<blank>
+		<html>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</blank>
+	<free>
+		<html>
+			<title><![CDATA[$V{title}]]></title>
+			<body><![CDATA[<div style="direction:rtl">$V{body}</div>]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[$V{title}]]></title>
+			<body><![CDATA[$V{body}]]></body>
+		</txt>
+	</free>
+	<welcome>
+		<html>
+			<title><![CDATA[قبول يرحب بعضوية $V{lname}]]></title>
+			<body><![CDATA[
+				<div style="font-size:14px;font-face:Tahoma">
+					<div>السلام عليكم <b>$V{lname}</b>,</div>
+					&nbsp;
+					<div>أسرة موقع قبول ترحب بعضويتك.</div>
+					&nbsp;
+					<div>اسم الدخول لعضويتك هو: "<font color="red">$V{lname}</font>"</div>
+					<div>كلمة سر الدخول لعضويتك هي: "<font color="red">$V{pw}</font>"</div>
+					&nbsp;
+					<div>مع تمنياتنا بالتوفيق في العثور علي شريك حياتك.</div>
+					<div>اسرة الموقع</div>
+				</div>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[قبول يرحب بعضوية $V{lname}]]></title>
+			<body><![CDATA[
+					السلام عليكم $V{lname},
+
+					أسرة موقع قبول ترحب بعضويتك.
+
+					اسم الدخول لعضويتك هو: "$V{lname}"
+					كلمة سر الدخول لعضويتك هي: "$V{pw}"
+					
+					<div>مع تمنياتنا بالتوفيق في العثور علي شريك حياتك.</div>
+					<div>اسرة قبول</div>
+			]]></body>
+		</txt>
+	</welcome>
+	<chg_pass>
+		<html>
+			<title><![CDATA[تم تعديل كلمة سر دخولك لموقع قبول]]></title>
+			<body><![CDATA[
+				<div>السلام عليكم <b>$V{lname}</b>,</div>
+				&nbsp;
+				<div>تم تعديل كلمة سر دخولك لموقع قبول الى: <font color="red">$V{pw}</font></div>
+				&nbsp;
+				<div>مع أطيب تمنياتنا بالتوفيق,</div>
+				<div>أسرة قبول</div>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[قبول: تم تعديل كلمة سر دخولك]]></title>
+			<body><![CDATA[
+				السلام عليكم $V{lname},
+				
+				تم تعديل كلمة سر دخولك لموقع قبول الى:  "$V{pw}"
+
+				مع أطيب تمنياتنا بالتوفيق,
+				أسرة قبول
+			]]></body>
+		</txt>
+	</chg_pass>
+	<chg_email>
+		<html>
+			<title><![CDATA[قبول: تم تعديل البريد الإليكتروني لعضويتك]]></title>
+			<body><![CDATA[
+				<p>السلام عليكم <b>$V{lname}</b>,</p>
+				<p>تم تعديل البريد الإليكتروني لعضويتك في موقع قبول ليكون: $V{email}</p>
+				<p>مع أطيب تمنياتنا بالتوفيق,<br/>
+				أسرة قبول</p>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[قبول: تم تعديل البريد الإليكتروني لعضويتك]]></title>
+			<body><![CDATA[
+				السلام عليكم $V{lname},
+				
+				تم تعديل البريد الإليكتروني لعضويتك في موقع قبول ليكون: $V{email}.
+
+				مع أطيب تمنياتنا بالتوفيق,
+				أسرة قبول
+			]]></body>
+		</txt>
+	</chg_email>
+	<vf_points>
+		<html>
+			<title><![CDATA[Points By Vodafone Order #$V{invoice}]]></title>
+			<body><![CDATA[
+				<div style="direction:rtl;font-size:14px;font-family:Tahoma">
+					طلب شراء نقاط اتصال قبول في تاريخ: $V{date} بتوقيت جرينتش.
+					<hr/>
+					رقم المرجع: $V{invoice}
+					<hr/>
+					رقم الكمبيوتر: <a target="_blank" href="http://www.kobool.com/admin.htm#a?pcusers=$V{pc_id}">$V{pc_id}</a>
+					<hr/>
+					رقم العضوية الفعالة: <a target="_blank" href="http://www.kobool.com/admin.htm?a&xid=$V{buyer_number}">$V{buyer_number}</a><br/>
+					اسم الدخول: <a target="_blank" href="http://www.kobool.com/#pg=mem&mem=$V{buyer_number}">$V{buyer_name} </a>
+					<hr/>
+					رقم العضوية المستفيدة: <a target="_blank" href="http://www.kobool.com/admin.htm?a_add_card&xid=$V{user_number}">$V{user_number}</a><br/>
+					اسم الدخول: <a target=_blank href="http://www.kobool.com/#pg=mem&mem=$V{user_number}">$V{user_name} </a>
+					<hr/>
+					قيمة الكارت: $V{amount} جنيه مصري.
+					<hr/>
+					رقم الكارت: <span style="font-size:18px;font-weight:bold;text-align:left">$V{card_number}</span>
+					<hr/>
+					ملاحظات:<br/>
+					$V{notes}
+				</div>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</vf_points>
+	<vf_points_receipt>
+		<html>
+			<title><![CDATA[نسخة طلب شراء نقاط قبول رقم:#$V{invoice}]]></title>
+			<body><![CDATA[
+				<div style="direction:rtl;font-size:14px;font-family:Tahoma">
+					تم إرسال طلب شراء نقاط اتصال قبول بواسطة كارت شحن فودافون في: $V{date} بتوقيت جرينتش
+					<hr/>
+					رقم المرجع: $V{invoice}
+					<hr/>
+					رقم الكارت: <span style="font-size:14px;font-weight:bold;text-align:left">$V{card_number}</span><br/>
+					قيمة الكارت: $V{amount} جنيه مصري<br/>&nbsp;
+					<div style="background:#FFFFCC;border-top:solid 1px orange;font-size:11px;padding:4px">
+						<b>تنويه:</b> اضافة النقاط المطلوبة لا يتم بشكل آلي وقد تضاف النقاط في خلال دقائق أو ساعات قليلة حسب موعد طلب الشراء .<br/>
+						لذا نرجوا التحلي ببعض الصبر الى أن تضاف النقاط وسيصلك منا اشعار آخر بالبريد الإليكتروني بمجرد الإضافة.
+					</div>
+					<hr/>
+					رقم العضوية الفعالة: $V{buyer_number}<br/>
+					اسم الدخول: <a target="_blank" href="http://www.kobool.com/#pg=mem&mem=$V{buyer_number}">$V{buyer_name} </a>
+					<hr/>
+					رقم العضوية التي سيضاف لها النقاط: $V{user_number}<br/>
+					اسم الدخول: <a target="_blank" href="http://www.kobool.com/#pg=mem&mem=$V{user_number}">$V{user_name} </a>
+					<hr/>
+					ملاحظات:<br/>
+					$V{notes}
+				</div>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</vf_points_receipt>
+	<used_vf_card>
+		<html>
+			<title><![CDATA[رفض طلب شراء نقاط قبول $V{invoice}]]></title>
+			<body><![CDATA[
+				<div style="direction:rtl;font-size:14pt">
+					<div>السلام عليكم $V{buyer_name},</div>
+					<div>كارت فودافون المرسل بتاريخ:</div>
+					<div>$V{date_created}</div>
+					<div>ورقمه:</div>
+					<div style="font-size:20pt;color:maroon">$V{card_num}</div>
+					<div>لم يتم قبوله وذلك لأن الكارت مستعمل.</div>
+					<div>قد تكون قمت بشحن تليفونك الخاص بهذا الكارت بعد ارساله, بغرض التجربة أو لإعتقادك أن ذلك صحيحا.</div>
+					<div>ولكن هذا يجعل الكارت بدون قيمة.</div>
+					
+					<div style="color:maroon">برجاء عدم ارسال كروت مستعملة في المستقبل لأن تكرار ذلك قد يؤدي الى إلغاء عضويتك بالموقع.</div>
+
+					<p style="background-color:#FFFFCC;color:green;">$V{admin_note}</p>	
+
+					<div>مع أطيب التمنيات,</div>
+					<div>موقع قبول</div>
+				</div>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[رفض طلب شراء نقاط قبول $V{invoice}]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</used_vf_card>
+	<bad_vf_card>
+		<html>
+			<title><![CDATA[رفض طلب شراء نقاط قبول $V{invoice}]]></title>
+			<body><![CDATA[
+				<div style="direction:rtl;font-size:14pt">
+					<div>السلام عليكم $V{buyer_name},</div>
+					<div>كارت فودافون المرسل بتاريخ:</div>
+					<div>$V{date_created}</div>
+					<div>ورقمه:</div>
+					<div style="font-size:20pt;color:maroon">$V{card_num}</div>
+					<div>لم يتم قبوله وذلك لأن رقم الكارت غير صحيح</div>
+					<div>قد تكون أخطأت في نقل رقم الكارت أثناء كتابته في صفحة الشراء.</div>
+					<div>برجاء التأكد من رقم الكارت وإعادة إرساله مرة أخرى من خلال صفحة الشراء بالموقع.</div>
+
+					<p style="background-color:#FFFFCC;color:green;">$V{admin_note}</p>
+
+					<div style="color:maroon">برجاء عدم ارسال أرقام كروت غير صحيحة في المستقبل لأن تكرار ذلك قد يؤدي الى إلغاء عضويتك بالموقع.</div>
+					<div>مع أطيب التمنيات,</div>
+					<div>موقع قبول</div>
+				</div>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[رفض طلب شراء نقاط قبول $V{invoice}]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</bad_vf_card>
+	<low_vf_card>
+		<html>
+			<title><![CDATA[رفض طلب شراء نقاط قبول $V{invoice}]]></title>
+			<body><![CDATA[
+				<div style="direction:rtl;font-size:14pt">
+					<div>السلام عليكم $V{buyer_name},</div>
+					<div>كارت فودافون المرسل بتاريخ:</div>
+					<div>${date_created}</div>
+					<div>ورقمه:</div>
+					<div style="font-size:20pt;color:maroon">$V{card_num}</div>
+					<div>لم يتم قبوله وذلك لأن قيمة الكارت أقل من ثمن نقطة الإتصال.</div>
+					<div>سيتم حساب قيمة هذا الكارت اذا قمت بارسال كروت أخرى لتكملة ثمن نقاط الإتصال.</div>
+
+					<p style="background-color:#FFFFCC;color:green;">$V{admin_note}</p>
+
+					<div>مع أطيب التمنيات,</div>
+					<div>موقع قبول</div>
+				</div>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</low_vf_card>
+	<kpoint_added>
+		<html>
+			<title><![CDATA[تم إضافة $V{count} نقطة إتصال الى حسابك في قبول]]></title>
+			<body><![CDATA[
+				<div dir="rtl" style="FONT-SIZE:14px;font-family:Tahoma">
+					<div>السلام عليكم يا <b>$V{login_id} </b>,</div>
+					<div>وصلتنا حوالتك النقدية وتم إضافة $V{count} نقطة إتصال في حسابك بموقع قبول.</div>
+					<div>ستجد النقاط الجديدة في قائمة نقاط الإتصال الغير مستخدمة في صفحة "نقاط الإتصال"</div>
+					<div>لتفعيل الإتصال المكتوب عليك الضغط على زر "استخدم هذه النقطة" الموجود في خانة "الإستخدام"</div>
+					<div>&nbsp;</div>
+					<p style="background-color:#FFFFCC;color:green;">$V{admin_note}</p>			
+					<div>&nbsp;</div>
+					<div>مع أطيب التمنيات</div>
+					<div>موقع قبول</div>
+				</div>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</kpoint_added>
+	<stop_membership>
+		<html>
+			<title><![CDATA[قبول - توقيف عضوية: $V{lname}]]></title>
+			<body><![CDATA[
+				<P>السلام عليكم <b>$V{lname}</b>,</P>
+				<div>تم توقيف عضويتك بناء على طلبك ذلك في: $V{date}</div>
+				<P>مع أطيب التمنيات<br/>
+					أسرة موقع قبول.
+				</P>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</stop_membership>
+	<activate_membership>
+		<html>
+			<title><![CDATA[قبول - تنشيط عضوية: $V{lname}]]></title>
+			<body><![CDATA[
+				<P>السلام عليكم <b>$V{lname}</b>,</P>
+				<div>تم تنشيط عضويتك بناء على طلبك ذلك في: $V{date}</div>
+				<P>مع أطيب التمنيات<br/>
+					أسرة موقع قبول.
+				</P>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</activate_membership>
+	<matched>
+		<html>
+			<title><![CDATA[قبــــول يزف خبر عظيم الى $V{lname}]]></title>
+			<body><![CDATA[
+				<div style="direction:rtl;font-size:14px;">
+					<p>السلام عليكم يا $V{lname}</p>
+					<div>
+						موقع (قبــول) يسعده ابلاغك انه بناء على نتيجة عملية توفيق القبول الإليكترونية 
+						والتي جرت في يوم $V{date}
+						<br/>
+						فقد وجد قبول مبدئي مشترك بينك وبين $V{mate}.
+					</div>
+					<div>وذلك لأن كل منكما أضاف الآخر الى قائمة قبوله.</div>
+					<p>لقد تم ارسال رساله بنفس المضمون الى $V{mate} معك للتبليغ عن هذه النتيجة.</p>
+					<div>
+				يمكنك الآن الإتصال ب $V{mate} وذلك بمجرد تسجيل دخولك بالموقع ستفتح لك صفحة اتصال لتبادل الرسائل بينكما.
+					</div>
+					<p>ملاحظة هامة: قد لا تصل رسالة الموقع الى $V{mate} لسبب ما.
+					وقد يكون مسافرا أو لم يدخل علي موقع قبول منذ فترة طويلة.
+					وقد يؤدي ذلك الى التأخر في الرد على رسائلك. 
+					</p>
+					<div style="color:brown">
+					لذا فإن الموقع ينصحك بالتروي وعدم الإندفاع وتعجل الأمور في تعاملك مع $V{mate} في الفترة القادمة. </div>
+					<p>
+						من الآن كل منكما سيحجب عن عمليات توفيق القبول القادمة الا اذا انسحب أحدكما او 
+						كلاكما من مشروع الإرتباط بواسطة استخدام الزر بعنوان "انسحاب" المتاح حاليا لكل 
+						منكما لاستخدامه إذا لم يحدث القبول النهائي.
+					</p>
+					<div>
+						نحب ان ننوه ان التوفيق الإليكتروني لا يوفق الا من قام كل منهما بقبول الطرف الآخر بنفسه مسبقا. 
+						ويراعي ترتيب الإختيارات في قوائم القبول لكل من الطرفين بحيث تتساوى الفرص أمام الجميع.<br/>
+						موقع قبول لايقوم بترشيح أحد لأحد.
+					</div>
+					<p>
+						في النهاية نهنئ كل منكما و خالص تمنياتنا لكما بالتوفيق و لا تنسونا بالدعاء
+					</p>
+					<div>
+						والسلام
+					</div>
+					<div>
+						اسرة موقع (قبــــول)
+					</div>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</matched>
+	<you_declined>
+		<html>
+			<title><![CDATA[قبول: تم تسجيل انسحابك]]></title>
+			<body><![CDATA[
+				<P>السلام عليكم يا <b>$V{lname}</b>,</P>
+				<p>لقد تم تسجيل انسحابك من مشروع الإرتباط ب $V{mate}. وذلك في $V{date}</p>
+
+				<div>مع تمنياتنا بالتوفيق</div>
+				<div>أسرة موقع قبول</div>
+		]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</you_declined>
+
+	<your_match_declined>
+		<html>
+			<title><![CDATA[قبول: يأسف لعدم التوفيق]]></title>
+			<body><![CDATA[
+				<P>السلام عليكم يا <b>$V{lname}</b>,</P>
+				<p>يؤسف موقع قبول إبلاغك بان $V{mate} قد انسحب من استكمال مشروع الإرتباط. وذلك في $V{date}</p>
+
+				<div>هذا نص آخر رسالة ارسلت اليك من هذا العضو:</div>
+
+				<p style="border:solid 1px silver;color:brown">$V{msg}</p>
+				
+				<p>مع تمنياتنا بحظ أفضل و"عسى ان تكرهوا شيئا وهو خير لكم"<br/>
+				أسرة موقع قبول</p>
+		]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</your_match_declined>
+	<login_reminder>
+		<html>
+			<title><![CDATA[قبول: بيانات الدخول للعضو $V{lname}]]></title>
+			<body><![CDATA[
+				<div style="direction:rtl">
+					بناء على طلبك بتذكيرك ببيانات دخولك موقع قبول في $V{date},<br/>
+					بيانات دخولك كالتالي:<br/>
+					<table>
+					<tr>
+						<td>اسم الدخول:</td><td><b>$V{lname}</b></td>
+					</tr>
+					<tr>
+						<td>كلمة السر:</td><td><b>$V{passw}</b></td>
+					</tr>
+					</table>
+					مع اطيب التمنيات,<br/>
+					فريق موقع قبول<br/>
+					<a href="http://www.kobool.com">KOBOOL.com</a>
+				</div>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</login_reminder>
+</root>

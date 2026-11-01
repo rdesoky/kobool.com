@@ -1,0 +1,322 @@
+<?xml version="1.0" ?>
+<root>
+	<option value="0"    code="0" name=""/>
+	<option value="1" code="AF" name="Afghanistan"/>
+	<option n="1" value="123"    code="AX" name="Aland Islands"/>
+	<option value="2" code="AL" name="Albania"/>
+	<option value="3" code="DZ" name="Algeria"/>
+	<option n="1" value="124"    code="AS" name="American Samoa"/>
+	<option value="4" code="AD" name="Andorra"/>
+	<option value="5" code="AO" name="Angola"/>
+	<option n="1" value="125"    code="AI" name="Anguilla"/>
+	<option n="1" value="126"    code="AQ" name="Antarctica"/>
+	<option n="1" value="127"    code="AG" name="Antarctica and Barbuda"/>
+	<option value="6" code="AR" name="Argentina"/>
+	<option value="7" code="AM" name="Armenia"/>
+	<option n="1" value="128"    code="AW" name="Aruba"/>
+	<option value="8" code="AU" name="Australia"/>
+	<option value="9" code="AT" name="Austria"/>
+	<option value="10" code="AZ" name="Azerbaijan"/>
+	<option value="11" code="BS" name="Bahamas"/>
+	<option value="12" code="BH" name="Bahrain"/>
+	<option value="13" code="BD" name="Bangladesh"/>
+	<option n="1" value="129"    code="BB" name="Barbados"/>
+	<option value="14" code="BE" name="Belgium"/>
+	<option n="1" value="130"    code="BZ" name="Belize"/>
+	<option n="1" value="131"    code="BJ" name="Benin"/>
+	<option value="15" code="BM" name="Bermudas"/>
+	<option n="1" value="132"    code="BT" name="Bhutan"/>
+
+	<option value="16" code="BO" name="Bolivia"/>
+	<option value="17" code="BA" name="Bosnia-Herzegovina"/>
+	<option value="18" code="BW" name="Botswana"/>
+
+	<option n="1" value="133"    code="BV" name="Bouvet Island"/>
+
+	<option value="19" code="BR" name="Brazil"/>
+	<option n="1" value="134"    code="IO" name="British Indian Ocean Territory"/>
+
+	<option value="20" code="BN" name="Brunei"/>
+	<option value="21" code="BG" name="Bulgaria"/>
+
+	<option n="1" value="135"    code="BF" name="Burkina Faso"/>
+	<option n="1" value="136"    code="BI" name="Burundi"/>
+	<option n="1" value="137"    code="KH" name="Cambodia"/>
+
+	<option value="22" code="CM" name="Cameroon"/>
+
+	<option ex="1" value="23" code="CA" name="Canada"/>
+
+	<option n="1" value="138"    code="CV" name="Cape Verde"/>
+	<option n="1" value="139"    code="KY2" name="Cayman Islands"/>
+
+	<option value="24" code="KY" name="Canary Islands"/>
+
+	<option n="1" value="140"    code="CF" name="Central African Republic"/>
+	<option n="1" value="141"    code="TD" name="Chad"/>
+
+	<option value="25" code="CL" name="Chile"/>
+	<option value="26" code="CN" name="China"/>
+
+	<option n="1" value="143"    code="CX" name="Christmas Island"/>
+	<option n="1" value="144"    code="CC" name="Cocos Islands"/>
+
+	<option value="27" code="CO" name="Colombia"/>
+
+	<option n="1" value="145"    code="KM" name="Comoros"/>
+	<option n="1" value="146"    code="CG" name="Congo"/>
+	<option n="1" value="147"    code="CD" name="Congo ( Republic )"/>
+
+	<option n="1" value="148"    code="CK" name="Cook Islands"/>
+
+	<option value="28" code="CR" name="Costa Rica"/>
+	<option value="121" code="CU" name="Cuba"/>
+	<option value="29" code="CY" name="Cyprus"/>
+
+	<option value="30" code="CZ" name="Czech Republic"/>
+
+	<option value="72" code="_X" name="Darussalam"/>
+	<option value="31" code="DK" name="Denmark"/>
+
+	<option n="1" value="149"    code="DJ" name="DJIBOUTI"/>
+	<option n="1" value="150"    code="DM" name="Dominica"/>
+	<option n="1" value="151"    code="DO" name="Dominican Republic"/>
+	<option n="1" value="152"    code="EC" name="Ecuador"/>
+
+	<option ex="1" value="32" code="EG" name="Egypt"/>
+
+	<option n="1" value="153"    code="SV" name="El Salvador"/>
+	<option n="1" value="154"    code="GQ" name="Equatorial Guinea"/>
+	<option n="1" value="155"    code="ER" name="Eritrea"/>
+
+	<option value="110" code="AE" name="Emirates"/>
+
+	<option value="33" code="EE" name="Estonia"/>
+	<option value="34" code="ET" name="Ethiopia"/>
+
+	<option n="1" value="156"    code="FK" name="Falkland Island"/>
+	<option n="1" value="157"    code="FO" name="Faroe Islands"/>
+	<option n="1" value="158"    code="FJ" name="Fiji"/>
+
+	<option value="35" code="FI" name="Finland"/>
+	<option value="36" code="FR" name="France"/>
+
+	<option n="1" value="159"    code="GF" name="French Guiana"/>
+	<option n="1" value="160"    code="PF" name="French Polynesia"/>
+	<option n="1" value="161"    code="TF" name="French Southern Territories"/>
+
+	<option value="37" code="GA" name="Gabon"/>
+	<option n="1" value="162"    code="GM" name="Gambia"/>
+	<option n="1" value="163"    code="GE" name="Georgia"/>
+
+	<option value="38" code="DE" name="Germany"/>
+	<option value="39" code="GH" name="Ghana"/>
+
+	<option n="1" value="164"    code="GI" name="GIBRALTAR"/>
+
+	<option value="40" code="GR" name="Greece"/>
+	<option n="1" value="165"    code="GL" name="Greenland"/>
+	<option n="1" value="166"    code="GD" name="Grenada"/>
+	<option n="1" value="167"    code="GP" name="Guadeloupe"/>
+	<option n="1" value="168"    code="GU" name="Guam"/>
+	<option n="1" value="169"    code="GT" name="Guatemala"/>
+	<option n="1" value="170"    code="GG" name="Guernsey"/>
+	<option n="1" value="171"    code="GN" name="Guinea"/>
+	<option n="1" value="172"    code="GW" name="Guinea-Bissau"/>
+
+	<option value="41" code="GY" name="Guyana"/>
+
+	<option value="42" code="HT" name="Haiti"/>
+	<option n="1" value="173"    code="MH" name="Heard Island and McDonald Islands"/>
+	<option n="1" value="174"    code="VA" name="Holy See ( Vatican City )"/>
+	<option n="1" value="175"    code="HN" name="Honduras"/>
+
+	<option value="43" code="NL" name="Holland"/>
+	<option value="44" code="HK" name="Hong kong"/>
+	<option n="1" value="176"    code="HU" name="Hungary"/>
+
+	<option value="45" code="IS" name="Iceland"/>
+
+	<option value="46" code="IN" name="India"/>
+	<option value="47" code="ID" name="Indonesia"/>
+	<option value="48" code="IR" name="Iran"/>
+	<option value="49" code="IQ" name="Iraq"/>
+	<option value="50" code="IE" name="Ireland"/>
+	<option n="1" value="177"    code="IM" name="Isle of Man"/>
+
+	<option value="51" code="IL" name="Israel"/>
+	<option value="52" code="IT" name="Italy"/>
+	<option value="53" code="_X" name="Ivory coast"/>
+	<option value="54" code="JM" name="Jamaica"/>
+	<option value="55" code="JP" name="Japan"/>
+	<option n="1" value="178"    code="JE" name="Jersey"/>
+
+	<option value="56" code="JO" name="Jordan"/>
+	<option value="57" code="KZ" name="Kazakhstan"/>
+	<option value="58" code="KE" name="Kenya"/>
+
+	<option n="1" value="179"    code="KI" name="Kiribati"/>
+	<option value="95" code="KP" name="Korea, Democratic"/>
+	<option n="1" value="180"    code="KR" name="Korea, Republic"/>
+
+	<option value="59" code="KW" name="Kuwait"/>
+	<option value="60" code="KG" name="Kyrgyzstan"/>
+
+	<option value="61"    code="LA" name="LAO People Republic"/>
+
+	<option n="1" value="181"    code="LV" name="Latvia"/>
+
+	<option ex="1" value="62" code="LB" name="Lebanon"/>
+
+	<option n="1" value="182"    code="LS" name="LSOTHO"/>
+	<option n="1" value="183"    code="LR" name="Liberia"/>
+	<option value="63" code="LY" name="Libya"/>
+
+	<option n="1" value="184"    code="LI" name="Liechtnestien"/>
+	<option n="1" value="185"    code="LT" name="Lithuania"/>
+	<option n="1" value="186"    code="LU" name="Luxembourg"/>
+	<option n="1" value="187"    code="MO" name="Macao"/>
+	<option n="1" value="188"    code="MK" name="Macdonia"/>
+
+	<option value="64" code="MG" name="Madagascar"/>
+	<option n="1" value="189"    code="MW" name="Malawi"/>
+	<option value="65" code="MY" name="Malaysia"/>
+	<option n="1" value="190"    code="MV" name="Maldives"/>
+	<option n="1" value="191"    code="ML" name="Mali"/>
+	<option n="1" value="192"    code="MT" name="Malta"/>
+	<option n="1" value="193"    code="MH" name="Marshall Islands"/>
+	<option n="1" value="194"    code="MQ" name="Martinique"/>
+	<option value="66" code="MR" name="Mauritania"/>
+	<option value="67" code="MU" name="Mauritius"/>
+	<option n="1" value="142"    code="YT" name="Mayotte"/>
+	<option value="68" code="MX" name="Mexico"/>
+	<option n="1" value="195"    code="FM" name="Micronesia"/>
+	<option n="1" value="196"    code="MD" name="Moldova"/>
+	<option n="1" value="197"    code="MC" name="Monaco"/>
+	<option n="1" value="198"    code="MN" name="Mongolia"/>
+	<option n="1" value="199"    code="MS" name="Montserrat"/>
+
+	<option ex="1" value="69" code="MA" name="Morocco"/>
+	<option n="1" value="201"    code="MZ" name="Mozambique"/>
+	<option n="1" value="202"    code="MM" name="Myanmar"/>
+
+	<option value="70" code="NA" name="Namibia"/>
+	<option n="1" value="203"    code="NR" name="Nauru"/>
+	<option n="1" value="204"    code="NP" name="Nepal"/>
+
+	<option n="1" value="205"    code="AN"   name="Netherlands Antilles"/>
+	<option value="71" code="_X" name="Negara"/>
+
+	<option n="1" value="206"    code="NC" name="New Caledonia"/>
+	<option value="73" code="NZ" name="New zealand"/>
+	<option n="1" value="207"    code="NI" name="Nicaragua"/>
+
+	<option value="74" code="NE" name="Niger"/>
+	<option value="75" code="NG" name="Nigeria"/>
+
+	<option n="1" value="208"    code="NU" name="Niue"/>
+	<option n="1" value="209"    code="NF" name="Norfolk Island"/>
+	<option n="1" value="210"    code="MP" name="Northern Mariana Islands"/>
+
+	<option value="76" code="NO" name="Norway"/>
+	<option value="77" code="OM" name="Oman"/>
+	<option value="78" code="PK" name="Pakistan"/>
+	<option n="1" value="211"    code="PW" name="Palau"/>
+
+	<option value="79" code="PS" name="Palestine"/>
+	<option n="1" value="212"    code="PA" name="Panama"/>
+	<option n="1" value="213"    code="PG" name="Papua New Guinea"/>
+	<option n="1" value="214"    code="PY" name="Paraguay"/>
+
+	<option value="80" code="PE" name="Peru"/>
+	<option value="81" code="PH" name="Philippines"/>
+	<option value="122" code="PL" name="Poland"/>
+	<option n="1" value="215"    code="PT" name="Portugal"/>
+
+	<option value="82" code="PR" name="Puerto Rico"/>
+	<option value="83" code="QA" name="Qatar"/>
+	<option value="84" code="RO" name="Romania"/>
+	<option value="85" code="RU" name="Russia"/>
+	<option n="1" value="216"    code="RW" name="Rwanda"/>
+
+	<option n="1" value="217"    code="SH" name="Saint Helena"/>
+	<option n="1" value="218"    code="KN" name="Saint Kitts and Nevis"/>
+
+	<option value="86" code="LC" name="Saint lucia"/>
+	<option n="1" value="219"    code="PM" name="Saint Pierre and Miquelon"/>
+	<option n="1" value="220"    code="VC" name="Saint Vincent and the Grenadines"/>
+	<option n="1" value="221"    code="WS" name="Samoa"/>
+	<option n="1" value="222"    code="ST" name="Sao Tome and Principe"/>
+
+	<option ex="1" value="87" code="SA" name="Saudi Arabia"/>
+	<option value="88" code="_X" name="Scotland"/>
+	<option value="89" code="SN" name="Senegal"/>
+	<option value="90" code="RS" name="Serbia"/>
+	<option n="1" value="223"    code="SC" name="Seychelles"/>
+	<option n="1" value="224"    code="SL" name="Sierra Leone"/>
+
+	<option value="91" code="SG" name="Singapore"/>
+	<option n="1" value="225"    code="SK" name="Slovakia"/>
+	<option value="92" code="SI" name="Slovenia"/>
+	<option n="1" value="226"    code="SB" name="Solomon Islands"/>
+
+	<option value="93" code="SO" name="Somalia"/>
+	<option value="94" code="ZA" name="South africa"/>
+	<option n="1" value="227"    code="GS" name="South Grorgia"/>
+
+	<option value="96" code="ES" name="Spain"/>
+	<option value="97" code="LK" name="Sri lanka"/>
+	<option value="98" code="SD" name="Sudan"/>
+	<option value="99" code="SR" name="Suriname"/>
+	<option n="1" value="228"    code="SJ" name="SVALBARD and Jan Mayen"/>
+	<option n="1" value="229"    code="SZ" name="Swaziland"/>
+
+	<option value="100" code="SE" name="Sweden"/>
+	<option value="101" code="CH" name="Switzerland"/>
+	<option ex="1" value="102" code="SY" name="Syria"/>
+	<option n="1" value="230"    code="TW" name="Taiwan"/>
+	<option n="1" value="231"    code="TJ" name="Tajikistan"/>
+
+	<option value="103" code="TZ" name="Tanzania"/>
+	<option value="104" code="TH" name="Thailand"/>
+	<option n="1" value="232"    code="TL" name="Timor-Leste"/>
+	<option n="1" value="233"    code="TG" name="Togo"/>
+	<option n="1" value="234"    code="TK" name="Tokelau"/>
+	<option n="1" value="235"    code="TO" name="Tonga"/>
+
+	<option value="105" code="TT" name="Trinidad and Tobago"/>
+	<option value="106" code="TN" name="Tunisia"/>
+	<option value="107" code="TR" name="Turkey"/>
+
+	<option n="1" value="236"    code="TM" name="Turkmenistan"/>
+	<option n="1" value="237"    code="TC" name="Turks and Caicos Islands"/>
+	<option n="1" value="238"    code="TV" name="Tuvalu"/>
+
+	<option value="108" code="UG" name="Uganda"/>
+	<option value="109" code="UA" name="Ukraine"/>
+	<option value="111" code="GB" name="United kingdom"/>
+	<option ex="1" value="112" code="US" name="United states"/>
+	<option n="1" value="239"    code="UM" name="United States Minor outlying Islands"/>
+	<option n="1" value="240"    code="UY" name="Uruguay"/>
+
+	<option value="113" code="UZ" name="Uzbekistan"/>
+
+	<option n="1" value="241"    code="VU" name="Vanautu"/>
+
+	<option value="114" code="VE" name="Venezuela"/>
+	<option value="115" code="VN" name="Vietnam"/>
+
+	<option n="1" value="242"    code="VG" name="Virgin Islands, British"/>
+	<option n="1" value="243"    code="VI" name="Virgin Islands, US"/>
+	
+	<option value="116" code="WF" name="Wallis and Futuna"/>
+
+	<option n="1" value="244"    code="EH" name="Western Sahara"/>
+
+
+	<option value="117" code="YE" name="Yemen"/>
+	<option value="118" code="_X" name="Yugoslavia"/>
+	<option value="119" code="ZM" name="Zambia"/>
+	<option value="120" code="ZW" name="Zimbabwe"/>
+	<option value="200" code="Other" name="Other Country"/>
+</root>

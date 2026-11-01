@@ -1,0 +1,37 @@
+.cntx_menu_btn{
+	display:inline-block;
+	vertical-align:bottom;
+	position:relative;
+	min-height:19px;
+	min-width:19px;
+	background-repeat:no-repeat;
+	background-image:url(/images/ddown_arrow.png);
+	background-position:center;
+}
+
+.cntx_menu_btn:hover{
+	background-color:gray;
+}
+
+.cntx_menu{
+	position:absolute;
+	top:19px;
+	background-color:gray;
+	padding:2px;
+}
+
+.cntx_menu_item{
+	color:white;
+	min-width:120px;
+	min-height:14px;
+	font-size:8.5pt;
+	cursor:pointer;
+	padding:3px;
+	white-space:nowrap;
+	font-weight:bold;
+}
+.cntx_menu_item:hover{
+	color:black;
+	background-color:white;
+}
+

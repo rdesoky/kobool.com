@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<root>
+	<chg_email>
+		<page_title>Change Account e-mail Address</page_title>
+		<intro>Submit the form below to change your Account e-mail Address (%email%).
+		</intro>
+		<form_title>Change e-mail Form</form_title>
+		<password>Account Password</password>
+		<email>New e-mail &lt;br&gt;Address</email>
+		<submit>Submit</submit>
+		<success>
+		You e-mail address has been changed successfully. 
+		&lt;p&gt;
+		A welcome message has been sent to your new email address %email% to verify it. 
+		&lt;p&gt;
+		Please Check your mail box shortly to view the message.
+		</success>
+	</chg_email>
+</root>

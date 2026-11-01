@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<option value="0" name=""  />
+	<option value="1" name="أبها"  />
+	<option value="6" name="الحدود الشمالية"  />
+	<option value="10" name="الجوف"  />
+	<option value="9" name="الجيزان"  />
+	<option value="13" name="الرياض"  />
+	<option value="12" name="القريات"  />
+	<option value="11" name="القصيم"  />
+	<option value="8" name="المدينة"  />
+	<option ex="1" value="3" name="المنطقة الشرقية"  />
+	<option value="2" name="بيشا"  />
+	<option value="14" name="تبوك"  />
+	<option value="7" name="مكة"  />
+	<option value="5" name="نجران"  />
+	<option value="4" name="هايل"  />
+</root>

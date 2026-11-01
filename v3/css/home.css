@@ -1,0 +1,84 @@
+#HomeText{
+	display:inline-block;
+	/* max-width:300px; */
+}
+#HomeText div:nth-child(1){
+	font-size:14pt;
+	font-weight:bold;
+}
+#HomePage{
+	/*background-image:url(../images/logo2.jpg);*/
+	background-repeat:no-repeat;
+}
+
+#HomePage .form_panel{
+	width:350px;
+}
+*[lang=en] #HomePage{
+	background-position:top right;
+	/*padding-right:100px;*/
+}
+
+#HomePage:lang(ar){
+	background-position:top left;
+	/*padding-left:100px;*/
+}
+
+
+#Greetings{
+	color:gray;
+	margin-bottom:10px;
+}
+
+#WhyKobool{
+	font-weight:bold;
+	color:#444444;
+	margin-bottom:5px;
+}
+
+#WhyKobool:lang(ar){
+	font-family:Simplified Arabic;
+}
+
+#WhyKoboolDesc{
+	color:maroon;
+	margin-bottom:5px;
+}
+
+#WhyKoboolQ{
+	font-weight:bold;
+	color:green;
+	margin-top:15px;
+	margin-bottom:10px;
+}
+
+#KoboolOffer{
+}
+
+#HomeOptions{
+	vertical-align:top;
+}
+
+#HomeFormPanel{
+	vertical-align:top;
+}
+
+.big_button{
+	cursor:pointer;
+	box-shadow: 0 0 5px rgba(0,0,0,.6);
+	border-radius: 5px;
+	padding: 5px;
+	text-align: center;
+	background-color: white;
+	/* font-weight: bold; */
+	margin: 10px auto;
+	display: block;
+}
+
+.big_button:hover{
+	background-color:lavender;
+}
+
+.big_button:active{
+	box-shadow: 0 0 2px rgba(0,0,0,.8);;
+}

@@ -1,0 +1,89 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<root>
+	<edit_help>Use the mouse wheel to zoom in or out. Click and drag to change the visible area</edit_help>
+	<zoom>Zoom</zoom>
+	<ratio>Aspect Ratio</ratio>
+	<ShiftX>Shift X</ShiftX>
+	<ShiftY>Shift Y</ShiftY>
+
+	<pics>
+		<title>Update : Profile Pictures</title>
+		<intro>Add or update your own photos</intro>
+		<instructions><![CDATA[
+		<div class=intro>Add/Remove photos or change album settings</div><hr>
+		You can add up to 10 photos to your personal album.<br>
+		Added Photos will not be visible to others before being reviewed by Kobool moderators.
+		<hr>
+		<b>Photo will be rejected if it shows any of the following:</b><br>
+		<table width="100%">
+		<tr><td>*</td><td  style="color:red;width:100%">Printed contact information (i.e.: email, phone number, web address )</td></tr>
+		<tr><td>*</td><td style="color:red">Photo for other persons or celebrities</td></tr>
+		</td><td>*</td><td style="color:red">Pornographic images</td></tr>
+		<tr><td>-</td><td>Lots of your skin (i.e.: shoulder, chest, legs )</td></tr>
+		<tr><td>-</td><td>Nature images without you appearing in the frame</td></tr>
+		<tr><td>-</td><td>Images for kids, animals or objects</td></tr>
+		<tr><td>-</td><td>Duplicating the same photo with the same size</td></tr>
+		</table>
+		<hr>
+		<b>Note: Ignoring instructions with red color will lead to terminating your membership</b>
+		
+		]]></instructions>
+
+		<visibility_title>Your photo album is visible to:</visibility_title>
+		<add_pic>Post new Photo</add_pic>
+		<upload>Add to my album</upload>
+		<file>Image File Name</file>
+		<finish>Done</finish>
+		<update_pics>Update Existing Photos</update_pics>
+		<make_top>Move to top</make_top>
+		<confirm_delete>The selected photo will be removed. Are you sure?</confirm_delete>
+		<file_not_uploaded>The selected picture has not been added to your album yet. Do you want to add it now?</file_not_uploaded>
+		<under_review>Under review by KOBOOL supervisor</under_review>
+		<rejected>Unacceptable picture, please remove it</rejected>
+		<can_not_be_main>Accepted, but can't be a default photo</can_not_be_main>
+		<submit>update</submit>
+		<review_warning>
+		Note: New pictures will not be displayed to KOBOOL members nor visitors before being reviewed and approved by the supervisor.
+		</review_warning>
+		<remove>Remove</remove>
+		<default_picture>Set as default picture</default_picture>
+		<no_default_picture>No default picture</no_default_picture>
+		<visibility>
+			<option_0>Your photos visibility has been updated to be shown everyone browsing KOBOOL web site</option_0>
+			<option_1>Your photos visibility has been updated to be shown only to KOBOOL active members, Currently: %n% member</option_1>
+			<option_2>Your photos visibility has been updated to be shown only to members whom you have added to your Acceptance List, Currently: %n% member</option_2>
+			<option_3>Your photos visibility has been updated to be shown only to the person you matched with through KOBOOL Acceptance Matching operation, Currently: %m%</option_3>
+			<option_4>Your photos visibility has been updated to be hidden to everyone (except you)</option_4>
+		</visibility>
+		<visibility_help>
+			<option value="0">
+			This option will make your profile appears in the top search results when searching with "pics first" option. Also it is possible that visitors who are not members might register to be members if they like your picture.
+			</option>
+			<option value="1">
+			This option will give your pictures some privacy. However, this will give your profile lower priority in the search results than who selected "Every one borwsing KOBOOL.com" when searching with "pics first" option.
+			</option>
+			<option value="2">
+			This option will give your pictures more privacy, as you will show them to only whom you selected and whom you are interested in. However, this will give your profile lower priority in the search results than who selected "Only Active Members" when searching with "pics first" option.
+			</option>
+			<option value="3">
+			This option will show your picture to only one person who you matched with via KOBOOL Acceptance Matching. However, this will give your profile lower priority in the search results than who selected "Only Members in your Acceptance List" when searching with "pics first" option.
+			</option>
+			<option value="4">
+			This option will completely hide your picture from everyone ( except you of cours ). This is useful when you want to temporary hide your picture completely.However, this will give your profile the lowest priority in the search results when searching with "pics first" option.
+			</option>
+		</visibility_help>
+	</pics>
+	<select_pics_visibility>
+		<option value="0">Everyone browsing KOBOOL.com</option>
+		<option value="1">Only Active Members from the opposite gender</option>
+		<option value="2">Only members in your Acceptance List	</option>
+		<option value="4">No one</option>
+	</select_pics_visibility>
+	<select_matched_pics_visibility>
+		<option value="0">Everyone browsing KOBOOL.com</option>
+		<option value="1">Only active members from the opposite gender</option>
+		<option value="2">Only members in your Acceptance List	</option>
+		<option value="3">Only whom you matched with</option>
+		<option value="4">No one</option>
+	</select_matched_pics_visibility>
+</root>

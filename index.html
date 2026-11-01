@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="PRAGMA" content="NO-CACHE"/>
+    <meta name="description" content="" data-string="str:meta_description" data-string-attr="content"/>
+    <meta name="keywords" content="" data-string="str:meta_keywords" data-string-attr="content"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <title data-string="str:title">Kobool</title>
+
+    <link rel="StyleSheet" href="/v3/css/font-awesome.min.css"/>
+    <link rel="StyleSheet" href="/v3/css/base.css"/>
+    <link rel="StyleSheet" href="/v3/css/kui.css"/>
+
+    <script src="/shared/config.js"></script>
+    <script src="/shared/strings.js"></script>
+    <script data-main="/v3/init.js" src="/v3/lib/require.js"></script>
+</head>
+<body>
+    <div id="PgBody">
+        <div id="Header">
+            <ul id="HeaderGrid">
+                <li><div id="HeaderLogo" data-init="require('dom-utils').initMenuBtn" data-menu="#Menu" data-submenu="#Menu .ctab"></div></li>
+                <li id="MemberBox"></li>
+                <li><div id="PageActions"></div></li>
+            </ul>
+        </div>
+
+        <div id="Menu">
+            <ul id="MemberMenu" style="display:none" class="menu">
+                <li id="Menu.home"><a href="#pg=my" data-string="str:main_menu.home">Home</a></li>
+                <li id="Menu_Kobool" data-string="str:mate_menu.my_match">My match</li>
+                <ul id="SubMenu.Kobool" class="submenu">
+                    <li id="Kobool.MatchPage"><a data-on-click="require('page-nav').open('mem',{mem:SSN.mate})" data-string="str:mate_menu.visit_page">Visit page</a></li>
+                    <li id="Kobool.Chat"><a href="#pg=chat" data-string="str:mate_menu.contact">Contact</a></li>
+                    <li id="Kobool.Decline"><a href="#pg=decline" data-string="str:mate_menu.decline">Decline</a></li>
+                </ul>
+                <li id="Menu.Search" class="seltab" data-string="str:browse">Browse</li>
+                <ul id="SubMenu.Search" class="submenu">
+                    <li id="Search.Simple"><a href="#pg=search" data-string="str:search">Search</a></li>
+                    <li id="Search.wsr"><a href="#pg=list&amp;ls=wsr&amp;ob=ra" data-string="str:member_menu.wishers">Wishers</a></li>
+                    <li id="Search.vtr"><a href="#pg=list&amp;ls=vtr&amp;ob=rv" data-string="str:member_menu.visitors">Visitors</a></li>
+                    <li id="Search.nvr"><a href="#pg=list&amp;ls=nvr&amp;ob=rv" data-string="str:member_menu.new_visitors">New visitors</a></li>
+                    <li id="Search.online"><a href="#pg=list&amp;ls=act&amp;ob=rl" data-string="str:last_login">Online now</a></li>
+                </ul>
+                <li id="Menu.Profile" data-string="str:my_activities">My activities</li>
+                <ul id="SubMenu.Profile" class="submenu">
+                    <li id="Profile.wls"><a tip="help:tips.wishlist" href="#pg=list&amp;ls=wls&amp;ob=ra" data-string="str:member_menu.wishlist">Wishlist</a></li>
+                    <li id="Profile.bkm"><a tip="help:tips.bookmarks" href="#pg=list&amp;ls=bkm&amp;ob=rl" data-string="str:member_menu.watchlist">Watchlist</a></li>
+                    <li id="Profile.vtd"><a href="#pg=list&amp;ls=vtd&amp;ob=rv" data-string="str:member_menu.visited">Visited</a></li>
+                    <li id="Profile.blk"><a href="#pg=list&amp;ls=blk&amp;ob=rl" data-string="str:member_menu.blocklist">Blocklist</a></li>
+                </ul>
+                <li id="Menu.QA" data-string="str:QandA">Q&amp;A</li>
+                <ul id="SubMenu.QA" class="submenu">
+                    <li id="QA.answers"><a href="#pg=qa" data-string="str:a.answer_lists">Answers</a></li>
+                    <li id="QA.my_recent_questions"><a href="#pg=my_recent_questions" data-string="str:qa_menu.recent_questions">Recent questions</a></li>
+                    <li id="QA.my_q_by_member"><a onclick="require(['my_q_by_member'],function(o){o.openBrowser();});return false;" data-string="str:qa_menu.by_member">By member</a></li>
+                </ul>
+                <li id="Menu.CPoints" data-string="str:points_menu.title">Points</li>
+                <ul id="SubMenu.CPoints" class="submenu">
+                    <li id="CP.report"><a href="#pg=cp_report" data-string="str:points_menu.info">Info</a></li>
+                    <li id="CP.eula"><a href="#pg=cp_eula" data-string="str:points_menu.eula">Terms</a></li>
+                    <li id="CP.buy"><a href="#pg=cp_buy" data-string="str:points_menu.buy">Buy</a></li>
+                    <li id="CP.help"><a href="#pg=cp_help" data-string="str:points_menu.help">Help</a></li>
+                </ul>
+                <li id="Menu.Update" data-string="str:member_menu.edit">Edit</li>
+                <ul id="SubMenu.Update" class="submenu">
+                    <li id="Update.attr"><a href="#pg=upd_attr" data-string="str:profile.update_attr">Attributes</a></li>
+                    <li id="Update.text"><a href="#pg=upd_txt" data-string="str:profile.update_text">Text</a></li>
+                    <li id="Update.pics"><a href="#pg=upd_pics" data-string="str:profile.update_pics">Pictures</a></li>
+                    <li id="Update.pass"><a href="#pg=upd_pass" data-string="str:profile.update_pass">Password</a></li>
+                    <li id="Update.email"><a href="#pg=upd_email" data-string="str:profile.update_email">Email</a></li>
+                    <li id="Update.account"><a href="#pg=acc_suspend" data-string="str:profile.activation">Account</a></li>
+                </ul>
+                <li id="Menu.ContactUs"><a href="#pg=contact" data-string="str:contact_us">Contact us</a></li>
+                <li id="Menu.Logout" data-on-click="require('kui').onBtnLogout()" data-string="str:a.logout">Logout</li>
+                <li onclick="require(['mem-ui'],function(imem){imem.refreshHeader(true)});return false;" data-string="str:refresh">Refresh</li>
+                <li data-lang-switch="en">English</li>
+                <li id="Menu.OldSite"><a href="/v2/" data-string="str:downgrade">Old site</a></li>
+            </ul>
+
+            <ul id="GuestMenu" class="menu" style="display:none">
+                <li id="GuestMenu.home"><a href="#pg=home" data-string="str:main_menu.home">Home</a></li>
+                <li id="GuestMenu.login"><a href="#pg=login" data-string="str:main_menu.login">Login</a></li>
+                <li id="GuestMenu.search"><a href="#pg=search" data-string="str:search">Search</a></li>
+                <li id="GuestMenu.online"><a href="#pg=list&amp;ls=act&amp;ob=rl" data-string="str:last_login">Online now</a></li>
+                <li id="GuestMenu.qa"><a href="#pg=qa" data-string="str:QandA">Q&amp;A</a></li>
+                <li id="Menu.ContactUs"><a href="#pg=contact" data-string="str:contact_us">Contact us</a></li>
+                <li onclick="require(['mem-ui'],function(imem){imem.refreshHeader(true)});return false;" data-string="str:refresh">Refresh</li>
+                <li data-lang-switch="en">English</li>
+                <li id="GuestMenu.OldSite"><a href="/v2/" data-string="str:downgrade">Old site</a></li>
+            </ul>
+
+            <hr/>
+            <div style="padding:10px;text-align:center">
+                <a style="color:white;text-shadow: 0 0 2px rgba(0,0,0,1);"
+                   href="https://play.google.com/store/apps/details?id=com.muslim_web.quran"
+                   target="_blank" rel="noopener">
+                    هدية رمضان من شبكة مسلم ويب<br/>
+                    <img src="/images/quran_hafiz_logo.png" style="width:100px;height:100px" alt=""/>
+                </a>
+                <a href="https://itunes.apple.com/us/app/quran-hafiz/id1384358953?ls=1&amp;mt=8" target="_blank" rel="noopener">
+                    <img id="AppStore" src="/images/Download_on_the_App_Store_Badge_AR_RGB_blk_102417.svg"
+                         style="width:100px;height:40px" alt="Download on the App Store"/>
+                </a>
+            </div>
+        </div>
+
+        <div id="RightSide" style="display:none">
+            <div id="MatchingTimer"></div>
+            <div id="RightSideContents"></div>
+        </div>
+
+        <div id="Contents"><div class="progress"></div></div>
+    </div>
+
+    <div id="Footer">
+        <div>
+            <a href="#pg=home" data-string="str:main_menu.home">Home</a>
+            | <a href="#pg=contact" data-string="str:footer.contact_us">Contact us</a>
+            | <a href="#" data-lang-switch="en">English</a>
+        </div>
+        <div data-string="str:copyright"></div>
+    </div>
+
+    <div style="display:none" id="ClientStrings"></div>
+</body>
+</html>

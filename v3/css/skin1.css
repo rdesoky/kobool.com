@@ -1,0 +1,25 @@
+#RightSide, .right_side
+{
+	border-color:LightSlateGray #C7C8A4;
+}
+
+.submenu_line, .header_line{
+	background-color:#C7C8A4;
+}
+
+#Menu .ctab.seltab, #Menu .ctab.seltab:hover{
+	background-color:#C7C8A4 !important;
+}
+
+#Menu .ctab:hover{
+	background-color:#E3E4D2 !important;
+}
+
+.href.sel:hover{
+	color:#0645AD;
+	background-color:#C7C8A4 ;
+}
+
+.href:hover{
+	background-color:#E3E4D2;
+}

@@ -1,0 +1,21 @@
+<div id="UpdateText" class="pg_body" style="visibility:hidden">
+	<form name="updateTextFrm" onsubmit="require('upd_txt').onsubmit(this);return false;">
+		<div class="field_label"><span data-string="profile:profile.main_title"></span>:</div>
+		<div class="form_filed">
+			<input type="text" name="ad_title"/>
+		</div>
+		<div class="field_label"><span data-string="profile:profile.member_self_desc"></span>: <span class="attr_title" data-string="profile:profile.self_desc"></span></div>
+		<div class="form_field">
+			<textarea name="self_desc" rows="4"></textarea>
+		</div>
+		<div class="field_label"><span data-string="profile:profile.member_mate_desc"></span>: <span class="attr_title" data-string="profile:profile.mate_desc"></span></div>
+		<div class="form_field">
+			<textarea name="mate_desc" rows="4"></textarea>
+
+		</div>
+		<div class="buttons_bar">
+			<input type="submit" name="save" value="" data-string="str:ok" data-string-attr="value" />
+			<input type="button" value="" data-string="str:cancel" data-string-attr="value" onclick="require('page-nav').open('update',undefined,true)"/>
+		</div>
+	</form>
+</div>

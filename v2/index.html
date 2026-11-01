@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="PRAGMA" content="NO-CACHE"/>
+    <meta name="description" content="" data-string="str:meta_description" data-string-attr="content"/>
+    <meta name="keywords" content="" data-string="str:meta_keywords" data-string-attr="content"/>
+    <title data-string="str:title">Kobool</title>
+
+    <link rel="StyleSheet" href="/v2/css/base.css"/>
+    <link rel="StyleSheet" href="/v2/css/defaultstyle.css"/>
+
+    <script src="/shared/config.js"></script>
+    <script src="/shared/strings.js"></script>
+    <script src="/v2/init_vars.js"></script>
+    <script src="/v2/init.js"></script>
+    <script src="/v2/kmain.js"></script>
+    <script>
+        // Seconds until the next 23:00 UTC matching run (was server-rendered).
+        (function () {
+            var now = new Date();
+            var target = new Date(Date.UTC(
+                now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 23, 0, 0
+            ));
+            if (target.getTime() <= now.getTime()) {
+                target.setUTCDate(target.getUTCDate() + 1);
+            }
+            window.TMatching = {
+                check_time: Math.floor(Date.now() / 1000),
+                time_left: Math.floor((target.getTime() - now.getTime()) / 1000)
+            };
+        })();
+    </script>
+</head>
+<body>
+    <div id="TipAnchor"></div>
+    <div class="header_line"></div>
+    <center>
+        <div id="PgBody" class="left_align">
+            <div id="Header" class="anchor">
+                <div id="HdrTopMenu">
+                    <span class="href" onclick="PgNav.open(SSN.id?'my':'home',{},true);return false;" data-string="str:main_menu.home">Home</span> |
+                    <span class="href" onclick="RSCR('IMem',function(){IMem.refreshHeader(true);})" data-string="str:refresh">Refresh</span> |
+                    <a href="#" data-lang-switch="en" data-show-if="ar">English</a>
+                    <a href="#" data-lang-switch="ar" data-show-if="en">عربي</a>
+                </div>
+                <div class="submenu_line"></div>
+                <div id="MemberSubmenu" style="display:none">
+                    <div id="StatsMenu"></div>
+                </div>
+                <table cellspacing="0" cellpadding="0" border="0" id="HeaderLayout" class="anchor">
+                    <tr>
+                        <td id="HeaderLogo" onclick="PgNav.open(SSN.id?'my':'home',{},true);">
+                            <div id="MainLogo" data-string="str:kobool">Kobool</div>
+                        </td>
+                        <td id="MemberBox" style="display:none"></td>
+                        <td id="Menu">
+                            <div id="MemberMenu" style="display:none">
+                                <div id="TopMenu">
+                                    <span id="Menu.Update" data-string="str:member_menu.edit">Edit</span>
+                                    <span id="Menu.Search" class="seltab" data-string="str:browse">Browse</span>
+                                    <span id="Menu.Profile" data-string="str:lists">Lists</span>
+                                    <span id="Menu.QA" data-string="str:QandA">Q&amp;A</span>
+                                    <span id="Menu.CPoints" data-string="str:points_menu.title">Points</span>
+                                </div>
+                                <div id="SubMenu">
+                                    <div id="SubMenu.Update">
+                                        <a id="Update.attr" href="#pg=upd_attr" data-string="str:profile.update_attr">Attributes</a>
+                                        <a id="Update.text" href="#pg=upd_txt" data-string="str:profile.update_text">Text</a>
+                                        <a id="Update.pics" href="#pg=upd_pics" data-string="str:profile.update_pics">Pictures</a>
+                                        <a id="Update.pass" href="#pg=upd_pass" data-string="str:profile.update_pass">Password</a>
+                                        <a id="Update.email" href="#pg=upd_email" data-string="str:profile.update_email">Email</a>
+                                        <a id="Update.account" href="#pg=acc_suspend" data-string="str:profile.activation">Account</a>
+                                    </div>
+                                    <div id="SubMenu.Profile" style="display:none">
+                                        <a id="Profile.wls" tip="help:tips.wishlist" href="#pg=list&amp;ls=wls&amp;ob=ra" data-string="str:member_menu.wishlist">Wishlist</a>
+                                        <a id="Profile.bkm" tip="help:tips.bookmarks" href="#pg=list&amp;ls=bkm&amp;ob=rl" data-string="str:member_menu.watchlist">Watchlist</a>
+                                        <a id="Profile.vtd" href="#pg=list&amp;ls=vtd&amp;ob=rv" data-string="str:member_menu.visited">Visited</a>
+                                        <a id="Profile.blk" href="#pg=list&amp;ls=blk&amp;ob=rl" data-string="str:member_menu.blocklist">Blocklist</a>
+                                    </div>
+                                    <div id="SubMenu.Search" style="display:none">
+                                        <a id="Search.Simple" href="#pg=smp_srch" data-string="str:search">Search</a>
+                                        <a id="Search.wsr" href="#pg=list&amp;ls=wsr&amp;ob=ra" data-string="str:member_menu.wishers">Wishers</a>
+                                        <a id="Search.vtr" href="#pg=list&amp;ls=vtr&amp;ob=rv" data-string="str:member_menu.visitors">Visitors</a>
+                                        <a id="Search.nvr" href="#pg=list&amp;ls=nvr&amp;ob=rv" data-string="str:member_menu.new_visitors">New visitors</a>
+                                    </div>
+                                    <div id="SubMenu.QA" style="display:none">
+                                        <a id="QA.answers" href="#pg=qa" data-string="str:a.answer_lists">Answers</a>
+                                        <a id="QA.my_recent_questions" href="#pg=my_recent_questions" data-string="str:qa_menu.recent_questions">Recent questions</a>
+                                        <a id="QA.my_q_by_member" href="#" onclick="Req('my_q_by_member',function(){MyQByMember.openBrowser();});return false;" data-string="str:qa_menu.by_member">By member</a>
+                                        <a id="QA.questions" href="#pg=qa" onclick="Req('qa',function(){QA.openBrowser();});return false;" data-string="str:questions">Questions</a>
+                                    </div>
+                                    <div id="SubMenu.CPoints" style="display:none">
+                                        <a id="CP.report" href="#pg=cp_report" data-string="str:points_menu.info">Info</a>
+                                        <a id="CP.eula" href="#pg=cp_eula" data-string="str:points_menu.eula">Terms</a>
+                                        <a id="CP.buy" href="#pg=cp_buy" data-string="str:points_menu.buy">Buy</a>
+                                        <a id="CP.help" href="#pg=cp_help" data-string="str:points_menu.help">Help</a>
+                                    </div>
+                                    <div id="SubMenu.Mailbox" style="display:none">
+                                        <a id="Mailbox.inbox" href="#pg=kmail&amp;spg=inbox&amp;tags=1" data-string="str:member_menu.inbox">Inbox</a>
+                                        <a id="Mailbox.alerts" href="#pg=kmail&amp;spg=alerts&amp;tags=2" data-string="str:member_menu.alerts">Alerts</a>
+                                        <a id="Mailbox.sent" href="#pg=kmail&amp;spg=sent&amp;tags=3" data-string="str:member_menu.sent">Sent</a>
+                                        <a id="Mailbox.starred" href="#pg=kmail&amp;spg=starred&amp;tags=4" data-string="str:member_menu.starred">Starred</a>
+                                        <a id="Mailbox.saved" href="#pg=kmail&amp;spg=saved&amp;tags=5" data-string="str:member_menu.saved">Saved</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div id="GuestMenu" style="display:none">
+                    <form onsubmit="RSCR('IMem',function(){IMem.loginSubmit();});return false;" id="LoginForm" name="login" autocomplete="off">
+                        <div><span data-string="str:login.login_name">Login name</span>&nbsp;<input type="text" name="lname" id="lname" autocomplete="off"/></div>&nbsp;
+                        <div><span data-string="str:login.password">Password</span>&nbsp;<input type="password" name="pw" id="pw" autocomplete="off"/></div>&nbsp;
+                        <div><input type="submit" class="button" style="margin:0px;padding:1px 3px" value="" data-string="str:login.submit" data-string-attr="value"/></div>&nbsp;
+                        <div class="href" onclick="PgNav.open('forgot');return false;" data-string="str:login.forgot_pass">Forgot?</div>
+                    </form>
+                    <div id="GuestCommandsLine">
+                        <a id="GuestMenu.register" href="#pg=register" data-string="str:main_menu.register">Register</a> |
+                        <a id="GuestMenu.search" href="#pg=smp_srch" data-string="str:search">Search</a> |
+                        <a id="GuestMenu.qa" href="#pg=qa" data-string="str:QandA">Q&amp;A</a>
+                    </div>
+                </div>
+
+                <div id="Slogan">
+                    <a href="#" onclick="_SH('DebugFrame');return false;" data-string="str:brief">Brief</a>
+                </div>
+
+                <div id="MatchingTimer" class="small abs_right" onclick="PgNav.open('matching')"></div>
+            </div>
+
+            <div id="Contents"><div class="progress"></div></div>
+
+            <div id="Footer">
+                <div>
+                    <a href="#pg=home" data-string="str:main_menu.home">Home</a>
+                    | <a href="#pg=contact" data-string="str:footer.contact_us">Contact us</a>
+                    | <a href="#" data-lang-switch="en" data-show-if="ar">English</a>
+                    <a href="#" data-lang-switch="ar" data-show-if="en">عربي</a>
+                </div>
+                <div data-string="str:copyright">&copy; Kobool</div>
+            </div>
+        </div>
+    </center>
+
+    <div id="DebugFrame" style="display:none;position:fixed;bottom:0px;height:240px;width:100%;background-color:#F0F0F0">
+        <input type="button" value="hide" onclick="DU.hide('DebugFrame')"/>
+        <pre id="Debug"></pre>
+    </div>
+</body>
+</html>

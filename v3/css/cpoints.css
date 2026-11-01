@@ -1,0 +1,74 @@
+.cashu_logo{
+	background:url(/images/cashu_refill_cards.jpg) no-repeat center; 
+	height:100px;
+}
+.cr_cards_logo{
+	background:url(/images/cr_cards.gif) no-repeat center; 
+	height:100px;
+}
+.bank_tr_logo{
+	background-image: url(/images/bank_tr.gif); 
+	height:100px;
+}
+
+.vf_submit_success_response{
+	border:solid 4px silver;
+	padding:10px;
+	font-size:15pt;
+}
+.voda_card_logo{
+	background-image: url(/images/vodafone_cards.png); 
+	height:100px;
+}
+.vodafone_card_preview{
+	padding:10px;
+	text-align:center;
+}
+.vodafone_card{
+	width:286px;
+	height:224px;
+	background:url(/images/vodafone_card.jpg) no-repeat center;
+	position:relative;
+	direction:ltr;
+	border:solid 1px gray;
+}
+
+.vodafone_card_value{
+	position:absolute;
+	top:150px;
+	left:15px;
+	color:white;
+	font-weight:bold;
+	font-size:9pt;
+}
+
+.vodafone_card_number{
+	position:absolute;
+	top: 130px;
+	left: 65px;
+	font-weight:bold;
+	direction:ltr !important;
+}
+
+#PBP textarea{
+	width:400px;
+	height:40px;
+}
+
+
+#PBP .hmouse{
+	margin:2px;
+	padding:2px;
+}
+
+#PBP input[type=text]{
+	width:200px;
+}
+
+.point_info>*:nth-child(odd){
+	background-color: #F6F6F6;
+}
+.unused_point{
+	height:120px;
+	display: inline-block;
+}

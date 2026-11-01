@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<root>
+	<option value="0" name="" ></option>
+	<option value="1" name="Abo Redis" ></option>
+	<option value="2" name="Abo Zenebah" ></option>
+	<option value="3" name="Al-Toar" ></option>
+	<option value="5" name="Dahab" ></option>
+	<option value="9" name="Noweaba" ></option>
+	<option value="6" name="Ras Sidr" ></option>
+	<option value="7" name="Sharm El-Sheikh" ></option>
+	<option value="8" name="Taba" ></option>
+</root>

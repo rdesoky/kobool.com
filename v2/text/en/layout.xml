@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<kobool>KOBOOL</kobool>
+	<year>years</year>
+	<mailbox>Mailbox</mailbox>
+	<welcome>Welcome</welcome>
+	<member_menu>
+		<inbox>Inbox</inbox>
+		<sent>Sent</sent>
+		<starred>Starred</starred>
+		<saved>Saved</saved>
+		<trash>Trash</trash>
+		<alerts>Alerts</alerts>
+		<my_questions>My Questions</my_questions>
+		<privacy>Privacy</privacy>
+		<payments>Financials</payments>
+		<title>Member Sections</title>
+		<mypage>Profile</mypage>
+		<edit>Update</edit>
+		<edit_info>Information</edit_info>
+		<edit_attr>Attributes</edit_attr>
+		<edit_text>Free Text</edit_text>
+		<edit_pics>Photos</edit_pics>
+		<wishlist>My accepted</wishlist>
+		<wishers>Acceptors</wishers>
+		<watchlist>Bookmarks</watchlist>
+		<blocklist>Blocked</blocklist>
+		<logout>Logout</logout>
+		<unregister>Stop membership</unregister>
+		<activate>Activate</activate>
+		<password>Password</password>
+		<email>E-mail</email>
+		<contact_cards>Contact points</contact_cards>
+		<pmo>Postal Money Orders</pmo>
+		<bank_tr>Bank transfer</bank_tr>
+		<manage_cards>My Balance</manage_cards>
+		<visitors>Visitors</visitors>
+		<visited>Visited</visited>
+		<new_visitors>New visitors</new_visitors>
+	</member_menu>
+	<mate_menu>
+		<contact>Contact</contact>
+		<decline>Decline</decline>
+	</mate_menu>
+	<mission>The modern way to find your future mate</mission>
+	<search_list>Quick Search List</search_list>
+	<select>Please select</select>
+	<save_search>Add Current Search to Quick Search List</save_search>
+	<view_type>View Type</view_type>
+	<clear_filters>Remove all filters</clear_filters>
+	<ru_sure>Are you sure?</ru_sure>
+	<mail2friend>Email current search to a friend</mail2friend>
+	<refine>Refine</refine>
+	<full_results>Show results</full_results>
+	<group_by>Group By</group_by>
+	<group>Group</group>
+	<show_report>show report</show_report>
+	<close_report>close report</close_report>
+	<show_blocked>show blocked</show_blocked>
+	<active_search>active search</active_search>
+	<search_group>search this group</search_group>
+	<self_filters>Personal</self_filters>
+	<filters>
+		<personal><![CDATA[<i>Personal</i>]]></personal>
+		<g>Gender</g>
+		<ag>Age</ag>
+		<c>Location</c>
+		<o>Origin</o>
+		<st>Location</st>
+		<ci>Location</ci>
+		<ms>Marital Status</ms>
+		<ht>Height</ht>
+		<wt>Weight</wt>
+		<ch>Children</ch>
+		<jb>Job</jb>
+		<nc>Annual Income</nc>
+		<la>Language</la>
+		<rc>Race</rc>
+		<ed>Education</ed>
+		<sm>Smoking</sm>
+		<re>Religion</re>
+		<ds>Disabilities</ds>
+		<dt>Dress</dt>
+		<sh>Shape</sh>
+		<fc>Attraction</fc>
+		<dst>Neighborhood</dst>
+		<po>Polygamy</po>
+	</filters>
+	<active_members_no>Members Count</active_members_no>
+	<active_members>Active Members</active_members>
+	<feedback_help>Your personal memo will appear only to you in the results pages. Kobool moderators will not review those comments. The only purpose for personal comments is to remind you with your impression to whom you visit.</feedback_help>
+	<feedback_link>Write personal memo on this member</feedback_link>
+	<religion>religion</religion>
+	<rank>rank</rank>
+	<main_menu>
+		<search_questions><![CDATA[Questions & Answers]]></search_questions>
+		<press>Press Coverage</press>
+		<title>Main Sections</title>
+		<home>Home</home>
+		<search><![CDATA[Search & Browse]]></search>
+		<login>Login</login>
+		<register>Join</register>
+		<options>Preferences</options>
+		<stats>Site statistics</stats>
+	</main_menu>
+	<search_menu>
+		<simple>Simple</simple>
+		<advanced>Advanced</advanced>
+		<saved>My searches</saved>
+		<drill>Groups</drill>
+	</search_menu>
+	<qa_menu>
+		<all>All Answers</all>
+		<recent>Recent Answers</recent>
+		<by_member>By Member</by_member>
+		<recent_questions>Relevant Answers</recent_questions>
+	</qa_menu>
+	<help_menu>
+		<matching>Acceptance Matching</matching>
+		<search_tips>Search Tips</search_tips>
+		<visitation>Visitation</visitation>
+	</help_menu>
+	<points_menu>
+		<buy>Buy Now</buy>
+		<title>Contact Points</title>
+		<info>Report</info>
+		<eula><![CDATA[Terms & Conditions]]></eula>
+		<help>Help</help>
+	</points_menu>
+	<delete_item>Remove</delete_item>
+	<header><![CDATA[
+		<table style="" >
+		<tr style="color:gray">
+			<td style="padding-top:25px">Searching ::
+				</td><td style="padding-top:20px;">Asking ::
+					</td><td style="padding-top:15px;">Accepting ::
+						</td><td style="padding-top:10px;">Matching ::
+							</td><td style="padding-top:5px;">Aquaintance ::
+								</td><td style="padding-top:0px;">Marriage ...
+									</td>
+		</tr>
+		</table>
+	
+	]]></header>
+	<make_gift>Gift Points</make_gift>
+	<login>
+		<login_required>This feature is available only for Kobool members, you need to login to continue.</login_required>
+		<page_title>Existing Members Login</page_title>
+		<form_title>Existing Members Login Form</form_title>
+		<login_name>Login name</login_name>
+		<password>Password</password>
+		<login_notify>You have been logged in as member (%m%)</login_notify>
+		<submit>Login</submit>
+		<forgot>Forgot Password?</forgot>
+		<forgot_pass><![CDATA[Forgot?]]></forgot_pass>
+		<new_member>Not a member yet? Click here to join for free.</new_member>
+		<auto>Auto Login</auto>
+	</login>
+	<photos_first>pics first</photos_first>
+	<advanced_search>Search in Groups</advanced_search>
+	<simple>Simple</simple>
+	<wife>wife</wife>
+	<husband>husband</husband>
+	<cpanel>Control</cpanel>
+	<promot>Promote</promot>
+	<demote>Demote</demote>
+	<bookmark>Bookmark</bookmark>
+	<vodafone_title>Buy Contact Points via Vodafone Cash</vodafone_title>
+	<buy_now_title>Contact Points purchase methods</buy_now_title>
+	<cr_cards_title>Buy Contact Points via Credit Card</cr_cards_title>
+	<cashu_title>Buy Contct Points via CashU card</cashu_title>
+	<pmo_title>Buy Contct Points via Postal Money Order</pmo_title>
+	<onecard_title>Buy Contct Points via OneCard</onecard_title>
+	<bank_tr_title>Buy Contct Points via bank transfer</bank_tr_title>
+	<wunion_title>Buy Contct Points via Wester Union</wunion_title>
+	<show_keyboards>Show Arabic Keyboards</show_keyboards>
+	<show_all_questions>Show All Questions</show_all_questions>
+	<login_id>Login Name</login_id>
+	<asked_questions>Questions</asked_questions>
+	<AskedMembersList>Members whom you asked questions</AskedMembersList>
+	<total_answers>All Answers</total_answers>
+	<pos_questions>Postponed</pos_questions>
+	<search_answers>Search within answers:</search_answers>
+	<edit_text>Edit your profile's free text</edit_text>
+	<mycards>List of Contact Points you purchased</mycards>
+	<no_answers><![CDATA[Nothing found ( it could be under review or member is inactive )]]></no_answers>
+	<NewQuestions>new questions</NewQuestions>
+	<Ask>Ask</Ask>
+	<any_status>-- any status --</any_status>
+	<all_languages>-- كل اللغات --</all_languages>
+	<change>تعديل</change>
+	<recent_answers>Recent Answers to you</recent_answers>
+	<recent_questions>My Recent Questions</recent_questions>
+	<member_answers>Member Answers</member_answers>
+	<question_text>Question Text</question_text>
+	<answer_count>Answers</answer_count>
+	<ask_count>Asked</ask_count>
+	<blank><![CDATA[&nbsp;]]></blank>
+	<least_visited_back>New Visitors</least_visited_back>
+	<last_visited>My Visits</last_visited>
+	<QandA><![CDATA[Answers]]></QandA>
+	<MyKobool>Profile</MyKobool>
+	<Visitation>Visitation</Visitation>
+	<all_ages>-- all ages --</all_ages>
+	<all_countries>-- all countries --</all_countries>
+	<other_language>عربي</other_language>
+	<confirm_switch_lang>Would you like to change the interface language?</confirm_switch_lang>
+	<featured_members><![CDATA[
+		Featured Members
+	]]></featured_members>
+	<accept>accept</accept>
+	<save>Save</save>
+	<help>Help</help>
+	<you>you</you>
+	<select_msg_type>Message Options</select_msg_type>
+	<predefined_msg>Predefined</predefined_msg>
+	<predefined_msgs>Predefined Messages set by Kobool</predefined_msgs>
+	<typed_text_msg>Written</typed_text_msg>
+	<date_purchased>Purchase Date</date_purchased>
+	<channel>Channel</channel>
+	<price>Price</price>
+	<currency>Currency</currency>
+	<date_used>Date Used</date_used>
+	<user>Usage</user>
+	<no_wishers_found><![CDATA[
+		No Members found<p>
+		There could be others who have accepted you but chose not to show their acceptance, 
+		or they are currently matched with other members.
+	]]></no_wishers_found>
+	<no_records_found><![CDATA[
+		No Records found.
+		<div mClass="JCVisible" style="text-align:left;width:200px;color:black;font-size:12px;font-weight:normal">
+			&nbsp;
+			<div mClass="JCHotText" mMouseInit="1" onclick="OnEditActiveFilter()" 
+			style='background:white;border:solid 1px silver;vertical-align:top;cursor:hand;height:20px;'>
+			<img src="images/search_minus.gif">
+			Remove Filters
+			</div>
+		</div>
+	]]></no_records_found>
+	<no_groups><![CDATA[
+		No groups found.
+		<div style="text-align:left;width:200px;color:black;font-size:12px;font-weight:normal">
+			&nbsp;
+			<div mClass=JCHotText mMouseInit="1" onclick="OnClickTopFilters('summary')" 
+			style='background:white;border:solid 1px silver;vertical-align:top;cursor:hand;height:20px;'>
+			<img src="images/search_plus.gif">
+			Select other groups
+			</div>
+			&nbsp;
+			<div mClass=JCHotText mMouseInit="1" onclick="OnEditActiveFilter()" 
+			style='background:white;border:solid 1px silver;vertical-align:top;cursor:hand;height:20px;'>
+			<img src="images/search_minus.gif">
+			Remove Filters
+			</div>
+		</div>
+	]]></no_groups>
+	<buy_now>Buy Now</buy_now>
+	<pay_now>Pay Now</pay_now>
+	<copy2clipboard>Copy to Clipboard</copy2clipboard>
+	<email>Send it via Email</email>
+	<list>List</list>
+	<results>Results</results>
+	<original>Original</original>
+	<no_visits>No Visits Recorded</no_visits>
+	<visited_you>Visited You</visited_you>
+	<your_visits>My Visits</your_visits>
+	<last_visit>Last Visit</last_visit>
+	<why>Why?</why>
+	<ur_ad_here>Your Ad Here</ur_ad_here>
+	<most_visitors>Most Visits </most_visitors>
+	<recent_visitors>Recent Visitors </recent_visitors>
+	<recent_login>Recent Login</recent_login>
+	<recent_members>Recent Members</recent_members>
+	<no_title>(untitled)</no_title>
+	<not_approved>(under review)</not_approved>
+	<answer>answer</answer>
+	<answers>Answers</answers>
+	<question>Question</question>
+	<questions>Questions</questions>
+	<browse_questions>Browse Questions</browse_questions>
+	<search_www>Search the Internet</search_www>
+	<ads>Advertisements</ads>
+	<color_code>color code</color_code>
+	<under_construction>Under Constructions</under_construction>
+	<date_matched>Matching Date</date_matched>
+	<date_declined>Decline Date</date_declined>
+	<msgs>Messages</msgs>
+	<search>Search</search>
+	<muslim_web>Muslim WEB</muslim_web>
+	<go_to>go to</go_to>
+	<go>go</go>
+	<open>open</open>
+	<moveto>move to</moveto>
+	<select_page>Select Page</select_page>
+	<browse>Browse</browse>
+	<std_view>view details</std_view>
+	<tn_view>view gallery</tn_view>
+	<window_title>Kobool</window_title>
+	<title>Kobool - The first step to marriage</title>
+	<slogan><![CDATA[<MARQUEE LOOP="1">And among His Signs is this, that He created for you mates from among yourselves, that ye may dwell in tranquillity with them, and He has put love and mercy between your hearts: verily in that are Signs for those who reflect. ALNOOR(21)</MARGQUEE>]]></slogan>
+	<TTM>Next Matching after</TTM>
+	<after>after</after>
+	<brief>The first step to marriage</brief>
+	<day>day</day>
+	<two_days>2 days</two_days>
+	<days>days</days>
+	<hour>hour</hour>
+	<hours>hours</hours>
+	<within>within</within>
+	<week>week</week>
+	<two_weeks>2 weeks</two_weeks>
+	<weeks>weeks</weeks>
+	<month>month</month>
+	<two_months>2 months</two_months>
+	<months>months</months>
+	<time_to_matchbot>%h1%Acceptance Matching%h0%</time_to_matchbot>
+	<matching_schedule>Done once a day</matching_schedule>
+	<inactive_member>Inactive Member</inactive_member>
+	<more>more...</more>
+	<edit>Update</edit>
+	<qsearch>Search For</qsearch>
+	<who_are_we>من نحن؟</who_are_we>
+	<contact_us>contact us</contact_us>
+	<privacy>privacy policy</privacy>
+	<feedback>feedback</feedback>
+	<report_bug>report bugs</report_bug>
+	<lang_menu>language</lang_menu>
+	<visitor>Welcome Visitor</visitor>
+	<add_wish>Acceptance</add_wish>
+	<is_accepted>Acceptance?</is_accepted>
+	<delete_bookmark>delete bookmark</delete_bookmark>
+	<submit>Submit</submit>
+	<reset>Reset</reset>
+	<visitors>Visitors</visitors>
+	<visits>Visits</visits>
+	<wishers>Accepted</wishers>
+	<watchers>Bookmarks</watchers>
+	<declines>Declines</declines>
+	<avrg_rank>Ranked</avrg_rank>
+	<refresh>Refresh</refresh>
+	<close>Close</close>
+	<ok>OK</ok>
+	<yes>Yes</yes>
+	<no>No</no>
+	<decline>Decline</decline>
+	<cancel>Cancel</cancel>
+	<first>|&lt;</first>
+	<last>&gt;|</last>
+	<of>of</of>
+	<page>page</page>
+	<member>member</member>
+	<total>total</total>
+	<back_to_results>Search Results</back_to_results>
+	<search_results>Search Results</search_results>
+	<remove>Remove</remove>
+	<default_picture>Set Default</default_picture>
+	<welcome>Welcome</welcome>
+	<thanks>Thank You</thanks>
+	<copyright><![CDATA[ 
+		&copy; Copyright 2004-2011 KOBOOL.COM, All rights reserved.
+	]]></copyright>
+	<your_match>You and %u% have mutual acceptance</your_match>
+	<lname>Nick</lname>
+	<age>Age</age>
+	<country>Location</country>
+	<origin>Origin</origin>
+	<date_added>Date Added</date_added>
+	<sponsors>Site Sponsors</sponsors>
+	<credits>The Site is Developed by</credits>
+	<loading>Loading... please wait</loading>
+	<searching>Searching... please wait</searching>
+	<footer>
+		<who>Who we are</who>
+		<contact_us>Contact us	</contact_us>
+		<tell>Tell a friend</tell>
+		<feedback>Feedback</feedback>
+	</footer>
+</root>

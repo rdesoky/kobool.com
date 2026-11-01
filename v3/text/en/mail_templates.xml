@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xi="http://www.w3.org/2001/XInclude">
+	<blank>
+		<html>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</blank>
+	<daily_visitors>
+		<html>
+			<title>$V{lname}, your Kobool page has been visited</title>
+			<body><![CDATA[
+				<style>
+					.km_logo{cursor:pointer}
+					.km_mem_view {clear:both;}
+					.km_mem_view a{font-weight:bold;}
+					.km_mem_view img{float:left;cursor:pointer;margin:10px;}
+					.km_ad_title, .km_lname a{font-weight:bold}
+					.km_self_desc{color:maroon}
+					.km_footer{clear:both}
+					.km_footer a{font-weight:bold}
+				</style>
+				<p><img onclick="window.open('http://www.kobool.com/','_blank')" class="km_logo" src="http://www.kobool.com/images/hdr_logo_en.png" /></p>
+				<p>Hi $V{lname},</p>
+				<p>$V{total} members have visited your page on Kobool in the last 24 hours.</p>
+				<p>Here are some of the visitors:</p>
+			
+				<div class="km_mem_view" style="display:$V{vdisp_1}">
+					<img onclick="window.open('http://www.kobool.com/#pg=mem&mem=$V{vid_1}','_blank')" src="http://www.kobool.com/cgi-bin/kpic.pl?id=$V{vpic_1}&g=$V{vgender}&pub=1"/>
+					<p class="km_lname"><a href="http://www.kobool.com/#pg=mem&mem=$V{vid_1}" target="_blank">$V{vname_1}</a></p>
+					<p class="km_ad_title">$V{vtitle_1}</p>
+					<p class="km_info">$V{vage_1} - $V{vcountry_1}</p>
+					<p class="km_self_desc">$V{vself_1}</p>
+				</div>
+
+				<div class="km_mem_view" style="display:$V{vdisp_2}">
+					<img onclick="window.open('http://www.kobool.com/#pg=mem&mem=$V{vid_2}','_blank')" src="http://www.kobool.com/cgi-bin/kpic.pl?id=$V{vpic_2}&g=$V{vgender}&pub=1"/>
+					<p class="km_lname"><a href="http://www.kobool.com/#pg=mem&mem=$V{vid_2}" target="_blank">$V{vname_2}</a></p>
+					<p class="km_ad_title">$V{vtitle_2}</p>
+					<p class="km_info">$V{vage_2} - $V{vcountry_2}</p>
+					<p class="km_self_desc">$V{vself_2}</p>
+				</div>
+			
+				<p class="km_footer">
+					Have our best wishes,<br/>
+					<a href="http://www.kobool.com/" target="_blank">Kobool.com</a>
+				</p>
+			]]></body>
+		</html>
+	</daily_visitors>
+	<free>
+		<html>
+			<title><![CDATA[$V{title}]]></title>
+			<body><![CDATA[$V{body}]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[$V{title}]]></title>
+			<body><![CDATA[$V{body}]]></body>
+		</txt>
+	</free>
+	<login_reminder>
+		<html>
+			<title><![CDATA[KOBOOL: Login reminder for $V{lname}]]></title>
+			<body><![CDATA[
+				<div style="direction:ltr">
+					Upon your request to remind you with your KOBOOL login information on: $V{date},<br/>
+					Here is the :<br/>
+					<table>
+					<tr>
+						<td>Login Name:</td><td><b>$V{lname}</b></td>
+					</tr>
+					<tr>
+						<td>Password:</td><td><b>$V{passw}</b></td>
+					</tr>
+					</table>
+					Have our best wishes,<br/>
+					<a href="http://www.kobool.com">KOBOOL.com</a> team.
+				</div>
+			]]></body>
+		</html>
+		<txt>
+			<body><![CDATA[]]></body>
+			<title><![CDATA[]]></title>
+		</txt>
+	</login_reminder>
+	<matched>
+		<html>
+			<title><![CDATA[KOBOOL has great news for: $V{lname}]]></title>
+			<body><![CDATA[
+				<div style="font-size:14px;font-face:Tahoma">
+					<p>Dear $V{lname}</p>
+					<p>KOBOOL is pleased to inform you that the Electronic Matching Operation that was done on $V{date} found that you and $V{mate} have Primary Mutual Acceptance.<br/>
+						That is because each of you added the other to his/her Acceptance List.
+					</p>
+
+					<p>A similar message has been sent to $V{mate} containing the same news.</p>
+
+					<p>To start contacting with $V{mate}, login to your KOBOOL account and a communication page will be opened to send and recieve messages.
+					</p>
+					<p>
+						Both you and $V{mate} will be excluded from the next Electornic Matching 
+						unless one of you declines from proceeding with marriage relationship 
+						via the "Decline" form that is currently available for both of you to use if things didn't work out between you two.
+					</p>
+					<p>
+						Important Note: KOBOOL notification message might not reach $V{mate} for any reason. <br/>
+						Also, $V{mate} might be out of town or away from his computer for sometime.<br/>
+						That could cause your match to not respond to your messages for a while.
+					</p>
+					<p style="color:brown">
+						Hence, we advice you to have patience and not to rush the progress of your relationship with $V{mate}.
+					</p>
+
+					<p>
+						We would like to mention again that the Matching Operation does not match couples 
+						unless both of them have previously accepted each others, 
+						and it takes in consideration the rankings and Acceptance dates for the matched couples, <br/>
+						so that the outcome would be fair for all members.
+					</p>
+
+					<p>At the end, have our best wishes.</p>
+
+					<p>KOBOOL.com team.
+					</p>
+			]]></body>
+		</html>
+		<txt>
+			<body><![CDATA[]]></body>
+			<title><![CDATA[]]></title>
+		</txt>
+	</matched>
+	<stop_membership>
+		<html>
+			<title><![CDATA[KOBOOL - Membership Deactivation for: $V{lname}]]></title>
+			<body><![CDATA[
+				<P>Dear <b>$V{lname}</b>,</P>
+				<div>Your KOBOOL membership was deactivated upon your request on: $V{date}</div>
+				<P>Have our best wishes<br/>
+					KOBOOL.com team.
+				</P>
+			]]></body>
+		</html>
+		<txt>
+			<body><![CDATA[]]></body>
+			<title><![CDATA[]]></title>
+		</txt>
+	</stop_membership>
+	<activate_membership>
+		<html>
+			<title><![CDATA[KOBOOL - Membership Activation for: $V{lname}]]></title>
+			<body><![CDATA[
+				<P>Dear <b>$V{lname}</b>,</P>
+				<div>Your KOBOOL membership has been activated upon your request on: $V{date}</div>
+				<P>Have our best wishes<br/>
+					KOBOOL.com team.
+				</P>
+			]]></body>
+		</html>
+		<txt>
+			<body><![CDATA[]]></body>
+			<title><![CDATA[]]></title>
+		</txt>
+	</activate_membership>
+	<vf_points_receipt>
+		<html>
+			<title><![CDATA[KOBOOL - request to buy Contact Points: #$V{invoice}]]></title>
+			<body><![CDATA[
+				<div style="direction:rtl;font-size:14px;font-family:Tahoma">
+					A request to buy KOBOOL points via Vodafone Egypt prepaid card was sent on: $V{date} GMT
+					<hr/>
+					Reference Number: $V{invoice}
+					<hr/>
+					Card Number: <span style="font-size:14px;font-weight:bold;text-align:left">$V{card_number}</span><br/>
+					Card Value: $V{amount} EGP<br/>&nbsp;
+					<div style="background:#FFFFCC;border-top:solid 1px orange;font-size:11px;padding:4px">
+						<b>Note:</b> The points are added manually and could take minutes or couple of hours, depends on purchase time.<br/>
+						Hence, we ask you to have some patience until we add the points.<br/>
+						You should recieve a notification email as soon as we add the points to your account.
+					</div>
+					<hr/>
+					Active Member Number: $V{buyer_number}<br/>
+					Login Name: <a target="_blank" href="http://www.kobool.com/#pg=mem&mem=$V{buyer_number}">$V{buyer_name} </a>
+					<hr/>
+					Beneficiary Member Number: $V{user_number}<br/>
+					Login Name: <a target="_blank" href="http://www.kobool.com/#pg=mem&mem=$V{user_number}">$V{user_name} </a>
+					<hr/>
+					Buyer notes:<br/>
+					$V{notes}
+				</div>
+			]]></body>
+		</html>
+		<txt>
+			<body><![CDATA[]]></body>
+			<title><![CDATA[]]></title>
+		</txt>
+	</vf_points_receipt>
+	<used_vf_card>
+		<html>
+			<title><![CDATA[رفض طلب شراء نقاط قبول $V{invoice}]]></title>
+			<body><![CDATA[
+				<div style="direction:rtl;font-size:14pt">
+					<div>السلام عليكم $V{buyer_name},</div>
+					<div>كارت فودافون المرسل بتاريخ:</div>
+					<div>$V{date_created}</div>
+					<div>ورقمه:</div>
+					<div style="font-size:20pt;color:maroon">$V{card_num}</div>
+					<div>لم يتم قبوله وذلك لأن الكارت مستعمل.</div>
+					<div>قد تكون قمت بشحن تليفونك الخاص بهذا الكارت بعد ارساله, بغرض التجربة أو لإعتقادك أن ذلك صحيحا.</div>
+					<div>ولكن هذا يجعل الكارت بدون قيمة.</div>
+					
+					<div style="color:maroon">برجاء عدم ارسال كروت مستعملة في المستقبل لأن تكرار ذلك قد يؤدي الى إلغاء عضويتك بالموقع.</div>
+
+					<p style="background-color:#FFFFCC;color:green;">$V{admin_note}</p>	
+
+					<div>مع أطيب التمنيات,</div>
+					<div>موقع قبول</div>
+				</div>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[رفض طلب شراء نقاط قبول $V{invoice}]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</used_vf_card>
+	<bad_vf_card>
+		<html>
+			<title><![CDATA[رفض طلب شراء نقاط قبول $V{invoice}]]></title>
+			<body><![CDATA[
+				<div style="direction:rtl;font-size:14pt">
+					<div>السلام عليكم $V{buyer_name},</div>
+					<div>كارت فودافون المرسل بتاريخ:</div>
+					<div>$V{date_created}</div>
+					<div>ورقمه:</div>
+					<div style="font-size:20pt;color:maroon">$V{card_num}</div>
+					<div>لم يتم قبوله وذلك لأن رقم الكارت غير صحيح</div>
+					<div>قد تكون أخطأت في نقل رقم الكارت أثناء كتابته في صفحة الشراء.</div>
+					<div>برجاء التأكد من رقم الكارت وإعادة إرساله مرة أخرى من خلال صفحة الشراء بالموقع.</div>
+
+					<p style="background-color:#FFFFCC;color:green;">$V{admin_note}</p>
+
+					<div style="color:maroon">برجاء عدم ارسال أرقام كروت غير صحيحة في المستقبل لأن تكرار ذلك قد يؤدي الى إلغاء عضويتك بالموقع.</div>
+					<div>مع أطيب التمنيات,</div>
+					<div>موقع قبول</div>
+				</div>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[رفض طلب شراء نقاط قبول $V{invoice}]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</bad_vf_card>
+	<low_vf_card>
+		<html>
+			<title><![CDATA[رفض طلب شراء نقاط قبول $V{invoice}]]></title>
+			<body><![CDATA[
+				<div style="direction:rtl;font-size:14pt">
+					<div>السلام عليكم $V{buyer_name},</div>
+					<div>كارت فودافون المرسل بتاريخ:</div>
+					<div>${date_created}</div>
+					<div>ورقمه:</div>
+					<div style="font-size:20pt;color:maroon">$V{card_num}</div>
+					<div>لم يتم قبوله وذلك لأن قيمة الكارت أقل من ثمن نقطة الإتصال.</div>
+					<div>سيتم حساب قيمة هذا الكارت اذا قمت بارسال كروت أخرى لتكملة ثمن نقاط الإتصال.</div>
+
+					<p style="background-color:#FFFFCC;color:green;">$V{admin_note}</p>
+
+					<div>مع أطيب التمنيات,</div>
+					<div>موقع قبول</div>
+				</div>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</low_vf_card>
+	<kpoint_added>
+		<html>
+			<title><![CDATA[تم إضافة $V{count} نقطة إتصال الى حسابك في قبول]]></title>
+			<body><![CDATA[
+				<div dir="rtl" style="FONT-SIZE:14px;font-family:Tahoma">
+					<div>السلام عليكم يا <b>$V{login_id} </b>,</div>
+					<div>وصلتنا حوالتك النقدية وتم إضافة $V{count} نقطة إتصال في حسابك بموقع قبول.</div>
+					<div>ستجد النقاط الجديدة في قائمة نقاط الإتصال الغير مستخدمة في صفحة "نقاط الإتصال"</div>
+					<div>لتفعيل الإتصال المكتوب عليك الضغط على زر "استخدم هذه النقطة" الموجود في خانة "الإستخدام"</div>
+					<div>&nbsp;</div>
+					<p style="background-color:#FFFFCC;color:green;">$V{admin_note}</p>			
+					<div>&nbsp;</div>
+					<div>مع أطيب التمنيات</div>
+					<div>موقع قبول</div>
+				</div>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[]]></body>
+		</txt>
+	</kpoint_added>
+	<welcome>
+		<html>
+			<title><![CDATA[Kobool welcomes $V{lname}]]></title>
+			<body><![CDATA[
+				<div style="font-size:14px;font-face:Tahoma">
+					<div>Dear <b>$V{lname}</b>,</div>
+					&nbsp;
+					<div>KOBOOL welcomes you as a new member.</div>
+					&nbsp;
+					<div>Your Login Name is: "<font color="red">$V{lname}</font>"</div>
+					<div>Your Password is: "<font color="red">$V{pw}</font>"</div>
+					&nbsp;
+					<div>Have our best wishes and good luck in finding your future mate,</div>
+					<div>KOBOOL Team</div>
+
+					&nbsp;
+					<div style="font-size:9px;text-align:center">
+						This is an automatic message. Please don't reply to it as it will not reach us. 
+						To contact Kobool use this address: 
+						<a href="http://www.kobool.com/?#pg=contact">
+						http://www.kobool.com/?contact.htm
+						</a>
+					</div>
+					<div style="font-size:11px;color:brown">
+						<div style="background:silver;font-size:5px">&nbsp;</div>
+						<div style="font-size:5px">&nbsp;</div>
+						<div>
+						If you know others who may benefit from this service, please use this link  
+						(<A href="http://www.kobool.com/#pg=tell" target="_blank">http://www.kobool.com/#pg=tell</A>) 
+						to tell them about Kobool as it might help them find their soul mate and you will be rewarded ISA.
+						</div>
+					</div>
+
+				</div>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[Kobool welcomes $V{lname}]]></title>
+			<body><![CDATA[
+					Dear $V{lname},
+
+					KOBOOL welcomes you as a new member.
+
+					Your Login Name is: "$V{lname}"
+					Your Password is: "$V{pw}"
+					
+					Have our best wishes and good luck in finding your future mate,
+					KOBOOL Team
+			]]></body>
+		</txt>
+	</welcome>
+	<you_declined>
+		<html>
+			<title><![CDATA[KOBOOL is sorry for failure]]></title>
+			<body><![CDATA[
+				<P>Dear <b>$V{lname}</b>,</P>
+				<p>Your decline from pursuing a marriage relationship with $V{mate} was submitted on: $V{date}</p>
+
+				<div>Have our best wishes</div>
+				<div>KOBOOL.com team</div>
+		]]></body>
+		</html>
+		<txt>
+			<body><![CDATA[]]></body>
+			<title><![CDATA[]]></title>
+		</txt>
+	</you_declined>
+	<your_match_declined>
+		<html>
+			<title><![CDATA[KOBOOL is sorry for failure]]></title>
+			<body><![CDATA[
+				<P>Dear <b>$V{lname}</b>,
+				</P>
+				<p>
+					KOBOOL is sorry to tell you that $V{mate} has declined from pursuing a marriage relationship with you.
+				</p>
+
+				<div>The following is the final message from that person to you:</div>
+				&nbsp;
+				<div style="border:solid 1px silver;color:brown">$V{msg}</div>
+				&nbsp;
+				<div>Have our best wishes.</div>
+				<div>KOBOOL.com team.</div>
+			]]></body>
+		</html>
+		<txt>
+			<body><![CDATA[]]></body>
+			<title><![CDATA[]]></title>
+		</txt>
+	</your_match_declined>
+	<chg_pass>
+		<html>
+			<title><![CDATA[Kobool Account Password changed]]></title>
+			<body><![CDATA[
+				<div>Dear <b>$V{lname}</b>,</div>
+				&nbsp;
+				<div>Your account password has been changed to $V{pw}.</div>
+				&nbsp;
+				<div>Have our best wishes,</div>
+				<div>kobool.com</div>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[Kobool Account Password changed]]></title>
+			<body><![CDATA[
+				Dear $V{lname},
+				
+				Your account password has been changed to $V{pw}.
+
+				Have our best wishes,
+				kobool.com
+			]]></body>
+		</txt>
+	</chg_pass>
+	<chg_email>
+		<html>
+			<title><![CDATA[Kobool Account Email address changed]]></title>
+			<body><![CDATA[
+				<p>Dear <b>$V{lname}</b>,</p>
+				<p>Your account email address has been changed to $V{email}.</p>
+				<p>Have our best wishes,<br/>
+				kobool.com</p>
+			]]></body>
+		</html>
+		<txt>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[
+				Dear $V{lname},
+				
+				Your account email address has been changed to $V{email}.
+
+				Have our best wishes,
+				kobool.com
+			]]></body>
+		</txt>
+	</chg_email>
+	<friendx_1_1>
+		<html>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[
+			]]></body>
+		</html>
+		<text>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[
+			]]></body>
+		</text>
+	</friendx_1_1>
+	<friendx_1_2>
+		<html>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[
+			]]></body>
+		</html>
+		<text>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[
+			]]></body>
+		</text>
+	</friendx_1_2>
+	<friendx_1_3>
+		<html>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[
+			]]></body>
+		</html>
+		<text>
+			<title><![CDATA[]]></title>
+			<body><![CDATA[
+			]]></body>
+		</text>
+	</friendx_1_3>
+</root>

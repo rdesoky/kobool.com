@@ -1,0 +1,8 @@
+
+.submenu_line, .header_line{
+	background-color:LightSteelBlue;
+}
+
+#Menu .ctab:hover{
+	background-color:AliceBlue !important;
+}

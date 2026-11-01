@@ -1,0 +1,551 @@
+<div class="Templates">
+
+    <div id="CommonControls">
+        <div class="list_ordinal" data-exists-if="(? $d.ordinal>0 ?)" data-js-attr="innerHTML"><span>{{ordinal}}</span></div>
+
+        <ul id="MemberStats" class="menu popup_list">
+            <li data-exists-if="(?SSN.questions?)"><a href="#pg=mem&amp;&amp;mtab=TNewQ" data-js-attr="innerHTML"><span data-string="str:m.questions"></span> ({{questions}})</a></li>
+            <li data-exists-if="(?SSN.visitors?)"><a href="#pg=list&amp;ls=vtr&amp;ob=rv" data-js-attr="innerHTML"><span data-string="str:m.visitors"></span> ({{visitors}})</a></li>
+            <li data-exists-if="(?SSN.wishers?)"><a href="#pg=list&amp;ls=wsr&amp;ob=ra" tip="help:tips.wishers" data-js-attr="innerHTML"><span data-string="str:m.wishers"></span> ({{wishers}})</a></li>
+            <li data-exists-if="(?SSN.declines?)"><a id="Stats.Declines" href="#pg=declines" data-js-attr="innerHTML"><span data-string="str:m.declines"></span> ({{declines}})</a></li>
+            <li><a data-on-click="require('kui').onBtnLogout()"><span data-string="str:a.logout"></span></a></li>
+        </ul>
+
+        <div class="points_indicator">
+            <div data-exists-if="(? $d.new_cards>0 ?)"
+                 class="cimg box12 absolute abs_left new_points_icon"
+                 tip="help:tips.has_new_cards"
+                    ></div>
+            <div data-exists-if="(? ( $d.purchased>0 && $d.new_cards==0 ) ?)"
+                 class="cimg box12 absolute abs_left old_points_icon"
+                 tip="help:tips.purchased_cards"
+                    ></div>
+        </div>
+
+        <div id="InActiveMsg" data-exists-if="(? SSN.activated!=1 ?)"><a href="#pg=acc_activate" data-string="str:a.inactive"></a></div>
+
+        <div class="profile_highlights" data-init="require('kui').initProfileHighlights"  data-exists-if="(? $d.activated==1 ?)"
+            ><a class="href icon pics_icon" data-exists-if="{{pics_count}}"
+                  data-js-attr="innerHTML"><span class="btn_title" data-string="str:a.pictures"></span>({{pics_count}})
+            </a
+            ><a class="href icon question_icon" data-exists-if="{{answers}}"
+                  data-js-attr="innerHTML"><span class="btn_title" data-string="str:a.answers"></span>({{answers}})
+            </a
+        ></div>
+        <div class="actions_bar footer_bar" data-exists-if="(? !SSN.id || require('kui').opGender($d) ?)" data-init="require('kui').initProfileActions"
+            ><a class="icon accept_icon" tip="help:tips.accept" data-exists-if="(? _N($d.rank) == 0 ?)"><span data-string="str:a.kobool"></span></a
+            ><a class="icon promote_icon" data-exists-if="(?_N( $d.rank )>1 ?) "><span data-string="str:sbtn.promote"></span></a
+            ><a class="icon demote_icon" data-exists-if="(? _N( $d.rank ) ?) "><span data-string="str:sbtn.demote"></span></a
+            ><a class="icon ask_icon" tip="help:tips.ask"><span data-string="str:a.ask"></span></a
+            ><a class="icon unaccept_icon" tip="help:tips.unaccept" data-exists-if="(? _N($d.rank) ?)"><span data-string="str:sbtn.unaccept"></span></a
+        ></div>
+
+        <div data-init="require('kui').initAttrBar" class="pic25frame"><img class="profilePic" data-js-attr="src" src="/cgi-bin/kpic.pl?tn=1&amp;id={{main_pic}}&amp;g={{gender}}"></div>
+
+        <div class="profile_title" data-init="require('kui').initMemTemplate" data-exists-if="(? $d.id!=0 ?)">
+            <span><a class="href fav_icon flat_btn fav_(? $d.bookmark == 1 ? 'on':'off' ?)" data-js-attr="className" tip="help:tips.bookmark"></a></span>
+            <span class="login_id" data-template="{innerHTML:'login_id'}"></span>
+            <span class="title_bar" data-template="{innerHTML:'ad_title'}"></span>
+        </div>
+
+        <div class="small_attr_bar" data-init="require('kui').initMemTemplate">
+            <a class="href fav_icon flat_btn fav_(? $d.bookmark == 1 ? 'on':'off' ?)" data-js-attr="className" tip="help:tips.bookmark"></a>
+            <span data-include="#CommonControls .pic25frame"></span>
+            <span class="login_id" data-template="{innerHTML:'login_id'}"></span>
+            <span data-on-click="require('kui').toggleFilter('g','gender',{ gender:{{gender}} })" data-js-attr="className" class="href attr gender_{{gender}}_icon">&nbsp;</span>
+            <span class="attr_age attr" data-exists-if="{{age}}" data-on-click="require('kui').toggleFilter('ag','age',{ birth_year:{{birth_year}} })" data-js-attr="innerHTML">{{age}} <span data-string="str:a.year"></span></span>
+            <span class="attr_ms attr" data-exists-if="{{marital_status}}" data-on-click="require('kui').toggleFilter('ms','marital_status',{marital_status:'{{marital_status}}'})" data-js-attr="innerHTML">(? _PS("options:sfilters.ms.v" + $d.marital_status) ?)</span>
+            <span class="attr_country attr" data-exists-if="{{country}}" data-on-click="require('kui').toggleFilter('c','country',{country:'{{country}}'})" data-js-attr="innerHTML">(? _PS("geo:c.v" + $d.country) ?)</span>
+        </div>
+
+        <div class="attr_bar" data-exists-if="(? $d.activated==1 ?)">
+            <span data-on-click="require('kui').toggleFilter('g','gender',{gender:{{gender}} })" data-js-attr="className" class="attr gender_{{gender}}_icon"></span>
+            <span data-exists-if="{{age}}" class="attr age" data-on-click="require('kui').toggleFilter('ag','age',{birth_year:{{birth_year}} })" data-js-attr="innerHTML">{{age}} <span data-string="str:a.year"></span></span>
+            <span data-exists-if="{{marital_status}}" class="attr mstatus" data-on-click="require('kui').toggleFilter('ms','marital_status',{marital_status:'{{marital_status}}'})" data-js-attr="innerHTML">(? _PS("options:sfilters.ms.v" + $d.marital_status) ?)</span>
+            <span data-exists-if="{{children}}" class="attr children" data-on-click="require('kui').toggleFilter('ch','children',{children:'{{children}}'})" data-js-attr="innerHTML">(? _PS("options:sfilters.ch.v" + $d.children) ?)</span>
+            <span data-exists-if="{{country}}" class="attr residence1" data-on-click="require('kui').toggleFilter('c','country',{country:'{{country}}'})" data-js-attr="innerHTML">(? _PS("geo:c.v" + $d.country) ?)</span>
+            <span data-exists-if="{{state}}" class="attr residence2" data-on-click="require('kui').toggleFilter('st','state',{country:'{{country}}',state:'{{state}}'})" data-js-attr="innerHTML">(? _PS( "geo:c"+ $d.country + ".v" + $d.state ) ?)</span>
+            <span data-exists-if="{{city}}" class="attr residence3" data-on-click="require('kui').toggleFilter('ci','city',{country:'{{country}}',state:'{{state}}',city:'{{city}}'})" data-js-attr="innerHTML">(? _PS( "geo:c"+ $d.country + "_" + $d.state + ".v" + $d.city ) ?)</span>
+            <span data-exists-if="{{origin_country}}" class="attr origin" data-on-click="require('kui').toggleFilter('o','origin_country',{origin_country:'{{origin_country}}'})" data-js-attr="innerHTML"><span data-string="str:origin"></span>: (? _PS("geo:c.v" + $d.origin_country) ?)</span>
+        </div>
+    </div>
+
+    <div id="QBrowser" data-init="require('qui').initQABrowser">
+        <form name="qbrowser">
+            <div data-exists-if="(? SSN.id ?)">
+                <input type="checkbox" name="myq" id="myq"><label for="myq"><span data-string="qa:my_questions"></span></label>
+            </div>
+            <div>
+                <input name="search" type="text" value="" placeholder="" data-string="str:a.add_filter" data-string-attr="placeholder">
+                <input type="submit" value="" data-string="str:search" data-string-attr="value">
+                <!--<input type="reset" value="" data-string="str:reset" data-string-attr="value">-->
+            </div>
+        </form>
+        <div id="QList"></div>
+    </div>
+
+    <div class="browse_question qgender_{{gender}} (? _N($d.answer) ? 'q_answerd' : '' ?) (? _N($d.asked_before) ? 'q_asked' : '' ?)"
+         data-js-attr="className"
+            data-init="require('kui').initBrowsedQustion"><span class="float_right flat_btn fav_(?$d.myq==1?'on':'off'?)" data-js-attr="className"></span>
+        <span class="qtext" data-js-attr="innerHTML">{{question_text}}</span>
+        (<a href="#pg=qa&qid={{question}}&ls=(?$d.myq==1?'myq':'act'?)" data-js-attr="innerHTML,href">{{answer_count}}</a>)</div>
+
+    <div id="QAHeader" data-init="require('qa').initHeader">
+        <button data-exists-if="(? $d.question_text==undefined ?)" class="button"><span data-string="str:questions"></span></button>
+        <span data-exists-if="(? $d.question_text!=undefined ?)" class="btn delete"></span>
+        <span data-exists-if="(? $d.question_text!=undefined ?)" class="href qtitle_text" data-js-attr="innerHTML">{{question_text}}</span>
+    </div>
+
+    <div id="MyQAHeader" data-init="require('my_recent_questions').initHeader">
+        <button id="q_by_member"><span data-string="str:qa_menu.by_member"></span></button>
+        <span data-exists-if="(? $d.question_text!=undefined ?)" class="btn delete"></span>
+        <span data-exists-if="(? $d.question_text!=undefined ?)" class="href qtitle_text" data-js-attr="innerHTML">{{question_text}}</span>
+    </div>
+
+    <ul class="member_hmenu" data-init="require('kui').initMemberHMenu" data-exists-if="(? $d.id!=0 ?)">
+        <div class="brgr_frame">
+            <div class="brgr_menu"></div>
+            <ul class="menu popup_list hmenu">
+                <li class="icon accept_icon" data-menu-id="accept" data-exists-if="(? !SSN.id || ( require('kui').opGender($d) && _N($d.rank) == 0) ?)"><span data-string="str:a.kobool"></span></li>
+                <li class="icon unaccept_icon" data-menu-id="unaccept" data-exists-if="(? _N($d.rank) ?)"><span data-string="str:sbtn.unaccept"></span></li>
+                <li class="icon hidden_wish_icon" data-menu-id="hide_kobool" data-exists-if="(? $d.visible_wish==1 ?)"><span data-string="str:sbtn.mk_hidden_wish"></span></li>
+                <li class="icon visible_wish_icon" data-menu-id="show_kobool" data-exists-if="(? _N($d.rank)>0 && $d.visible_wish==0 ?)"><span data-string="str:sbtn.mk_visible_wish"></span></li>
+                <li class="icon promote_icon" data-menu-id="promote" data-exists-if="(? _N($d.rank)>1 ?) "><span data-string="str:sbtn.promote"></span></li>
+                <li class="icon demote_icon" data-menu-id="demote" data-exists-if="(? _N($d.rank)>0 ?) "><span data-string="str:sbtn.demote"></span></li>
+                <li class="icon ask_icon" data-exists-if="(? !SSN.id || require('kui').opGender($d) ?)" data-menu-id="ask" ><span data-string="str:a.ask"></span></li>
+                <li class="icon btn_block block_(? $d.blocked == 0 ? 'off':'on' ?)" data-menu-id="block" data-show-if="(? !SSN.id || ( require('kui').opGender($d) && $d.blocked == 0) ?)" data-js-attr="innerHTML,className"><span data-string="str:sbtn.block"></span></li>
+                <li class="icon btn_block block_(? $d.blocked == 0 ? 'off':'on' ?)" data-menu-id="unblock" data-show-if="(? SSN.id && $d.blocked == 1 && require('kui').opGender($d) ?)" data-js-attr="innerHTML,className"><span data-string="str:sbtn.unblock"></span></li>
+                <li data-menu-id="report" data-show-if="(? (SSN.id != $d.id) ?)" data-js-attr="innerHTML,className"><span data-string="str:a.report"></span></li>
+            </ul>
+        </div>
+    </ul>
+    <ul class="my_answer_hmenu" data-init="require('kui').initAnswerHMenu">
+        <div class="brgr_frame">
+            <div class="brgr_menu"></div>
+            <ul class="menu popup_list hmenu">
+                <li data-menu-id="later" data-exists-if="(? $d.answer_text.length==0 && $d.postpone!=1 ?)"><span data-string="qa:ui.later"></span></li>
+                <li data-menu-id="not_later" data-exists-if="(? $d.answer_text.length==0 && $d.postpone==1 ?)"><span data-string="qa:ui.not_later"></span></li>
+                <li data-menu-id="reject" data-exists-if="(? $d.answer_text.length==0 ?)"><span data-string="qa:ui.Ignore"></span></li>
+                <li data-menu-id="delete" data-exists-if="(? $d.answer_text.length>0 ?)"><span data-string="qa:ui.DelAnswer"></span></li>
+            </ul>
+        </div>
+    </ul>
+    <ul class="answer_hmenu" data-init="require('kui').initAnswerHMenu">
+        <div class="brgr_frame">
+            <div class="brgr_menu"></div>
+            <ul class="menu popup_list hmenu">
+                <li data-menu-id="report"><span data-string="str:a.report"></span></li>
+            </ul>
+        </div>
+    </ul>
+
+
+    <div class="result_item detailedSResult" id="Member_(?$d.id?)" data-js-attr="id" data-init="require('kui').initMemTemplate">
+        <div class="profile_layout (? $d.blocked==1?'blocked':'' ?)" data-js-attr="className">
+            <div class="results_pic_col">
+                <div data-include=".my_visit_box"></div>
+                <div data-include=".points_indicator"></div>
+                <div class="block_icon"></div>
+                <div class="pic100frame">
+                    <img src="/cgi-bin/kpic.pl?tn=1&amp;id={{main_pic}}&amp;g={{gender}}" data-js-attr="src" unselectable="on" class="no_select"/>
+                </div>
+                <div data-include=".visitor_box"></div>
+            </div>
+            <div  class="results_info_col">
+                <div data-include=".member_hmenu"></div>
+                <div data-include="#CommonControls .profile_title"></div>
+                <div data-include=".attr_bar"></div>
+
+                <div data-exists-if="(? $d.self_desc && $d.self_desc.length ?)" class="self_desc" data-js-attr="innerHTML">{{self_desc}}</div>
+                <div data-exists-if="(? $d.mate_desc && $d.mate_desc.length ?)" class="mate_desc" data-js-attr="innerHTML">{{mate_desc}}</div>
+                <div data-include=".last_login"></div>
+                <div data-include=".profile_highlights"></div>
+
+                <div class="inactive_member_msg" data-exists-if="(? $d.activated==0 ?)"><span data-string="str:a.inactive"></span></div>
+                <div class="inactive_member_msg" data-exists-if="(? $d.id==0 && $d.wished!=0 ?)"><span data-string="str:a.hidden_mem"></span></div>
+            </div>
+        </div>
+        <div data-include=".feedback_frame"></div>
+    </div>
+
+    <div class="sresult_item_frame">
+        <div data-include="#CommonControls .list_ordinal"></div>
+        <div data-include=".detailedSResult"></div>
+    </div>
+
+    <div class="attr_panel_tmpl">
+        <div class="attr_panel">
+            <span class="info_col">
+                <span class="attr_line" data-exists-if="(? _D($d.height) ?)">
+                    <span class="attr_label" data-string="filters.ht"></span>:
+                    <span class="href attr_value" data-js-attr="innerHTML">(? _PS("options:sfilters.ht.v" + $d.height) ?)</span>
+                </span>
+                <span class="attr_line" data-exists-if="(? _D($d.body) ?)">
+                    <span class="attr_label"><span data-string="str:filters.wt"></span>: </span>
+                    <span class="href attr_value" data-js-attr="innerHTML">(? _PS("options:sfilters.wt.v" + $d.body) ?)</span>
+                </span>
+                <span class="attr_line" data-exists-if="(? _D($d.shape) ?)">
+                    <span class="attr_label"><span data-string="str:filters.sh"></span>: </span>
+                    <span class="attr_value href" data-js-attr="innerHTML">(? _PS("options:sfilters.sh.v" + $d.shape) ?)</span>
+                </span>
+                <span class="attr_line" data-exists-if="(? _D($d.facelook) ?)">
+                    <span class="attr_label"><span data-string="str:filters.fc"></span>: </span>
+                    <span class="href attr_value" data-js-attr="innerHTML">(? _PS("options:sfilters.fc.v" + $d.facelook) ?)</span>
+                </span>
+                <span class="attr_line" data-exists-if="(? _D($d.disability) ?)">
+                    <span class="attr_label"><span data-string="str:filters.ds"></span>: </span>
+                    <span class="href attr_value" data-js-attr="innerHTML">(? _PS("options:sfilters.ds.v" + $d.disability) ?)</span>
+                </span>
+            </span>
+            <span class="info_col">
+                <span class="attr_line" data-exists-if="(? _D($d.religion) ?)">
+                    <span class="attr_label"><span data-string="str:filters.re"></span>: </span>
+                    <span class="href attr_value" data-js-attr="innerHTML">(? _PS("options:sfilters.re.v" + $d.religion) ?)</span>
+                </span>
+                <span class="attr_line" data-exists-if="(? _D($d.language) ?)">
+                    <span class="attr_label"><span data-string="str:filters.la"></span>: </span>
+                    <span class="href attr_value" data-js-attr="innerHTML">(? _PS("options:sfilters.la.v" + $d.language) ?)</span>
+                </span>
+                <span class="attr_line" data-exists-if="(? _D($d.race) ?)">
+                    <span class="attr_label"><span data-string="str:filters.rc"></span>: </span>
+                    <span class="href attr_value" data-js-attr="innerHTML">(? _PS("options:sfilters.rc.v" + $d.race) ?)</span>
+                </span>
+                <span class="attr_line" data-exists-if="(? _D($d.district) ?)">
+                    <span class="attr_label"><span data-string="str:filters.dst"></span>: </span>
+                    <span class="href attr_value" data-js-attr="innerHTML">(? _PS("options:sfilters.dst.v" + $d.district) ?)</span>
+                </span>
+                <span class="attr_line" data-exists-if="(? _D($d.smoker) ?)">
+                    <span class="attr_label"><span data-string="str:filters.sm"></span>: </span>
+                    <span class="href attr_value" data-js-attr="innerHTML">(? _PS("options:sfilters.sm.v" + $d.smoker) ?)</span>
+                </span>
+            </span>
+            <span class="info_col">
+                <span class="attr_line" data-exists-if="(? _D($d.education) ?)">
+                    <span class="attr_label"><span data-string="str:filters.ed"></span>: </span>
+                    <span class="href attr_value" data-js-attr="innerHTML">(? _PS("options:sfilters.ed.v" + $d.education) ?)</span>
+                </span>
+                <span class="attr_line" data-exists-if="(? _D($d.job) ?)">
+                    <span class="attr_label"><span data-string="str:filters.jb"></span>: </span>
+                    <span class="href attr_value" data-js-attr="innerHTML">(? _PS("options:sfilters.jb.v" + $d.job) ?)</span>
+                </span>
+                <span class="attr_line" data-exists-if="(? _D($d.income) ?)">
+                    <span class="attr_label"><span data-string="str:filters.nc"></span>: </span>
+                    <span class="href attr_value" data-js-attr="innerHTML">(? _PS("options:sfilters.nc.v" + $d.income) ?)</span>
+                </span>
+                <span class="attr_line" data-exists-if="(? _D($d.dress_type) ?)">
+                    <span class="attr_label"><span data-string="str:filters.dt"></span>: </span>
+                    <span class="attr_value href" data-js-attr="innerHTML">(? _PS("options:sfilters.dt.v" + $d.dress_type) ?)</span>
+                </span>
+                <span class="attr_line" data-exists-if="(? _D($d.polygamy) ?)">
+                    <span class="attr_label"><span data-string="str:filters.po"></span>: </span>
+                    <span class="attr_value href" data-js-attr="innerHTML">(? _PS("options:sfilters.po.v" + $d.polygamy) ?)</span>
+                </span>
+            </span>
+        </div>
+    </div>
+
+    <!-- Header/Login -->
+    <div id="LoginBox">
+        <div id="OpenLoginPanel">
+            <form id="LoginForm" name="login" autocomplete="off">
+                <input type="text" name="lname" id="lname" autocomplete="off" placeholder="" data-string="str:login.login_name" data-string-attr="placeholder"/>
+                <input type="password" name="pw" id="pw" autocomplete="off" placeholder="" data-string="str:login.password" data-string-attr="placeholder"/>
+                <input type="submit" class="button" style="margin:0;padding:1px 3px" data-string="" value="" data-string="str:login.submit" data-string-attr="value" />
+                <span class="href" onclick="require('page-nav').open('forgot');return false;"><span data-string="str:login.forgot_pass"></span></span>
+            </form>
+        </div>
+        <button id="OpenLoginBtn" data-init="DU.initLoginBtn" data-string="login.submit"></button>
+    </div>
+
+    <div id="GuestBox"></div>
+
+    <ul id="UserBox">
+        <li>
+            <div class="menu_handle" data-init="require('dom-utils').initMenuBtn">
+                <div class="hdr_profile_pic" ><img id="ProfilePic" class="profilePic" data-js-attr="src" src="/cgi-bin/kpic.pl?tn=1&amp;id={{main_pic}}&amp;g={{gender}}"></div>
+            </div>
+            <div data-include="#MemberStats" class="menu"></div>
+        </li>
+        <li><a href="#pg=mem" class="href" data-js-attr="innerHTML">{{login_name}}</a></li>
+        <li><div data-include="#InActiveMsg"></div></li>
+    </ul>
+
+    <div id="MatchedBox">
+        <ul id="MatchShow">
+            <li>
+                <div class="menu_handle" data-init="require('dom-utils').initMenuBtn">
+                    <div class="hdr_profile_pic"><img id="ProfilePic" class="profilePic" data-js-attr="src" src="/cgi-bin/kpic.pl?tn=1&amp;id={{main_pic}}&amp;g={{gender}}"></div>
+                </div>
+                <div data-include="#MemberStats" class="menu"></div>
+            </li>
+            <li class="ani_heart"></li>
+            <li><div class="menu_handle" data-init="require('dom-utils').initMenuBtn" data-menu=".menu.popup_list">
+                    <div class="hdr_profile_pic"><img class="profilePic" data-js-attr="src" src="/cgi-bin/kpic.pl?tn=1&amp;id={{mate_pic}}&amp;g={{mate_gender}}"></div>
+                </div>
+                <ul class="menu popup_list">
+                    <li><a href="#pg=chat"><span data-string="str:mate_menu.contact"></span></a></li>
+                    <li><a data-on-click="require('page-nav').open('mem',{mem:SSN.mate})" data-string="str:mate_menu.visit_page"></a></li>
+                    <li><a href="#pg=decline" data-string="str:mate_menu.decline"></a></li>
+                </ul>
+            </li>
+            <li id="MatchNames">
+                <div><a href="#pg=mem" class="href" data-js-attr="innerHTML">{{login_name}}</a></div>
+                <div><a href="#pg=mem&mem={{mate}}" data-js-attr="innerHTML,href">{{mlogin}}</a></div>
+            </li>
+        </ul>
+    </div>
+
+    <div data-tip="visit_info" class="my_visit_box visit_box" data-exists-if="(? $d.id!=0 && SSN.id && $d.gender!=SSN.gender ?)" >
+        <div class="visit_heart (? require('kui').myVisitCSS($d) ?)" data-js-attr="className,innerHTML"
+             data-init="require('dom-utils').initMenuBtn"
+             data-menu=".profile_menu">(? $d.rank!=0 ? $d.rank:"" ?)</div>
+        <div class="visited visit_counter" data-template="{innerHTML:'my_visits'}"></div>
+        <div data-exists-if="(? $d.my_visits !=0 ?)" class="item_date (? require('kui').dateToRange($d.my_last_visit).s ?)" data-js-attr="innerHTML,className">(? require('kui').dateToRange($d.my_last_visit).t ?)</div>
+        <div data-exists-if="(? $d.my_visits == 0 ?)" class="item_date past" data-string="str:no_visits"></div>
+        <ul class="profile_menu menu popup_list" data-init="require('kui').initProfileActions">
+            <li class="icon accept_icon" tip="help:tips.accept" data-exists-if="(? _N($d.rank) == 0 ?)" data-string="str:a.kobool"></li>
+            <li class="icon promote_icon" data-exists-if="(?_N( $d.rank )>1 ?) "><span data-string="str:sbtn.promote"></span></li>
+            <li class="icon demote_icon" data-exists-if="(? _N( $d.rank ) ?) " data-string="str:sbtn.demote"></li>
+            <li class="icon hidden_wish_icon" data-exists-if="(? _N($d.visible_wish) != 0 ?)" data-string="str:sbtn.mk_hidden_wish"></li>
+            <li class="icon visible_wish_icon" data-exists-if="(? _N($d.rank) && _N($d.visible_wish) == 0 ?)" data-string="str:sbtn.mk_visible_wish"></li>
+            <li class="icon unaccept_icon" tip="help:tips.unaccept" data-exists-if="(? _N($d.rank) ?)" data-string="str:sbtn.unaccept"></li>
+        </ul>
+    </div>
+
+    <div class="visitor_box visit_box" data-exists-if="(? $d.id!=0 && SSN.id && $d.gender != SSN.gender && $d.activated!=0 ?)" >
+        <div class="visit_heart (? require('kui').visitorCSS($d) ?)" data-js-attr="className"></div>
+        <div class="visitor visit_counter" data-template="{innerHTML:'visits_count'}"></div>
+        <div data-exists-if="(? $d.visits_count!=0 ?)" class="item_date (? require('kui').dateToRange($d.last_visit).s ?)" data-js-attr="innerHTML,className">(? require('kui').dateToRange($d.last_visit).t ?)</div>
+        <div data-exists-if="(? $d.visits_count==0 ?)" class="item_date past" data-string="str:no_visits"></div>
+    </div>
+
+    <div class="user_image pic25frame">
+        <img src="/cgi-bin/kpic.pl?tn=1&amp;id=(?SSN.main_pic?)&amp;g=(?SSN.gender?)" data-js-attr="src" unselectable="on" class="no_select"/>
+    </div>
+
+    <div class="feedback_frame" data-init="$editor.initFeedback" data-exists-if="(? $d.id!=0 && SSN.id && (SSN.gender != $d.gender) ?)">
+        <div class="i-text-frame" >
+            <div class="i-text">
+                <textarea  data-js-attr="innerHTML,title"
+                      title="{{feedback_date}}"
+                      rows="1"
+                      placeholder="&gt;" data-string="str:feedback_link" data-string-attr="placeholder" data-string-template="&gt;{s}"
+                >{{feedback}}</textarea>
+            </div>
+        </div>
+        <div class="i-text-actions">
+            <button class="save" tip="help:personal_note.btn_tip" data-string="str:save"></button>
+            <button class="cancel" data-string="str:cancel"></button>
+        </div>
+    </div>
+
+    <div class="answer_frame" data-init="$editor.initAnswer">
+        <div class="i-text-frame (? $kui.myAnswerClass($d) ?)" data-js-attr="className" >
+            <div class="i-text">
+                <textarea  data-js-attr="innerHTML,title"
+                           title="{{answer_date}}"
+                           rows="1"
+                           placeholder='&gt;' data-string="str:answer" data-string-attr="placeholder" data-string-template="&gt;{s}"
+                >{{answer_text}}</textarea>
+            </div>
+        </div>
+        <div class="i-text-actions">
+            <button class="save" data-string="str:save"></button>
+            <button class="cancel" data-string="str:cancel"></button>
+        </div>
+    </div>
+
+
+    <div class="featured_mem">
+        <table cellspacing="0" data-on-click="require(['list'],function($list){$list.openItem($d.id)})">
+            <tr>
+                <td class="gallery_pic">
+                    <div class="anchor">
+                        <div class="cimg box12 absolute abs_left new_points_icon"
+                            tip="help:tips.has_new_cards"
+                        ></div>
+                    </div>
+                    <img src="/cgi-bin/kpic.pl?tn=1&amp;id={{main_pic}}&amp;g={{gender}}" data-js-attr="src" unselectable="on" class="no_select"/>
+                </td>
+                <td class="vtop">
+                    <div class="login_id" data-template="{innerHTML:'login_id'}">{{login_id}}</div>
+                    <div data-exists-if="{{age}}" data-js-attr="innerHTML">{{age}} <span data-string="str:a.year"></span></div>
+                    <div data-exists-if="{{country}}" data-js-attr="innerHTML">(? _PS("geo:c.v" + $d.country) ?)</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="answer_result result_item" data-init="require('kui').initAnswer">
+        <div data-include="#CommonControls .list_ordinal"></div>
+
+        <div data-include=".answer_hmenu"></div>
+        <div data-include="#CommonControls .small_attr_bar"></div>
+        <div class="question_title">
+            <span class="href flat_btn fav_(?$d.myq==1?'on':'off'?)" tip="qa:ui.add_fav_q" data-js-attr="className"></span>
+            <span class="href qtitle_text" data-template="{innerHTML:'question_text'}"></span>
+        </div>
+        <div class="answer_text" data-exists-if="(? ($d.answer_text!==undefined) ?)">
+            <span class="href flat_btn fav_(?$d.myq2m==1?'on':'off'?)" tip="qa:ui.add_fav_ans" data-js-attr="className"></span>
+            <span data-template="{innerHTML:'answer_text'}"></span>
+        </div>
+        <div class="no_text" data-exists-if="(? ($d.answer_text == undefined) ?)" data-string="str:a.no_answer"></div>
+        <div class="item_date" data-js-attr="innerHTML">(? require('kui').dateToRange($d.last_update).t ?)</div>
+    </div>
+
+    <div class="answer_simple_result" data-on-click="require('page-nav').open('mem',{mem:$d.id,mtab:'TAnswers4U'})">
+        <div class="user_image pic25frame">
+            <img src="/cgi-bin/kpic.pl?tn=1&amp;id={{main_pic}}&amp;g={{gender}}" data-js-attr="src" unselectable="on" class="no_select"/>
+        </div>
+        <span data-js-attr="innerHTML" class="login_id">{{login_id}}, </span>
+        <span data-template="{innerHTML:'question_text'}" class="href"></span>:
+        <span data-template="{innerHTML:'answer_text'}"></span>
+    </div>
+
+    <div class="mem_answer" data-init="require('kui').initAnswer">
+        <div data-include=".answer_hmenu"></div>
+        <div class="question_title">
+            <span class="href flat_btn" tip="qa:ui.add_fav_q"></span>
+            <span class="href qtitle_text" data-template="{innerHTML:'question_text'}"></span>
+        </div>
+        <div class="answer_text" data-exists-if="(? ($d.answer_text !== undefined) ?)">
+            <span class="href flat_btn" tip="qa:ui.add_fav_ans"></span>
+            <span data-template="{innerHTML:'answer_text'}"></span>
+        </div>
+        <div class="no_text" data-exists-if="(? ($d.answer_text == undefined) ?)" data-string="str:a.no_answer"></div>
+        <div class="item_date" data-js-attr="innerHTML" data-exists-if="(? $d.last_update != undefined ?)">(? require('kui').dateToRange($d.last_update).t ?)</div>
+    </div>
+
+    <div class="my_answer" data-init="require('kui').initAnswer">
+        <div data-include=".my_answer_hmenu"></div>
+        <div class="question_title">
+            <span class="href qtitle_text" data-template="{innerHTML:'question_text'}"></span>
+        </div>
+        <div data-include=".answer_frame"></div>
+        <div class="item_date" data-js-attr="innerHTML">(? require('kui').dateToRange($d.last_update).t ?)</div>
+    </div>
+
+    <div class="last_login item_date" data-exists-if="(? $d.id!=0 && $d.activated!=0 ?)" data-js-attr="innerHTML">(? require('kui').renderLastLogin($d).innerHTML ?)</div>
+
+    <div class="mem_profile" data-init="require('kui').initMemTemplate" id="Member_(? $d.id ?)" data-js-attr="id" >
+        <div class="profile_header">
+            <div class="profile_layout (? $d.blocked==1?'blocked':'' ?)" data-js-attr="className">
+                <div class="results_pic_col">
+                    <div data-include=".my_visit_box"></div>
+                    <!-- <div data-include=".points_indicator"></div> -->
+                    <div class="block_icon"></div>
+                    <div class="pic100frame">
+                        <img src="/cgi-bin/kpic.pl?tn=1&amp;id={{main_pic}}&amp;g={{gender}}" data-js-attr="src" unselectable="on" class="no_select"/>
+                    </div>
+                    <div data-include=".visitor_box"></div>
+                </div>
+                <div class="results_info_col">
+                    <div data-include="#CommonControls .profile_title"></div>
+                    <div data-include=".attr_bar"></div>
+
+                    <div data-exists-if="(? SSN.id==0 || ( $d.gender!=SSN.gender && SSN.mate!=$d.id) ?)" class="contact_note" data-string="str:contact_note"></div>
+
+                    <div class="contact_note" data-exists-if="(? $d.new_cards>0 ?)"><div class="cimg box12 new_points_icon"></div>&nbsp;<span data-string="help:tips.has_new_cards"></span></div>
+                    <div class="contact_note" data-exists-if="(? ( $d.purchased>0 && $d.new_cards==0 ) ?)"><div class="cimg box12 old_points_icon"></div>&nbsp;<span data-string="help:tips.purchased_cards"></span></div>
+
+                    <div class="inactive_member_msg" data-exists-if="(? $d.activated==0 ?)" data-string="str:a.inactive"></div>
+                    <div data-include=".last_login"></div>
+                </div>
+            </div>
+            <ul class="mem_action_bar">
+                <li class="icon chat_icon btn_contact" data-exists-if="(? SSN.mate==$d.id ?)" data-string="str:mate_menu.contact"></li>
+
+                <li class="icon accept_icon" data-menu-id="accept" data-exists-if="(? !SSN.id || ( require('kui').opGender($d) && _N($d.rank)==0 && $d.id!=SSN.mate) ?)" data-string="str:a.kobool"></li>
+                <li class="icon unaccept_icon" data-menu-id="unaccept" data-exists-if="(? _N($d.rank) && $d.id!=SSN.mate ?)" data-string="str:sbtn.unaccept"></li>
+
+                <li class="icon hidden_wish_icon" data-menu-id="hide_kobool" data-exists-if="(? $d.visible_wish==1 && $d.id!=SSN.mate ?)" data-string="str:sbtn.mk_hidden_wish"></li>
+                <li class="icon visible_wish_icon" data-menu-id="show_kobool" data-exists-if="(? _N($d.rank)>0 && $d.visible_wish==0 && $d.id!=SSN.mate ?)"><span data-string="str:sbtn.mk_visible_wish"></span></li>
+
+                <li class="icon ask_icon" data-exists-if="(? !SSN.id || require('kui').opGender($d) ?)" data-menu-id="ask" data-string="str:a.ask"></li>
+
+                <li class="icon btn_block block_(? $d.blocked == 0 ? 'off':'on' ?)" data-menu-id="block" data-exists-if="(? !SSN.id || ( _N($d.rank)==0 && require('kui').opGender($d) && $d.blocked==0 && $d.id!=SSN.mate) ?)" data-js-attr="innerHTML,className" data-string="str:sbtn.block"></li>
+                <li class="icon btn_block block_(? $d.blocked == 0 ? 'off':'on' ?)" data-menu-id="unblock" data-exists-if="(? SSN.id && $d.blocked==1 && _N($d.rank)==0 && require('kui').opGender($d) && $d.id!=SSN.mate ?)" data-js-attr="innerHTML,className" data-string="str:sbtn.unblock"></li>
+
+                <li class="icon edit_icon btn_update" data-exists-if="(? SSN.id==$d.id ?)" data-string="str:member_menu.edit"></li>
+
+            </ul>
+            <div data-include=".feedback_frame"></div>
+        </div>
+
+        <div class="profile_details" data-exists-if="(? $d.activated!=0 ?)">
+            <div class="mem_tabs scroll2Menu" data-xinit="DU.overflowCSS">
+                <!--<div class="menu_button"></div>-->
+                <ul id="MTabs" class="tabs" data-init="require('mem').initTabs">
+                    <li id="TText" class="ctab seltab" data-string="str:m.info"></li>
+                    <li id="TPictures" class="ctab" data-js-attr="innerHTML" data-exists-if="(? ($d.pics_count > 0) ?)"><span data-string="str:m.pics"></span> ({{pics_count}})</li>
+                    <li id="TAnswers" class="ctab" data-exists-if="(? $d.answers != 0 ?)"><span><span data-string="str:a.answers"></span> (<span class="href" id="MAnswers_count" data-js-attr="innerHTML">{{answers}}</span>)</span></li>
+                    <li id="TRelAnswers" class="ctab" data-exists-if="(? SSN.id && $d.gender != SSN.gender ?)"><span><span data-string="str:m.relevant_answers"></span> (<span class="href" id="MRelAnswers_count">?</span>)</span></li>
+                    <li id="TAnswers4U" class="ctab" data-exists-if="(? SSN.id && $d.gender != SSN.gender ?)"><span><span data-string="str:a.answers4u"></span> (<span class="href" id="MAnswers4U_count">?</span>)</span></li>
+                    <li id="TNewQ" class="ctab" data-exists-if="(? SSN.id && $d.id == SSN.id ?)"><span><span data-string="str:m.newq"></span> (<span class="href" id="MNewQ_count">?</span>)</span></li>
+                    <li id="TPstpQ" class="ctab" data-exists-if="(? SSN.id && $d.id == SSN.id ?)"><span><span data-string="str:m.postponed"></span> (<span class="href" id="MPstpQ_count">?</span>)</span></li>
+                </ul>
+            </div>
+
+            <div class="tabs_root">
+                <div id="MText" class="tab_panel TText seltab">
+                    <div data-include=".attr_panel_tmpl"></div>
+                    <div data-exists-if="(? $d.self_desc && $d.self_desc.length ?)" class="self_desc"  data-js-attr="innerHTML">{{self_desc}}</div>
+                    <div data-exists-if="(? $d.mate_desc && $d.mate_desc.length ?)" class="mate_desc"  data-js-attr="innerHTML">{{mate_desc}}</div>
+                </div>
+                <div id="MPictures" class="tab_panel TPictures"></div>
+                <div id="MAnswers" class="tab_panel TAnswers mem_qa_tab"></div>
+                <div id="MNewQ" class="tab_panel TNewQ mem_qa_tab"></div>
+                <div id="MPstpQ" class="tab_panel TPstpQ mem_qa_tab"></div>
+                <div id="MRelAnswers" class="tab_panel TRelAnswers mem_qa_tab"></div>
+                <div id="MAnswers4U" class="tab_panel TAnswers4U mem_qa_tab"></div>
+            </div>
+        </div>
+    </div>
+
+    <div data-js-attr="className" class="chat_msg (? ($d.id_sender == SSN.id) ? 'sent':'received' ?)" data-init="require('chat').initMsgTemplate">
+        <div class="chat_time_line">
+            <span class="msg_index" data-js-attr="innerHTML">{{msg_index}}</span>
+            <span class="chat_msg_author" data-js-attr="innerHTML">(? ($d.id_sender == SSN.id) ? _S("contact:contact_m.you") : SSN.mlogin ?)</span>
+            <span class="chat_msg_time posted_msg" data-js-attr="innerHTML"><span data-string="contact:contact_m.posted_on"></span>:{{sent_on}}</span>
+            <span class="chat_msg_time read_msg" data-exists-if="(?$d.recieved_on!=''?)" data-js-attr="innerHTML"><span data-string="contact:contact_m.read_on"></span>:{{recieved_on}}</span>
+            <span class="chat_msg_time unread_msg" data-exists-if="(?$d.recieved_on==''?)"><span data-string="contact:contact_m.not_read"></span></span>
+        </div>
+        <div class="chat_sender">
+            <div><img class="tiny_pic" data-js-attr="src" data-on-click="require('page-nav').open('mem',{mem:$d.id_sender})"
+             src="/cgi-bin/kpic.pl?tn=1&amp;id=(?($d.id_sender==SSN.id)?SSN.main_pic:SSN.mate_pic?)&amp;g=(?($d.id_sender==SSN.id)?SSN.gender:((SSN.gender==1)?0:1)?)"></div>
+        </div>
+        <div class="chat_bubble">
+            <div class="chat_msg_box">
+                <div class="chat_msg_text">
+                    <div data-js-attr="innerHTML">(? $d.body.replace(/\n/g, "<br/>") ?)</div>
+                </div>
+                <div class="unreadable_msg" data-exists-if="(? $d.id_sender==SSN.id && $d.is_free==0 && $context.mate_can_read==0 ?)" data-js-attr="innerHTML">(? _S("contact:contact.mate_cant_read_msg").replace(/\%m\%/g,SSN.mlogin) ?)</div>
+                <div class="unreadable_msg" data-exists-if="(? $d.id_sender==SSN.mate && $d.is_free==0 && $context.can_type!=1 ?)" data-js-attr="innerHTML">(? _S("contact:contact.you_cant_read_msg").replace(/\%m\%/g,SSN.mlogin) ?)</div>
+            </div>
+        </div>
+        <div class="brgr_frame" data-exists-if="(? ($d.id_sender!=SSN.id && $d.is_free==0) || $d.recieved_on=='' ?)">
+            <div class="brgr_menu"></div>
+            <div class="menu_popup_frame">
+                <ul class="menu popup_list hmenu">
+                    <li data-menu-id="edit" data-exists-if="(? $d.id_sender==SSN.id && $d.recieved_on=='' && $d.is_free==0 ?)" data-string="str:a.edit"></li>
+                    <li data-menu-id="delete" data-exists-if="(? $d.id_sender==SSN.id && $d.recieved_on == '' ?)" data-string="str:a.delete"></li>
+                    <li data-menu-id="report" data-exists-if="(? $d.is_free==0 && $d.id_sender!=SSN.id ?)" data-string="str:a.report"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <a class="stats_button drill_btn {{key}}" data-js-attr="href,className" href="{{href}}">
+        <div><span data-js-attr="className" class="sym-icon icon-{{icon}}"></span></div>
+        <div data-js-attr="innerHTML">(? _S("m." + $d.key) + " (" + ( SSN[$d.key] || "0" ) + ")" ?)</div>
+    </a>
+
+    <a class="link_button drill_btn" data-js-attr="href,className" href="{{href}}">
+        <div><span data-js-attr="className" class="sym-icon icon-{{icon}}"></span></div>
+        <div data-js-attr="innerHTML">(? _S($d.title) ?)</div>
+    </a>
+
+    <a class="update_btn drill_btn" data-js-attr="href" href="#pg={{key}}">
+        <div><span class='sym-icon icon-(? $d.icon ?)' data-js-attr="className"></span></div>
+        <div data-js-attr="innerHTML">(? _S("profile." + $d.title) ?)</div>
+    </a>
+</div>

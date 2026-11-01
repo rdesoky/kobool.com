@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<root>
+	<option value="0" name=""  />
+	<option value="1" name="Abha"  />
+	<option value="2" name="Besha"  />
+	<option ex="1" value="3" name="Eastern Province"  />
+	<option value="4" name="Hail"  />
+	<option value="5" name="Najran"  />
+	<option value="6" name="Northern Province"  />
+	<option value="7" name="Mecca"  />
+	<option value="8" name="Medina"  />
+	<option value="9" name="Jizan"  />
+	<option value="10" name="Jouf"  />
+	<option value="11" name="Qasesm"  />
+	<option value="12" name="Qurayyat"  />
+	<option value="13" name="Riyadh"  />
+	<option value="14" name="Tabuk"  />
+</root>

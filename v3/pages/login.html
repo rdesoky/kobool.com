@@ -1,0 +1,15 @@
+<div class="pg_body">
+	<div class="pg_intro" data-string="str:login.form_title"></div>
+
+	<form onsubmit="require('login').onsubmit();return false;" id="idLoginForm" name="login" class="form_frame">
+	    <div class="field_label"><span data-string="str:login.login_name"></span>:</div>
+		<div><input type=text name="lname" id="lname"></div>
+	    <div class="field_label"><span data-string="str:login.password"></span>:</div>
+		<div><input type="password" name="pw" id="pw"></div>
+		<div class="buttons_bar"><input type="submit" value="" data-string="str:login.submit" data-string-attr="value" ></div>
+	</form>
+
+	<div><a class="big_button" href="#pg=forgot"><span data-string="str:login.forgot_pass"></span></a></div>
+    <div class="pg_intro"><span data-string="str:not_member"></span></div>
+	<div><a class="big_button" href="#pg=register" data-string="str:login.new_member"></a></div>
+</div>

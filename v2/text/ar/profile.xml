@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<alnoor_30>قُل لِّلْمُؤْمِنِينَ يَغُضُّوا مِنْ أَبْصَارِهِمْ وَيَحْفَظُوا فُرُوجَهُمْ ذَلِكَ أَزْكَى لَهُمْ إِنَّ اللَّهَ خَبِيرٌ بِمَا يَصْنَعُونَ (النور:30)</alnoor_30>
+	<upd_attr>
+		<page_title>تعديل : الصفات الشخصية</page_title>
+	</upd_attr>
+	<upd_txt>
+		<page_title>تعديل : النص الحر</page_title>
+	</upd_txt>
+	<forgot>
+		<page_title>استرجاع بيانات الدخول</page_title>
+		<form_title>نموذج استرجاع بيانات دخول</form_title>
+		<intro>ارسل النموذج التالي ليرسل لك الموقع بيانات الدخول على بريدك المسجل بالموقع</intro>
+		<email_prompt>بريدك الإليكتروني</email_prompt>
+		<missing_email>فضلا ادخل عنوان بريدك الإليكتروني الذي استخدمته عند تسجيل عضويتك بالموقع</missing_email>
+		<invalid_email>خطأ في صيغة البريد الإليكتروني</invalid_email>
+		<submit>ارسال النموذج</submit>
+		<done>تم ارسال بيانات الدخول الى بريدك الإليكتروني</done>
+	</forgot>
+	<acc_activate>
+		<page_title>تعديل : تفعيل العضوية</page_title>
+		<form_title>نموذج تفعيل عضوية بالموقع</form_title>
+		<intro>ارسل النموذج التالي لتفعيل عضويتك بالموقع</intro>
+		<password_prompt>كلمة سر عضويتك:</password_prompt>
+		<missing_pw>فضلا ادخل كلمة سر عضويتك</missing_pw>
+		<invalid_password>كلمة السر غير صحيحة</invalid_password>
+		<submit>ارسال النموذج</submit>
+		<done>تم بنجاح تفعيل عضويتك بالموقع</done>
+		<blacklist_prompt>ملاحظات المشرف عن هذه العضوية:</blacklist_prompt>
+	</acc_activate>
+	<acc_suspend>
+		<page_title>تعديل : توقيف العضوية</page_title>
+		<form_title>نموذج توقيف عضوية بالموقع</form_title>
+		<intro>ارسل النموذج التالي لتوقيف عضويتك بالموقع</intro>
+		<password_prompt>كلمة سر عضويتك:</password_prompt>
+		<feedback_prompt>انطباعك عن الموقع (اختياري):</feedback_prompt>
+		<missing_pw>فضلا ادخل كلمة سر عضويتك</missing_pw>
+		<invalid_password>كلمة السر غير صحيحة</invalid_password>
+		<submit>ارسال النموذج</submit>
+		<done>تم بنجاح توقيف عضويتك بالموقع</done>
+	</acc_suspend>
+	<upd_email>
+		<page_title>تعديل : البريد الإليكتروني</page_title>
+		<form_title>نموذج تغيير البريد الإليكتروني</form_title>
+		<intro>ارسل النموذج التالي لتغيير بريدك الإليكتروني المسجل بالموقع</intro>
+		<password_prompt>كلمة سر عضويتك:</password_prompt>
+		<new_email_prompt>البريد الإليكتروني الجديد:</new_email_prompt>
+		<missing_pw>فضلا ادخل كلمة سر عضويتك</missing_pw>
+		<missing_email>فضلا أدخل عنوان البريد الإليكتروني الجديد</missing_email>
+		<invalid_password>كلمة السر غير صحيحة</invalid_password>
+		<invalid_email>خطأ في صيغة البريد الإليكتروني</invalid_email>
+		<submit>ارسال النموذج</submit>
+		<done>تم بنجاح تغيير بريدك الإليكتروني المسجل بالموقع</done>
+	</upd_email>
+	<upd_pass>
+		<page_title>تعديل : كلمة السر</page_title>
+		<form_title>نموذج تغيير كلمة السر</form_title>
+		<intro>ارسل النموذج التالي لتغيير كلمة سر الدخول الى عضويتك</intro>
+		<old_prompt>كلمة السر الحالية:</old_prompt>
+		<new_prompt>كلمة السر الجديدة:</new_prompt>
+		<retype_prompt>تأكيد كلمة السر الجديدة:</retype_prompt>
+		<submit>ارسال النموذج</submit>
+		<missing_old_pw>فضلا ادخل كلمة السر الحالية</missing_old_pw>
+		<missing_new_pw>فضلا ادخل كلمة السر الجديدة</missing_new_pw>
+		<missing_retype_pw>فضلا أدخل تأكيد كلمة السر الجديدة</missing_retype_pw>
+		<pw_mismatch>تأكيد كلمة السر لا يطابق كلمة السر الجديدة</pw_mismatch>
+		<done>تم بنجاح تغيير كلمة سر عضويتك بالموقع</done>
+	</upd_pass>
+	<select_gender>
+		<option value="0">رجل</option>
+		<option value="1">إمرأة</option>
+	</select_gender>
+	<profile>
+		<blacklist_warning>
+		<![CDATA[
+		لا تخسر عضويتك بموقع قبول بمخالفتك تعليمات الموقع بكتابتك بياناتك الشخصية أو عبارات مرفوضة. 
+		ولا تحاول إستخدام الحيلة لتفادي إكتشاف المشرفين للمخالفات فهذا سيؤدي الى عدم قبول إعتذارك نهائيا في حالة إكتشاف المخالفة.
+		]]></blacklist_warning>
+		<save>حــــفظ</save>
+		<cancel>تجاهل التعديلات</cancel>
+		<no_contact>
+		الإتصال ب %m% غير متاح الا في حالة وجود قبول مشترك بينكما.
+		اذا كان لديك قبول مبدئي تجاه %m% فعليك ان تضيف %m% الي قائمة قبولك وذلك بالضغط على زر "قبول" الموجود أسفل الصورة.
+		سيقوم الموقع بالتوفيق بينكما وفتح قناة اتصال اذا وجد ان %m% أضافك الى قائمة قبوله.
+		</no_contact>
+		<actions>قائمة الأدوات..</actions>
+		<ask>لديك أسئلة؟</ask>
+		<pics_count>عدد الصور</pics_count>
+		<edit_page_title>تحرير البيانات الشخصية</edit_page_title>
+		<page_title>صفحة بيانات %u%</page_title>
+		<free_text>تكلم عن نفسك وعن شريك المستقبل</free_text>
+		<show_pics>من يمكنه مشاهدة صورك؟</show_pics>
+		<edit>تعديل بياناتك</edit>
+		<edit_pics>اضافة وتعديل الصور</edit_pics>
+		<language>اللغة الأصلية</language>
+		<in_wishlist>في قائمة قبولك</in_wishlist>
+		<contact>اتصال</contact>
+		<form_title>بياناتك الشخصية</form_title>
+		<main_title>عنوان صفحتك</main_title>
+		<no_title>(بدون عنوان)</no_title>
+		<no_ad_title>(لم يذكر عنوان للصفحة)</no_ad_title>
+		<nick>المميز</nick>
+		<status>الحالة</status>
+		<children>أطفال</children>
+		<age>السن</age>
+		<country>الدولة</country>
+		<state>الولاية/المحافظة</state>
+		<city>المدينة</city>
+		<area_code>كود التليفون</area_code>
+		<origin>بلد الأصل</origin>
+		<education>التعليم</education>
+		<job>مجال العمل</job>
+		<height>الطول</height>
+		<smoker>مدخن</smoker>
+		<created>التسجيل</created>
+		<last_update>التحديث</last_update>
+		<last_login>آخر دخول</last_login>
+		<self_desc>
+		تكلم عن نفسك (نشأتك ,علاقتك بدينك, أسرتك, ثقافتك, عملك, طموحاتك, هواياتك, ماضيك, إمكانياتك المادية, شكلك , طباعك,الخ..)
+		</self_desc>
+		<mate_desc>
+		تكلم عن الصفات التي تبحث عنها في شريك المستقبل (السن , الديانة, الإقامة, الحالة الإجتماعية والمادية, الشكل, الخ..)
+		</mate_desc>
+		<member_self_desc>الصفات الشخصية</member_self_desc>
+		<member_mate_desc>صفات شريك المستقبل</member_mate_desc>
+		<visit_count>عدد زيارات %m% لصفحتك: %n% , آخر زيارة في %d%</visit_count>
+		<no_visit>لم تسجل زيارات لصفحتك من %m%</no_visit>
+		<visits_not_counted/>
+		<update>تنفيـــذ</update>
+		<name>الإسم</name>
+		<lname>اسم العائلة</lname>
+		<birth_year>سنة الميلاد</birth_year>
+		<not_specified>(غير مذكور)</not_specified>
+		<later>(في وقت آخر)</later>
+		<location>الإقامة</location>
+		<race>الإنتماء العرقي</race>
+		<religion>الديانة</religion>
+		<income>الدخل السنوي</income>
+		<body>الوزن</body>
+		<zipcode>الرقم البريدي</zipcode>
+		<not_approved>(تحت المراجعة)</not_approved>
+		<pics_title>ألبوم الصور</pics_title>
+		<select>(اختار من التالي)</select>
+		<lastupdate><![CDATA[آخر <b><a href="javascript:" onclick="OpenPage('profile')">تعديل</a></b> للبيانات في (%d%)]]></lastupdate>
+		<no_self_desc>(لم  تذكر الصفات الشخصية)</no_self_desc>
+		<no_mate_desc>(لم  تذكر صفات شريك المستقبل)</no_mate_desc>
+		<skip>لا تعديل</skip>
+		<attributes>الصفات الشخصية</attributes>
+		<basic_info>بياناتك الشخصية</basic_info>
+		<result_sample>
+		بياناتك ستظهر في نتائج البحث بالشكل التالي (الصورة تظهر فقط لمن اخترتهم لمشاهدة صورك):
+		</result_sample>
+		<recent_visits>آخر زيارات قمت بها</recent_visits>
+		<recent_visitors>الزائرين لصفحتك الشخصية</recent_visitors>
+		<details>بياناتك ستظهر للزائرين بالشكل التالي</details>
+		<most_visitors>أكثر الزائرين</most_visitors>
+		<latest_visitors>أحدث الزائرين</latest_visitors>
+	</profile>
+	<register>
+		<retry>اعد المحاولة</retry>
+		<processing>جاري تسجيل العضوية .. فضلا الإنتظار</processing>
+		<intro><![CDATA[
+ادخل البيانات التالية لتسجيل عضويتك بالموقع<br/>
+اذا كنت والد أو والدة أو ولي الراغب في الزواج فعليك إدخال بيانات من تبحث له عن زوج أو زوجة.
+]]>		</intro>
+		<warning><![CDATA[فضلا لا تقوم بانشاء أكثر من عضوية لنفس الشخص<br/>هذا سيكون دليلا على عدم جديتك وسيؤدي ذلك الى الغاء جميع عضوياتك بشكل نهائي.]]></warning>
+		<tip><![CDATA[
+عنوان بريدك الإليكتروني مطلوب فقط ليستخدمه الموقع لمراسلتك عليه للأغراض التالية:
+<ol>
+	<li>تذكيرك بكلمة السر في حالة نسيانك لها</li>
+	<li>إبلاغك بنتيجة عملية توفيق القبول</li>
+	<li>ابلاغك بوجود رسائل جديدة ممن توافق معك في عملية توفيق القبول</li>
+</ol>
+<ul>
+	<li>لن يظهر هذا العنوان لأي من زوار أو أعضاء الموقع.</li>
+	<li>يجب ان تتأكد من صحة هذا العنوان لكي تتمكن من الحصول على الدعم الكامل من الموقع. </li>
+	<li>يمكنك تغيير هذا العنوان حينما تشاء بعد تسجيل عضويتك.</li>
+</ul>
+	]]></tip>
+		<gender>ماهو جنسك؟</gender>
+		<male>رجل</male>
+		<female>امرأة</female>
+		<page_title>انشاء عضوية جديدة</page_title>
+		<form_title>نموذج تسجيل عضو جديد</form_title>
+		<gender>ما هو جنسك؟</gender>
+		<login_name>اختر اسم دخول</login_name>
+		<password>اختر كلمة سر</password>
+		<confirm_pw>تأكيد كلمة السر</confirm_pw>
+		<email>بريدك الإليكتروني</email>
+		<submit>تسجيــــل</submit>
+		<success><![CDATA[
+		شكرا لإنضمامك الى أسرة اعضاء الموقع.<p>
+		لقد تم بنجاح انشاء ملف بيانات للعضو '%u%'.<p>
+		ارسلت رسالة ترحيب اليكترونية للعنوان "%m%".<p>
+		رجاء مراجعة الرسائل المتلقاه في بريدك الإليكتروني بعد قليل للتأكد من صلاحية العنوان المسجل بالموقع. <p>
+		يمكنك توقيف عضويتك بالموقع في أي وقت باستخدام امر "توقيف العضوية".
+		]]></success>
+		<next>تــالي</next>
+		<retype_email>اعد كتابة بريدك الإليكتروني</retype_email>
+		<auto_login>دخول تلقائي</auto_login>
+	</register>
+	<unregister>
+		<page_title>توقيف العضوية</page_title>
+		<intro><![CDATA[
+		بارسالك النموذج التالي سيتم في الحال توقيف عضويتك في الموقع.<br/>
+		توقيف عضويتك سيؤدي الى التالي:<br/>
+		1. لن تظهر بياناتك في نتائج البحث<br/>
+		2. لن تشارك في عمليات توفيق القبول القادمة<br/>
+	]]>	</intro>
+		<form_title>لتوقيف عضويتك فضلا ادخل كلمة السر التي تستخدمها لتسجيل دخولك </form_title>
+		<submit>توقيف العضوية</submit>
+		<success>
+			تم بنجاح توقيف عضويتك.
+		</success>
+		<note>انطباعك عن الخدمة</note>
+	</unregister>
+</root>

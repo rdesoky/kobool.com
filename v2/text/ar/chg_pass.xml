@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<chg_pass>
+		<page_title>تغيير كلمة السر</page_title>
+		<intro>ارسل النموذج التالي لتغيير كلمة السر المستخدمة للدخول الى حسابك في الموقع.</intro>
+		<form_title>نموذج تغيير كلمة السر</form_title>
+		<current_pw>كلمة السر الحالية</current_pw>
+		<password>كلمة السر الجديدة</password>
+		<confirm_pw>أعد كتابة كلمة&lt;br&gt;السر الجديدة</confirm_pw>
+		<submit>تنفيــذ</submit>
+		<success>لقد تم بنجاح تغيير كلمة السر لحسابك بالموقع.</success>
+	</chg_pass>
+</root>

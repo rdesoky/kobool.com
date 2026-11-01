@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<root>
+	<alnoor_30>Tell the believing men to	lower their	gaze and be	modest.	That is	purer for them.	Lo!	Allah is aware of what they	do (Al Noor:30)
+	</alnoor_30>
+	<upd_attr>
+		<page_title>Update : Personal Information</page_title>
+	</upd_attr>
+	<upd_txt>
+		<page_title>Update : Free Text</page_title>
+	</upd_txt>
+	<forgot>
+		<page_title>Password Reminder</page_title>
+		<form_title>Password Reminder Form</form_title>
+		<intro>Send this form to recieve an email message containing your login name and password</intro>
+		<email_prompt>Your Email</email_prompt>
+		<missing_email>Please enter your email address that is associated with your Kobool account</missing_email>
+		<invalid_email>Invalid email format</invalid_email>
+		<submit>Submit Form</submit>
+		<done>Your login name and password has been sent to your email box. Please check your email shortly.</done>
+	</forgot>
+	<acc_activate>
+		<page_title>Update : Activate Membership</page_title>
+		<form_title>Membership activation form</form_title>
+		<intro>Send this form to activate your Kobool membership</intro>
+		<password_prompt>Enter Password:</password_prompt>
+		<missing_pw>Please enter your Kobool membership password</missing_pw>
+		<invalid_password>Invalid Password</invalid_password>
+		<submit>Submit Form</submit>
+		<done>Your membership has been activated successfully.</done>
+		<blacklist_prompt>Kobool supervisor note:</blacklist_prompt>
+	</acc_activate>
+	<acc_suspend>
+		<page_title>Update : Stop Membership</page_title>
+		<form_title>Stop Membership form</form_title>
+		<intro>Send this form to stop your kobool membership</intro>
+		<password_prompt>Enter Password:</password_prompt>
+		<feedback_prompt>Enter Feedback about Kobool (Optional):</feedback_prompt>
+		<missing_pw>Please enter your Kobool membership password</missing_pw>
+		<invalid_password>Invalid Password</invalid_password>
+		<submit>Submit Form</submit>
+		<done>Your Kobool membership has been stopped successfully.</done>
+	</acc_suspend>
+	<upd_email>
+		<page_title>Update : Email address</page_title>
+		<form_title>Update Email address form</form_title>
+		<intro>Send this form to change the email address linked to your Kobool membership</intro>
+		<password_prompt>Enter Password:</password_prompt>
+		<new_email_prompt>New Email Address:</new_email_prompt>
+		<missing_pw>Please enter your Kobool membership password</missing_pw>
+		<missing_email>Please enter the new email address</missing_email>
+		<invalid_password>Invalid Password</invalid_password>
+		<invalid_email>Invalid email format</invalid_email>
+		<submit>Submit Form</submit>
+		<done>Your email address has been updated successfully</done>
+	</upd_email>
+	<upd_pass>
+		<page_title>Update : Password</page_title>
+		<form_title>Password update form</form_title>
+		<intro>Send this form to update your Kobool membership password</intro>
+		<old_prompt>Current Password:</old_prompt>
+		<new_prompt>New Password:</new_prompt>
+		<retype_prompt>Retype the New Password:</retype_prompt>
+		<submit>Submit Form</submit>
+		<missing_old_pw>Please enter your current password</missing_old_pw>
+		<missing_new_pw>Please enter the new password</missing_new_pw>
+		<missing_retype_pw>Please retype the new password</missing_retype_pw>
+		<pw_mismatch>The retyped password doesn't match the new password, please try again.</pw_mismatch>
+		<done>Your Kobool membership password has been updated successfully/</done>
+	</upd_pass>
+	<select_gender>
+		<option value="0">Male</option>
+		<option value="1">Female</option>
+	</select_gender>
+	<profile>
+		<blacklist_warning>
+		<![CDATA[
+		Don't lose your Kobool membership by violating the rules by writing your personal information or unaccepted statements. 
+		Don't try to conseal unaccepted text to pass the supervisors eyes, this will lead to even rejecting your apology if caught.
+		]]></blacklist_warning>
+		<save>Save Changes</save>
+		<cancel>Cancel</cancel>
+		<no_contact>
+Contacting %m% is not possible unless you and %m% have mutual acceptance.
+If you have	initial	acceptance towards %m%,	click on the 'Acceptance' button that is located below %m%'s picture to	add	%m%	to your	Acceptance List.
+Kobool will	match you with %m% if you two have added each others to	your Acceptance	Lists and only then	you	will be	able to	contact	each others.
+		</no_contact>
+		<actions>Action List...</actions>
+		<ask>Ask me..</ask>
+		<pics_count>Pictures</pics_count>
+		<most_visitors>Most Visitors</most_visitors>
+		<edit_page_title>Edit Personal Information</edit_page_title>
+		<page_title>"%u%" Profile	Page</page_title>
+		<free_text>Describe yourself &amp; your mate	</free_text>
+		<no_self_desc>(no self description)</no_self_desc>
+		<no_mate_desc>(no mate description)</no_mate_desc>
+		<show_pics>من يمكنه مشاهدة صورك؟</show_pics>
+		<edit>Modify Profile</edit>
+		<edit_pics>Modify Photos</edit_pics>
+		<language>Native Language</language>
+		<in_wishlist>in Acceptance List</in_wishlist>
+		<contact>Contact</contact>
+		<form_title>Your Personal Information</form_title>
+		<main_title>Your Page Title</main_title>
+		<no_title>(no title)</no_title>
+		<no_ad_title>(no page title)</no_ad_title>
+		<nick>Nick</nick>
+		<status>Status</status>
+		<children>Kids</children>
+		<age>Age</age>
+		<country>Location</country>
+		<state>State</state>
+		<city>City</city>
+		<area_code>كود التليفون</area_code>
+		<origin>Origin</origin>
+		<education>Education</education>
+		<job>Job Field</job>
+		<height>Height</height>
+		<smoker>Smoker</smoker>
+		<weight>Weight</weight>
+		<created>Created</created>
+		<last_update>Updated</last_update>
+		<last_login>Last Login</last_login>
+		<self_desc>Talk about yourself(your religion practice,	family,	education, work, dreams, hobbies, biography, financial status, appearance, etc..)	
+		</self_desc>
+		<mate_desc>Talk about your	mate requirements(age range, religion, location, marital status, financial status, appearance, etc..)
+		</mate_desc>
+		<member_self_desc>Self Description</member_self_desc>
+		<member_mate_desc>Future Mate Description</member_mate_desc>
+		<visit_count>'%m%' visited your page '%n%' times;	last visit on: %d%</visit_count>
+		<no_visit>'%m%' has not visited your page	yet</no_visit>
+		<visits_not_counted/>
+		<update>Update</update>
+		<name>Name</name>
+		<lname>Family	name</lname>
+		<birth_year>Birth	year</birth_year>
+		<select>(please select)</select>
+		<not_specified>(unspecified)</not_specified>
+		<later>(في وقت آخر)</later>
+		<zipcode>zip code</zipcode>
+		<location>Location</location>
+		<income>Annual Income</income>
+		<religion>Religion</religion>
+		<race>Race</race>
+		<body>Weight</body>
+		<not_approved>(under review)</not_approved>
+		<pics_title>Pictures</pics_title>
+		<lastupdate><![CDATA[Last <b><a href="javascript:" onclick="OpenPage('profile')">update</a></b> on %d%)]]></lastupdate>
+		<skip>No Updates</skip>
+		<attributes>Personal	Attributes</attributes>
+		<basic_info>Personal Information</basic_info>
+		<result_sample>Your profile will be listed as	following (photo appears only to whom you selected to see it):</result_sample>
+		<recent_visits>You Recently Visited:</recent_visits>
+		<recent_visitors>Your	Personal Page Visitors:</recent_visitors>
+		<details>Your	Profile	will look to Visitors like this:</details>
+		<latest_visitors>Recent Visitors</latest_visitors>
+	</profile>
+	<register>
+		<retry>try again</retry>
+		<processing>Creating a new membership... please	wait
+		</processing>
+		<intro><![CDATA[Please fill in the following form to create a new member profile	]]></intro>
+		<warning><![CDATA[Please don't create more than one profile for the same person. 
+			That is a sign of being unserious and might lead to terminating all your profiles.
+		]]></warning>
+		<tip><![CDATA[
+			Your e-mail	address	is required	only for KOBOOL	to contact you for the following purposes:
+			<ol>
+				<li>Password reminder.</li>
+				<li>Acceptance Matching notification.</li>
+				<li>Notification for new messages	from whom you matched with.</li>
+			</ol>
+			<ul>
+				<li>Your e-mail will NOT be visible to any visitor or	member.</li>
+				<li>You can change this address whenever you want	after becoming a member.</li>
+				<li>Please make sure that	this address is	correct	in order to	get	the	full support from us.</li>
+			</ul>
+		]]></tip>
+		<gender>Your gender</gender>
+		<male>man</male>
+		<female>woman</female>
+		<page_title>Creating New Profile</page_title>
+		<form_title>New Members Free Registration Form</form_title>
+		<login_name>Choose a login name</login_name>
+		<password>Choose a password</password>
+		<confirm_pw>Retype Password</confirm_pw>
+		<email>Your e-mail address:</email>
+		<submit>Create My Profile</submit>
+		<success><![CDATA[
+			<p>Thank you for becoming a KOBOOL	member.</p>
+			<p>A user Profile for '%u%' has been created successfully.</p>
+			<p>An e-mail message has been sent	to %m% containing welcome message.</p>
+			<p>It is important	to make	sure that your email address is	valid to get the full support from KOBOOL.</p>
+			<p>You	can	stop your membership at	any	time using the "Stop Membership" button.</p>
+		]]></success>
+		<next>Continue</next>
+		<retype_email>Retype your Email</retype_email>
+		<auto_login>Auto Login</auto_login>
+	</register>
+	<unregister>
+		<page_title>Stop Membership</page_title>
+		<intro><![CDATA[
+Submit	the	form below to stop your	KOBOOL membership.&lt;br&gt;
+		Stopping your membership will cause	the	following:&lt;br&gt;
+		1. Your	profile	will not appear	in the Search Results.&lt;br&gt;
+		2. You will	not	be included	in the next	Acceptance Matching	operations.
+		]]></intro>
+		<form_title>Stop Membership Form</form_title>
+		<note>Write your comments&lt;br&gt;about the service&lt;br&gt;(optional)</note>
+		<submit>Submit</submit>
+		<success>
+			Your Membership	has	been stopped successfully.&lt;p&gt;
+			A confirmation e-mail has been sent	to you for your	records.
+		</success>
+	</unregister>
+</root>

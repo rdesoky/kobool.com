@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<root>
+	<option value="0"    name="" ></option>
+	<option value="1" name="Alabama" ></option>
+	<option value="2" name="Alaska" ></option>
+	<option value="3" name="Arizona" ></option>
+	<option value="4" name="Arkansas" ></option>
+	<option ex="1" value="5" name="California" ></option>
+	<option value="6" name="Colorado" ></option>
+	<option value="7" name="Connecticut" ></option>
+	<option value="8" name="Delaware" ></option>
+	<option value="9" name="Florida" ></option>
+	<option value="10" name="Georgia" ></option>
+	<option value="11" name="Hawaii" ></option>
+	<option value="12" name="Idaho" ></option>
+	<option value="13" name="Illinois" ></option>
+	<option value="14" name="Indiana" ></option>
+	<option value="15" name="Iowa" ></option>
+	<option value="16" name="Kansas" ></option>
+	<option value="17" name="Kentucky" ></option>
+	<option value="18" name="Louisiana" ></option>
+	<option value="19" name="Maine" ></option>
+	<option value="20" name="Maryland" ></option>
+	<option value="21" name="Massachusetts" ></option>
+	<option value="22" name="Michigan" ></option>
+	<option value="23" name="Minnesota" ></option>
+	<option value="24" name="Mississippi" ></option>
+	<option value="25" name="Missouri" ></option>
+	<option value="26" name="Montana" ></option>
+	<option value="27" name="Nebraska" ></option>
+	<option value="28" name="Nevada" ></option>
+	<option value="29" name="New Hampshire" ></option>
+	<option value="30" name="New Jersey" ></option>
+	<option value="31" name="New Mexico" ></option>
+	<option value="32" name="New York" ></option>
+	<option value="33" name="North Carolina" ></option>
+	<option value="34" name="North Dakota" ></option>
+	<option value="35" name="Ohio" ></option>
+	<option value="36" name="Oklahoma" ></option>
+	<option value="37" name="Oregon" ></option>
+	<option value="38" name="Pennsylvania" ></option>
+	<option value="39" name="Rhode Island" ></option>
+	<option value="40" name="South Carolina" ></option>
+	<option value="41" name="South Dakota" ></option>
+	<option value="42" name="Tennessee" ></option>
+	<option value="43" name="Texas" ></option>
+	<option value="44" name="Utah" ></option>
+	<option value="45" name="Vermont" ></option>
+	<option value="46" name="Virginia" ></option>
+	<option value="47" name="Washington" ></option>
+	<option value="48" name="West Virginia" ></option>
+	<option value="49" name="Wisconsin" ></option>
+	<option value="50" name="Wyoming" ></option>
+</root>

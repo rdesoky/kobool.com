@@ -1,0 +1,170 @@
+<?xml version="1.0"  ?>
+<root>
+	<option value="0" name="" />
+	<option value="1" name="Airdrie" />
+	<option value="2" name="Alberta Beach" />
+	<option value="3" name="Ardrossan" />
+	<option value="4" name="Athabasca" />
+	<option value="5" name="Banff" />
+	<option value="6" name="Barrhead" />
+	<option value="7" name="Beaumont" />
+	<option value="8" name="Beaverlodge" />
+	<option value="9" name="Beiseker" />
+	<option value="10" name="Bentley" />
+	<option value="11" name="Berwyn" />
+	<option value="12" name="Bindloss" />
+	<option value="13" name="Black Diamond" />
+	<option value="14" name="Blackfalds" />
+	<option value="15" name="Blackie" />
+	<option value="16" name="Blairmore" />
+	<option value="17" name="Bon Accord" />
+	<option value="18" name="Bonnyville" />
+	<option value="19" name="Botha" />
+	<option value="20" name="Bow Island" />
+	<option value="21" name="Bowden" />
+	<option value="22" name="Boyle" />
+	<option value="23" name="Bragg Creek" />
+	<option value="24" name="Breton" />
+	<option value="25" name="Brooks" />
+	<option value="26" name="Calgary" />
+	<option value="27" name="Calmar" />
+	<option value="28" name="Camrose" />
+	<option value="29" name="Canmore" />
+	<option value="30" name="Cardston" />
+	<option value="31" name="Caroline" />
+	<option value="32" name="Carstairs" />
+	<option value="33" name="Castle Mountain" />
+	<option value="34" name="Castor" />
+	<option value="35" name="Chestermere" />
+	<option value="36" name="Claresholm" />
+	<option value="37" name="Coaldale" />
+	<option value="38" name="Cochrane" />
+	<option value="39" name="Cold Lake" />
+	<option value="40" name="Coleman" />
+	<option value="41" name="Consort" />
+	<option value="42" name="Coronation" />
+	<option value="43" name="Cowley" />
+	<option value="44" name="Dapp" />
+	<option value="45" name="De Winton" />
+	<option value="46" name="Dead Man's Flats" />
+	<option value="47" name="Devon" />
+	<option value="48" name="Diamond City" />
+	<option value="49" name="Didsbury" />
+	<option value="50" name="Drayton Valley" />
+	<option value="51" name="Drumheller" />
+	<option value="52" name="Duffield" />
+	<option value="53" name="Eckville" />
+	<option value="54" name="Edmonton" />
+	<option value="55" name="Edson" />
+	<option value="56" name="Elnora" />
+	<option value="57" name="Fairview" />
+	<option value="58" name="Falher" />
+	<option value="59" name="Foremost" />
+	<option value="60" name="Fort Assiniboine" />
+	<option value="61" name="Fort Chipewyan" />
+	<option value="62" name="Fort Macleod" />
+	<option value="63" name="Fort McMurray" />
+	<option value="64" name="Fort Saskatchewan" />
+	<option value="65" name="Fort Vermillion" />
+	<option value="66" name="Fox Creek" />
+	<option value="67" name="Fox Lake" />
+	<option value="68" name="Garden River" />
+	<option value="69" name="Grande Cache" />
+	<option value="70" name="Grande Prairie" />
+	<option value="71" name="Grassland" />
+	<option value="72" name="Grimshaw" />
+	<option value="73" name="Hanna" />
+	<option value="74" name="Harvie Heights" />
+	<option value="75" name="Hay Lakes" />
+	<option value="76" name="Heisler" />
+	<option value="77" name="High Level" />
+	<option value="78" name="High Prairie" />
+	<option value="79" name="Hinton" />
+	<option value="80" name="Hythe" />
+	<option value="81" name="Innisfail" />
+	<option value="82" name="Iron River" />
+	<option value="83" name="Jasper" />
+	<option value="84" name="Kananaskis Village" />
+	<option value="85" name="Kelsey" />
+	<option value="86" name="Killam" />
+	<option value="87" name="La Crete" />
+	<option value="88" name="La Glace" />
+	<option value="89" name="Lac La Biche" />
+	<option value="90" name="Lacombe" />
+	<option value="91" name="Lake Louise" />
+	<option value="92" name="Lamont" />
+	<option value="93" name="Leduc" />
+	<option value="94" name="Lethbridge" />
+	<option value="95" name="Linden" />
+	<option value="96" name="Lloydminster" />
+	<option value="97" name="Longview" />
+	<option value="98" name="Manning" />
+	<option value="99" name="Markerville" />
+	<option value="100" name="Marwayne" />
+	<option value="101" name="Mayerthorpe" />
+	<option value="102" name="McLennan" />
+	<option value="103" name="Medicine Hat" />
+	<option value="104" name="Milo" />
+	<option value="105" name="Morinville" />
+	<option value="106" name="Mossleigh" />
+	<option value="107" name="Mountain View" />
+	<option value="108" name="Mundare" />
+	<option value="109" name="Munson" />
+	<option value="110" name="Nanton" />
+	<option value="111" name="New Norway" />
+	<option value="112" name="New Sarepta" />
+	<option value="113" name="Nisku" />
+	<option value="114" name="Nordegg" />
+	<option value="115" name="Okotoks" />
+	<option value="116" name="Olds" />
+	<option value="117" name="Oyen" />
+	<option value="118" name="Peace River" />
+	<option value="119" name="Peers" />
+	<option value="120" name="Picture Butte" />
+	<option value="121" name="Pincher Creek" />
+	<option value="122" name="Pine Lake" />
+	<option value="123" name="Ponoka" />
+	<option value="124" name="Provost" />
+	<option value="125" name="Rainbow Lake" />
+	<option value="126" name="Raymond" />
+	<option value="127" name="Red Deer" />
+	<option value="128" name="Redcliff" />
+	<option value="129" name="Redwood Meadows" />
+	<option value="130" name="Rimbey" />
+	<option value="131" name="Riviere Qui Barre" />
+	<option value="132" name="Rocky Mountain House" />
+	<option value="133" name="Rosemary" />
+	<option value="134" name="Sangudo" />
+	<option value="135" name="Sherwood Park" />
+	<option value="136" name="Siksika" />
+	<option value="137" name="Slave Lake" />
+	<option value="138" name="Smoky Lake" />
+	<option value="139" name="Spruce Grove" />
+	<option value="140" name="St. Albert" />
+	<option value="141" name="Stettler" />
+	<option value="142" name="Stirling" />
+	<option value="143" name="Stony Plain" />
+	<option value="144" name="Strathmore" />
+	<option value="145" name="Sundre" />
+	<option value="146" name="Swan Hills" />
+	<option value="147" name="Sylvan Lake" />
+	<option value="148" name="Taber" />
+	<option value="149" name="Thorhild" />
+	<option value="150" name="Thorsby" />
+	<option value="151" name="Three Hills" />
+	<option value="152" name="Tofield" />
+	<option value="153" name="Turner Valley" />
+	<option value="154" name="Valleyview" />
+	<option value="155" name="Vauxhall" />
+	<option value="156" name="Vegreville" />
+	<option value="157" name="Vermilion" />
+	<option value="158" name="Vilna" />
+	<option value="159" name="Vulcan" />
+	<option value="160" name="Wainwright" />
+	<option value="161" name="Water Valley" />
+	<option value="162" name="Wembley" />
+	<option value="163" name="Westlock" />
+	<option value="164" name="Wetaskiwin" />
+	<option value="165" name="Whitecourt" />
+	<option value="166" name="Worsley" />
+</root>

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<c>
+		<option value="0" code="0" name=""/>
+		<option value="56"	code="JO" name="الأردن"/>
+		<option value="110"	code="AE" name="الإمارات"/>
+		<option value="12"	code="BH" name="البحرين"/>
+		<option value="3"	code="DZ" name="الجزائر"/>
+		<option value="93"	code="SO" name="الصومال"/>
+		<option value="49"	code="IQ" name="العراق"/>
+		<option value="59"	code="KW" name="الكويت"/>
+		<option ex="1" value="87"	code="SA" name="السعودية"/>
+		<option value="98"	code="SD" name="السودان"/>
+		<option ex="1" value="69"	code="MA" name="المغرب"/>
+		<option value="117"	code="YE" name="اليمن"/>
+		<option value="106"	code="TN" name="تونس"/>
+		<option n="1" value="149" code="DJ" name="جيبوتي" />
+		<option value="77"	code="OM" name="سلطنة عمان"/>
+		<option ex="1" value="102"	code="SY" name="سوريا"/>
+		<option value="79"	code="PS" name="فلسطين"/>
+		<option value="83"	code="QA" name="قطر"/>
+		<option ex="1" value="62" code="LB" name="لبنان"/>
+		<option value="63"	code="LY" name="ليبيا"/>
+		<option ex="1" value="32"	code="EG" name="مصر"/>
+		<option value="66"	code="MR" name="موريتانيا"/>
+		<option value="00"	code="00" name="---------------"/>
+		<option value="34"	code="ET" name="اثيوبيا"/>
+		<option value="10"	code="AZ" name="أذربيجان"/>
+		<option n="1" value="155" code="ER" name="أرتيريا" />
+		<option value="7"	code="AM" name="أرمنيا"/>
+		<option value="1"	code="AF" name="افغانستان"/>
+		<option value="6"	code="AR" name="الأرجنتين"/>
+		<option n="1" value="152" code="EC" name="الإكوادور" />
+		<option value="2"	code="AL" name="ألبانيا"/>
+		<option value="19"	code="BR" name="البرازيل"/>
+		<option n="1" value="215" code="PT" name="البرتغال" />
+		<option value="11"	code="BS" name="البهاما"/>
+		<option value="17"	code="BA" name="البوسنه والهرسك"/>
+		<option value="37"	code="GA" name="الجابون"/>
+		<option value="31"	code="DK" name="الدنمارك"/>
+		<option value="26"	code="CN" name="الصين"/>
+		<option n="1" value="174" code="VA" name="الفاتيكان" />
+		<option value="81"	code="PH" name="الفلبين"/>
+		<option value="22"	code="CM" name="الكاميرون"/>
+		<option n="1" value="146" code="CG" name="الكونجو" />
+		<option n="1" value="147" code="CD" name="الكونجو الديموقراطية" />
+		<option n="1" value="153" code="SV" name="السلفادور" />
+		<option n="1" value="124" code="AS" name="الساموا الأمريكية" />
+		<option value="89"	code="SN" name="السنغال"/>
+		<option value="100"	code="SE" name="السويد"/>
+		<option value="38"	code="DE" name="المانيا"/>
+		<option value="68"	code="MX" name="المكسيك"/>
+		<option value="111"	code="GB" name="المملكة المتحدة"/>
+		<option n="1" value="190" code="MV" name="المالديفز" />
+		<option value="76"	code="NO" name="النرويج"/>
+		<option value="9"	code="AT" name="النمسا"/>
+		<option value="74"	code="NE" name="النيجر"/>
+		<option value="46"	code="IN" name="الهند"/>
+		<option ex="1" value="112" code="US" name="الولايات المتحدة"/>
+		<option value="55"	code="JP" name="اليابان"/>
+		<option value="40"	code="GR" name="اليونان"/>
+		<option value="96"	code="ES" name="أسبانيا"/>
+		<option value="8"	code="AU" name="استراليا"/>
+		<option value="33"	code="EE" name="استونيا"/>
+		<option value="51"	code="IL" name="اسرائيل"/>
+		<option value="88"	code="_X" name="اسكتلنده"/>
+		<option n="1" value="126" code="AQ" name="أنتراكتيا" />
+		<option value="5"	code="AO" name="أنجولا"/>
+		<option value="47"	code="ID" name="اندونسيا"/>
+		<option value="4"	code="AD" name="أندورا"/>
+		<option n="1" value="240" code="UY" name="أورجواي" />
+		<option value="113"	code="UZ" name="أوزبكستان"/>
+		<option value="108"	code="UG" name="اوغندا"/>
+		<option value="109"	code="UA" name="اوكرانيا"/>
+		<option value="48"	code="IR" name="ايران"/>
+		<option value="50"	code="IE" name="ايرلنده"/>
+		<option value="45"	code="IS" name="ايسلنده"/>
+		<option value="52"	code="IT" name="ايطاليا"/>
+		<option n="1" value="214" code="PY" name="باراجواي" />
+		<option value="78"	code="PK" name="باكستان"/>
+		<option n="1" value="127" code="AG" name="أنتراكتيا و باربودا" />
+		<option n="1" value="129" code="BB" name="باربودوز" />
+		<option value="15"	code="BM" name="برموده"/>
+		<option value="20"	code="BN" name="بروناي"/>
+		<option value="14"	code="BE" name="بلجيكا"/>
+		<option value="21"	code="BG" name="بلغاريا"/>
+		<option value="13"	code="BD" name="بنجلاديش"/>
+		<option n="1" value="212" code="PA" name="بنما" />
+		<option value="18"	code="BW" name="بوتسوانا"/>
+		<option value="82"	code="PR" name="بورتا ريكو"/>
+		<option n="1" value="136" code="BI" name="بوروندي" />
+		<option value="16"	code="BO" name="بوليفيا"/>
+		<option value="122"	code="PL" name="بولندا" />
+		<option value="80"	code="PE" name="بيرو"/>
+		<option n="1" value="131" code="BJ" name="بينين" />
+		<option value="104"	code="TH" name="تايلاند"/>
+		<option n="1" value="230" code="TW" name="تايوان" />
+		<option value="105"	code="TT" name="ترينداد وتوباجو"/>
+		<option n="1" value="236" code="TM" name="تركمستان" />
+		<option value="107"	code="TR" name="تركيا"/>
+		<option n="1" value="141" code="TD" name="تشاد" />
+		<option value="25"	code="CL" name="تشيلي"/>
+		<option value="103"	code="TZ" name="تنزانيا"/>
+		<option n="1" value="233" code="TG" name="توجو" />
+		<option n="1" value="162" code="GM" name="جامبيا" />
+		<option value="54"	code="JM" name="جاميكا"/>
+		<option n="1" value="151" code="DO" name="جمهورية الدومينيكا" />
+		<option n="1" value="180" code="KR" name="جمهورية كوريا" />
+		<option n="1" value="165" code="GL" name="جرين لاند" />
+		<option value="24"	code="KY" name="جزر الكناري"/>
+		<option n="1" value="193" code="MH" name="جزر المارشال" />
+		<option n="1" value="156" code="FK" name="جزر فوكلاند" />
+		<option value="30"	code="CZ" name="جمهورية التشيك"/>
+		<option value="94"	code="ZA" name="جنوب افريقيا"/>
+		<option n="1" value="139" code="KY2" name="جزر السيمان" />
+		<option n="1" value="169" code="GT" name="جواتيمالا" />
+		<option n="1" value="227" code="GS" name="جنوب جورجيا" />
+		<option n="1" value="163" code="GE" name="جورجيا" />
+		<option value="41"	code="GY" name="جيانا"/>
+		<option n="1" value="178" code="JE" name="جيرسي" />
+		<option value="72"	code="_X" name="دار السلام"/>
+		<option n="1" value="150" code="DM" name="دومينيكا" />
+		<option n="1" value="216" code="RW" name="رواندا" />
+		<option value="85"	code="RU" name="روسيا"/>
+		<option value="84"	code="RO" name="رومانيا"/>
+		<option value="119"	code="ZM" name="زامبيا"/>
+		<option value="120"	code="ZW" name="زيمبابوي"/>
+		<option value="114"	code="VE" name="فنزويلا"/>
+		<option value="115"	code="VN" name="فيتنام"/>
+		<option value="53"	code="_X" name="ساحل العاج"/>
+		<option value="86"	code="LC" name="سانتا لوسيا"/>
+		<option value="97"	code="LK" name="سريلانكا"/>
+		<option value="91"	code="SG" name="سنغافوره"/>
+		<option value="92"	code="SI" name="سلوفينيا"/>
+		<option value="99"	code="SR" name="سورينام"/>
+		<option value="101"	code="CH" name="سويسرا"/>
+		<option value="90"	code="RS" name="صربيا"/>
+		<option n="1" value="231" code="TJ" name="طاجيكستان" />
+		<option value="39"	code="GH" name="غانا"/>
+		<option n="1" value="166" code="GD" name="غرناطة" />
+		<option value="36"	code="FR" name="فرنسا"/>
+		<option value="35"	code="FI" name="فنلنده"/>
+		<option n="1" value="158" code="FJ" name="فيجي" />
+		<option value="29"	code="CY" name="قبرص"/>
+		<option value="57"	code="KZ" name="كازاخستان"/>
+		<option n="1" value="137" code="KH" name="كامبوديا" />
+		<option value="60"	code="KG" name="كريجستان"/>
+		<option ex="1" value="23"	code="CA" name="كندا"/>
+		<option value="121"	code="CU" name="كوبا"/>
+		<option value="95"	code="KP" name="كوريا الجنوبيه"/>
+		<option value="28"	code="CR" name="كوستاريكا"/>
+		<option value="27"	code="CO" name="كولومبيا"/>
+		<option value="58"	code="KE" name="كينيا"/>
+		<option n="1" value="181" code="LV" name="لاتفيا" />
+		<option value="61"	code="LA" name="لاوس"/>
+		<option n="1" value="186" code="LU" name="لوكسمبورج" />
+		<option n="1" value="183" code="LR" name="ليبيريا" />
+		<option n="1" value="187" code="MO" name="ماكاو" />
+		<option n="1" value="196" code="MD" name="مالدوفا" />
+		<option n="1" value="192" code="MT" name="مالطة" />
+		<option n="1" value="191" code="ML" name="مالي" />
+		<option value="65"	code="MY" name="ماليزيا"/>
+		<option value="64"	code="MG" name="مدغشقر"/>
+		<option n="1" value="188" code="MK" name="مقدونيا" />
+		<option n="1" value="189" code="MW" name="ملاوي" />
+		<option n="1" value="198" code="MN" name="منغوليا" />
+		<option value="67"	code="MU" name="موريشيوس"/>
+		<option n="1" value="201" code="MZ" name="موزمبيق" />
+		<option n="1" value="197" code="MC" name="موناكو" />
+		<option value="70"	code="NA" name="نامبيا"/>
+		<option n="1" value="204" code="NP" name="نيبال" />
+		<option value="71"	code="_X" name="نيجارا"/>
+		<option value="75"	code="NG" name="نيجريا"/>
+		<option n="1" value="207" code="NI" name="نيكاراجوا" />
+		<option value="73"	code="NZ" name="نيوزيلاندا"/>
+		<option value="42"	code="HT" name="هايتي"/>
+		<option n="1" value="176" code="HU" name="هنغاريا" />
+		<option value="43"	code="NL" name="هولندا"/>
+		<option value="44"	code="HK" name="هونج كونج"/>
+		<option n="1" value="140" code="CF" name="وسط أفريقيا" />
+		<option value="116"	code="WF" name="ويلز"/>
+		<option value="118"	code="_Z" name="يوغوسلافيا"/>
+
+		<option n="1" value="123" code="AX" name="Aland Islands" />
+		<option n="1" value="125" code="AI" name="Anguilla" />
+		<option n="1" value="128" code="AW" name="Aruba" />
+		<option n="1" value="130" code="BZ" name="Belize" />
+		<option n="1" value="132" code="BT" name="Bhutan" />
+		<option n="1" value="133" code="BV" name="Bouvet Island" />
+		<option n="1" value="134" code="IO" name="British Indian Ocean Territory" />
+		<option n="1" value="135" code="BF" name="Burkina Faso" />
+		<option n="1" value="138" code="CV" name="Cape Verde" />
+		<option n="1" value="143" code="CX" name="Christmas Island" />
+		<option n="1" value="144" code="CC" name="Cocos Islands" />
+		<option n="1" value="145" code="KM" name="Comoros" />
+		<option n="1" value="148" code="CK" name="Cook Islands" />
+		<option n="1" value="154" code="GQ" name="Equatorial Guinea" />
+		<option n="1" value="157" code="FO" name="Faroe Islands" />
+		<option n="1" value="159" code="GF" name="French Guiana" />
+		<option n="1" value="160" code="PF" name="French Polynesia" />
+		<option n="1" value="161" code="TF" name="French Southern Territories" />
+		<option n="1" value="164" code="GI" name="GIBRALTAR" />
+		<option n="1" value="167" code="GP" name="Guadeloupe" />
+		<option n="1" value="168" code="GU" name="Guam" />
+		<option n="1" value="170" code="GG" name="Guernsey" />
+		<option n="1" value="171" code="GN" name="Guinea" />
+		<option n="1" value="172" code="GW" name="Guinea-Bissau" />
+		<option n="1" value="173" code="MH" name="Heard Island and McDonald Islands" />
+		<option n="1" value="175" code="HN" name="Honduras" />
+		<option n="1" value="177" code="IM" name="Isle of Man" />
+		<option n="1" value="179" code="KI" name="Kiribati" />
+		<option n="1" value="182" code="LS" name="LSOTHO" />
+		<option n="1" value="184" code="LI" name="Liechtnestien" />
+		<option n="1" value="185" code="LT" name="Lithuania" />
+		<option n="1" value="194" code="MQ" name="Martinique" />
+		<option n="1" value="142" code="YT" name="Mayotte" />
+		<option n="1" value="195" code="FM" name="Micronesia" />
+		<option n="1" value="199" code="MS" name="Montserrat" />
+		<option n="1" value="202" code="MM" name="Myanmar" />
+		<option n="1" value="203" code="NR" name="Nauru" />
+		<option n="1" value="205" code="AN" name="Netherlands Antilles" />
+		<option n="1" value="206" code="NC" name="New Caledonia" />
+		<option n="1" value="208" code="NU" name="Niue" />
+		<option n="1" value="209" code="NF" name="Norfolk Island" />
+		<option n="1" value="210" code="MP" name="Northern Mariana Islands" />
+		<option n="1" value="211" code="PW" name="Palau" />
+		<option n="1" value="213" code="PG" name="Papua New Guinea" />
+		<option n="1" value="217" code="SH" name="Saint Helena" />
+		<option n="1" value="218" code="KN" name="Saint Kitts and Nevis" />
+		<option n="1" value="219" code="PM" name="Saint Pierre and Miquelon" />
+		<option n="1" value="220" code="VC" name="Saint Vincent and the Grenadines" />
+		<option n="1" value="221" code="WS" name="Samoa" />
+		<option n="1" value="222" code="ST" name="Sao Tome and Principe" />
+		<option n="1" value="223" code="SC" name="Seychelles" />
+		<option n="1" value="224" code="SL" name="Sierra Leone" />
+		<option n="1" value="225" code="SK" name="Slovakia" />
+		<option n="1" value="226" code="SB" name="Solomon Islands" />
+		<option n="1" value="228" code="SJ" name="SVALBARD and Jan Mayen" />
+		<option n="1" value="229" code="SZ" name="Swaziland" />
+		<option n="1" value="232" code="TL" name="Timor-Leste" />
+		<option n="1" value="234" code="TK" name="Tokelau" />
+		<option n="1" value="235" code="TO" name="Tonga" />
+		<option n="1" value="237" code="TC" name="Turks and Caicos Islands" />
+		<option n="1" value="238" code="TV" name="Tuvalu" />
+		<option n="1" value="239" code="UM" name="United States Minor outlying Islands" />
+		<option n="1" value="241" code="VU" name="Vanautu" />
+		<option n="1" value="242" code="VG" name="Virgin Islands, British" />
+		<option n="1" value="243" code="VI" name="Virgin Islands, US" />
+		<option n="1" value="244" code="EH" name="Western Sahara" />
+
+		<option value="200" code="200" name="بلد أخرى"/>
+	</c>
+	<c32>
+		<option value="0" name="" ></option>
+		<option value="4" name="الإسكندرية"></option>
+		<option ex="1" value="13" name="الإسماعيلية"></option>
+		<option ex="1" value="23" name="البحر الأحمر"></option>
+		<option ex="1" value="7" name="البحيرة"></option>
+		<option ex="1" value="12" name="الجيزة"></option>
+		<option ex="1" value="10" name="الدقهلية"></option>
+		<option ex="1" value="27" name="السويس"></option>
+		<option ex="1" value="3" name="الشرقية"></option>
+		<option ex="1" value="2" name="الغربية"></option>
+		<option ex="1" value="1" name="الفيوم"></option>
+		<option value="9" name="القاهرة"></option>
+		<option ex="1" value="21" name="القليوبية"></option>
+		<option ex="1" value="17" name="المنوفية"></option>
+		<option ex="1" value="18" name="المنيا"></option>
+		<option value="19" name="الوادي الجديد"></option>
+		<option ex="1" value="6" name="أسوان"></option>
+		<option value="5" name="أسيوط"></option>
+		<option ex="1" value="8" name="بني سويف"></option>
+		<option value="20" name="بورسعيد"></option>
+		<option ex="1" value="25" name="جنوب سيناء"></option>
+		<option ex="1" value="11" name="دمياط"></option>
+		<option ex="1" value="22" name="قنا"></option>
+		<option ex="1" value="14" name="كفر الشيخ"></option>
+		<option ex="1" value="26" name="سوهاج"></option>
+		<option ex="1" value="24" name="شمال سيناء"></option>
+		<option ex="1" value="16" name="مطروح"></option>		
+	</c32>
+	<c32.10>
+	</c32.10>
+
+</root>

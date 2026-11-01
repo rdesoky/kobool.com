@@ -1,0 +1,144 @@
+#MemViewPanel{
+	min-height:400px;
+}
+#MemViewPanel .self_desc, #MemViewPanel .mate_desc{
+	padding:6px 2px;
+}
+
+
+#AttrBar{
+	margin:4px 0px 8px 0px;
+	background-color: #EEE;
+}
+
+#MTabs{
+}
+
+.mem_left_col{
+	vertical-align:top;
+	width:100px;
+}
+
+.mem_left_col img{
+}
+.mem_left_col .visit_box{
+	margin-bottom:3px;
+}
+
+.tabs{
+	list-style-type: none;
+	list-style:none;
+	display:block;
+	padding:0px;
+	margin:0px 0px -1px 0px;
+}
+
+.ctab{
+}
+
+.ctab:lang(ar){
+}
+
+#MTabs li{
+	padding:2px 8px 1px 8px;
+	height:24px;
+	line-height:20px;
+	border-style: solid;
+	border-width: 1px 0px;
+	border-color: white white silver white;
+	font-size:10pt;
+}
+
+#MTabs li *{
+	font-size:10pt;
+}
+#MTabs .ctab{
+	border-color:#EEE #EEE silver #EEE;
+	margin:0px 3px 0px 0px;
+	float:left;
+	cursor:default;
+	background-color:#EEE;
+}
+
+#MTabs .ctab.seltab{
+	border-width:1px;
+	background-color:white;
+	border-color:silver silver transparent silver;
+	cursor:default;
+}
+
+#MTabs .ctab:lang(ar){
+	float:right;
+	margin:0px 0px 0px 3px;
+}
+
+#MTabPanels{
+	padding:8px;
+	min-height:360px;
+}
+
+
+#MTabPanels{
+	border-style:solid;
+	border-color:silver;
+	border-width:0px 0px 0px 1px;
+}
+#MTabPanels:lang(ar){
+	border-width:0px 1px 0px 0px;
+}
+
+.attr_panel{
+	/*min-height:100px;*/
+	/*min-width:400px;*/
+	display:block;
+}
+.info_col{
+	vertical-align:top;
+	padding:0px 5px 0px 5px;
+	display:inline-block;
+}
+
+.tn_frame{
+	border-bottom:solid 1px #F0F0F0;
+	margin-bottom:5px;
+}
+
+.tn_frame_pic{
+	height:50px;
+	width:auto;
+	cursor:pointer;
+	border:solid white;
+	border-width:5px 1px;
+}
+
+.tn_frame_pic.sel{
+	border-color:silver;
+}
+
+.tn_frame_pic:hover{
+	border-color:#0645AD;
+}
+.pic_frame{
+/*	border:solid 1px red;
+	display:block;
+	min-height:320px;*/
+}
+
+.pic_frame .progress{
+/*	position:absolute;*/
+}
+
+.attr_line{
+	display:block;
+}
+
+#MemPicColumn{
+	background-color:white;
+	padding:0px 5px 5px 0px;
+	min-height:100px;
+}
+
+#MemPicColumn:lang(ar){
+	padding:0px 0px 5px 5px;
+}
+

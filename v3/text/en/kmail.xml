@@ -1,0 +1,24 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<root>
+	<m></m>
+	<tags>
+		<inbox>Inbox</inbox>
+		<sent>Sent</sent>
+		<starred>Starred</starred>
+		<saved>Saved</saved>
+		<trash>Trash</trash>
+		<alerts>Alerts</alerts>
+	</tags>
+	<ui>
+		<admin>Kobool.com</admin>
+		<page_title>My Mailbox</page_title>
+		<move_to>-- Move to --</move_to>
+		<reply>Reply</reply>
+		<msg_from>From</msg_from>
+		<msg_date>Sent on</msg_date>
+		<subject>Subject</subject>
+		<no_selection>No selected message. Please click on a message to display its contents.</no_selection>
+		<delete>Delete</delete>
+		<save>Save</save>
+	</ui>
+</root>

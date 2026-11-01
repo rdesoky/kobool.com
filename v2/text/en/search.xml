@@ -1,0 +1,111 @@
+<?xml version="1.0" ?>
+<root>
+	<blocklist>
+		<intro>This List contains the members whom you removed from your Visitors List.</intro>
+	</blocklist>
+	<search>
+		<search_login>login name contains</search_login>
+		<list>Search List</list>
+		<saved>This Search has been added to your Search List</saved>
+		<refine>Refine</refine>
+		<save>Save</save>
+		<save_search>Save This Search</save_search>
+		<tips>Search Tips</tips>
+		<basic_title>Basic Search</basic_title>
+		<advanced_title>Advanced</advanced_title>
+		<title>Set your Search Criteria</title>
+		<what>Search for</what>
+		<husband>husband</husband>
+		<wife>wife</wife>
+		<age>Age range</age>
+		<country>Location or Origin</country>
+		<origin>Origin</origin>
+		<photo>pics first</photo>
+		<submit>Search</submit>
+		<year>year</year>
+		<unspecified>-- doesn't matter --</unspecified>
+		<age_from>Age from</age_from>
+		<age_to>to</age_to>
+		<sorting>Sort by</sorting>
+		<mstatus>Marital Status</mstatus>
+		<religion>Religion</religion>
+		<go_basic>Switch to basic search</go_basic>
+		<go_advanced>Switch to advanced search</go_advanced>
+		<no_visits>has not visited your page yet</no_visits>
+		<visits>Number of visits: %n%</visits>
+		<last_visit_time>Last Visit on: %d%</last_visit_time>
+		<show_top_visitors>
+Number of times %u% visited your personal page.
+%u%'s visit to your page does not mean that %u% has accepted you, but several visits might indicate that.
+Click here to list all the visitors sorted by the most visitors.
+		</show_top_visitors>
+		<show_recent_visitors>
+Click here to list all your visitors sorted by the recent ones.
+		</show_recent_visitors>
+		<more_info>More Information</more_info>
+	</search>
+	<wishlist>
+		<mutual_wishers>List of whom you accepted and they showed their Acceptance</mutual_wishers>
+		<show_mutual><![CDATA[List only whom you have Accepted]]></show_mutual>
+		<show_wishers><![CDATA[List all who have chosen to show their Acceptance]]></show_wishers>
+		<show_blocked>Show Blocked Members</show_blocked>
+		<hide_blocked>Hide Blocked Members</hide_blocked>
+		<wishers>
+			<![CDATA[List of who showed their Acceptance]]>
+		</wishers>
+		<wishers_intro>
+			<![CDATA[These members have added you to their Acceptance List and chose to show you their Acceptance and they are currently not connected to other members.<br>
+			There might be more members added you to their Acceptance List but they chose not to show their Acceptance ( mainly to avoid embarrassment ) and you may be matched with one of them if you Accepted that one.<br>
+			There also could be members who have accepted you and chose to show you their Acceptance but they are currently connected to other members. You can not be matched with any of them unless he/she ends the communication with the other member.]]>
+		</wishers_intro>
+		<intro><![CDATA[
+This list contains the persons you have	accepted as possible future mate.<br> 
+		<p>
+The <span class=toolbar_button onclick="OpenPage('matchbot')">Acceptance Matching</span> will match you with one of your accepted persons 
+only if he/she has added you to his/her Acceptance List.
+		<br>
+Matching will pick the highest rank (in case of multiple mutual acceptances) 
+then notifies both of you via e-mail to start communicating each others.
+		<p>
+There is no chance of mutual acceptance if a member has not visited your page yet.
+		<p>
+If one day has passed after the last visit from any of your accepted members without being matched with him/her, 
+that means either he/she has not yet accepted you or he/she has been matched with someone else 
+and they are still contacting each others.
+		<p>
+There is no limit on how many persons you can add to your list. 
+However, adding many persons to your list might reduce your chance to win those who have low ranks.
+]]>		</intro>
+		<ranking_desc>
+		Note: the member with Rank 1 has more chance to be matched with than the following members.
+		</ranking_desc>
+		<brief_intro><![CDATA[
+This list contains the persons you have	accepted as possible future mate.<br>
+There is no chance of mutual acceptance if a member has not visited your page yet.
+	]]></brief_intro>
+		<page_title>Acceptance List</page_title>
+		<empty_list><![CDATA[
+		Your Acceptance List is currently empty.<p> 
+		<b><font color=red>You have no chance to be matched with any Kobool member untill you add that member to your Acceptance List</font></b><p>
+		To add whoever is acceptable to you as a future mate, click on the "Acceptance" button found in that person profile page or in the %h1%Search%h0% results page.
+		]]></empty_list>
+		<rank>rank</rank>
+	</wishlist>
+	<watchlist>
+		<page_title>
+		Bookmarks
+		</page_title>
+		<brief_intro>
+		This list contains bookmarks to member pages. 
+		</brief_intro>
+		<intro><![CDATA[
+		This list contains bookmarks to member pages. 
+		<br>
+		This list has no effect in the Acceptance Matching operation.
+		]]></intro>
+		<empty_list><![CDATA[Your Bookmark list is currently empty.<p>
+		To bookmark a profile, click on the "Bookmark" button found in that profile page or in the %h1%Search%h0% results page
+		]]></empty_list>
+		<rank>rank</rank>
+	</watchlist>
+</root>

@@ -1,0 +1,720 @@
+<?xml version="1.0" ?>
+<root>
+	<sfilters>
+		<g>
+			<option value="-1"></option>
+			<option value="0">Husband</option>
+			<option value="1">Wife</option>
+		</g>
+		<ms>
+			<option value="0"></option>
+			<option value="1">Never married</option>
+			<option value="2">Divorced</option>
+			<option value="3">Widow</option>
+			<option value="4">Married (but separated)</option>
+			<option value="5">Married</option>
+			<option value="6">Engaged</option>
+		</ms>
+		<ht>
+			<option value="0"></option>
+			<option value="1">4' 6" (135 cm)</option>
+			<option value="2">4' 7" (138 cm)</option>
+			<option value="3">4' 8" (140 cm)</option>
+			<option value="4">4' 9" (143 cm)</option>
+			<option value="5">4' 10" (145 cm)</option>
+			<option value="6">4' 11" (148 cm)</option>
+			<option value="7">5' (150 cm)</option>
+			<option value="8">5' 1" (153 cm)</option>
+			<option value="9">5' 2" (155 cm)</option>
+			<option value="10">5' 3" (158 cm)</option>
+			<option value="11">5' 4" (160 cm)</option>
+			<option value="12">5' 5" (163 cm)</option>
+			<option value="13">5' 6" (165 cm)</option>
+			<option value="14">5' 7" (168 cm)</option>
+			<option value="15">5' 8" (170 cm)</option>
+			<option value="16">5' 9" (173 cm)</option>
+			<option value="17">5' 10" (175 cm)</option>
+			<option value="18">5' 11" (178 cm)</option>
+			<option value="19">6' (180 cm)</option>
+			<option value="20">6' 1" (183 cm)</option>
+			<option value="21">6' 2" (185 cm)</option>
+			<option value="22">6' 3" (188 cm)</option>
+			<option value="23">6' 4" (190 cm)</option>
+			<option value="24">6' 5" (193 cm)</option>
+			<option value="25">6' 6" (195 cm)</option>
+			<option value="26">6' 7" (198 cm)</option>
+			<option value="27">6' 8" (200 cm)</option>
+			<option value="28">6' 9" (203 cm)</option>
+			<option value="29">6' 10" (205 cm)</option>
+			<option value="30">6' 11" (208 cm)</option>
+		</ht>
+		<wt>
+			<option value="0"></option>
+			<option value="1">80 lbs (36 kg)</option>
+			<option value="2">85 lbs (39 kg)</option>
+			<option value="3">90 lbs (41 kg)</option>
+			<option value="4">95 lbs (43 kg)</option>
+			<option value="5">100 lbs (45 kg)</option>
+			<option value="6">105 lbs (48 kg)</option>
+			<option value="7">110 lbs (50 kg)</option>
+			<option value="8">115 lbs (52 kg)</option>
+			<option value="9">120 lbs (55 kg)</option>
+			<option value="10">125 lbs (57 kg)</option>
+			<option value="11">130 lbs (59 kg)</option>
+			<option value="12">135 lbs (61 kg)</option>
+			<option value="13">140 lbs (64 kg)</option>
+			<option value="14">145 lbs (66 kg)</option>
+			<option value="15">150 lbs (68 kg)</option>
+			<option value="16">155 lbs (70 kg)</option>
+			<option value="17">160 lbs (73 kg)</option>
+			<option value="18">165 lbs (75 kg)</option>
+			<option value="19">170 lbs (77 kg)</option>
+			<option value="20">175 lbs (79 kg)</option>
+			<option value="21">180 lbs (82 kg)</option>
+			<option value="22">185 lbs (84 kg)</option>
+			<option value="23">190 lbs (86 kg)</option>
+			<option value="24">195 lbs (88 kg)</option>
+			<option value="25">200 lbs (91 kg)</option>
+			<option value="26">205 lbs (93 kg)</option>
+			<option value="27">210 lbs (95 kg)</option>
+			<option value="28">215 lbs (98 kg)</option>
+			<option value="29">220 lbs (100 kg)</option>
+			<option value="30">225 lbs (102 kg)</option>
+			<option value="31">230 lbs (104 kg)</option>
+			<option value="32">235 lbs (107 kg)</option>
+			<option value="33">240 lbs (109 kg)</option>
+			<option value="34">245 lbs (111 kg)</option>
+			<option value="35">250 lbs (113 kg)</option>
+			<option value="36">255 lbs (116 kg)</option>
+			<option value="37">260 lbs (118 kg)</option>
+			<option value="38">265 lbs (120 kg)</option>
+			<option value="39">270 lbs (122 kg)</option>
+			<option value="40">275 lbs (125 kg)</option>
+			<option value="41">280 lbs (127 kg)</option>
+		</wt>
+		<ch>
+			<option value="0"></option>
+			<option value="1">No Children</option>
+			<option value="2">Children not living with me</option>
+			<option value="3">Children living with me</option>
+		</ch>
+		<jb>
+			<option value="0"></option>
+			<option value="1">Currently Not working</option>
+			<option value="2">Finance</option>
+			<option value="3">Artist</option>
+			<option value="4">Computers</option>
+			<option value="5">Consulting</option>
+			<option value="6">Customer Service</option>
+			<option value="7">Education</option>
+			<option value="8">Executive/Managerial</option>
+			<option value="9">Engineering</option>
+			<option value="10">Governmental</option>
+			<option value="11">Military</option>
+			<option value="12">Legal</option>
+			<option value="13">Manufacturing</option>
+			<option value="14">Medical</option>
+			<option value="15">Marketing/Advertising</option>
+			<option value="16">Self Employed</option>
+			<option value="17">Technician</option>
+			<option value="18">Agricultural</option>
+			<option value="100">Other Job</option>
+		</jb>
+		<nc>
+			<option value="0"></option>
+			<option value="1">No Annual Income</option>
+			<option value="2">Less than 5000 USD</option>
+			<option value="3">5,000-10,000 USD</option>
+			<option value="4">10,000-20,000 USD</option>
+			<option value="5">20,000-30,000 USD</option>
+			<option value="6">30,000-40,000 USD</option>
+			<option value="7">50,000-60,000 USD</option>
+			<option value="8">60,000-70,000 USD</option>
+			<option value="9">70,000-80,000 USD</option>
+			<option value="10">80,000-90,000 USD</option>
+			<option value="11">90,000-100,000 USD</option>
+			<option value="12">Above 100,000 USD</option>
+		</nc>
+		<la>
+			<option value="0"></option>
+			<option value="1"  >Arabic</option>
+			<option value="2"  >Bengali</option>
+			<option value="3"  >Bahasa Melayu</option>
+			<option value="4"  >Bahasa Indonesia</option>
+			<option value="5"  >Chinese</option>
+			<option value="6"  >Dutch</option>
+			<option value="7"  >English</option>
+			<option value="8"  >French</option>
+			<option value="9"  >German</option>
+			<option value="10" >Italian</option>
+			<option value="11" >Japanese</option>
+			<option value="12" >Persian</option>
+			<option value="13" >Punjabi</option>
+			<option value="14" >Pushto</option>
+			<option value="15" >Russian</option>
+			<option value="16" >Spanish</option>
+			<option value="17" >Turkish</option>
+			<option value="18" >Urdu/Hindi</option>
+			<option value="19" >Other Language</option>
+		</la>
+		<rc>
+			<option value="0"></option>
+			<option value="1">African</option>
+			<option value="2">Arabic</option>
+			<option value="3">Asian</option>
+			<option value="4">Latino</option>
+			<option value="5">White/European</option>
+			<option value="100">Other Race</option>
+		</rc>
+		<ed>
+			<option value="0"></option>
+			<option value="1"  >High School</option>
+			<option value="2"  >Undergraduate</option>
+			<option value="3"  >Bachelors Degree</option>
+			<option value="4"  >Diploma</option>
+			<option value="5"  >Masters Degree</option>
+			<option value="6"  >Ph.D.</option>
+			<option value="100">Other Education</option>
+		</ed>
+		<sm>
+			<option value="0"></option>
+			<option value="1">No and it bothers me</option>
+			<option value="2">No but it doesn't bother me</option>
+			<option value="3">Occasionally</option>
+			<option value="4">Frequently</option>
+		</sm>
+		<re>
+			<option value="0"></option>
+			<option value="1">Muslim</option>
+			<option value="11">Christian</option>
+			<option value="21">Jew</option>
+			<option value="31">Hindu</option>
+			<option value="32">Buddhist</option>
+			<option value="100">Other Religion</option>
+		</re>
+		<ds>
+			<option value="0"></option>
+			<option value="1">No</option>
+			<option value="2">20%</option>
+			<option value="3">40%</option>
+			<option value="4">60%</option>
+			<option value="5">80%</option>
+		</ds>
+		<dt>
+			<option value="0"></option>
+			<option value="1">No restrictions</option>
+			<option value="2">Regular with Head Scarf</option>
+			<option value="3">Wide without Head Scarf</option>
+			<option value="4">Wide with Head Scarf</option>
+			<option value="5">Khimar and Gilbab</option>
+			<option value="6">Niqab showing eyes</option>
+			<option value="7">Niqab covering all face</option>
+		</dt>
+		<sh>
+			<option value="0"></option>
+			<option value="1">Athletic</option>
+			<option value="2">Good</option>
+			<option value="4">Average</option>
+			<option value="5">Not good</option>
+		</sh>
+		<fc>
+			<option value="0"></option>
+			<option value="1">Very Attractive</option>
+			<option value="2">Attractive</option>
+			<option value="4">Average Attraction</option>
+			<option value="5">Not Attractive</option>
+		</fc>
+		<dst>
+			<option value="0"></option>
+			<option value="1">Rich Neighborhood</option>
+			<option value="2">Good Neighborhood</option>
+			<option value="4">Average Neighborhood</option>
+			<option value="5">Poor Neighborhood</option>
+		</dst>
+		<po>
+			<option value="0"></option>
+			<option value="1">Accepting polygamy</option>
+			<option value="2">Accepting polygamy with conditions</option>
+			<option value="4">Not accepting polygamy</option>
+		</po>
+
+		<ag>
+			<option value="0"></option>
+		</ag>
+		<o>
+			<option value="0"></option>
+		</o>
+		<c>
+			<option value="0"></option>
+		</c>
+		<st>
+			<option value="0"></option>
+		</st>
+		<ci>
+			<option value="0"></option>
+		</ci>
+	</sfilters>
+
+	<select_all_polygamy>No Matter Polygamy</select_all_polygamy>
+	<select_polygamy>
+		<option value="0"/>
+		<option value="1">Accepting polygamy</option>
+		<option value="2">Accepting polygamy with conditions</option>
+		<option value="4">Not accepting polygamy</option>
+	</select_polygamy>
+
+	<select_all_districts>Neighborhood doesn't mattter</select_all_districts>
+	<select_district>
+		<option value="0"/>
+		<option value="1">Rich Neighborhood</option>
+		<option value="2">Good Neighborhood</option>
+		<option value="4">Average Neighborhood</option>
+		<option value="5">Poor Neighborhood</option>
+	</select_district>
+
+	<select_all_shapes>Shape doesn't matter</select_all_shapes>
+	<select_shape>
+		<option value="0"/>
+		<option value="1">Athletic</option>
+		<option value="2">Good</option>
+		<option value="4">Average</option>
+		<option value="5">Not good</option>
+	</select_shape>
+
+	<select_all_facelooks>Face Attraction doesn't matter</select_all_facelooks>
+	<select_facelook>
+		<option value="0"/>
+		<option value="1">Very Attractive</option>
+		<option value="2">Attractive</option>
+		<option value="4">Average Attraction</option>
+		<option value="5">Not Attractive</option>
+	</select_facelook>
+
+	<select_all_dress_types>Dress doesn't matter</select_all_dress_types>
+	<select_dress_type>
+		<option value="0"/>
+		<option value="1">No restrictions</option>
+		<option value="2">Regular with Head Scarf</option>
+		<option value="3">Wide without Head Scarf</option>
+		<option value="4">Wide with Head Scarf</option>
+		<option value="5">Khimar and Gilbab</option>
+		<option value="6">Niqab showing eyes</option>
+		<option value="7">Niqab covering all face</option>
+	</select_dress_type>
+
+
+	<select_all_disabilities>Disability doesn't matter</select_all_disabilities>
+	<select_disability>
+		<option value="0"/>
+		<option value="1">No</option>
+		<option value="2">20%</option>
+		<option value="3">40%</option>
+		<option value="4">60%</option>
+		<option value="5">80%</option>
+	</select_disability>
+
+	<select_gender>
+		<option value="0">Husband</option>
+		<option value="1">Wife</option>
+	</select_gender>
+
+	<select_group_countries>
+		<option value="0" />
+		<option value="1001">Islamic Countries</option>
+		<option value="1002">Arabic Countries</option>
+		<option value="1003">Persian Gulf Countries</option>
+		<option value="1004">North America Countries</option>
+		<option value="1005">European Countries</option>
+		<option value="1006">Western Arab Countries</option>
+		<option value="1007">Shamic Arab Countries</option>
+	</select_group_countries>
+
+	<select_all_jobs>Any Job</select_all_jobs>
+	<select_job>
+		<option value="0"></option>
+		<option value="1">Currently Not working</option>
+		<option value="2">Finance</option>
+		<option value="3">Artist</option>
+		<option value="4">Computers</option>
+		<option value="5">Consulting</option>
+		<option value="6">Customer Service</option>
+		<option value="7">Education</option>
+		<option value="8">Executive/Managerial</option>
+		<option value="9">Engineering</option>
+		<option value="10">Governmental</option>
+		<option value="11">Military</option>
+		<option value="12">Legal</option>
+		<option value="13">Manufacturing</option>
+		<option value="14">Medical</option>
+		<option value="15">Marketing/Advertising</option>
+		<option value="16">Self Employed</option>
+		<option value="17">Technician</option>
+		<option value="18">Agricultural</option>
+		<option value="100">Other Job</option>
+	</select_job>
+
+	<select_all_incomes>Any Income</select_all_incomes>
+	<select_income>
+		<option value="0"></option>
+		<option value="1">No Annual Income</option>
+		<option value="2">Less than 5000 USD</option>
+		<option value="3">5,000-10,000 USD</option>
+		<option value="4">10,000-20,000 USD</option>
+		<option value="5">20,000-30,000 USD</option>
+		<option value="6">30,000-40,000 USD</option>
+		<option value="7">50,000-60,000 USD</option>
+		<option value="8">60,000-70,000 USD</option>
+		<option value="9">70,000-80,000 USD</option>
+		<option value="10">80,000-90,000 USD</option>
+		<option value="11">90,000-100,000 USD</option>
+		<option value="12">Above 100,000 USD</option>
+	</select_income>
+
+	<select_all_marital_status>Any Status</select_all_marital_status>
+	<select_marital_status>
+		<option value="0"></option>
+		<option value="1">Never married</option>
+		<option value="2">Divorced</option>
+		<option value="3">Widow</option>
+		<option value="4">Married (but separated)</option>
+		<option value="5">Married</option>
+		<option value="6">Engaged</option>
+	</select_marital_status>
+
+	<select_all_children>No Matter Kids</select_all_children>
+	<select_children>
+		<option value="0"></option>
+		<option value="1">No Children</option>
+		<option value="2">Children not living with me</option>
+		<option value="3">Children living with me</option>
+	</select_children>
+
+	<select_all_heights>Any Height</select_all_heights>
+	<height_options>
+		<h0 ovalue="0"></h0>
+		<h1 ovalue="1-4">From 135 to 143 cm</h1>
+		<h2 ovalue="5-9">From 145 to 155 cm</h2>
+		<h3 ovalue="10-14">From 158 to 168 cm </h3>
+		<h4 ovalue="15-19">From 170 to 180 cm</h4>
+		<h5 ovalue="20-24">From 183 to 193 cm</h5>
+		<h6 ovalue="25-30">From 195 to 208 cm</h6>
+	</height_options>
+	<select_height>
+		<option value="0"></option>
+		<option value="1">4' 6" (135 cm)</option>
+		<option value="2">4' 7" (138 cm)</option>
+		<option value="3">4' 8" (140 cm)</option>
+		<option value="4">4' 9" (143 cm)</option>
+		<option value="5">4' 10" (145 cm)</option>
+		<option value="6">4' 11" (148 cm)</option>
+		<option value="7">5' (150 cm)</option>
+		<option value="8">5' 1" (153 cm)</option>
+		<option value="9">5' 2" (155 cm)</option>
+		<option value="10">5' 3" (158 cm)</option>
+		<option value="11">5' 4" (160 cm)</option>
+		<option value="12">5' 5" (163 cm)</option>
+		<option value="13">5' 6" (165 cm)</option>
+		<option value="14">5' 7" (168 cm)</option>
+		<option value="15">5' 8" (170 cm)</option>
+		<option value="16">5' 9" (173 cm)</option>
+		<option value="17">5' 10" (175 cm)</option>
+		<option value="18">5' 11" (178 cm)</option>
+		<option value="19">6' (180 cm)</option>
+		<option value="20">6' 1" (183 cm)</option>
+		<option value="21">6' 2" (185 cm)</option>
+		<option value="22">6' 3" (188 cm)</option>
+		<option value="23">6' 4" (190 cm)</option>
+		<option value="24">6' 5" (193 cm)</option>
+		<option value="25">6' 6" (195 cm)</option>
+		<option value="26">6' 7" (198 cm)</option>
+		<option value="27">6' 8" (200 cm)</option>
+		<option value="28">6' 9" (203 cm)</option>
+		<option value="29">6' 10" (205 cm)</option>
+		<option value="30">6' 11" (208 cm)</option>
+	</select_height>
+
+	<select_language>
+		<option value="0"  ></option>
+		<option value="1"  >Arabic</option>
+		<option value="2"  >Bengali</option>
+		<option value="3"  >Bahasa Melayu</option>
+		<option value="4"  >Bahasa Indonesia</option>
+		<option value="5"  >Chinese</option>
+		<option value="6"  >Dutch</option>
+		<option value="7"  >English</option>
+		<option value="8"  >French</option>
+		<option value="9"  >German</option>
+		<option value="10" >Italian</option>
+		<option value="11" >Japanese</option>
+		<option value="12" >Persian</option>
+		<option value="13" >Punjabi</option>
+		<option value="14" >Pushto</option>
+		<option value="15" >Russian</option>
+		<option value="16" >Spanish</option>
+		<option value="17" >Turkish</option>
+		<option value="18" >Urdu/Hindi</option>
+		<option value="19" >Other Language</option>
+	</select_language>
+
+	<select_qa_language>
+		<option value="0"  >- Any Language -</option>
+		<option value="1"  >Arabic</option>
+		<option value="7"  >English</option>
+		<option value="8"  >French</option>
+		<option value="9"  >German</option>
+	</select_qa_language>
+
+	<select_all_weights>Any Weight</select_all_weights>
+	<weight_options>
+		<w0 ovalue="0"></w0>
+		<w1 ovalue="1-4">From 36 to 44 kg</w1>
+		<w2 ovalue="5-9">From 45 to 56 kg</w2>
+		<w3 ovalue="10-14">From 57 to 67 kg</w3>
+		<w4 ovalue="15-19">From 68 to 78 kg</w4>
+		<w5 ovalue="20-24">From 79 to 90 kg</w5>
+		<w6 ovalue="25-29">From 91 to 101 kg</w6>
+		<w7 ovalue="30-34">From 102 to 112 kg</w7>
+		<w8 ovalue="35-39">From 113 to 124 kg</w8>
+		<w9 ovalue="40-41">More than 125 kg</w9>
+	</weight_options>
+	<select_body>
+		<option value="0"></option>
+		<option value="1">80 lbs (36 kg)</option>
+		<option value="2">85 lbs (39 kg)</option>
+		<option value="3">90 lbs (41 kg)</option>
+		<option value="4">95 lbs (43 kg)</option>
+		<option value="5">100 lbs (45 kg)</option>
+		<option value="6">105 lbs (48 kg)</option>
+		<option value="7">110 lbs (50 kg)</option>
+		<option value="8">115 lbs (52 kg)</option>
+		<option value="9">120 lbs (55 kg)</option>
+		<option value="10">125 lbs (57 kg)</option>
+		<option value="11">130 lbs (59 kg)</option>
+		<option value="12">135 lbs (61 kg)</option>
+		<option value="13">140 lbs (64 kg)</option>
+		<option value="14">145 lbs (66 kg)</option>
+		<option value="15">150 lbs (68 kg)</option>
+		<option value="16">155 lbs (70 kg)</option>
+		<option value="17">160 lbs (73 kg)</option>
+		<option value="18">165 lbs (75 kg)</option>
+		<option value="19">170 lbs (77 kg)</option>
+		<option value="20">175 lbs (79 kg)</option>
+		<option value="21">180 lbs (82 kg)</option>
+		<option value="22">185 lbs (84 kg)</option>
+		<option value="23">190 lbs (86 kg)</option>
+		<option value="24">195 lbs (88 kg)</option>
+		<option value="25">200 lbs (91 kg)</option>
+		<option value="26">205 lbs (93 kg)</option>
+		<option value="27">210 lbs (95 kg)</option>
+		<option value="28">215 lbs (98 kg)</option>
+		<option value="29">220 lbs (100 kg)</option>
+		<option value="30">225 lbs (102 kg)</option>
+		<option value="31">230 lbs (104 kg)</option>
+		<option value="32">235 lbs (107 kg)</option>
+		<option value="33">240 lbs (109 kg)</option>
+		<option value="34">245 lbs (111 kg)</option>
+		<option value="35">250 lbs (113 kg)</option>
+		<option value="36">255 lbs (116 kg)</option>
+		<option value="37">260 lbs (118 kg)</option>
+		<option value="38">265 lbs (120 kg)</option>
+		<option value="39">270 lbs (122 kg)</option>
+		<option value="40">275 lbs (125 kg)</option>
+		<option value="41">280 lbs (127 kg)</option>
+	</select_body>
+
+	<select_all_educations>Any Education</select_all_educations>
+	<select_education>
+		<option value="0"  ></option>
+		<option value="1"  >High School</option>
+		<option value="2"  >Undergraduate</option>
+		<option value="3"  >Bachelors Degree</option>
+		<option value="4"  >Diploma</option>
+		<option value="5"  >Masters Degree</option>
+		<option value="6"  >Ph.D.</option>
+		<option value="100">Other Education</option>
+	</select_education>
+
+	<select_yes_no>
+		<option value="0"></option>
+		<option value="1">Yes</option>
+		<option value="2">No</option>
+	</select_yes_no>
+
+	<select_no_yes>
+		<option value="0"></option>
+		<option value="2">No</option>
+		<option value="1">Yes</option>
+	</select_no_yes>
+
+	<select_all_smoker>No matter Smoking</select_all_smoker>
+	<select_smoker>
+		<option value="0"></option>
+		<option value="1">No and it bothers me</option>
+		<option value="2">No but it doesn't bother me</option>
+		<option value="3">Occasionally</option>
+		<option value="4">Frequently</option>
+	</select_smoker>
+
+	<select_all_religions>All Religions</select_all_religions>
+	<select_religion>
+		<option value="0"></option>
+		<option value="1">Muslim</option>
+		<option value="11">Christian</option>
+		<option value="21">Jew</option>
+		<option value="31">Hindu</option>
+		<option value="32">Buddhist</option>
+		<option value="100">Other Religion</option>
+	</select_religion>
+
+	<select_all_races>All Races</select_all_races>
+	<select_race>
+		<option value="0"></option>
+		<option value="1">African</option>
+		<option value="2">Arabic</option>
+		<option value="3">Asian</option>
+		<option value="4">Latino</option>
+		<option value="5">White/European</option>
+		<option value="100">Other Race</option>
+	</select_race>
+
+	<select_sorting>
+		<option value="0">Latest Login</option>
+		<option value="6">Latest Members</option>
+		<option value="1">Most Visitors to your Page</option>
+		<option value="9">Recent Visitors to your Page</option>
+		<option value="2">Age</option>
+		<option value="3">Location</option>
+		<option value="4">Origin</option>
+		<option value="5">Annual Income</option>
+		<option value="7">Login Name</option>
+		<option value="10">Last Visited Members</option>
+		<option value="11">Least Visited Back Members</option>
+	</select_sorting>
+
+	<order_by>
+		<rm>Join Date</rm>
+		<rl>Last Login</rl>
+		<ag>Age</ag>
+		<rv>Last Visit</rv>
+		<mv>Visits Count</mv>
+	</order_by>
+
+	<select_sorting_visitor>
+		<option value="0">Recent login</option>
+		<option value="6">Recent Members</option>
+		<option value="2">Age</option>
+		<option value="3">Location</option>
+		<option value="4">Origin</option>
+		<option value="5">Annual Income</option>
+		<option value="7">Login Name</option>
+	</select_sorting_visitor>
+
+	<add_wish>
+		<visible>Show your Acceptance (You can change your choice any time later).</visible>
+		<invisible>Hide your Acceptance (This does not affect the Matching operation).</invisible>
+	</add_wish>
+
+	<chat>
+		<msg value="1"><![CDATA[Salamo Alykom.]]></msg>
+		<msg value="2"><![CDATA[Thanks for accepting me.]]></msg>
+		<msg value="3"><![CDATA[May God guides us to the right direction.]]></msg>
+		<msg value="4"><![CDATA[Are you parents accepting this way of aquaintance.]]></msg>
+		<msg value="5"><![CDATA[I am very serious about marriage are you?]]></msg>
+		<msg value="6"><![CDATA[Thanks.]]></msg>
+
+		<msg value="7"><![CDATA[ ]]></msg>
+
+		<msg value="8"><![CDATA[Yes.]]></msg>
+		<msg value="9"><![CDATA[I wish that.]]></msg>
+		<msg value="10"><![CDATA[No problem.]]></msg>
+		<msg value="11"><![CDATA[I see.]]></msg>
+		<msg value="12"><![CDATA[Its' ok.]]></msg>
+		<msg value="13"><![CDATA[Why not.]]></msg>
+		<msg value="14"><![CDATA[Very much.]]></msg>
+		
+
+
+		<msg value="15"><![CDATA[ ]]></msg>
+
+		<msg value="16"><![CDATA[No.]]></msg>
+		<msg value="17"><![CDATA[I apologize.]]></msg>
+		<msg value="18"><![CDATA[I can't.]]></msg>
+		<msg value="19"><![CDATA[May be.]]></msg>
+		<msg value="20"><![CDATA[No comment.]]></msg>
+		<msg value="21"><![CDATA[Why?]]></msg>
+		
+		<msg value="22"><![CDATA[ ]]></msg>
+
+		<msg value="23"><![CDATA[Could you buy a Contact Point to be able to read my written messages?]]></msg>
+		<msg value="24"><![CDATA[I can't buy my Contact Point, could you buy one for me?]]></msg>
+		<msg value="25"><![CDATA[Would you mind if I buy a Contact Point for you?]]></msg>
+		<!--<msg value="26"><![CDATA[I purchased a Gift Contact Point for you, Please use this Point to start reading and writing.]]></msg>-->
+		<msg value="27"><![CDATA[Please give me more time to buy my Contact Point.]]></msg>
+		<msg value="28"><![CDATA[It will take me couple of days to buy Contact Points, Could you wait please?.]]></msg>
+		<msg value="29"><![CDATA[The payment methods to buy Contact Points are not available in my area.]]></msg>
+		<msg value="30"><![CDATA[A friend of mine will help me to buy Contact Points.]]></msg>
+		<msg value="31"><![CDATA[I don't have enough money to buy Contact Points.]]></msg>
+		<msg value="32"><![CDATA[I am afraid I would decline if you couldn't buy Contact Points.]]></msg>
+		
+		<msg value="33"><![CDATA[ ]]></msg>
+		<msg value="34"><![CDATA[May I see a recent photo of yours?]]></msg>
+		<msg value="35"><![CDATA[You can upload your photos and make them invisible to every one except me.]]></msg>
+		<msg value="36"><![CDATA[You can set who can see your photos in "Modify My Photos" page.]]></msg>
+		<msg value="37"><![CDATA[I can't continue with you without seeing your photo]]></msg>
+		<msg value="38"><![CDATA[Please give me some time to prepare recent digital photos for me.]]></msg>
+		<msg value="39"><![CDATA[May I see more photos of yours?]]></msg>
+		<msg value="40"><![CDATA[May I see a photo of yours that shows your shape?]]></msg>
+		<msg value="41"><![CDATA[The photo shown in your profile, are those yours?]]></msg>
+		<msg value="42"><![CDATA[The photos shown in my profile are my real photos.]]></msg>
+		<msg value="43"><![CDATA[Are your photos in your profile new?]]></msg>
+		<msg value="44"><![CDATA[Did you like my photos?]]></msg>
+		<msg value="45"><![CDATA[I can't see your photos.]]></msg>
+		<msg value="46"><![CDATA[My new photos are still under supervisor review.]]></msg>
+		<msg value="47"><![CDATA[My new photos are available now. You can open my profile page to see them.]]></msg>
+		<msg value="48"><![CDATA[Do you want me to post more photos?]]></msg>
+		<msg value="49"><![CDATA[Your photos looks great.]]></msg>
+
+		<msg value="50"><![CDATA[ ]]></msg>
+		<msg value="51"><![CDATA[I sent new questions to your profile, could you please answer them?]]></msg>
+		<msg value="52"><![CDATA[My answers are still under review.]]></msg>
+		<msg value="53"><![CDATA[Please read my profile and my answers to the new questions.]]></msg>
+		<msg value="54"><![CDATA[Will you be able to come to my city to meet each others?]]></msg>
+	</chat>
+
+	<decline>
+		<msg value="1"><![CDATA[I am declining because I couldn't buy a Contact Point.]]></msg>
+		<msg value="2"><![CDATA[I am declining because You couldn't buy a Contact Point.]]></msg>
+		<msg value="3"><![CDATA[I am declining because You refused to buy a Contact Point for me.]]></msg>
+
+		<msg value="4"><![CDATA[I am declining for reasons I don't want to mention.]]></msg>
+		<msg value="5"><![CDATA[I am declining because final acceptance didn't happen.]]></msg>
+		<msg value="6"><![CDATA[I am declining because I felt that you are not serious about the marriage.]]></msg>
+		<msg value="7"><![CDATA[I am declining because you refused to show me your photo.]]></msg>
+		<msg value="8"><![CDATA[I am declining because you are unable to come to my area.]]></msg>
+		<msg value="9"><![CDATA[I am declining because you have been away from Kobool site for a long time. 
+						It meens that you are careless about this matter.]]></msg>
+	</decline>
+
+	<select_currency>
+		<option value="0">Free</option>
+		<option value="1">US Dollar</option>
+		<option value="2">Cashu</option>
+		<option value="3">SAR</option>
+		<option value="4">EGP</option>
+	</select_currency>
+
+	<payment_channels>
+		<option value="0">Gift</option>
+		<option value="2">Cashu</option>
+		<option value="3">ArabCheckout</option>
+		<option value="4">Western Union</option>
+		<option value="5">Postal M. Order</option>
+		<option value="6">Bank Transfer</option>
+		<option value="7">Credit Card</option>
+		<option value="8">One Card</option>
+		<option value="9">Mobile Transfer</option>
+		<option value="10">Vodafone Cash</option>
+
+	</payment_channels>
+
+</root>

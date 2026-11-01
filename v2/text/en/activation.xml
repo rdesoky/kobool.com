@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<root>
+	<activation>
+		<page_title>Membership Activation</page_title>
+		<active>Your Membership is currently "Active".</active>
+		<instructions>
+			Your membership is currently "Inactive". &lt;p&gt;
+			Submit the form below to activate your membership.
+		</instructions>
+		<form_title>Membership Activation Form</form_title>
+		<submit>Submit</submit>
+		<send_mail>Send Activation e-mail</send_mail>
+		<mail_has_been_sent>
+			Activation e-mail message has been sent successfully.&lt;br&gt;
+			Please Check your Mailbox shortly.&lt;p&gt;
+			Make sure the message is not received in your Junk Mail folder.
+		</mail_has_been_sent>
+		<success>Your Membership has been activated successfully.</success>
+		<failure>An Error occurred.</failure>
+		<contact_us>
+If you couldn't find the activation email though, please verify that your email address (%email%) is valid.&lt;p&gt;
+You can also contact the site supervisor directly to activate your membership, %h1%click here to open the contact form%h0%.
+		</contact_us>
+	</activation>
+</root>

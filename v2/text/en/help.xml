@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<personal_note>
+		<popup_title>Personal Notes on '%m%'</popup_title>
+		<btn_tip><![CDATA[
+			Write a personal note for this member to remind you later.<br/>
+			<b>Information:</b><br/>
+			No one nor this member could read this note except you.<br/>
+			The purpose of it is to remind you with your impressions about this member in a later time.
+		]]></btn_tip>
+	</personal_note>
+	<tips>
+		<decline><![CDATA[
+			Declare that will not continue with the relationship with your match.<br/>
+			You will be asked to enter your membership password and your reason for this action.
+		]]></decline>
+		<wishers><![CDATA[
+		Number of all members who have added you to their Acceptance Lists.<br/>
+		Click here to display the list of members who Accepted you and chose to show their acceptance and are not currently matched with other members.<br/>
+		<b>Important Note:</b><br/>
+		The list will most likely contains less than this number. Because not all members show their acceptance.
+		]]></wishers>
+		<save_search>Save the current search criteria to your preferred searches.</save_search>
+		<under_review><![CDATA[
+			This text has not yet been approved. <br/>
+			Other members will not be able to read it before it is approved by the supervisor. <br/>
+			The review is usually done within 48 hours.<br/>
+			Your text will not be accepted if it contains unproper statements or contains personal contact information like phone number, email, home address or personal messages to other KOBOOL members.
+		]]></under_review>
+		<rejected><![CDATA[
+			This text is not acceptable and will not be displayed to other members nor site visitors. <br/>
+			Please modify this text in order to be reviewed again.<br/>
+			Your text will not be accepted if it contains unproper statements or contains personal contact information like phone number, email, home address or personal messages to other KOBOOL members.
+		]]></rejected>
+		<accept>Add this member to your 'Acceptance List' if you have preliminary acceptance for marriage towards this member.</accept>
+		<ask>Submit annonymous questions to this member.</ask>
+		<gift_points><![CDATA[
+			Purchase Contact Points for this member<br/>
+			<b>Important Node:</b><br/>KOBOOL does not tell this member who bought the Gift Points.
+		]]></gift_points>
+		<bookmark>Click here to add this member to your bookmarks.</bookmark>
+		<unbookmark>Click here to remove this member to your bookmarks.</unbookmark>
+		<bookmarks>Show list of bookmarked members.</bookmarks>
+		<wishlist>Show list of members selected as acceptable for marriage.</wishlist>
+		<hot_field><![CDATA[Click here to list the members having the same attribute.
+			Click again to list the results grouped by this attribute..
+		]]></hot_field>
+		<visit_info>Number of visits and the date of last visit to your page by this member</visit_info>
+		<your_visit_info>Number of visits and the date of your last visit to this member's page</your_visit_info>
+		<purchased_cards>This member purchased at least one Contact Point.</purchased_cards>
+		<has_new_cards>This member has at least one usable Contact Point.</has_new_cards>
+		<featured_members><![CDATA[
+			Members who have usable Contact Points are listed "free" in this area. 
+			Click here to join this list.
+		]]></featured_members>
+		<featured_footer><![CDATA[
+			<div class="left_align">Features Members' list shows (for free) the members who own unused 
+				<a href="#pg=cpoints">Contact&nbsp;Points</a>.<br/>
+				The larger the number of unused points the more frequent the profile appears in this list.
+			</div>
+		]]></featured_footer>
+		<no_visits><![CDATA[
+			This member has not visited your page till now.<br/>
+			There is no chance of matching with this member until visiting your page.
+		]]></no_visits>
+		<btn_blocklist><![CDATA[
+			List of members whom you removed from your Visitors List.<br/>
+			Click here to view or modify this list.
+		]]></btn_blocklist>
+		<block><![CDATA[
+			Block this member from appearing in your personal pages.<br/>
+			No one will know whom you are blocking.<br/>
+			Blocking action does not affect the Electronic Matching.
+		]]></block>
+		<unblock><![CDATA[
+			Unblock this member to appear in your personal pages.
+		]]></unblock>
+	</tips>
+	<new_tips>
+		<inactive><![CDATA[
+			Your Membership is currently inactive. <br/>
+			You have to Activate your Membership in order to make your profile visible to other members or site visitors and in order to participate in the Acceptance Matching. <br/>
+			Click here to know more.
+		]]></inactive>
+		<btn_search>Browse members profiles using the search tool to quickly find certain criterias.</btn_search>
+		<btn_search_qa>Browse and search the Questions exchanged between Kobool members and list all the answers for these questions.</btn_search_qa>
+		<btn_wishers>View the list of members who added you to their Acceptance List and chose to show their acceptance to you and they are contacting any other member in the time being.</btn_wishers>
+		<btn_buy_cards>Click here to purchase and manage purchased Contact Points.</btn_buy_cards>
+		<btn_mypage>Your main Kobool page which contains your recent activites, your saved Searches and your profile preview</btn_mypage>
+		<btn_logout><![CDATA[
+			Logout from your account. <br/>
+			This will change your current status in the site to a Visitor. <br/>
+			To login again use the Login form
+		]]></btn_logout>
+		<btn_wishlist>View and modify the list of members whom you have Acceptance towards them for possible future marriage.</btn_wishlist>
+		<btn_addpic>Add new photo to your Ablum or modify or delete the existing photos</btn_addpic>
+		<btn_watchlist>View and Modify your bookmark list.</btn_watchlist>
+		<btn_edit>Make changes to your personal information.</btn_edit>
+		<btn_activate>Activate your membership in order to make your profile visible to other members or site visitors and in order to participate in the Acceptance Matching</btn_activate>
+		<btn_login>Login to your KOBOOL account.</btn_login>
+		<btn_create>Join KOBOOL members to let us help you find your future mate.It takes 20 seconds to register.</btn_create>
+		<btn_unregister><![CDATA[
+			Stop your membership if you would like to hide your profile from site visitors and members and not to participate in KOBOOL Acceptance Matching operation.
+		]]></btn_unregister>
+		<btn_chg_pass>Change your Login Password.</btn_chg_pass>
+		<btn_chg_email>Change your email address that KOBOOL uses to communicate with you.</btn_chg_email>
+		<your_mate_photo><![CDATA[
+			The main photo for the person you matched with through the Acceptance Matching operation.<br/>
+			Click on the photo to display the profile detail of your match.
+		]]></your_mate_photo>
+		<btn_contact>
+			Open Contact page to send a new message to %m% and to read the Message History between you and %m%.
+		</btn_contact>
+		<btn_married><![CDATA[
+			Declare that your marriage process with your match has succeeded. <br/>
+			Therefor, KOBOOL will stop showing your profile to other site members or visitors.
+		]]></btn_married>
+		<collapse_header>Collapse Page Header</collapse_header>
+		<expand_header>Expand Page Header</expand_header>
+		<sorting_header>Results sorting buttons</sorting_header>
+		<email><![CDATA[
+			Your e-mail address that KOBOOL uses to communicate with you.<br/>
+			It is not visible to site visitors nor members.<br/>
+			Please make sure that this address is correct in order to get the full support from us.<br/>
+			Click to update this address or to use another one.
+		]]></email>
+		<your_photo><![CDATA[
+			Your main photo that appears to the visitors and members in the search results page and in your profile information page.
+		]]></your_photo>
+	</new_tips>
+	<summary>
+		<questions>New questions from other member. Click here to read or answer those questions.</questions>
+		<declines>Your previous unsuccessful matchings that ended by your decline or by the other's. </declines>
+		<most_visitors>Click here to list all your visitors sorted by the most visitors</most_visitors>
+		<visitors><![CDATA[
+			Visitors (from the opposite gender) to your personal page in Kobool.<br/>
+			Click here to list the visitors sorted by recent visitors.
+		]]></visitors>
+		<visits><![CDATA[
+			Visits (made by members from the opposite gender) to your information page.<br/>
+			Click here to list all your visitors sorted by the most ones.
+		]]></visits>
+		<accepted><![CDATA[
+			Number of members who added you to their Acceptance List.<br/>
+			They should be among your Visitors List.<br/>
+			Click here to know how to guess who Accepted you.
+		]]></accepted>
+		<rank>Your average rank in the Acceptance Lists that you have been added to</rank>
+		<bookmarks>Number of members who added your profile to their Bookmarks</bookmarks>
+		<refresh>Click here to refresh the information inside this box</refresh>
+	</summary>
+	<qa>
+		<add_fav>Add this question to your personal questions to make it easier for you to submit it to other members.</add_fav>
+		<remove_fav>Remove this question from your personal questions.</remove_fav>
+		<Add2MyQ>Add this question to your relevant questions. This will make it easy to post it to other members or to know the answers to it.</Add2MyQ>
+		<RemoveMyQ>Remove this question from your relevant questions</RemoveMyQ>
+	</qa>
+	<ccards>
+		<secure_payment>This payment method is secured via high encryption to enusure that no hackers could steel your personal information.</secure_payment>
+		<cashu_countries>Click here to display the list of countries and cities where Cashu Cards are available and how to get it.</cashu_countries>
+	</ccards>
+	<contact>
+		<predefined_msg_radio><![CDATA[Choose this option to send predefined message set by Kobool.
+			Predefined messages are readable even without using Contact Points.
+		]]></predefined_msg_radio>
+		<predefined_decline_msg_radio><![CDATA[Choose this option to send predefined decline message set by Kobool.]]></predefined_decline_msg_radio>
+		<typing_enabled_radio><![CDATA[
+			Choose this option to send written message.<br/>
+			Your recepient will not be able to read this message without using a Contact Point.
+		]]></typing_enabled_radio>
+		<decline_typing_enabled_radio><![CDATA[
+			Choose this option to send written decline message.
+		]]></decline_typing_enabled_radio>
+		<typing_disabled_radio><![CDATA[
+			You can't use this option until you use a Contact Point, or your match does that for you.
+		]]></typing_disabled_radio>
+		<decline_typing_disabled_radio><![CDATA[
+			You can't use this option unless 2 Contact Points are used.
+		]]></decline_typing_disabled_radio>
+		<expand>Expand the message box</expand>
+		<shrink>Shrink the message box</shrink>
+		<toggle_direction>Toggle message reading order</toggle_direction>
+		<mate_pic><![CDATA[
+			Your match's thumbnail picture. <br/>
+			Left click on it to open your match's profile page. <br/>
+			Right click for updating it in case your match uploaded a new picture and it was approved by the supervisor.
+		]]></mate_pic>
+	</contact>
+	<search>
+		<save><![CDATA[
+			Add this search criteria to your saved Search List.<br/>
+			This will make it easier for you to repeat the same search in the future
+		]]></save>
+		<refine>Refine this search to get better results</refine>
+		<remove>Remove from your Search List</remove>
+	</search>
+	<register>
+		<email><![CDATA[
+			Enter your email address that KOBOOL will use to communicate with you.<br/>
+			Your Email address will not be shown to KOBOOL members nor visitors.<br/>
+			Please make sure that this address is correct in order to get the full support from us.
+		]]></email>
+	</register>
+	<sresults>
+		<add_fav>Add %m% to the top of your Acceptance List.</add_fav>
+		<bookmark>Add %m% to your Bookmarks</bookmark>
+		<goto_page>Goto to results page</goto_page>
+		<next_page>Go to next page</next_page>
+		<prev_page>Go to previous page</prev_page>
+		<first_page>Go to first page</first_page>
+		<last_page>Go to last page</last_page>
+	</sresults>
+	<profile>
+		<blacklist_warning><![CDATA[
+			Warning: Don't lose your Kobool membership by violating the rules by writing your personal information or unaccepted statements. <br/>
+			Don't try to conseal unaccepted text to pass the supervisors eyes, <br/>
+			this will lead to even rejecting your apology if caught.
+		]]></blacklist_warning>
+		<mu_mate>You have been connected to this member via Acceptance Matching.</mu_mate>
+		<unk_kobool><![CDATA[
+			We can't tell if this member has added you to his/her Acceptance List.<br/>
+			There are three possibilites:
+			<ol>
+				<li>This member has added you to his/her Acceptance List and chose not to show his/her acceptance to you.</li>
+				<li>This member has added you to his/her Acceptance List and chose to show his/her acceptance to you but he/she is connected to other member right now. In this case Kobool hides his/her acceptance to others as long as he/she is connected already.</li>
+				<li>This member has not added you to his/her Acceptance List.</li>
+			</ol>
+			Only the first case gives you an option to match with this member if you added him/her to your acceptance list.
+		]]></unk_kobool>
+		<no_kobool><![CDATA[
+			You haven't added this member to your Acceptance List.<br/> 
+			As a result there is no chance that you will be matched with this member.
+		]]></no_kobool>
+		<no_kobool_chance><![CDATA[
+			There is no chance that this member has added you to his/her Acceptance List.<br/>
+			Because he/she hasn't visited your page yet. <br/>
+			You can't match with this member unless both of you add each others to your Acceptance Lists.
+		]]></no_kobool_chance>
+		<wisher><![CDATA[
+			This member has added you to his/her Acceptance List and chose to show his/her acceptance to you.<br/>
+			You can be matched with this member in the Next Acceptance Matching if you add him/her to your Acceptance List and your ranks were the highest of other possible matches.
+		]]></wisher>
+		<pics_count>Pictures Count</pics_count>
+		<show_pics>Click here to show/hide the Photo Album</show_pics>
+		<in_wishlist><![CDATA[
+			You added this member to your Acceptance List and this could lead to matching the two of you via Kobool Acceptance Matching process. <br/>
+			Click here to review your list and the "Ranking" of whom you accepted as possible future mates.
+		]]></in_wishlist>
+		<last_thumb_page>Display the last thumbnails page</last_thumb_page>
+		<first_thumb_page>Display the first thumbnails page</first_thumb_page>
+		<add_fav>Add this member to your 'Acceptance List' if you have preliminary acceptance for marriage towards this member.</add_fav>
+		<add_fav_confirm><![CDATA[]]></add_fav_confirm>
+		<ask>Submit Question.</ask>
+		<visit_count><![CDATA[
+			This line shows the number of times '%m%' visited your page. This number doesn't indicate that %m% is accepting you,<br/>
+			but larger number of visits indicates larger possibility of acceptance by %m%.
+		]]></visit_count>
+		<back_to_results>Return back to results page.</back_to_results>
+		<back_to_watches>Return back to Bookmarks.</back_to_watches>
+		<back_to_wishes>Return back to Acceptance List.</back_to_wishes>
+		<first>Display the first profile</first>
+		<previous>Display the previous profile</previous>
+		<next>Display the next profile</next>
+		<last>Display the last profile</last>
+		<next_thumb_page>Display next results thumbnails page</next_thumb_page>
+		<prev_thumb_page>Display previous results thumbnails page</prev_thumb_page>
+		<page_thumbs>Current results page thumbnails. Click on a thumbnail to display the full details. Use the side buttons to view the next or previous thumbnail page.
+		</page_thumbs>
+		<main_pic>%m%'s main picture, size is reduced from the original size. Click on this picture to view %m%'s Picture Album with original sizes.
+		</main_pic>
+		<free_text_warning><![CDATA[
+			<b style="color:red">Important warning</b>:<br/>
+			We review any text you write in your page and will immediately terminate your membership if you write any of the following:<br/>
+			<li>Improper words.
+			<li>Personal contact information. i.e.: phone number, e-mail, address, etc..
+			<li>Personal messages to other Kobool members.
+			<li>none-understandable statements.
+		]]></free_text_warning>
+	</profile>
+	<wishlist>
+		<make_visible><![CDATA[
+			You chose not to show your Acceptance to this member.<br/>
+			Click here to show your Acceptance.<br/>
+			Showing or hiding your Acceptance will not affect the Acceptance Matching operation.<br/>
+			You can still be matched with this member if he/she added you to his/her Acceptance List.<br/>
+			Showing your Acceptance only helps to motivate this member to add you to his/her Acceptance List if there is Acceptance from his/her side.<br/>
+			(note: Showing your acceptance is not visible to anyone except the member you are accepting)
+		]]></make_visible>
+		<make_invisible><![CDATA[
+			You chose to show your Acceptance to this member.<br/>
+			Click here to hide this Acceptance.<br/>
+			Showing or hiding your acceptance does not affect the Acceptance Matching operation.
+		]]></make_invisible>
+		<promote>Promot this profile, this will give '%m%' higher priority in the next Acceptance Matching.</promote>
+		<demote>Demote this profile, this will give '%m%' lower priority in the next Acceptance Matching.</demote>
+		<remove>Remove from Acceptance List</remove>
+	</wishlist>
+	<login>
+		<auto><![CDATA[
+			Select the Auto Login option if you are the only user of this computer to automatically login in the future without the need to enter user name and passoword.<br/>
+			You can remove this feature by clicking on Logout button.
+		]]></auto>
+	</login>
+	<pics>
+		<can_not_be_main>Can't be you profile main picture</can_not_be_main>
+		<rejected><![CDATA[
+			The site supervisor did not accept this picture,<br/> 
+			hence it will not be shown to any of the site visitors or members.
+		]]></rejected>
+	</pics>
+	<bookmarks>
+		<delete_item>Remove this member from your Bookmarks.</delete_item>
+	</bookmarks>
+</root>

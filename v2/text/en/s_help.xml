@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<root>
+	<search_tips>
+		<page_title>Acceptance Guide</page_title>
+		<intro>
+Your success in finding your Match through KOBOOL service depends greatly on 
+your success in adding the right persons to your Acceptance List. 
+&lt;p&gt;
+Simply because when you accept someone who did not accept you, your acceptance to 
+that person will have no value. 
+Because he/she will not know that you Accepted him/her, neither will you. 
+&lt;br&gt;
+Also, adding a person to your Acceptance List reduces your chance to Match with other 
+members in your Acceptance List who are lower in Rank.
+		</intro>
+		<main_question>
+So, the question is.. Is there a way to know all who added me to his/her Acceptance List?
+		</main_question>
+		<answer>
+The answer is, not all of them.
+&lt;p&gt;
+The reason for that is to let everyone selects his/her wished spouse without worrying about being rejected by that person.
+		</answer>
+		<clues>
+			<title>
+However, Kobool gives "clues" or "hints" to guess who are interested in you.
+&lt;p&gt;
+These clues are:
+			</title>
+			<clue_1>
+				<title>
+1- The Photos Visibility: 
+				</title>
+				<text>
+There is a feature in the Photo Album management page to set the visibility of the photos to 
+"Only people in the Acceptance List".
+&lt;br&gt;
+Since many members (specially female members) would rather not displaying their photos to the public, 
+they have the option to show their photos only to the persons whom they have added to their Acceptance List.
+&lt;br&gt;
+So, If you could see the picture of a person (only when you are logged on) 
+this means that he/she might has added you to his/her Acceptance List.
+				</text>
+			</clue_1>
+			<clue_2>
+				<title>
+2- The number of visits to your personal information page:
+				</title>
+				<text>
+KOBOOL counts the number of times your Profile has been visited by every member (of the opposite gender only). 
+&lt;br&gt;
+When you open the Profile page of that person, 
+you can read the number of times that person has visited your Profile page and 
+when was the last visit (you can find it right below the Profile Title line).
+				&lt;br&gt;
+You can also set the Search options to sort the search results by number of visits to your Profile page. 
+				&lt;br&gt;
+We believe that the more the visits you have by someone the more likely that 
+he/she has Accepted you.
+&lt;p&gt;
+Important Note: KOBOOL does not record your visit to a member unless at least one hour has been passed since your last visit to that member.
+				</text>
+			</clue_2>
+			<clue_3>
+				<title>
+3- The Mate description:
+				</title>
+				<text>
+You can know from the person's description of his wished mate whether you are 
+the one he/she is looking for.
+				</text>
+			</clue_3>
+			<clue_4>
+				<title>
+4- Similarities:
+				</title>
+			<text>
+Always consider closer location, same religion, closer age, closer physical appearance, etc 
+as important factors to mutual acceptances.
+&lt;br&gt;
+You can use the filters and sorting options in the Search tools to quickly find 
+whom have similarity with you.
+			</text>
+			</clue_4>
+		</clues>
+		<final_advice>
+Our final advice to you is to always try to search for whom are seeking you.
+		</final_advice>
+	</search_tips>
+</root>

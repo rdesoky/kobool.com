@@ -1,0 +1,23 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<root>
+	<tags>
+		<inbox>الوارد</inbox>
+		<sent>المرسل</sent>
+		<starred>مميز بنجمة</starred>
+		<saved>محفوظات</saved>
+		<trash>مهملات</trash>
+		<alerts>اشعارات</alerts>
+	</tags>
+	<ui>
+		<admin>موقع قبول</admin>
+		<page_title>صندوق بريدي</page_title>
+		<move_to>-- انقل إلى --</move_to>
+		<reply>كتابة رد</reply>
+		<msg_from>مرسل من</msg_from>
+		<msg_date>تاريخ الرسالة</msg_date>
+		<subject>الموضوع</subject>
+		<no_selection>لم تختر رسالة للعرض, فضلا انقر بالماوس على الرسالة لعرضها.</no_selection>
+		<delete>حذف</delete>
+		<save>حفظ</save>
+	</ui>
+</root>

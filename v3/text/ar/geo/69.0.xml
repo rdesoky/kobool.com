@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<option value="0" name=""  />
+	<option value="1" name="أجادير"  />
+	<option value="8" name="ارفود"  />
+	<option value="26" name="آسفي" />
+	<option value="2" name="الحسيمة" />
+	<option value="25" name="الرباط"  />
+	<option value="13" name="العرائش" />
+	<option value="19" name="المحمدية" />
+	<option value="27" name="الوزان" />
+	<option value="3" name="بني عياش"  />
+	<option value="4" name="بو عرفه" />
+	<option value="9" name="فاس"  />
+	<option value="5" name="الدار البيضاء"  />
+	<option value="28" name="تطوان" />
+	<option value="10" name="طنجر"  />
+	<option value="14" name="مراكش"  />
+	<option value="16" name="مكناس"  />
+	<option value="29" name="نادور"  />
+	<option value="6" name="Ceuta Tetouan" />
+	<option value="7" name="الجديدة" />
+	<option value="11" name="Tarfaya" />
+	<option value="12" name="القنيطرة" />
+	<option value="15" name="Mazagan" />
+	<option value="17" name="Melilla" />
+	<option value="18" name="Mogador" />
+	<option value="20" name="Oran" />
+	<option value="21" name="Ouarzazate" />
+	<option value="22" name="Ouezzane" />
+	<option value="23" name="Oujda" />
+	<option value="24" name="Port Lyautey" />
+</root>

@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<root>
+	<option value="0" name="" ></option>
+	<option value="1" name="Al-Hamoul" ></option>
+	<option value="2" name="Al-Riyadh" ></option>
+	<option value="3" name="Balteem" ></option>
+	<option value="4" name="Beyalah" ></option>
+	<option value="5" name="Desook" ></option>
+	<option value="6" name="Fouh" ></option>
+	<option value="8" name="Kafr El-Sheikh" ></option>
+	<option value="10" name="Motoabas" ></option>
+	<option value="7" name="Qelleen" ></option>
+	<option value="9" name="Sydi Salem" ></option>
+</root>

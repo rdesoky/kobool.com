@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--TODO: unused-->
+<html>
+	<title>New Visitors</title>
+	<body>Hi $V{lname}</body>
+</html>

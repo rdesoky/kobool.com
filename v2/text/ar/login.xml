@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<login>
+		<login_required>هذه الوظيفة متاحة فقط للأعضاء المسجلين يجب تسجيل دخولك أولا لاستخدام هذه الخاصية.</login_required>
+		<page_title>تسجيل الدخول</page_title>
+		<form_title>فضلا ادخل بيانات الدخول</form_title>
+		<login_name>اسم الدخول</login_name>
+		<password>كلمة السر</password>
+		<login_notify>تم تسحيل دخول العضو (%m%)</login_notify>
+		<submit>دخول</submit>
+		<forgot>غير متذكر؟</forgot>
+		<forgot_pass>هل نسيت كلمة السر؟ اضغط هنا لإستعادتها</forgot_pass>
+		<new_member>لست عضو بالموقع؟ انضم لعضوية موقع (قبول) مجانا</new_member>
+	</login>
+</root>

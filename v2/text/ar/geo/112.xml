@@ -1,0 +1,54 @@
+<?xml version="1.0"  encoding="utf-8" ?>
+<root>
+		<option value="0" name="" ></option>
+		<option value="1" name="ألاباما" ></option>
+		<option value="2" name="ألاسكا" ></option>
+		<option value="3" name="أريزونا" ></option>
+		<option value="4" name="أركنساس" ></option>
+		<option ex="1" value="5" name="كاليفورنيا" ></option>
+		<option value="6" name="كولورادو" ></option>
+		<option value="7" name="كناتيكت" ></option>
+		<option value="8" name="دلاوير" ></option>
+		<option value="9" name="فلوريدا" ></option>
+		<option value="10" name="جورجيا" ></option>
+		<option value="11" name="هاواي" ></option>
+		<option value="12" name="ايداهو" ></option>
+		<option value="13" name="الينوي" ></option>
+		<option value="14" name="إنديانا" ></option>
+		<option value="15" name="أيوا" ></option>
+		<option value="16" name="كنساس" ></option>
+		<option value="17" name="كنتاكي" ></option>
+		<option value="18" name="لويزيانا" ></option>
+		<option value="19" name="ماين" ></option>
+		<option value="20" name="ميريلاند" ></option>
+		<option value="21" name="ماساشوستز" ></option>
+		<option value="22" name="ميتشيجان" ></option>
+		<option value="23" name="ميناسوتا" ></option>
+		<option value="24" name="ميسيسبي" ></option>
+		<option value="25" name="ميزوري" ></option>
+		<option value="26" name="مونتانا" ></option>
+		<option value="27" name="نبراسكا" ></option>
+		<option value="28" name="نيفادا" ></option>
+		<option value="29" name="نيو هامبشير" ></option>
+		<option value="30" name="نيو جيرسي" ></option>
+		<option value="31" name="نيو ميكسيكو" ></option>
+		<option value="32" name="نيويورك" ></option>
+		<option value="33" name="نورث كارولينا" ></option>
+		<option value="34" name="نورث داكوتا" ></option>
+		<option value="35" name="أوهايو" ></option>
+		<option value="36" name="أوكلاهوما" ></option>
+		<option value="37" name="أوريجون" ></option>
+		<option value="38" name="بنسلفينيا" ></option>
+		<option value="39" name="رود أيلاند" ></option>
+		<option value="40" name="ساوث كارولينا" ></option>
+		<option value="41" name="ساوث داكوتا" ></option>
+		<option value="42" name="تينيسي" ></option>
+		<option value="43" name="تكساس" ></option>
+		<option value="44" name="يوتا" ></option>
+		<option value="45" name="فيرمونت" ></option>
+		<option value="46" name="فيرجينيا" ></option>
+		<option value="47" name="واشنطن" ></option>
+		<option value="48" name="وست فيرجينيا" ></option>
+		<option value="49" name="وسكنسن" ></option>
+		<option value="50" name="وايومنج" ></option>
+</root>

@@ -1,0 +1,71 @@
+<div class="pg_body" id="SearchPage">
+	<div data-init="require('dom-utils').initTabs" data-tab="tab_1" >
+		<ul class="tab_selector">
+			<li data-tab="tab_1" data-string="str:search"></li>
+			<li data-tab="tab_2" data-exists-if="(? SSN.id ?)" data-string="str:search_menu.saved"></li>
+			<li data-tab="tab_3" data-string="str:a.drill"></li>
+		</ul>
+		<ul class="tab_list">
+			<li data-tab="tab_1" id="SearchFormPanel">
+				<form name="searchFrm" class="form_frame">
+					<div class="form_field">
+						<select name="g">
+							<option value="">---<span data-string="str:qsearch"></span>---</option>
+							<option value="0" data-string="str:husband"></option>
+							<option value="1" data-string="str:wife"></option>
+						</select>
+					</div>
+					<div class="field_label"><span data-string="str:age"></span>:</div>
+					<div class="form_field">
+						<select name="ag">
+							<option value="">---<span data-string="str:all_ages"></span>---</option>
+							<option value="1">16-24</option>
+							<option value="2">25-29</option>
+							<option value="3">30-34</option>
+							<option value="4">35-39</option>
+							<option value="5">40-44</option>
+							<option value="6">45-49</option>
+							<option value="7">50-54</option>
+							<option value="8">55-59</option>
+							<option value="9">60-64</option>
+							<option value="10">65-69</option>
+							<option value="11">70-74</option>
+							<option value="12">75-79</option>
+							<option value="13">80-84</option>
+							<option value="14">85-89</option>
+							<option value="15">90-94</option>
+							<option value="16">95-99</option>
+						</select>
+					</div>
+					<div class="field_label"><span data-string="str:filters.ms"></span>:</div>
+					<div class="form_field">
+						<select name="ms">
+							<option value="" data-string="str:any_status" data-string-template="---{s}---"></option>
+
+						</select>
+					</div>
+
+					<div class="field_label"><span data-string="str:filters.c"></span>:</div>
+					<div class="form_field">
+						<select name="c">
+							<option value="" data-string="str:all_countries" data-string-template="---{s}---"></option>
+
+						</select>
+					</div>
+
+					<div class="field_label"><span data-string="str:filters.o"></span>:</div>
+					<div class="form_field">
+						<select name="o">
+							<option value="" data-string="str:all_countries" data-string-template="---{s}---"></option>
+
+						</select>
+					</div>
+					<div class="buttons_bar"><input type="submit" value="" data-string="str:full_results" data-string-attr="value" ></div>
+				</form>
+			</li>
+			<li data-tab="tab_2" id="SavedSearches"></li>
+			<li data-tab="tab_3" id="Driller" ></li>
+		</ul>
+	</div>
+
+</div>

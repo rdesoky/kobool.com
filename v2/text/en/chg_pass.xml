@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<root>
+	<chg_pass>
+		<page_title>Change Account Password</page_title>
+		<intro>Submit the form below to change your Account Password.</intro>
+		<form_title>Change Password Form</form_title>
+		<current_pw>Current Password</current_pw>
+		<password>New Password</password>
+		<confirm_pw>Retype the &lt;br&gt;New Password</confirm_pw>
+		<submit>Submit</submit>
+		<success>
+			Your password has been changed successfully.
+		</success>
+	</chg_pass>
+</root>

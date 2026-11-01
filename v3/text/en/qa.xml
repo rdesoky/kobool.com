@@ -1,0 +1,157 @@
+<root>
+	<ui>
+		<question_text>Question Text</question_text>
+		<answer_count>Answers</answer_count>
+		<ask_count>Asked</ask_count>
+		<search>Search</search>
+		<clear>Clear</clear>
+
+		<ask_confirm><![CDATA[The question will be posted to this member.<br/>Are you sure?]]></ask_confirm>
+		<del_fav_ans>Click here to remove this answer from Relevant Answers</del_fav_ans>
+		<del_fav_q>Click here to remove this question from Relevant Questions</del_fav_q>
+		<remove_my_question><![CDATA[
+			This question and all the answers to it will be removed from you relevant Questoins and answers.
+			<br/>Are you sure?
+		]]></remove_my_question>
+		<later>Answer Later</later>
+		<not_later>Not Later</not_later>
+		<Answer>Edit Answer</Answer>
+		<DelAnswer>Remove Answer</DelAnswer>
+		<Postpone>Postpone</Postpone>
+		<Ignore>Ignore</Ignore>
+		<fav_q>Relevant Question</fav_q>
+		<fav_ans>Relevant Answer</fav_ans>
+		<add_fav_ans>Click here to add this answer to Relevant Answers</add_fav_ans>
+		<add_fav_q>Click here to add this question to Relevant Questions</add_fav_q>
+		<ConfirmRemoveMyQ><![CDATA[
+			This question will be removed from your relevant questions.<br/>Are you sure?
+		]]></ConfirmRemoveMyQ>
+		<qselect_0>All questions</qselect_0>
+		<qselect_1>Relevant Questions</qselect_1>
+		<filters>
+			<act>All Members</act>
+			<wls>Accepted</wls>
+			<bkm>Bookmarked</bkm>
+			<myq>Whom you Asked</myq>
+		</filters>
+	</ui>
+	<new_questions_intro><![CDATA[
+	New questions posted by other opposite gender members<br>
+	KOBOOL does not reveal the identity of who asked these questions. More than one member could post the same question to you.<br>
+	You don't have to answer all questions. If you found some of them out of context or so mean, just ignore them.
+	]]></new_questions_intro>
+	<p_questions_intro><![CDATA[
+	List of questions you chose to answer them later.<br> You can put them back to your list of new questions or answer them in this place.
+	]]></p_questions_intro>
+	<answers_intro>Answers to questions posted by other members</answers_intro>
+	<RelevantAnswers_intro>Answers to questions found among your relevant questions.</RelevantAnswers_intro>
+	<Answers4You_intro>Questions you posted to this member</Answers4You_intro>
+	<confirm_answered_q><![CDATA[This member has already answered this question.<br>Whould you like to review his/her answers?]]></confirm_answered_q>
+	<quick_filters>
+		<term value="1">Yes</term>
+		<term value="2">نعم</term>
+		<term value="3">Que</term>
+		<term value="4">Ya</term>
+		<term value="5">No</term>
+		<term value="6">لا</term>
+		<term value="7">Nein</term>
+		<term value="8">Sometimes</term>
+		<term value="9">حيانا</term>
+		<term value="10">May be</term>
+		<term value="11">ربما</term>
+		<term value="12">Impossible</term>
+		<term value="13">مستحيل</term>
+	</quick_filters>
+	<ccards>
+		<qa>
+			<a><![CDATA[
+يمكن اذا استخدم أحد العضوين نقطة الإتصال بدء الكتابة على الفور للطرف الآخر ولكن لن يتمكن الطرف الآخر من قراءة الرسائل المكتوبة الا بعد أن يستخدم نقطة الإتصال الخاصه به.
+اذا لم يستخدم الطرف الثاني نقطة إتصال وتم الإنسحاب بدون تبادل أي رسائل وبدون رسالة انسحاب مكتوبة فان نقطة الإتصال التي اشتراها الطرف الأول ستصبح صالحة للإستخدام مرة أخرى في الإتصال بقبول مشترك آخر.
+]]></a>
+			<q>
+ماذا يحدث اذا استخدمت نقطة إتصال ولم يقم الطرف المتوافق معي باستخدام نقطة الإتصال المطلوبة منه؟
+			</q>
+		</qa>
+		<qa>
+			<a><![CDATA[
+عند استخدام نقطتي الإتصال يظل التواصل بالرسائل المكتوبة مفتوح بشكل دائم وليس مرتبط بمده معينه أو بعدد معين من الرسائل . الى أن يحدث انسحاب من أحد الأطراف.
+]]></a>
+			<q><![CDATA[
+هل تعطي نقطة الإتصال صلاحية لحد أقصى من الرسائل المكتوبة؟ أو لمدة زمنية ثابتة؟
+]]></q>
+		</qa>
+		<qa>
+			<a><![CDATA[
+]]></a>
+			<q><![CDATA[
+]]></q>
+		</qa>
+		<qa>
+			<a><![CDATA[
+]]></a>
+			<q><![CDATA[
+]]></q>
+		</qa>
+		<qa>
+			<a><![CDATA[
+]]></a>
+			<q><![CDATA[
+]]></q>
+		</qa>
+	</ccards>
+	<search>Search</search>
+	<click2ask>click to select a question</click2ask>
+	<short_question>The question is too short</short_question>
+	<write_new>Write a new question ( You can add up to 2 new questions per day ) It is recommended that you select a similar question from the database because it could take several days to review your new question before sending it</write_new>
+	<ask_note>
+		Please, make sure that this member has not already answered this question to avoid annoying him/her with repeated or unwanted questions.
+	</ask_note>
+	<ask_text_note>
+	This question would be added to Kobool questions database and would be available for other Kobool members to use it if they want to. 
+	&lt;br&gt;
+	Hence it will be reviewed by Kobool supervisor before showing it to others and that could take couple of days.
+	&lt;br&gt;
+	So you have to consider the following before submitting your question:
+	&lt;br&gt;
+	1- Your question should not contain personal information or messages for you or whome you are asking
+	&lt;br&gt;
+	2- Don't mention profile names or detailed information ( for example: city names )
+	&lt;br&gt;
+	3- Use proper language and avoid bad words
+	&lt;p&gt;
+	If we found that you are not following these rules that would lead to cancelling your membership and enlisting you to Kobool blacklist.
+	</ask_text_note>
+	<title>Choose from questions database</title>
+	<no_questions><![CDATA[
+	<div>No questions found for your search criteria.</div>
+	<div>We recommend that you shorten your search keyword to get more results.</div>
+	<div>For example: search for <b>net</b> instead of <b>internet</b>.</div>
+	]]></no_questions>
+	<question_text>Question Text</question_text>
+	<question_sent><![CDATA[
+Your question has been sent<hr>
+The remaining questions you can send today is: %n%<br>
+The remaining questions you can send to this member today is: %m%
+]]></question_sent>
+	<asked_before>You already sent this question to this member.</asked_before>
+	<send>Submit</send>
+	<new_question>New</new_question>
+	<QandA>Questions and Answers</QandA>
+	<edit_answer>Modify</edit_answer>
+	<clear_answer>Delete</clear_answer>
+	<requests>Asked you</requests>
+	<asked_count>Asked</asked_count>
+	<answer_count>Answers</answer_count>
+	<answer_it>Answer</answer_it>
+	<reject_it>Ignore</reject_it>
+	<later>Later</later>
+	<not_later>Not Later</not_later>
+	<all_questions>All questions</all_questions>
+	<my_questions>Relevant Questions</my_questions>
+	<language>Language</language>
+	<clear>Clear</clear>
+	<q_accepted>Accepted Questions</q_accepted>
+	<q_under_review>Under Review</q_under_review>
+	<q_rejected>Rejected</q_rejected>
+	<answered>Already answered</answered>
+</root>

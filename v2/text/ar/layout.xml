@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<kobool>قبول</kobool>
+	<year>سنة</year>
+	<mailbox>البريد</mailbox>
+	<welcome>مرحبا</welcome>
+	<mate_menu>
+		<contact>اتصال</contact>
+		<decline>انسحاب</decline>
+	</mate_menu>
+	<member_menu>
+		<privacy>الخصوصية</privacy>
+		<saved>المحفوظات</saved>
+		<trash>المهملات</trash>
+		<sent>المرسل</sent>
+		<starred>مميز بنجمة</starred>
+		<payments>تقرير</payments>
+		<pmo>الحوالات البريدية</pmo>
+		<bank_tr>الحوالات البنكية</bank_tr>
+		<manage_cards>رصيدي</manage_cards>
+		<my_questions>اسئلتي</my_questions>
+		<title>أدوات العضوية</title>
+		<logout>خروج</logout>
+		<wishlist>قائمة قبولي</wishlist>
+		<wishers>من قبلني؟</wishers>
+		<watchlist>العلامات</watchlist>
+		<blocklist>المحذوفين</blocklist>
+		<mypage>صفحتي</mypage>
+		<unregister>توقيف العضوية</unregister>
+		<edit>تعديل</edit>
+		<edit_info>بياناتي</edit_info>
+		<edit_attr>صفاتي</edit_attr>
+		<edit_text>النص الحر</edit_text>
+		<edit_pics>الصور</edit_pics>
+		<alerts>تنبيهات</alerts>
+		<activate>تفعيل العضوية</activate>
+		<password>كلمة السر</password>
+		<email>البريد الإليكتروني</email>
+		<inbox>الوارد</inbox>
+		<contact_cards>نقاط الإتصال</contact_cards>
+		<visitors>الزائرون</visitors>
+		<visited>من زرتهم</visited>
+		<new_visitors>زائرون جدد</new_visitors>
+	</member_menu>
+	<mission>الحل العصري للوصول الى شريك المستقبل</mission>
+	<view_type>شكل العرض</view_type>
+	<search_list>قائمة البحث السريع</search_list>
+	<select>اختار من التالي</select>
+	<clear_filters>حذف جميع الصفات من خصائص البحث</clear_filters>
+	<ru_sure>هل أنت متأكد؟</ru_sure>
+	<mail2friend>ارسل هذا البحث الى صديقك بالبريد الإليكتروني</mail2friend>
+	<group_by>مجموعات حسب</group_by>
+	<group>المجموعة</group>
+	<show_report>عرض تقرير</show_report>
+	<close_report>اغلاق التقرير</close_report>
+	<show_blocked>عرض المحذوفين</show_blocked>
+	<active_search>البحث الحالي</active_search>
+	<search_group>ابحث في هذه المجموعة</search_group>
+	<refine>تنقيح</refine>
+	<full_results>اعرض النتائج</full_results>
+	<self_filters>الخصائص الشخصية</self_filters>
+	<save_search>احفظ خصائص البحث الحالي في قائمة البحث السريع أو في المفضلة</save_search>
+	<filters>
+		<personal><![CDATA[<i>البيانات الشخصية</i>]]></personal>
+		<g>الجنس</g>
+		<ag>السن</ag>
+		<c>الإقامة</c>
+		<o>بلد الأصل</o>
+		<st>الإقامة 2</st>
+		<ci>الإقامة 3</ci>
+		<ms>الحالة الإجتماعية</ms>
+		<ht>الطول</ht>
+		<wt>الوزن</wt>
+		<ch>حالة الأطفال</ch>
+		<jb>المهنة</jb>
+		<nc>الدخل السنوي</nc>
+		<la>اللغة الأصلية</la>
+		<rc>الإنتماء العرقي</rc>
+		<ed>التعليم</ed>
+		<sm>التدخين</sm>
+		<re>الديانة</re>
+		<ds>إعاقة جسدية</ds>
+		<dt>الملابس</dt>
+		<sh>القوام</sh>
+		<fc>الشكل</fc>
+		<dst>منطقة السكن</dst>
+		<po>مبدأ التعدد</po>
+	</filters>
+	<active_members_no>عدد الأعضاء</active_members_no>
+	<active_members>الأعضاء الفعالين</active_members>
+	<feedback_help>انطباعك الشخصي يظهر لك في قوائم البحث ولا يقرؤه أحد سواك ولا يراجعه مشرفي الموقع والغرض منه فقط تذكيرك بمن قمت بزيارتهم</feedback_help>
+	<feedback_link>سجل انطباعك الشخصي عن هذا العضو</feedback_link>
+	<religion>الديانة</religion>
+	<rank>أولوية القبول</rank>
+	<help_menu>
+		<matching>توفيق القبول</matching>
+		<search_tips>ارشادات البحث</search_tips>
+		<visitation>الزيارات</visitation>
+	</help_menu>
+	<points_menu>
+		<title>نقاط الإتصال</title>
+		<info>تقرير</info>
+		<buy>الشراء</buy>
+		<eula><![CDATA[الشروط والقواعد]]></eula>
+		<help>عن نقاط الإتصال</help>
+	</points_menu>
+	<main_menu>
+		<search_questions>الإسئلة والإجوبة</search_questions>
+		<press>تغطيات صحفية</press>
+		<title>الأقسام الرئيسية</title>
+		<home>صفحة البداية</home>
+		<search>بحث وعرض</search>
+		<login>تسجيل الدخول</login>
+		<register>اشترك الآن</register>
+		<options>تفضيلات</options>
+		<stats>إحصاءات الموقع</stats>
+	</main_menu>
+	<search_menu>
+		<simple>بسيط</simple>
+		<advanced>متقدم</advanced>
+		<saved>بحثي المفضل</saved>
+		<drill>مجموعات</drill>
+	</search_menu>
+	<qa_menu>
+		<all>كل الإجابات</all>
+		<recent>أحدث إجابات تهمك</recent>
+		<by_member>من سألتهم</by_member>
+		<recent_questions>إجابات تهمك</recent_questions>
+	</qa_menu>
+	<make_gift>اهداء نقاط</make_gift>
+	<login>
+		<login_required>هذه الوظيفة متاحة فقط للأعضاء المسجلين يجب تسجيل دخولك أولا لاستخدام هذه الخاصية.</login_required>
+		<page_title>تسجيل الدخول</page_title>
+		<form_title>نموذج دخول الإعضاء المسجلين</form_title>
+		<login_name>اسم الدخول</login_name>
+		<password>كلمة السر</password>
+		<submit>دخــول</submit>
+		<forgot_pass><![CDATA[ غير متذكر؟ ]]></forgot_pass>
+		<new_member>لست عضو بالموقع؟ انضم لعضوية موقع (قبول) مجانا</new_member>
+	</login>
+	<photos_first>الصور أولا</photos_first>
+	<advanced_search>بحث متقدم</advanced_search>
+	<simple>بحث سريع</simple>
+	<wife>زوجة</wife>
+	<husband>زوج</husband>
+	<cpanel>لوحة تحكم</cpanel>
+	<promot>ترقية</promot>
+	<demote>تأخير</demote>
+	<bookmark>ضع علامة</bookmark>
+	<vodafone_title>شراء نقاط اتصال بواسطة التليفون المحمول</vodafone_title>
+	<buy_now_title>وسائل شراء نقاط الإتصال</buy_now_title>
+	<cr_cards_title>شراء نقاط اتصال بواسطة بطاقة ائتمان</cr_cards_title>
+	<cashu_title>شراء نقاط اتصال بواسطة بطاقات كاشيو</cashu_title>
+	<pmo_title>شراء نقاط اتصال بواسطة الحوالات البريدية</pmo_title>
+	<onecard_title>اضافة نقاط اتصال بطاقة قبول</onecard_title>
+	<bank_tr_title>شراء نقاط اتصال بواسطة التحويل البنكي</bank_tr_title>
+	<wunion_title>شراء نقاط اتصال باستخدام ويسترن يونيون</wunion_title>
+	<pos_questions>أسئلة مؤجلة</pos_questions>
+	<mycards>نقاط الإتصال التي قمت بشرائها</mycards>
+	<total_answers>جميع الإجابات</total_answers>
+	<asked_questions>عدد الأسئلة</asked_questions>
+	<login_id>اسم الدخول</login_id>
+	<edit_text>تحرير النص الحر</edit_text>
+	<show_all_questions>عرض جميع الأسئلة</show_all_questions>
+	<search_answers>ابحث في الإجابات</search_answers>
+	<blank><![CDATA[&nbsp;]]></blank>
+	<question_text>نص السؤال</question_text>
+	<ask_count>سئل</ask_count>
+	<answer_count>أجيب</answer_count>
+	<recent_questions>آخر أسئلة طرحتها</recent_questions>
+	<recent_answers>أحدث إجابات لأسئلتك</recent_answers>
+	<no_answers>لا يوجد أو أنها تحت المراجعة أو أن العضو غير فعال</no_answers>
+	<AskedMembersList>قائمة الأعضاء الذين وجهت اليهم أسئلة</AskedMembersList>
+	<member_answers>إجابات من سألتهم</member_answers>
+	<Ask>وجه سؤالا</Ask>
+	<NewQuestions>أسئلة جديدة</NewQuestions>
+	<least_visited_back>أقل رد للزيارات</least_visited_back>
+	<last_visited>آخر من زرتهم</last_visited>
+	<QandA>إجابات</QandA>
+	<MyKobool>بياناتي</MyKobool>
+	<Visitation>الزيارات</Visitation>
+	<all_ages>-- كل الأعمار --</all_ages>
+	<all_countries>-- كل الدول --</all_countries>
+	<any_status>-- كل الحالات --</any_status>
+	<all_languages>-- كل اللغات --</all_languages>
+	<other_language>English</other_language>
+	<confirm_switch_lang>هل تود تغيير لغة الإستخدام؟</confirm_switch_lang>
+	<featured_members>أعضاء مميزون</featured_members>
+	<accept>قبول</accept>
+	<save>حفظ</save>
+	<help>إرشادات</help>
+	<you>أنت</you>
+	<select_msg_type>إختر نوع الرسالة</select_msg_type>
+	<predefined_msg>رسالة موضوعة</predefined_msg>
+	<predefined_msgs>الرسائل الموضوعة بواسطة الموقع</predefined_msgs>
+	<typed_text_msg>رسالة مكتوبة</typed_text_msg>
+	<date_purchased>تاريخ الشراء</date_purchased>
+	<channel>الوسيلة</channel>
+	<price>السعر</price>
+	<currency>العملة</currency>
+	<date_used>تاريخ الإستخدام</date_used>
+	<user>الإستخدام</user>
+	<no_wishers_found><![CDATA[
+		لا يوجد أعضاء أظهروا لك قبولهم وغير متصلين بقبول مشترك.<p>
+		ربما يكون هناك آخرون قبلوا بك ولكنهم اختاروا ألا يظهروا هذا القبول أو أنهم حاليا متصلين بقبول مشترك.
+	]]></no_wishers_found>
+	<no_records_found><![CDATA[
+		لا توجد سجلات
+		<div mClass="JCVisible" style="display:none;text-align:right;width:200px;color:black;font-size:12px;font-weight:normal">
+			&nbsp;
+			<div mClass="JCHotText" mMouseInit="1" onclick="OnEditActiveFilter()" 
+			style='background:white;border:solid 1px silver;vertical-align:top;cursor:hand;height:20px;'>
+			<img src="images/search_minus.gif">
+			احذف بعض خصائص البحث
+			</div>
+		</div>
+	]]></no_records_found>
+	<no_groups><![CDATA[
+		لا توجد مجموعات
+		<div style="text-align:right;width:200px;color:black;font-size:12px;font-weight:normal">
+			&nbsp;
+			<div mClass=JCHotText mMouseInit="1" onclick="OnClickTopFilters('summary')" 
+			style='background:white;border:solid 1px silver;vertical-align:top;cursor:hand;height:20px;'>
+			<img src="images/search_plus.gif">
+			اختر مجموعات أخرى
+			</div>
+			&nbsp;
+			<div mClass=JCHotText mMouseInit="1" onclick="OnEditActiveFilter()" 
+			style='background:white;border:solid 1px silver;vertical-align:top;cursor:hand;height:20px;'>
+			<img src="images/search_minus.gif">
+			احذف بعض خصائص البحث
+			</div>
+		</div>
+	]]></no_groups>
+	<buy_now>إشتر الآن</buy_now>
+	<pay_now>إدفع الآن</pay_now>
+	<copy2clipboard>انسخ في الحافظة</copy2clipboard>
+	<email>ارسل بالبريد الإليكتروني</email>
+	<list>قائمة</list>
+	<results>نتائج</results>
+	<original>أصلي</original>
+	<no_visits>لم تسجل أي زيارات</no_visits>
+	<visited_you>عدد الزيارات لك</visited_you>
+	<your_visits>عدد زياراتك</your_visits>
+	<last_visit>أحدث زيارة</last_visit>
+	<why>لماذا؟</why>
+	<ur_ad_here>ضع إعلانك هنا</ur_ad_here>
+	<most_visitors>أكثر الزيارات</most_visitors>
+	<recent_visitors>أحدث زيارة</recent_visitors>
+	<recent_login>آخر دخول</recent_login>
+	<recent_members>آخر المشتركين</recent_members>
+	<no_title>(بدون عنوان)</no_title>
+	<not_approved>(تحت المراجعة)</not_approved>
+	<answer>إجابة</answer>
+	<answers>إجابات</answers>
+	<browse_questions>اعرض الأسئلة</browse_questions>
+	<question>سؤال</question>
+	<questions>أسئلة</questions>
+	<search_www>ابحث في الإنترنت</search_www>
+	<ads>إعلانـــــات</ads>
+	<color_code>دلالات الألوان</color_code>
+	<under_construction>تحت الإنشاء</under_construction>
+	<date_matched>تاريخ التوفيق</date_matched>
+	<date_declined>تاريخ الإنسحاب</date_declined>
+	<msgs>الرسائل المتبادلة</msgs>
+	<loading>تحميل البيانات ... من فضلك الإنتظار</loading>
+	<searching>جاري البحث ... من فضلك الإنتظار</searching>
+	<search>البحث</search>
+	<std_view>عرض بالتفاصيل</std_view>
+	<tn_view>عرض البوم</tn_view>
+	<edit>تحرير</edit>
+	<change>تعديل</change>
+	<qsearch>ابحث عن</qsearch>
+	<is_accepted>قبـــول؟</is_accepted>
+	<delete_bookmark>حذف علامة</delete_bookmark>
+	<submit>تنفيـــذ</submit>
+	<reset>إعـــادة</reset>
+	<visitors>زائرين</visitors>
+	<visits>زيارات</visits>
+	<wishers>مقبول</wishers>
+	<watchers>علامات</watchers>
+	<avrg_rank>ترتيب</avrg_rank>
+	<close>اغــــلاق</close>
+	<ok>تـــــم</ok>
+	<yes>نعم</yes>
+	<no>لا</no>
+	<decline>Decline</decline>
+	<declines>Declines</declines>
+	<default_picture>Set Default</default_picture>
+	<cancel>الغاء</cancel>
+	<first>|&lt;</first>
+	<last>&gt;|</last>
+	<of>من</of>
+	<page>صفحة</page>
+	<member>عضو</member>
+	<total>إجمالي</total>
+	<back_to_results>نتائج البحث</back_to_results>
+	<search_results>نتائج البحث</search_results>
+	<remove>Remove</remove>
+	<lname>المميز</lname>
+	<age>العمر</age>
+	<country>الإقامة</country>
+	<origin>بلد الأصل</origin>
+	<date_added>تاريخ الإضافة</date_added>
+	<day>يوم</day>
+	<two_days>يومين</two_days>
+	<days>أيام</days>
+	<hour>ساعة</hour>
+	<hours>ساعة</hours>
+	<within>خلال</within>
+	<TTM>توفيق القبول التالي بعد: </TTM>
+	<after>بعد</after>
+	<week>اسبوع</week>
+	<two_weeks>اسبوعين</two_weeks>
+	<weeks>أسابيع</weeks>
+	<month>شهر</month>
+	<two_months>شهرين</two_months>
+	<months>شهور</months>
+	<time_to_matchbot> موعد %h1%توفيق القبول%h0% القادم
+	</time_to_matchbot>
+	<matching_schedule>يتم التوفيق مرة يوميا</matching_schedule>
+	<inactive_member>عضو غير فعال</inactive_member>
+	<window_title>قبول</window_title>
+	<title>قبول - الخطوة الأولى للزواج</title>
+	<sponsors>هذا الموقع برعاية</sponsors>
+	<credits>هذا الموقع من تطوير</credits>
+	<lang_menu>لغة المستخدم</lang_menu>
+	<visitor>مرحبا بالزائر</visitor>
+	<add_wish>Acceptance</add_wish>
+	<slogan>ومن آياته ان خلق لكم من انفسكم ازواجا لتسكنوا اليها وجعل بينكم مودة ورحمة ان في ذلك لآيات لقوم يتفكرون</slogan>
+	<brief>الخطوة الأولى للزواج</brief>
+	<muslim_web>شبكة المسلم</muslim_web>
+	<welcome>مرحبا</welcome>
+	<thanks>شكرا لك</thanks>
+	<copyright><![CDATA[
+		جميع الحقوق محفوظة &copy; قبول كم 2004-2011
+	]]></copyright>
+	<who_are_we>من نحن؟</who_are_we>
+	<contact_us>contact us</contact_us>
+	<privacy>سياسة السرية</privacy>
+	<feedback>feedback</feedback>
+	<report_bug>بلغ عن خطأ</report_bug>
+	<your_match>لك قبول مشترك مع %u%</your_match>
+	<refresh>تحديث</refresh>
+	<more>المزيد...</more>
+	<show_keyboards>إضغط هنا لإظهار لوحة المفاتيح العربية</show_keyboards>
+	<delete_item>حذف</delete_item>
+	<go_to>اذهب إلى</go_to>
+	<go>إذهب</go>
+	<open>إفتح</open>
+	<moveto>إنتقل</moveto>
+	<browse>إعرض</browse>
+	<select_page>حدد رقم الصفحة</select_page>
+	<footer>
+		<who>من نحن؟</who>
+		<contact_us>إتصل بالموقع</contact_us>
+		<tell>اخبر صديق</tell>
+		<feedback>إرسل انطباعك</feedback>
+	</footer>
+</root>

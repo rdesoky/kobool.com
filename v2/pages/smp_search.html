@@ -1,0 +1,89 @@
+<div class="pg_body" id="SimpleSearchPage">
+	<table cellspacing="5" class="full_width">
+	<tr>
+		<td valign="top">
+			<div class="form_panel">
+			<form name="searchFrm" onsubmit="Search.submit(this);return false;">
+				<table cellspacing="5">
+				<tr>
+					<td class="right_align" data-string="str:qsearch"></td>
+					<td>
+						<table>
+						<tr>
+							<td class="nowrap">
+								<div class="hmouse">
+									<input type="radio" name="g" value="0" id="gender_male" ><span onclick="document.forms.searchFrm.g[0].click()" data-string="str:husband"></span>
+								</div>
+								<div class="hmouse">
+									<input type="radio" name="g" value="1" id="gender_female"><span onclick="document.forms.searchFrm.g[1].click()" data-string="str:wife"></span>
+								</div>
+							</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td class="right_align" data-string="str:age"></td>
+					<td>
+						<select name="ag">
+							<option value="">---<span data-string="str:all_ages"></span>---</option>
+							<option value="1">16-24</option>
+							<option value="2">25-29</option>
+							<option value="3">30-34</option>
+							<option value="4">35-39</option>
+							<option value="5">40-44</option>
+							<option value="6">45-49</option>
+							<option value="7">50-54</option>
+							<option value="8">55-59</option>
+							<option value="9">60-64</option>
+							<option value="10">65-69</option>
+							<option value="11">70-74</option>
+							<option value="12">75-79</option>
+							<option value="13">80-84</option>
+							<option value="14">85-89</option>
+							<option value="15">90-94</option>
+							<option value="16">95-99</option>
+						</select>
+						<span data-string="str:year"></span>
+					</td>
+				</tr>
+				<tr>
+					<td class="right_align"><span data-string="str:filters.ms"></span>:</td>
+					<td>
+						<select name="ms">
+							<option value="" data-string="str:any_status" data-string-template="---{s}---"></option>
+
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="right_align"><span data-string="str:filters.c"></span>:</td>
+					<td>
+						<select name="c">
+							<option value="" data-string="str:all_countries" data-string-template="---{s}---"></option>
+
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="right_align"><span data-string="str:filters.o"></span>:</td>
+					<td>
+						<select name="o">
+							<option value="" data-string="str:all_countries" data-string-template="---{s}---"></option>
+
+						</select>
+					</td>
+				</tr>
+				</table>
+				<center><input type="submit" value="" data-string="str:full_results" data-string-attr="value" ></center>
+			</form>
+			</div>
+		</td>
+		<td class="vtop full_width">
+			<div id="SavedSearches"></div>
+		</td>
+	</tr>
+	</table>
+	<div id="Driller" class="padding"></div>
+
+</div>

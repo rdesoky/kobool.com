@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<root>
+<visiting_help>
+	<page_title>Your Kobool Page Visitation</page_title>
+	<intro>Advices to increase the number of visits to your personal Kobool page</intro>
+	<access>
+		<title>Your Kobool page could be reached by others via two ways:</title>
+		<search>Searching</search>
+		<visitation>Visitation records (this applies on visitors from opposite gender only)</visitation>
+	</access>
+	<search>
+		<title>Searching</title>
+		<intro>
+		Kobool user ( or Internet user in general ) does not browse all the Search Results pages, but does browse 4 pages in average.
+		</intro>
+		<recommendations>
+			<title>
+In order to increase the rate of reaching and visiting your page you have to make your page appears among the top 4 pages of the search results by taking care of the following:
+			</title>
+			<item_1>
+Fill in all your profile information fields as much as possible (especially your Date of Birth and your Location). 
+Too little information in your profile causes your page to appear less or even not appears at all in the Search Results.
+Missing your Date of Birth in your profile prevents your page from appearing in the Search Results completely.
+			</item_1>
+			<item_2>
+Adding your self photo will make your profile appears in the top pages when searching with "Pics First" option.
+			</item_2>
+			<item_3>
+If you have multiple photos in your profile, it is recommended to change your main photo every once in while to make the visitors think that there are something new in your page.
+			</item_3>
+			<item_4>
+If you don't have a personal photo in your profile make sure to set your photos visibility option to "Everyone browsing kobool.com". Because choosing the other options will delay your page appearance in the Search Results without any benefit.
+			</item_4>
+			<item_5>
+In most search operations the results are sorted by the recent Login to Kobool. 
+So, it is recommended to Login to Kobool as much as you can because that would increase the time periods that your page will be displayed in the top Search Result pages.
+			</item_5>
+			<item_6>
+Try to make your page title contains attraction elements. The importance of your page title is mainly because it is shown with the thumbs and photo album view mode. It persents your short message to site visitors that distinguish your profile from others.
+It is recommended to change this title every once in a while to attract the visitors who are always looking for new stuff.
+			</item_6>
+			<item_7>
+Make the first phrase of your Self description and your mate description also contains attraction elements, because in search results, only the first two lines of these fields will be displayed.
+			</item_7>
+		</recommendations>	
+	</search>
+	<visiting_record>
+		<title>Visitation Records</title>
+		<intro_1>
+Kobool records the visitation between members. 
+The page visit is considered a meeting that leads to a decission by the visitor whether to Accept or not Accept the visited member as a possible future mate.
+		</intro_1>
+		<intro_2>
+Each member can view his/her visitors and can list them sorted by recent or most visitors.
+		</intro_2>
+		<intro_3>
+Upon member login to Kobool, the recent 5 visitors will be displayed on the top of member's main page.
+In 90% of the cases the member visits back those recent 5 visitors so, both of the couple would have seen each others and their decissions of (Acceptance) will be the first step to be matched by Kobool and to start the aquaintance for the sake of marriage.
+		</intro_3>
+		<recommendations>
+			<title>
+To increase the number of visits to your page via back visits from members you visit you should consider the following:
+			</title>
+			<item_1>
+Visit the members you are intersted in more often to increase your chance to appear in the top of their main page or in the top pages when the members you visit list their visitors sorted by recent or most visitors.
+			</item_1>
+			<item_2>
+Make sure that whoever you visit is frequently visiting Kobool site by observing the "Last Login" field that appears among his/her information. 
+If a member has not visited Kobool for several weeks or monthes then the chance that he/she will visit you back is very slim and the chance of his/her Acceptance is also low, because his/her long absence indicates that he/she is not interested in finding his future mate through Kobool site.
+			</item_2>
+		</recommendations>
+	</visiting_record>	
+</visiting_help>
+</root>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<home>
+		<header><![CDATA[<span style="font-size:14px">Search &gt; Ask &gt; Accept &gt; Matching &gt; Aquaintance &gt; Marriage &gt; </span>]]></header>
+		<msg><![CDATA[
+			<h1>The modern way to find your future mate</h1>
+			<h2>Why Kobool?</h2>
+			<div>
+				Have you ever proposed to someone and the answer was no?<br/>
+				Or someone proposed to you and you didn't accept?<br/>
+				Or you didn't propose to someone to avoid being rejected?<br/>
+			</div>
+			<h2>Would you like to find your soulmate without going through these experiences?</h2>
+			<h3>
+				"Kobool" offers a unique service that helps making the first, the most important and the most difficult step towards marriage,<br/>
+				which is to match couples having mutual acceptances without causing them to go through painful experiences.
+			</h3>
+		]]>
+		</msg>
+		<intro_1>Assalamo Alykom</intro_1>
+		<intro_2><![CDATA[
+			<div class="title">Why Kobool?</div>
+			<div class="subtitle">
+				Have you ever proposed to someone and the answer was no?<br/>
+				Or someone proposed to you and you didn't accept?<br/>
+				Or you didn't propose to someone to avoid being rejected?<br/>
+			</div>
+			<div class="subtitle">Would you like to find your soulmate without going through these experiences?</div>
+
+			<div class="subtitle box padding">"Kobool" offers a unique service that helps making the first, the most important and the most difficult step towards marriage,<br/>
+			which is to match couples having mutual acceptances without causing them to go through painful experiences.
+			</div>
+		]]>
+		</intro_2>
+
+		<intro_5>To reach this goal KOBOOL provides three operations:</intro_5>
+
+		<fstep_title>Searching</fstep_title>
+		
+		<fstep_1>
+Search tools help to quickly find the right matches.&lt;br&gt;
+Several "hints" to guess the interested members.
+		</fstep_1>
+
+		<sstep_title>Accepting</sstep_title>
+
+		<sstep_1>Each member has "Acceptance List" adding to it whom are acceptable for marriage sorted by the degree of acceptance.</sstep_1>
+		<tstep_title>Matching</tstep_title>
+		<tstep_1>Electronic Acceptance Matching (performed daily) to determine the couples who have "Mutual Acceptances".</tstep_1>
+		<tstep_2></tstep_2>
+		<tstep_3>
+This electronic Match-Bot takes into consideration the Ranking in every Acceptance List then the Date of Acceptance to break the ties in case of equal Rankings. This way the result will be fair to all parties.
+		</tstep_3>
+
+	
+		<trailer>
+			<p1>
+Embarrassed from posting a marriage Ad on the Internet?
+			</p1>
+			<p2>
+There is no reason for that. You are not required to show your real name and KOBOOL never shows your e-mail address to other members.
+Also, KOBOOL enables you to limit your picture's visibility to only certain members so that only those you selected can see your picture.
+			</p2>
+			<p3>
+Don't waste the time in trials that might fail as a result of unilateral acceptance and let KOBOOL helps you find your future mate more efficiently.
+			</p3>
+			<p4>Do you want to help your friends to get married?</p4>
+			<p5>Click here to send them an email telling them about KOBOOL</p5>
+		</trailer>
+
+	</home>
+</root>

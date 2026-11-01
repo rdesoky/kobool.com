@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<root>
+	<info>
+		<feedback_recieved><![CDATA[
+			Your message has been sent successfully.<br/>
+			We will study it carefully and respond to it as soon as we can.
+		]]></feedback_recieved>
+		<email_sent>The email was sent successfully</email_sent>
+	</info>
+	<confirm>
+		<remove_my_question><![CDATA[
+			This question will be removed from your private questions list.<br/>
+			Are you sure?
+		]]></remove_my_question>
+		<ask_question><![CDATA[
+			This selected question will be sent to '%m%'. <br/>
+			'%m%' will not know who asked this question and is not forced to answer it. <br/>
+			Are you sure you want to ask '%m%' this question?
+		]]></ask_question>
+		<clear_answer><![CDATA[
+			Your answer will be deleted. Are you sure?
+		]]></clear_answer>
+		<reject_question><![CDATA[
+			This question will be removed from the list of questions you recieved.<br/>
+			Are you sure?
+		]]></reject_question>
+		<postpone_question><![CDATA[
+			This question will be removed from this list and will be added to the List of questions you would answer them later. <br/>
+			Are you sure?
+		]]></postpone_question>
+		<unpostpone_question><![CDATA[
+			This question will be removed from this list and will be added to the List of questions you would answer right now.<br/>
+			Are you sure?
+		]]></unpostpone_question>
+
+		<block_member><![CDATA[
+			%m% will be removed from your Visitors List.<br/>
+			Are you sure?
+		]]></block_member>
+		<unblock_member><![CDATA[
+			%m% will be returned to your Visitors List.<br/>
+			Are you sure?
+		]]></unblock_member>
+		<remove_search><![CDATA[
+			This search will be removed from your Search List.<br/>
+			Are you sure?
+		]]></remove_search>
+		<logout><![CDATA[
+			You will logout.<br/>
+			Are you sure?
+		]]></logout>
+		<remove_wish><![CDATA[
+			'%m%' will be removed from your Acceptance list.<br/>
+			Are you sure?
+		]]></remove_wish>
+		<show_wishes><![CDATA[
+			'%m%' has been added to your Acceptance list.<br/>
+			Would you like to review your list?
+		]]></show_wishes>
+		<add_kobool_title>Acceptance Confirmation</add_kobool_title>
+		<add_kobool><![CDATA[
+			<div class="parag">
+				By adding <b>%u%</b> to your Acceptance List, you "declare" that you are accepting <b>%u%</b>'s attributes as a possible future spouse.
+			</div>
+			<div class="parag">
+				Kobool does electronic "Acceptance Matching" operation once a day to find the couples who added each others to their Acceptance Lists.<br/>
+				If the "Acceptance Matching" found that <b>%u%</b> is accepting you as well and that your rank is higher than others (in case of multiple Mutual Acceptances), only then, Kobool will notify both of you with your Mutual Acceptance via e-mail and will open a communcation channel for you to continue the acquaintance process with the intention of future marriage (INSHAA ALLAH).
+			</div>
+			<div class="parag bold">Do you still want to add %u% to your Acceptance List as following?</div>
+		]]></add_kobool>
+		<delete_bookmark><![CDATA[
+			'%m%' page will be deleted from your Bookmarks.<br/>
+			Are you sure?
+		]]></delete_bookmark>
+	</confirm>
+	<alerts>
+		<add_watch>
+			This profile has been added to your Bookmarks. Click on "Bookmarks" button in the Main Menu to list all your Bookmarks.
+		</add_watch>
+	</alerts>
+
+</root>

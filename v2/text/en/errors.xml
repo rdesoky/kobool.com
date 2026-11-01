@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<error>
+		<duplicate_pp_card><![CDATA[This card number was sent before.</br>Please don't send the same card number more than once.]]></duplicate_pp_card>
+		<invalid_id>Invalid Member Number</invalid_id>
+		<no_gender>Member gender has not been set</no_gender>
+		<invalid_phone_card_number>Invalid Prepaid Phone Card Number</invalid_phone_card_number>
+		<invalid_memid>Invalid Member Number</invalid_memid>
+		<invalid_or_used_card_number>The card number is invalid or was used before.</invalid_or_used_card_number>
+		<invalid_card_number>The card number is invalid. Make sure it is 16 digits length.</invalid_card_number>
+
+		<add_bookmark_failed>This member was already in your Bookmarks</add_bookmark_failed>
+		<no_cookies><![CDATA[<div align=left style="background:white">"Cookies" feature is not enabled in your web browser.<br>
+	Kobool can't function properly without "Cookies" enabled.<br>
+	To enable "Cookies" follow these steps:<br>
+	- Open "Tools" menu.<br>
+	- Open Internet Options..<br>
+	- Open "Privacy" tab.<br>
+	- Click on "Default" button.<br>
+	- Click OK.<br>
+	- Refresh the current page by pressing F5 key.</div>
+	]]>
+		</no_cookies>
+		<script_error>
+	An error occured in the Script. Please reload the current page by pressing on Ctrl + F5 key. or contact us to tell us about this error if it keeps happening.
+		</script_error>	    
+
+		<max_queries_reached>You have reached the maximum number of Searches in your Search List. Please Open the Search page and remove unused Searches to be able to add new Searches.</max_queries_reached>
+		<query_exists>This Search already exists in your Search List</query_exists>
+		<invalid_password>Invalid Password	</invalid_password>
+		<create_member_failed><![CDATA[
+		The "login Name" you chose is already taken by another member. <br>
+		Please choose another "Login Name".
+		]]></create_member_failed>
+		<invalid_login>Invalid Login Information</invalid_login>
+		<no_db_connection>Connection to Database is currently unavailable. Please try again shortly.</no_db_connection>
+		<no_login_name>Please enter Login Name</no_login_name>
+		<invalid_login_name>Login Name is not valid.&lt;br&gt;It should not be longer than 20 characters, and should not contain your personal information</invalid_login_name>
+		<no_password>Please enter a Password</no_password>
+		<password_mismatch>Password confirmation does not match your Password</password_mismatch>
+		<no_email>Please Enter a valid e-mail address.</no_email>
+		<invalid_email><![CDATA[
+	You entered an invalid e-mail address<br>
+	Please retry
+	]]></invalid_email>
+		<script_failed>
+		An error occured during data download. Please refresh the page to retry.
+		</script_failed>
+
+		<email_mismatch>
+		The email address you have typed didn't match the email address you typed in the registration from.&lt;br&gt;
+		It is important to make sure that your email address is valid to get the full support from KOBOOL.&lt;br&gt;
+		Please rewrite your email address.
+		</email_mismatch>
+
+      <blacklist_member><![CDATA[
+This profile can not be re-activated because the owner has violated the rules of Kobool site and ignored the warnings of the supervisors.
+<p>If you are already in connection with another member via Kobool Acceptance Matching you still have the following options:
+<li>Your profile will remain visible to that member.
+<li>You will be able to continue communicating with that member.
+<li>You can use Kobool Contact Card to chat with that member.
+<p>However, you have the following limitations:
+<li>If you update any text or question answer in your profile it will not be reviewed by Kobool supervisors and will remain (under review) forever.
+<li>If you (or the person currently connected to you) decline from this relationship you will not participate in future Kobool Acceptance Matching and there is no chance to be matched with other members.
+	]]></blacklist_member>
+      <max_questions_reached>You have reached your maximum daily question you can choose and send to all members. The maximum daily questions you can send to all members is 40</max_questions_reached>
+      <max_member_questions_reached>You have reached your maximum daily question you can send to this member. The maximum daily questions you can send to each members is 10</max_member_questions_reached>
+      <max_new_questions_reached>You have reached your maximum daily question you can create add to the Kobool questions database. 
+	  However, you can select a question from the database and send it. You will propably find a similar question. Use the search tool to find a specific question.</max_new_questions_reached>
+	
+	</error>
+</root>

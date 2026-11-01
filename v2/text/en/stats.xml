@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<root>
+	<stats>
+		<page_title>KOBOOL Statistics</page_title>
+		<title>KOBOOL statistics</title>
+		<intro>The following report represents KOBOOL statistics since June 1st 2004</intro>
+		<members>Members count (Active/Inactive)</members>
+		<visits>Visits</visits>
+		<wishes>Acceptances</wishes>
+		<male>Males</male>
+		<female>Females</female>
+		<total>Total</total>
+		<matched>Matched</matched>
+		<date>Matching Date</date>
+		<declined>Declined</declined>
+		<matching_results>Matching Results</matching_results>
+		<earlier>Earlier</earlier>
+		<active>Still Contacting</active>
+	</stats>
+</root>

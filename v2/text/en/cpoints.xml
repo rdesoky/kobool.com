@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<confirm>
+		<unuse><![CDATA[
+		You are about to restore the point(s) used in the current connection.<br/>
+		This action will delete your written messages that you sent to your current match.<br/>
+		The predefined messages will not be deleted though.
+		<br/> Are you sure you want to do that?
+		]]></unuse>
+		<use_point_self><![CDATA[
+			You are about to use one Contact Point<br/> to be able to send written messages to your current match.<br/>
+			Are you sure?
+		]]></use_point_self>
+		<use_point_mate><![CDATA[
+			You are about to grant one Contact Point to your match<br/> to be able to read your written message.<br/>
+			Are you sure?
+		]]></use_point_mate>
+	</confirm>
+	<ui>
+		<buy>Buy Now</buy>
+		<buy_prompt><![CDATA[
+			You need to buy and use one Contact Point to be able to send written messages to your match:]]></buy_prompt>
+		<not_needed><![CDATA[
+			You don't need to buy or use Contact Points in the time being.
+		]]></not_needed>
+		<buy_extra_prompt><![CDATA[
+			You may buy Contact Points for future use and to be listed in the Featured Members List for free:
+		]]></buy_extra_prompt>
+		<for_member>Buying Contact Points for:</for_member>
+		<other_methods>Other purchase methods:</other_methods>
+		<eula_intro>Please make sure that you read and accepted the Terms and Conditions of KOBOOL Points System.</eula_intro>
+		<eula_accepted><![CDATA[I read the <span href1>Terms ans Conditions</span> and accepted it]]></eula_accepted>
+		<accept>Accept</accept>
+		<back>Back</back>
+		<eula_accept_required>You have to accept the "Terms and Conditions" of KOBOOL points System.</eula_accept_required>
+		<restore_points_prompt><![CDATA[
+			No written messages have been exchanged between you and your match till now,<br/>
+			and you can restore the Contact Point(s) you used in this connection to be able to use it in a future connection:
+		]]></restore_points_prompt>
+		<restore_points>Restore the Contact Point(s)</restore_points>
+		<use_prompt>To be able to send written messages to your match in the chat page, you need to use one Contact Point::</use_prompt>
+		<use>Use one Contact Point</use>
+		<use4mate_prompt>Your match should use one Contact Point to be able to read your written messages:</use4mate_prompt>
+		<use4mate>Grant a Contact Point</use4mate>
+	</ui>
+	<report>
+		<page_title>Contact Points: Report</page_title>
+		<list_title>List of purchased Contact Points:</list_title>
+		<no_points_found>You havnt' purchased any Contact Points so far.</no_points_found>
+		<price>Price</price>
+		<currency>Currency</currency>
+		<channel>Purchase Method</channel>
+		<date_purchased>Purchase Date</date_purchased>
+		<date_used>Date Used</date_used>
+		<usage>Usage</usage>
+		<usable>Usable</usable>
+		<usable_points>Usable Contact Points</usable_points>
+		<used_points>You took advantage of the Contact Point(s) used in the current connection and it can't be reused in another connection.</used_points>
+	</report>
+	<methods>
+		<page_title>Contact Points: Purchase Methods</page_title>
+		<cr_cards>Credit Card</cr_cards>
+		<phone_tr>Phone Prepaid Card</phone_tr>
+		<cashu>CashU</cashu>
+		<bank_tr>Bank Transfer</bank_tr>
+	</methods>
+	<cr_cards>
+		<page_title>Contact Points: Buy via Credit Card</page_title>
+		<intro><![CDATA[Purchase Contact Points using your credit card:<br/>
+Visa - Mastercard - American Express - Discover <br/>
+from anywhere in the world.]]></intro>
+		<select_val>Select quantity:</select_val>
+		<val_5>One Contact Point for $5 US dollars</val_5>
+		<val_10>Two Contact Points for $10 US Dollars</val_10>
+		<buy>Buy Now</buy>
+	</cr_cards>
+	<cashu>
+		<page_title>Contact Points: Buy via CashU</page_title>
+		<intro><![CDATA[
+			Use "<a href="http://www.cashu.com" target="_blank">CashU</a>" account to buy KOBOOL Contact Points.<br/>
+			<a href="http://www.cashu.com" target="_blank">Click here</a> to learn more about CashU payment system.
+		]]></intro>
+		<select_val>Select Quantity:</select_val>
+		<val_250>One Contact Point for 250 CashU ( $5 US Dollars )</val_250>
+		<val_500>Two Contact Points for 500 CashU ( $10 US Dollars )</val_500>
+		<buy>Buy Now</buy>
+	</cashu>
+	<phone_tr>
+		<card_num_required>Please enter Vodafone Prepaid Card number</card_num_required>
+		<email_required>Please enter your email address</email_required>
+		<invalid_member>Invalid Member Number</invalid_member>
+		<page_title>Contact Points : Buy via Vodafone Egypt prepaid cards</page_title>
+		<intro><![CDATA[
+			<div>Purchase Contact Points via Vodafone Egypt mobile prepaid cards.</div>
+			<ul>
+			<li>One Contact Point costs 25 EGP.</li>
+ 			<li>You don't have to own Vodafone mobile service, all you have to do is to buy the recharge card and send its' information without using it.</li>
+			<li><span style="color:brown">Vodafone Prepaid cards of values less than 25 EGP will not be accepted.</span></li>
+			<li><span style="color:brown">Prepaid cards from other mobile phone service providers (I.E. Mobinil and Etisalat) will not be accepted.</span></li>
+			</ul>
+		]]></intro>
+		<vf25>25 EGP (one contact points)</vf25>
+		<vf50>50 EGP  (two contact points)</vf50>
+		<vf100>100 EGP (5 contact points)</vf100>
+		<form_title>Buy a Vodafone Egypt prepaid card and submit the followin infomation:</form_title>
+		<card_value>Card Value:</card_value>
+		
+		<card_num>Card Scratched Number:</card_num>
+		<card_num_note>Scratch the card and write its' number without spaces.</card_num_note>
+		
+		<email>Your email:</email>
+		<email_note>Enter your email to receive a notification mail.</email_note>
+		
+		<preview_title>Please review the card data before sending it.</preview_title>
+		<preview>Send Card Information</preview>
+		<preview_footer>After sending the card information, we will verify its' validity and will add the Points to your account within couple of hours.</preview_footer>
+		<submit_note>Important Node: Sending wrong numbers or numbers of already used Vodafone cards will lead to suspending your membership. </submit_note>
+		
+		<submit>Send Now</submit>
+		<edit>Update Information</edit>
+
+		<notes>Notes:</notes>
+		<invalid_card>Invalid Card Number</invalid_card>
+		<prepaid_card_submitted><![CDATA[
+			The card information has been sent successfully.<br/>
+			You should receive an email containing your order information and another email after adding the Contact Points
+			<br/>
+			Reference Number: 
+		]]></prepaid_card_submitted>
+		<send_more>Send another card</send_more>
+		<prepaid_card_submitted_footer>Please don't send the same card information more than once.</prepaid_card_submitted_footer>
+	</phone_tr>
+	<eula>
+		<title>Contact Points: Terms and Conditions</title>
+		<contents><![CDATA[
+			<div style="font-size:14px">
+			<b>Please read all the Terms and Conditions carefully</b>
+
+			<ol dir=LTR>
+				<li>Kobool Contact Point is a digital product that you can use only to 
+					start writing and reading messages to and from the member you matched with 
+					via Kobool Mutual Acceptance Matching operation.
+
+				<li> You can not use the Contact Point to contact any Kobool member other than the one you are matched with.
+
+				<li> Upon buying the Contact Point, it would be added to your Kobool profile and will remain usable until 
+					you use it by clicking the "Use this point" button that is displayed next to your usable Points.
+
+				<li> Usable Contact Points never expire until they are used.
+
+				<li>Two Contact Points are required per Mutual Acceptance Connection to have full communication.<br>
+					You are responsible for "one" Contact Point and your matched member is responsible for the other one.
+
+				<li>Upon buying and using your Contact Point you will immediately be able to write messages to your matched member. But your match will not be able to read your written messages unless he/she buy and use his Contact Point.
+
+				<li>You may choose to buy and use "two" Contact Points to activate full communication with your match 
+					if your match is unable or doesn't like to buy a Contact Point or if you like to make it as a gift to your match.
+
+				<li> After using a Contact Point, it can not be re-used again if any of the following happens:
+					<ul>
+					<li>Your contact with the matched member is still active.
+					<li>You sent at least one written text message and your match could read it.<br>
+					<li>Your match sent at least one written text message and you read it.<br>
+					<li>You or your match declined from the Mutual Acceptance Connection and used written text message in the Decline Form.
+					</ul>
+
+				<li>If none of the above condition is valid, your point can be re-used in future matches upon 
+					declining from the Mutual Acceptance Connection that you used the Contact Points for.
+
+				<li>Currently, it is "not" possible for Kobool to refund the price of the purchased Contact Points to their owners.<br>
+					Soon, Kobool will implement a method for Contact Points owners to be able to sell the points 
+					or give them as gifts to other Kobool members when they want to.
+			</ol>
+			</div>
+
+			]]></contents>
+	</eula>
+
+	<qa>
+		<title>Contact Points: Questions and Answers</title>
+		<contents><![CDATA[
+			<div class="a_title">
+				
+				What happens if I purchase and use a Contact Card but my matched member doesn't do the same thing?
+				
+			</div>
+			<div class="indent free_text">
+				
+				Upon buying and using your Kobool Contact Card you will immediately be able to write messages to your matched member. But your match will not be able to read your written messages untill he/she buys and uses a Contact Card.<br>
+				If your match didn't use a Contact Card and one of you decided to decline, your purchased Card will become re-usable for future Mutual Acceptance matches if Decline message was a predefined one.
+				
+			</div>
+
+			<div class="a_title">
+				
+				Does my Contact Card expire after a specific number of written messages or after a period of time?
+				
+			</div>
+			<div class="indent free_text">
+				
+				After using the two Contact Cards Your communication with your match via written messages will not be terminated and will always be on,
+				unless one of you decides to decline from your relationship.
+				
+			</div>
+
+			<div class="a_title">
+				
+				If I purchased and used one Contact Card and my matched member didn't, will I be able to send a written decline message to him/her?
+				
+			</div>
+			<div class="indent free_text">
+				
+				You can only decline with sending written decline message when the two Contact Cards are used.<br>
+				But, you can use one of the predefined Decline messages.
+				
+			</div>
+
+			<div class="a_title">
+				
+				How can I buy Kobool Contact Cards in Egypt using cash money?
+				
+			</div>
+			<div class="indent free_text">
+				
+				Currently Kobool Contact Cards can only be bought through www.kobool.com web site.<br>
+				To buy Kobool Contact Card using cash money you can buy <b>CashU card 250</b> with your cash money and then use it to buy Kobool Card.<br>
+				<b>CashU</b> cards are available in most Middle Eastern cities. You can order it from your nearest distibuter by telephone and ask them to deliver it to your home.<br>
+				<div style="padding-bottom:4px"><a target="_blank" href="http://www.cashu.com/">Click here to find the nearest CashU Cards distributer to your area</a>.</div>
+				
+			</div>
+
+			<div class="a_title">
+				
+				I live in a small town in Egypt, How can I buy Kobool Contact Card and how much does it cost in Egyptian bound?
+				
+			</div>
+			<div class="indent free_text">
+				
+				You can buy <b>CashU</b> card using cash money and use it to buy Kobool Contact Card through kobool.com website.<br>
+				<b>CashU</b> cards can be delivered to your home in most cities in Egypt and Arabic countries<br>
+				<div style="padding:4px" align=center>
+				<a target="_blank" href="http://www.cashu.com/">
+				Click here to find the nearest distributer to your area.
+				</a></div>
+				Kobool Contact Card requires one <b>CashU 250</b> card which costs 5 US dollar or about 28 Egyptian bound.
+				
+			</div>
+
+			<div class="a_title">
+				I live in Sweden, do you have offices or outlets I can go to to buy Contact Cards? Or a bank account that I can transfer to it the money required to buy Contact Cards?
+			</div>
+			<div class="indent free_text">
+				In the time being we don't have outlets or offices that sell Kobool Contact Cards. Also, we don't have a bank account set up to recieve money on it for Contact Cards sales. We will unlikely setup such bank account because the price of a Kobool Contact Card is only 5 US dollar. Propably the cost of the money transfer will cost higher than this amount.<br>
+				If you have any type of credit cards, you can use it directly to buy the Kobool Card.<br>
+				If you don't have any credit cards, the only option for you in Sweden is to ask one of your friends who owns a credit card to buy the Kobool Card for you and you can pay him back later.<br>
+				In the middle of this page you can find the <a href="javascript:OpenAskFriend();">link</a> you have to send to your friend to use it to buy the Kobool Card so that it will be directly added to your Kobool account.<br>
+				&nbsp;
+				
+			</div>
+
+		]]></contents>
+	</qa>
+
+	<bank_tr>
+		<page_title>Contact Points: Buy via bank deposit or transfer </page_title>
+
+		<contents><![CDATA[
+			<div>Members living in Arabian Gulf countries can purchase Contact Points via depositing or transferring the price of the required Points to Bank accounts created for this purpose.</div>
+			&nbsp;
+			<div>Deposit or transfer <b>&#36;5</b> USD (or equivalence in local currency <b>18.5</b> SAR) for each required Contact Point.
+			<div style="padding-bottom:5px">
+			Deposit the money directly in any branch of the following banks or via ATM machines or via bank transfer from you local bank to one of these accounts:
+			</div>
+
+			<div style="border:dotted 1px navy;padding:5px;background:white;padding:5px;">
+				<div style="float:right">
+					<a href="javascript:" onclick="window.open('http://www.alrajhibank.com.sa/AR/MainSections/Exchange And Remittance/Tahweel Al Rajhi/', '_blank')">
+					<img src="/images/rajhi.en.gif" border=0></a>
+				</div>
+				<div>Bank Name: <b>Al Rajhi Bank</b></div>
+				<div>Account Owner Name: <b>Sherif Mohamed Eldesouky Ibrahim</b></div>
+				<div>Account Number: <b>471608010075083</b></div>
+				<div>Branch: <b>Al-Rehab, Jiddah, Saudi Arabia</b></div>
+				<div>Branch No.: <b>47100</b></div>
+			</div>
+			&nbsp;
+			<div style="border:dotted 1px navy;padding:5px;background:white;padding:5px;">
+				<div style="float:right">
+					<a href="javascript:" onclick="window.open('http://www.alahli.com/', '_blank')">
+						<img src=/images/ncb_logo.gif border=0></a>
+				</div>
+				<div>Bank Name: <b>The National Commercial Bank</b></div>
+				<div>Account Owner Name: <b>Sherif Mohamed Eldesouky Ibrahim</b></div>
+				<div>Account Number:<b>14162810000101</b></div>
+				<div>Branch:<b>Al-Makarona, Jiddah, Saudi Arabia</b></div>
+				<div>Branch No.: <b>141</b></div>
+			</div>
+			&nbsp;
+			<div style="border:dotted 1px navy;padding:5px;background:white;padding:5px;">
+				<div style="float:right">
+					<a href="javascript:" onclick="window.open('http://www.samba.com.sa/atm&branches/arabic/index.htm', '_blank')">
+						<img src="/images/samba_logo_en.gif" border="0">
+					</a>
+				</div>
+				<div>Bank Name: <b>SAMBA</b></div>
+				<div>Account Owner Name: <b>Sherif Mohamed Eldesouky Ibrahim</b></div>
+				<div>Account Number: <b>4701731544</b></div>
+				<div><b>Jiddah, Saudi Arabia</b></div>
+			</div>
+			&nbsp;
+			<div>Then send the following information to <a href='javascript:Mail2Cards()' style="font-weight:bold">cards@kobool.com</a>:</div>
+			<div id=CardsMailBody style="border:dotted 1px navy;padding:5px;background:white">
+				<p>Destination Bank Name: ___________</p>
+				<p>Date of transfer/deposit: _________</p>
+				<p>Receipt Number: __________ </p>
+				<p>Sender Full Name: ______________________ </p> 
+				<p>Kobool Login Name: <b><span id="PointsMemberNumber">(Invalid Member Number)</span></b></p>
+				<p>Kobool Member Number: <b><span id="PointsLoginName">??</span></b><p>
+				<p>Deposited/transferred amount: ________ </p>
+			</div>
+
+			<div>The required Contact Points should be added to your Kobool account within 24 hours after receiving your bank transfer ( except holidays )</div>
+		]]></contents>
+	</bank_tr>
+</root>

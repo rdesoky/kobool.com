@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<root>
+	<option value="0" name="" ></option>
+	<option ex="1" value="1" name="Al-Fayoum"></option>
+	<option ex="1" value="2" name="Al-Gharbiya"></option>
+	<option ex="1" value="3" name="Al-Sharqiya"></option>
+	<option value="4" name="Alexandria"></option>
+	<option ex="1" value="27" name="Al-Sewais"></option>
+	<option value="5" name="Assiut"></option>
+	<option ex="1" value="6" name="Aswan"></option>
+	<option ex="1" value="7" name="Beheira"></option>
+	<option ex="1" value="8" name="Beni Suef"></option>
+	<option value="9" name="Cairo"></option>
+	<option ex="1" value="10" name="Dakahliya"></option>
+	<option ex="1" value="11" name="Damietta"></option>
+	<option ex="1" value="12" name="Giza"></option>
+	<option ex="1" value="13" name="Ismailia"></option>
+	<option ex="1" value="14" name="Kafr al Sheikh"></option>
+	<option value="16" name="Matrouh"></option>
+	<option ex="1" value="17" name="Minoufiyah"></option>
+	<option ex="1" value="18" name="Minya"></option>
+	<option value="19" name="New Valley - Wadi Gedid"></option>
+	<option value="20" name="Port Said"></option>
+	<option ex="1" value="21" name="Qalyobiya"></option>
+	<option ex="1" value="22" name="Qena"></option>
+	<option ex="1" value="23" name="Red Sea"></option>
+	<option ex="1" value="24" name="Sinai North"></option>
+	<option ex="1" value="25" name="Sinai South"></option>
+	<option ex="1" value="26" name="Sohag"></option>
+</root>

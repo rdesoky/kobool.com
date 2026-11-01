@@ -1,0 +1,22 @@
+{
+  "name": "kobool.com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static frontend for kobool.com (v2 and v3)",
+  "license": "SEE LICENSE IN LICENSE",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node tools/build.js",
+    "build:staging": "node tools/build.js --env=staging",
+    "build:prod": "node tools/build.js --env=prod",
+    "serve": "node tools/serve.js",
+    "check": "node tools/validate.js",
+    "test": "node tests/run.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "html-minifier-terser": "^7.2.0"
+  }
+}

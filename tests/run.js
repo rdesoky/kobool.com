@@ -1,0 +1,271 @@
+'use strict';
+
+/**
+ * Test runner for kobool.com static build.
+ *
+ *   node tests/run.js
+ *
+ * Covers: XML parser, string compiler, data compiler, shared strings binder
+ * (language resolution), and the same-origin proxy allowlist. A final smoke
+ * builds dist/ and runs validate.
+ */
+
+const test = require('node:test');
+const assert = require('node:assert');
+const fs = require('fs');
+const path = require('path');
+const { execFileSync } = require('child_process');
+
+const ROOT = path.join(__dirname, '..');
+const TOOLS = path.join(ROOT, 'tools');
+
+const { parseXml, parseXmlToObject, decodeEntities } = require(path.join(TOOLS, 'xml'));
+const { compileSourceFile, flatten, listXmlSources, LANGS } = require(path.join(TOOLS, 'compile-strings'));
+const { buildCountries, buildOptions } = require(path.join(TOOLS, 'compile-data'));
+const { createProxy, DEFAULT_TARGET } = require(path.join(TOOLS, 'proxy'));
+const { convert } = require(path.join(TOOLS, 'convert-pages'));
+
+test('XML parser: elements, attributes, entities, CDATA', () => {
+    const src = '<?xml version="1.0"?>\n<root>\n  <a x="1&amp;2">Hello &lt;world&gt;</a>\n' +
+        '  <b><![CDATA[raw <stuff> & here]]></b>\n  <c/>\n  <!-- comment -->\n</root>';
+    const tree = parseXml(src);
+    assert.strictEqual(tree.name, 'root');
+    assert.strictEqual(tree.children.length, 3);
+
+    const a = tree.children[0];
+    assert.strictEqual(a.name, 'a');
+    assert.deepStrictEqual(a.attrs, { x: '1&2' });
+    assert.strictEqual(a.text, 'Hello <world>');
+
+    const b = tree.children[1];
+    assert.strictEqual(b.text, 'raw <stuff> & here');
+
+    const c = tree.children[2];
+    assert.strictEqual(c.name, 'c');
+    assert.strictEqual(c.children.length, 0);
+    assert.strictEqual(c.text, '');
+});
+
+test('XML parser: rejects malformed input', () => {
+    assert.throws(() => parseXml('<root><a></root>'), /mismatched tag/);
+    assert.throws(() => parseXml('<root><a></a>'), /unclosed element/);
+    assert.throws(() => parseXml(''), /empty document/);
+});
+
+test('decodeEntities: named and numeric', () => {
+    // &nbsp; is U+00A0, not a plain space.
+    assert.strictEqual(decodeEntities('&amp;&lt;&gt;&quot;&apos;&nbsp;'), '&<>"\'\u00a0');
+    assert.strictEqual(decodeEntities('&#65;&#x42;'), 'AB');
+    assert.strictEqual(decodeEntities('&unknown;'), '&unknown;');
+});
+
+test('decodeEntities: &nbsp; is U+00A0', () => {
+    assert.strictEqual(decodeEntities('&nbsp;'), '\u00a0');
+});
+
+test('string compiler: flatten renames value-attr elements to v<value>', () => {
+    const src = '<root><select_gender><option value="0">رجل</option>' +
+        '<option value="1">امرأة</option></select_gender><pg_title.home>home</pg_title.home></root>';
+    const tree = parseXml(src);
+    const flat = {};
+    flatten(tree, '', flat);
+    assert.deepStrictEqual(flat, {
+        'select_gender.v0': 'رجل',
+        'select_gender.v1': 'امرأة',
+        'pg_title.home': 'home'
+    });
+});
+
+test('string compiler: compileSourceFile outputs deterministically sorted keys', () => {
+    const dir = fs.mkdtempSync(path.join(require('os').tmpdir(), 'kobool-sort-'));
+    const file = path.join(dir, 'str.xml');
+    fs.writeFileSync(file, '<root><b>2</b><a>1</a><c>3</c></root>');
+    const compiled = compileSourceFile(file);
+    assert.deepStrictEqual(Object.keys(compiled), ['a', 'b', 'c']);
+    fs.rmSync(dir, { recursive: true, force: true });
+});
+
+test('string compiler: listXmlSources lists only .xml files', () => {
+    const dir = fs.mkdtempSync(path.join(require('os').tmpdir(), 'kobool-xml-'));
+    fs.writeFileSync(path.join(dir, 'a.xml'), '<root/>');
+    fs.writeFileSync(path.join(dir, 'b.xml'), '<root/>');
+    fs.writeFileSync(path.join(dir, 'notes.txt'), 'x');
+    const sources = listXmlSources(dir);
+    assert.deepStrictEqual(sources, ['a', 'b']);
+    assert.deepStrictEqual(listXmlSources(path.join(dir, 'missing')), []);
+    fs.rmSync(dir, { recursive: true, force: true });
+});
+
+test('data compiler: countries parse with preserveAttrs', () => {
+    const dir = fs.mkdtempSync(path.join(require('os').tmpdir(), 'kobool-data-'));
+    const langDir = path.join(dir, 'v3', 'text', 'ar');
+    fs.mkdirSync(langDir, { recursive: true });
+    fs.writeFileSync(
+        path.join(langDir, 'countries.xml'),
+        '<root><option value="1" name="مصر" code="EG"/><option value="0" name="X"/></root>'
+    );
+    const countries = buildCountries(dir, 'ar');
+    assert.ok(Array.isArray(countries));
+    assert.strictEqual(countries.length, 1);
+    assert.deepStrictEqual(countries[0], { value: '1', label: 'مصر', code: 'EG' });
+    fs.rmSync(dir, { recursive: true, force: true });
+});
+
+test('data compiler: options groups parse', () => {
+    const dir = fs.mkdtempSync(path.join(require('os').tmpdir(), 'kobool-data-'));
+    const langDir = path.join(dir, 'v3', 'text', 'ar');
+    fs.mkdirSync(langDir, { recursive: true });
+    fs.writeFileSync(
+        path.join(langDir, 'options.xml'),
+        '<root><sfilters><f1><option value="1">One</option><option value="2">Two</option></f1>' +
+        '<f2><option value="3">Three</option></f2></sfilters></root>'
+    );
+    const opts = buildOptions(dir, 'ar');
+    assert.deepStrictEqual(Object.keys(opts.sfilters).sort(), ['f1', 'f2']);
+    assert.deepStrictEqual(opts.sfilters.f1, [
+        { value: '1', label: 'One' },
+        { value: '2', label: 'Two' }
+    ]);
+    assert.deepStrictEqual(opts.sfilters.f2, [{ value: '3', label: 'Three' }]);
+    fs.rmSync(dir, { recursive: true, force: true });
+});
+
+test('page converter: element content becomes data-string', () => {
+    const { html } = convert('<div><span><?=S("a.logout")?></span></div>');
+    assert.match(html, /<span data-string="str:a\.logout"><\/span>/);
+});
+
+test('page converter: attribute value becomes data-string-attr', () => {
+    const { html } = convert('<input type="text" placeholder="<?=S("login.login_name")?>"/>');
+    assert.match(html, /placeholder="" data-string="str:login\.login_name" data-string-attr="placeholder"/);
+});
+
+test('page converter: literal text around a string becomes a template', () => {
+    const { html } = convert('<option value=""><?= "---" . S("any_status") . "---" ?></option>');
+    assert.match(html, /data-string="str:any_status"/);
+    assert.match(html, /data-string-template="---\{s\}---"/);
+});
+
+test('page converter: attribute template keeps the literal prefix', () => {
+    const { html } = convert('<textarea placeholder="&gt;<?=S("feedback_link")?>"></textarea>');
+    assert.match(html, /data-string-template="&gt;\{s\}"/);
+});
+
+test('page converter: explicit string source is preserved', () => {
+    const { html } = convert('<div><?=S("home.msg","home")?></div>');
+    assert.match(html, /data-string="home:home\.msg"/);
+});
+
+test('page converter: strips the PHP prologue and reports leftovers', () => {
+    const { html, notes } = convert('<?php include("x.php"); ?>\n<div><?php echo 1; ?></div>');
+    assert.ok(!html.includes('<?php'), 'PHP must not survive conversion');
+    assert.ok(notes.some((n) => /unconverted PHP/.test(n)));
+});
+
+test('strings binder: language resolution prefers cookie, falls back to default', () => {
+    // detectLang() lives in shared/strings.js (IIFE); assert its static
+    // expectations from source (config.js is a browser script, not loadable).
+    const js = fs.readFileSync(path.join(ROOT, 'shared', 'strings.js'), 'utf8');
+    assert.match(js, /supportedLangs/);
+    assert.match(js, /defaultLang/);
+    const src = fs.readFileSync(path.join(ROOT, 'shared', 'config.js'), 'utf8');
+    assert.match(src, /defaultLang: 'ar'/);
+    assert.match(src, /supportedLangs: \['ar', 'en'\]/);
+});
+
+test('proxy: DEFAULT_TARGET points at the CORS-enabled API host', () => {
+    assert.strictEqual(DEFAULT_TARGET, 'https://api.kobool.com');
+});
+
+function mockReqRes(url, headers) {
+    const req = {
+        url,
+        method: 'GET',
+        headers: Object.assign({ host: 'localhost', accept: '*/*' }, headers),
+        pipe: () => {}
+    };
+    const res = {
+        _status: 0,
+        _headers: {},
+        _body: '',
+        writeHead(status, headers) {
+            this._status = status;
+            Object.assign(this._headers, headers);
+        },
+        end(body) {
+            this._body = body || '';
+        }
+    };
+    return { req, res };
+}
+
+test('proxy: allowlist rejects non-allowed paths', () => {
+    const proxy = createProxy({ target: 'http://127.0.0.1:1', allowlist: ['/cgi-bin/login.pl'] });
+    const { req, res } = mockReqRes('/cgi-bin/query.pl', {});
+    proxy(req, res);
+    assert.strictEqual(res._status, 403);
+});
+
+test('proxy: non-proxied path returns 404', () => {
+    const proxy = createProxy({ target: 'http://127.0.0.1:1' });
+    const { req, res } = mockReqRes('/index.html', {});
+    proxy(req, res);
+    assert.strictEqual(res._status, 404);
+});
+
+test('smoke: dist builds and validates cleanly', { timeout: 120000 }, () => {
+    execFileSync(process.execPath, [path.join(TOOLS, 'build.js'), '--env=prod'], {
+        cwd: ROOT,
+        stdio: 'pipe'
+    });
+
+    // dist must contain the config pointing at the CORS-enabled API host.
+    const distConfig = fs.readFileSync(path.join(ROOT, 'dist', 'shared', 'config.js'), 'utf8');
+    assert.match(distConfig, /https:\/\/api\.kobool\.com\/cgi-bin\//);
+
+    // The App Store badge must be present (referenced from index.html).
+    assert.ok(
+        fs.existsSync(path.join(ROOT, 'dist', 'images', 'Download_on_the_App_Store_Badge_AR_RGB_blk_102417.svg')),
+        'App Store badge SVG missing from dist/images'
+    );
+
+    // Validation must pass.
+    let out;
+    try {
+        out = execFileSync(process.execPath, [path.join(TOOLS, 'validate.js')], {
+            cwd: ROOT,
+            stdio: 'pipe'
+        }).toString();
+    } catch (err) {
+        assert.fail('validate.js failed:\n' + err.stdout.toString() + err.stderr.toString());
+    }
+    assert.match(out, /Validation passed/);
+
+    // No PHP/Perl/Python or secrets may survive into dist.
+    const walk = (dir) => {
+        for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+            const full = path.join(dir, entry.name);
+            if (entry.isDirectory()) {
+                walk(full);
+            } else {
+                const ext = path.extname(entry.name).toLowerCase();
+                assert.ok(
+                    !['.php', '.pl', '.pm', '.cgi', '.py'].includes(ext),
+                    `blocked extension in dist: ${path.relative(ROOT, full)}`
+                );
+                if (['.js', '.html', '.json'].includes(ext)) {
+                    const text = fs.readFileSync(full, 'utf8');
+                    assert.ok(!/(kobool_2004|amazonaws|BEGIN PRIVATE|rds\.amazonaws|mysql\s*[:=]\s*['"])/i.test(text),
+                        `possible secret in dist: ${path.relative(ROOT, full)}`);
+                    assert.ok(!/sharethis|st_share|paypal\.com|PayPalForm|SubmitPayPal/i.test(text),
+                        `deprecated integration marker in dist: ${path.relative(ROOT, full)}`);
+                }
+            }
+        }
+    };
+    walk(path.join(ROOT, 'dist'));
+});
+
+test('LANGS exports both supported languages', () => {
+    assert.deepStrictEqual(LANGS, ['ar', 'en']);
+});

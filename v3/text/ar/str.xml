@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<top>أعلى</top>
+	<contact_note>للإتصال بهذا العضو, يجب أولا أن يكون بينكما قبول مشترك ثم توفيق بواسطة برنامج التوفيق الإليكتروني اليومي.</contact_note>
+	<last_login>المتواجدون الآن</last_login>
+	<last_join>آخر المشتركين</last_join>
+	<a>
+        <not_implemented>قيد التطوير</not_implemented>
+        <all_answers>جميع الإجابات</all_answers>
+        <mk_hidden_wish>اخفي القبول</mk_hidden_wish>
+        <mk_visible_wish>اظهر القبول</mk_visible_wish>
+        <toggle>عكس اتجاه النص</toggle>
+        <delete>حذف</delete>
+        <report>بلغ عن مخالفة</report>
+		<total>إجمالي</total>
+		<match_gift><![CDATA[
+			لإهداء نقطة اتصال للعضو المتصل معك بقبول مشترك,<br/>
+			عليك أن تشتري نقطة اتصال لحسابك ثم تستخدم نقطة من حسابك لصالح العضو المتصل بك.<br/>
+			معلومة: لست بحاجة لشراء نقطة جديدة اذا كان لديك بالفعل نقطة غير مستعملة.
+		]]></match_gift>
+		<hidden_mem>قبول غير ظاهر</hidden_mem>
+		<mtime>توفيق القبول التالي بعد: </mtime>
+		<matching_now>* تمت عملية التوفيق منذ قليل *</matching_now>
+		<logout>خروج</logout>
+		<extend>إستمرار</extend>
+		<page>صفحة</page>
+		<error>خطأ</error>
+		<pg_title>
+			<matching>توفيق القبول</matching>
+			<home>الخطوة الأولى للزواج</home>
+			<kmail>صندوق بريدي</kmail>
+			<logout>خروج</logout>
+			<register>انشاء عضوية جديدة</register>
+			<drill>تنقيب</drill>
+			<qa>إجابات</qa>
+			<my_recent_questions>آخر أسئلة طرحتها</my_recent_questions>
+			<my_q_by_member>إجابات من سألتهم</my_q_by_member>
+			<forgot>إسترجاع بيانات الدخول</forgot>
+			<chat>صفحة الإتصال</chat>
+			<my>صفحتي الرئيسية</my>
+			<list>عرض نتائج</list>
+			<act>أعضاء فعالين</act>
+			<bkm>علامات</bkm>
+			<wls>من قبلتهم</wls>
+			<wsr>من قبلوني</wsr>
+			<blk>المحذوفين</blk>
+			<vtr>زائرون</vtr>
+			<vtd>من زرتهم</vtd>
+			<nvr>زائرون جدد</nvr>
+            <search>بحث</search>
+			<smp_srch>بحث سريع</smp_srch>
+			<mem>صفحة بيانات العضو</mem>
+			<cp_report>تقرير نقاط الإتصال</cp_report>
+			<cp_eula>شروط وقواعد استخدام نقاط الإتصال</cp_eula>
+			<cp_buy>شراء نقاط اتصال</cp_buy>
+			<cp_help>اسئلة شائعة عن نظام النقاط</cp_help>
+			<cashu>شراء نقاط اتصال باستخدام حساب كاشيو</cashu>
+			<phone_tr>شراء نقاط اتصال باستخدام كروت شحن فودافون مصر</phone_tr>
+			<cr_cards>شراء نقاط اتصال باستخدام بطاقة ائتمان</cr_cards>
+			<bank_tr>شراء نقاط اتصال من االسعودية بواسطة ايداع أو تحويل بنكي </bank_tr>
+			<svd_srch>البحث المفضل</svd_srch>
+			<update>تعديلات العضوية</update>
+			<upd_attr>تعديل الصفات الشخصية</upd_attr>
+			<upd_txt>تعديل النص الحر</upd_txt>
+			<upd_pics>تعديل الصور</upd_pics>
+			<upd_pass>تعديل كلمة السر</upd_pass>
+			<upd_email>تعديل البريد الإليكتروني</upd_email>
+			<acc_suspend>توقيف العضوية</acc_suspend>
+			<acc_activate>تنشيط العضوية</acc_activate>
+            <login>تسجيل الدخول</login>
+            <contact>اتصل بالموقع</contact>
+            <declines>الإنسحابات</declines>
+            <decline>إنسحاب</decline>
+        </pg_title>
+		<login_id>اسم الدخول</login_id>
+		<sure>هل أنت متأكد؟</sure>
+		<you>أنت</you>
+		<finish>إنهاء</finish>
+		<update>تعديل</update>
+		<edit>تحرير</edit>
+		<browse>تصفح</browse>
+		<login_required>يجب أولا ان تسجل دخولك للموقع</login_required>
+		<info>معلومات</info>
+		<order>الترتيب</order>
+		<refresh>تحديث</refresh>
+		<no_results>لا توجد نتائج</no_results>
+		<not_implemented>قيد التطوير</not_implemented>
+		<under_review>تحت المراجعة</under_review>
+		<rejected>نص مرفوض</rejected>
+		<order>الترتيب</order>
+		<featured>أعضاء مميزون</featured>
+		<welcome>مرحبا</welcome>
+		<yes>نعم</yes>
+		<no>لا</no>
+		<save>حفظ</save>
+		<cancel>تراجع</cancel>
+		<show_my_page>كيف تبدو صفحتي</show_my_page>
+		<ask>وجه سؤالا</ask>
+		<no_answer>لا توجد إجابة أو لازالت تحت المراجعة أو العضو غير فعال.</no_answer>
+		<questions>الأسئلة</questions>
+		<answers>إجابات</answers>
+		<answer_lists>إعرض</answer_lists>
+		<rel_answers>إجابات تهمك</rel_answers>
+		<answers4u>إجابات لك</answers4u>
+		<to>إلى</to>
+		<matched_msg>وانت بينكما قبول مشترك</matched_msg>
+		<add_filter>فلتر</add_filter>
+		<remove_filters>حذف فلتر أو أكثر</remove_filters>
+		<accepted>مقبول</accepted>
+		<drill>تنقيب</drill>
+		<pictures>الصور</pictures>
+		<back2results>عودة الى النتائج</back2results>
+		<kobool>قبول</kobool>
+		<add_bookmark>علامة</add_bookmark>
+		<del_bookmark>حذف علامة</del_bookmark>
+		<last_login>تواجد</last_login>
+		<from>من</from>
+		<question_answers>إجابات الأسئلة</question_answers>
+		<next>تالي</next>
+		<previous>سابق</previous>
+		<block>منع</block>
+		<unblock>إعادة</unblock>
+		<found>يوجد</found>
+		<information>بيانات</information>
+		<Acceptance>قبول</Acceptance>
+		<not_specified>غير مذكور</not_specified>
+		<ok>تـــــم</ok>
+		<year>سنة</year>
+		<inactive>غير فعال</inactive>
+		<relevant_answers>إجابات تهمك</relevant_answers>
+		<answers4you>اسئلتك</answers4you>
+		<within>خلال</within>
+		<answer_date>التاريخ</answer_date>
+		<all_languages>اللغة</all_languages>
+		<t>
+			<d1>24 ساعة</d1>
+			<d2>يومين</d2>
+			<dx>% أيام</dx>
+			<w1>أسبوع</w1>
+			<w2>أسبوعين</w2>
+			<wx>% أسابيع</wx>
+			<m1>شهر</m1>
+			<m2>شهرين</m2>
+			<mx>% شهور</mx>
+			<old>فوق 3 شهور</old>
+		</t>
+	</a>
+	<session>
+		<auto_end_title>توقف استخدام صفحة الموقع</auto_end_title>
+		<auto_end_confirmation><![CDATA[
+			لعدم وجود أي نشاط منك لفترة أطول من 15 دقيقة وللحفاظ على سرية بيانتك, سيتم تسجيل خروجك من الموقع تلقائيا.<br/> 
+			اضغط زر "الغاء" اذا كنت لا تريد تسجيل الخروج. <br/>
+			الوقت المتبقى: &nbsp;
+		]]></auto_end_confirmation>
+		<auto_end_notification><![CDATA[
+			للحفاظ على سرية بياناتك, تم تسجيل خروجك من الموقع تلقائيا وذلك لعدم وجود أي نشاط منك	لفترة أكثر من 15 دقيقة.
+		]]></auto_end_notification>
+	</session>
+	<login>
+		<missing_lname>فضلا ادخل اسم الدخول لعضويتك</missing_lname>
+		<missing_pw>فضلا ادخل كلمة السر</missing_pw>
+		<login_required>هذه الوظيفة متاحة فقط للأعضاء المسجلين يجب تسجيل دخولك أولا لاستخدام هذه الخاصية.</login_required>
+		<page_title>دخول</page_title>
+		<form_title>أدخل البيانات التالية لتسجيل الدخول</form_title>
+		<login_name>اسم الدخول</login_name>
+		<password>كلمة السر</password>
+		<submit>دخــول</submit>
+		<forgot_pass><![CDATA[ غير متذكر؟ ]]></forgot_pass>
+		<new_member>إنضم للموقع الآن (مجانا)</new_member>
+	</login>
+	<confirm>
+		<save_search>هل تود إضافة البحث الحالي إلي قائمة بحثك المفضل</save_search>
+	</confirm>
+	<my>
+		<page_title>قبول</page_title>
+	</my>
+	<qa_filter>
+		<all>جميع الإعضاء</all>
+		<wls>من قبلتهم</wls>
+		<bkm>العلامات</bkm>
+		<myq>من سألتهم</myq>
+	</qa_filter>
+	<svd_srch>
+		<page_title>البحث المفضل</page_title>
+		<del_confirm>سيتم حذف هذا البحث من قائمة البحث السريع. هل أنت متأكد؟</del_confirm>
+	</svd_srch>
+	<contact>
+		<page_title>اتصل بالموقع</page_title>
+		<intro>نرحب بأي استفسار أو شكوى</intro>
+		<form_title>إملأ البيانات التالية</form_title>
+		<name_prompt>اسمك:</name_prompt>
+		<email_prompt>بريدك الإليكتروني:</email_prompt>
+		<title_prompt>عنوان الرسالة:</title_prompt>
+		<msg_prompt>نص الرسالة:</msg_prompt>
+		<invalid_email>خطأ في صيغة البريد الإلكيتروني</invalid_email>
+		<missing_msg>فضلا اكتب نص الرسالة التي تود ارسالها للموقع</missing_msg>
+		<missing_email>فضلا ادخل عنوان بريدك الإليكتروني لكي يمكننا الرد على رسالتك</missing_email>
+		<submit>ارسال</submit>
+		<done>تم استقبال رسالتك. هل تود ارسال رسالة أخرى؟</done>
+	</contact>
+	<declines>
+		<page_title>الإنسحابات السابقة</page_title>
+		<date_matched>تاريخ التوفيق:</date_matched>
+		<date_declined>رسالة انسحاب في:</date_declined>
+		<inactive>العضو غير فعال</inactive>
+	</declines>
+	<decline><!-- Not used-->
+		<confirm>تأكيد رغبتك في الإنسحاب من الإتصال الحالي وارسال رسالة الإنسحاب التالية للطرف الآخر:</confirm>
+		<title>انسحاب من مشروع زواج</title>
+		<form_title>نموذج تسجيل انسحاب من مشروع زواج</form_title>
+		<msg_type>نوع الرسالة النهائية</msg_type>
+		<written_msg>رسالة مكتوبة</written_msg>
+		<submit_title>انسحاب</submit_title>
+		<use_point>استخدم نقطة اتصال</use_point>
+		<use_point4mate>منح نقطة اتصال</use_point4mate>
+		<used_points>تم الإستفادة من نقاط الإتصال المستخدمة في الإتصال الحالي, ولا يمكن إعادة استخدامهما في اتصال آخر.</used_points>
+		<usable_points>سيمكنك إعادة استخدام النقاط التي استخدمتها في هذا الإتصال مرة أخرى في إتصال آخر.</usable_points>
+		<lose_points>لن يمكنك إعادة استخدام النقاط التي استخدمتها في هذا الإتصال مرة أخرى في إتصال آخر.</lose_points>
+		<need_point>لإرسال رسالة انسحاب مكتوبة يحتاج كل منكما استخدام نقطة اتصال</need_point>
+		<mate_need_point>لإرسال رسالة انسحاب مكتوبة يحتاج الطرف الآخر استخدام نقطة اتصال</mate_need_point>
+		<no_password>فضلا أدخل كلمة السر التي تستخدمها للدخول الى ملفك بالموقع</no_password>
+		<password>كلمة السر لعضويتك:</password>
+		<msg_title>الرسالة النهائية:</msg_title>
+		<intro><![CDATA[
+			<div>بارسالك النموذج التالي فانك بذلك تسجل تراجعك عن مشروع الإرتباط ب %m%.</div>
+			<ol>
+				<div><b>و سيترتب علي ذلك ان يقوم موقع (قبول) بالآتي:</b></div>
+				<li>ارسال رسالة الكترونية الى %m% لإخطاره بقرارك لكي يتحرر من اي التزامات تجاهك.</li>
+				<li>سيتم حذف %m% تلقائيا من قائمة القبول الخاصة بك. (ولكنك لن تحذف تلقائيا من قائمة قبول %m%)</li>
+				<li>كل منكما سيشترك في عملية توفيق قوائم القبول القادمة. وقد يجد كل منكما قبول مشترك مع أشخاص آخرين من قائمتي القبول الخاصة بكما.</li>
+			</ol>
+		]]></intro>
+		<note><![CDATA[
+			<div><b>ملاحظة هامة:</b></div> 
+			<div>بمجرد تسجيل الإنسحاب لن يستطيع أي منكما قراءة <span ref1>الرسائل السابقة</span> بينكما نهائيا. فإذا كان هناك رسائل حديثة قمت بإرسالها ولم تقرأ حتى الآن فان %m% لن يصله ما كتبت في هذه الرسائل.
+			يمكنك في هذه الحالة اعادة كتابة هذه الرسائل الأخيرة في مربع 'الرسالة النهائية' الموجود في نموذج الإنسحاب التالي حيث سيقوم الموقع بإرسالها الي البريد الإليكتروني ل %m%.
+			</div>
+		]]></note>
+	</decline>
+	<decline_msgs>
+		<msg value="1"><![CDATA[أعتذر عن إنسحابي لعدم تمكني من الحصول على نقطة الإتصال]]></msg>
+		<msg value="2"><![CDATA[أعتذر عن إنسحابي لعدم تمكنك من الحصول على نقطة الإتصال الخاص بك]]></msg>
+		<msg value="3"><![CDATA[أعتذر عن انسحابي لرفضك شراء نقطة الإتصال الخاص بي]]></msg>
+		<msg value="4"><![CDATA[أعتذر عن إنسحابي لأسباب أفضل عدم ذكرها]]></msg>
+		<msg value="5"><![CDATA[أعتذر عن إنسحابي لعدم حدوث قبول نهائي من طرفي]]></msg>
+		<msg value="6"><![CDATA[أعتذر عن إنسحابي لشعوري بعدم جديتك]]></msg>
+		<msg value="7"><![CDATA[أعتذر عن إنسحابي لرفضك عرض صورتك لي]]></msg>
+		<msg value="8"><![CDATA[أعتذر عن الإنسحاب لعدم قدرتك على المجيء الى محل إقامتي للتعارف المباشر]]></msg>
+		<msg value="9"><![CDATA[أعتذر عن الإنسحاب لتغيبك عن الموقع وهذا يوحي بعدم إهتمامك بأمر الزواج.]]></msg>
+	</decline_msgs>
+	<cp>
+		<pointsByPhone_title>شراء نقطة اتصال بواسطة كارت شحن فودافون</pointsByPhone_title>
+		<other_methods>وسائل شراء أخرى</other_methods>
+	</cp>
+	<profile>
+		<select_update>إختر أي البيانات تود تحديثها</select_update>
+		<update_text>النصوص</update_text>
+		<update_attr>صفاتي</update_attr>
+		<update_pics>الصور</update_pics>
+		<update_pass>كلمة السر</update_pass>
+		<update_email>البريد الإليكتروني</update_email>
+		<account>العضوية</account>
+		<activation>حالة العضوية</activation>
+		<stop_account>توقيف العضوية</stop_account>
+		<activate_account>تنشيط العضوية</activate_account>
+	</profile>
+	<sbtn>
+		<ask>وجه سؤالا</ask>
+		<kobool>قبول</kobool>
+		<add_bookmark>علامة</add_bookmark>
+		<del_bookmark>حذف علامة</del_bookmark>
+		<block>منع</block>
+		<unblock>إعادة</unblock>
+		<promote>ترقية</promote>
+		<demote>تأخير</demote>
+		<unaccept>الغاء القبول</unaccept>
+		<delete>مسح</delete>
+		<edit>تعديل</edit>
+		<mk_hidden_wish>اخفي القبول</mk_hidden_wish>
+		<mk_visible_wish>اظهر القبول</mk_visible_wish>
+	</sbtn>
+	<m>
+		<mailbox>البريد</mailbox>
+		<qsearch>البحث المفضل</qsearch>
+		<news_feed>آخر الأخبار</news_feed>
+		<notifications>إخطارات</notifications>
+		<qa_feed>آخر الإجابات</qa_feed>
+		<visitors>زائرون</visitors>
+		<visits>زيارات</visits>
+		<wishers>قبلوني</wishers>
+		<watchers>علامات</watchers>
+		<declines>انسحابات</declines>
+		<logout>خروج</logout>
+		<questions>أسئلة</questions>
+		<newq>أسئلة جديدة</newq>
+		<postponed>أسئلة مؤجلة</postponed>
+		<self_desc>الصفات الشخصية</self_desc>
+		<mate_desc>صفات الشريك</mate_desc>
+		<relevant_questions>أسئلة تهمك</relevant_questions>
+		<relevant_answers>إجابات تهمك</relevant_answers>
+		<pics>صور</pics>
+		<info>بيانات</info>
+		<gift_points>اهداء نقاط</gift_points>
+	</m>
+	<q>
+		<addFav>سؤال يهمك</addFav>
+		<post2Mem>إجابه تهمك</post2Mem>
+		<question_sent><![CDATA[
+			تم توجيه سؤالك<hr/>
+			الرصيد اليومي المتبقي لك من الأسئلة التي تختارها هو : %n%<br/>
+			الرصيد اليومي من الأسئلة التي يمكنك توجيهها الى هذا العضو: %m% <br/> 
+		]]></question_sent>
+	</q>
+	<sort>
+		<m>الصور أولا</m>
+		<ra>أولوية القبول</ra>
+		<rm>آخر المشتركين</rm>
+		<rl>تواجد</rl>
+		<ag>العمر</ag>
+		<rv>أحدث زيارة</rv>
+		<mv>عدد الزيارات</mv>
+		<bl>عرض المحذوفين</bl>
+		<mu>من قبلتهم</mu>
+	</sort>
+	<search_lists>
+		<act>أعضاء فعالين</act>
+		<bkm>علامات</bkm>
+		<vtr>زائرون</vtr>
+		<vtd>زرتهم</vtd>
+		<wls>قبلتهم</wls>
+		<wsr>قبلوني</wsr>
+		<nvr>زائرون جدد </nvr>
+		<blk>محذوفين</blk>
+	</search_lists>
+	<filters>
+		<personal><![CDATA[<i>البيانات الشخصية</i>]]></personal>
+		<g>الجنس</g>
+		<ag>السن</ag>
+		<c>الإقامة</c>
+		<o>بلد الأصل</o>
+		<st>الإقامة 2</st>
+		<ci>الإقامة 3</ci>
+		<ms>الحالة الإجتماعية</ms>
+		<ht>الطول</ht>
+		<wt>الوزن</wt>
+		<ch>حالة الأولاد</ch>
+		<jb>المهنة</jb>
+		<nc>الدخل السنوي</nc>
+		<la>اللغة الأصلية</la>
+		<rc>الإنتماء العرقي</rc>
+		<ed>التعليم</ed>
+		<sm>التدخين</sm>
+		<re>الديانة</re>
+		<ds>إعاقة جسدية</ds>
+		<dt>الملابس</dt>
+		<sh>القوام</sh>
+		<fc>الشكل</fc>
+		<dst>منطقة السكن</dst>
+		<po>مبدأ التعدد</po>
+	</filters>
+	<filters_title>
+		<ls>في:</ls>
+		<personal>الصفات:</personal>
+		<ag><![CDATA[السن:&nbsp;]]></ag>
+		<c><![CDATA[الإقامة:&nbsp;]]></c>
+		<o><![CDATA[بلد الأصل:&nbsp;]]></o>
+		<jb><![CDATA[المهنة:&nbsp;]]></jb>
+		<nc><![CDATA[دخل السنوي:&nbsp;]]></nc>
+		<la><![CDATA[اللغة الأم:&nbsp;]]></la>
+		<rc><![CDATA[العرق:&nbsp;]]></rc>
+		<sm><![CDATA[التدخين:&nbsp;]]></sm>
+		<ds><![CDATA[إعاقة جسدية:&nbsp;]]></ds>
+		<sh><![CDATA[القوام:&nbsp;]]></sh>
+		<fc><![CDATA[الشكل:&nbsp;]]></fc>
+		<dst><![CDATA[منطقة السكن:&nbsp;]]></dst>
+		<po><![CDATA[مبدأ التعدد:&nbsp;]]></po>
+	</filters_title>
+	<help_menu>
+		<matching>توفيق القبول</matching>
+		<search_tips>ارشادات البحث</search_tips>
+		<visitation>الزيارات</visitation>
+	</help_menu>
+	<points_menu>
+		<title>نقاط الإتصال</title>
+		<info>تقرير</info>
+		<buy>شراء</buy>
+		<eula><![CDATA[الشروط والقواعد]]></eula>
+		<help>عن نقاط الإتصال</help>
+	</points_menu>
+	<main_menu>
+		<search_questions>الإسئلة والإجوبة</search_questions>
+		<press>تغطيات صحفية</press>
+		<title>الأقسام الرئيسية</title>
+		<home>صفحة البداية</home>
+		<search>بحث وعرض</search>
+		<login>دخول</login>
+		<register>اشترك الآن</register>
+		<options>تفضيلات</options>
+		<stats>إحصاءات الموقع</stats>
+	</main_menu>
+	<search_menu>
+		<simple>سريع</simple>
+		<advanced>متقدم</advanced>
+		<saved>البحث المفضل</saved>
+		<drill>مجموعات</drill>
+	</search_menu>
+	<qa_menu>
+		<all>إجابات</all>
+		<recent>أحدث إجابات</recent>
+		<by_member>من سألتهم</by_member>
+		<recent_questions>آخر أسئلة</recent_questions>
+	</qa_menu>
+	<mate_menu>
+        <my_match>التوافق الحالي</my_match>
+        <visit_page>زيارة الصفحة</visit_page>
+		<contact>اتصال</contact>
+		<decline>انسحاب</decline>
+	</mate_menu>
+	<member_menu>
+		<privacy>الخصوصية</privacy>
+		<saved>المحفوظات</saved>
+		<trash>المهملات</trash>
+		<sent>المرسل</sent>
+		<starred>مميز بنجمة</starred>
+		<payments>تقرير</payments>
+		<pmo>الحوالات البريدية</pmo>
+		<bank_tr>الحوالات البنكية</bank_tr>
+		<manage_cards>رصيدي</manage_cards>
+		<my_questions>اسئلتي</my_questions>
+		<title>أدوات العضوية</title>
+		<logout>خروج</logout>
+		<wishlist>المقبولين</wishlist>
+		<wishers>من قبلني؟</wishers>
+		<watchlist>العلامات</watchlist>
+		<blocklist>المحذوفين</blocklist>
+		<mypage>صفحتي</mypage>
+		<unregister>توقيف العضوية</unregister>
+		<edit>تعديل</edit>
+		<edit_info>بياناتي</edit_info>
+		<edit_attr>صفاتي</edit_attr>
+		<edit_text>النص الحر</edit_text>
+		<edit_pics>الصور</edit_pics>
+		<alerts>اشعارات</alerts>
+		<activate>تفعيل العضوية</activate>
+		<password>كلمة السر</password>
+		<email>البريد الإليكتروني</email>
+		<inbox>الوارد</inbox>
+		<contact_cards>نقاط الإتصال</contact_cards>
+		<visitors>الزائرون</visitors>
+		<visited>من زرتهم</visited>
+		<new_visitors>زائرون جدد</new_visitors>
+	</member_menu>
+	<footer>
+		<who>من نحن؟</who>
+		<contact_us>إتصل بالموقع</contact_us>
+		<tell>اخبر صديق</tell>
+		<feedback>إرسل انطباعك</feedback>
+	</footer>
+	<kobool>قبول</kobool>
+    <already_member>مشترك بالفعل?</already_member>
+    <not_member>لست عضو بالموقع?</not_member>
+	<year>سنة</year>
+	<mailbox>البريد</mailbox>
+	<welcome>مرحبا</welcome>
+	<meta_description><![CDATA[
+		The modern and unique way to find your future wife or husband.
+		الحل العصري للوصول الى زوج المستقبل بدون حرج أو خوف من الفشل.
+	]]></meta_description>
+	<meta_keywords><![CDATA[
+		Zawaj, Nikah, Marriage, Engagement, Groom, Bride, Acceptance, Matching, Qabool, Qubool, kbool, kpool, Kobol, Kopol, Kopool, Qapool, Kebool, Koboul, qobool, qoboul, Mawada, ezawaj, Bintelhalal, eharmony,زوج, زوجة, زواج, نكاح, بنت الحلال, إبن الحلال, زوجتي, مودة, قبول, 
+	]]></meta_keywords>
+	<make_gift>اهداء نقاط</make_gift>
+	<photos_first>الصور أولا</photos_first>
+	<advanced_search>بحث متقدم</advanced_search>
+	<simple>بحث سريع</simple>
+	<wife>زوجة</wife>
+	<husband>زوج</husband>
+	<cpanel>لوحة تحكم</cpanel>
+	<promot>ترقية</promot>
+	<demote>تأخير</demote>
+	<bookmark>ضع علامة</bookmark>
+	<vodafone_title>شراء نقاط اتصال بواسطة التليفون المحمول</vodafone_title>
+	<buy_now_title>وسائل شراء نقاط الإتصال</buy_now_title>
+	<cr_cards_title>شراء نقاط اتصال بواسطة بطاقة ائتمان</cr_cards_title>
+	<cashu_title>شراء نقاط اتصال بواسطة بطاقات كاشيو</cashu_title>
+	<pmo_title>شراء نقاط اتصال بواسطة الحوالات البريدية</pmo_title>
+	<onecard_title>اضافة نقاط اتصال بطاقة قبول</onecard_title>
+	<bank_tr_title>شراء نقاط اتصال بواسطة التحويل البنكي</bank_tr_title>
+	<wunion_title>شراء نقاط اتصال باستخدام ويسترن يونيون</wunion_title>
+	<pos_questions>أسئلة مؤجلة</pos_questions>
+	<mycards>نقاط الإتصال التي قمت بشرائها</mycards>
+	<total_answers>جميع الإجابات</total_answers>
+	<asked_questions>عدد الأسئلة</asked_questions>
+	<login_id>اسم الدخول</login_id>
+	<edit_text>تحرير النص الحر</edit_text>
+	<show_all_questions>عرض جميع الأسئلة</show_all_questions>
+	<search_answers>ابحث في الإجابات</search_answers>
+	<blank><![CDATA[&nbsp;]]></blank>
+	<recent_questions>آخر أسئلة طرحتها</recent_questions>
+	<recent_answers>أحدث إجابات لأسئلتك</recent_answers>
+	<no_answers>لا يوجد أو أنها تحت المراجعة أو أن العضو غير فعال</no_answers>
+	<AskedMembersList>قائمة الأعضاء الذين وجهت اليهم أسئلة</AskedMembersList>
+	<member_answers>إجابات من سألتهم</member_answers>
+	<Ask>وجه سؤالا</Ask>
+	<NewQuestions>أسئلة جديدة</NewQuestions>
+	<least_visited_back>أقل رد للزيارات</least_visited_back>
+	<last_visited>آخر من زرتهم</last_visited>
+	<QandA>منتدى التعارف</QandA>
+	<blog>أسئلة شائعة</blog>
+	<MyKobool>بياناتي</MyKobool>
+	<lists>القوائم</lists>
+    <my_activities>التسجيلات</my_activities>
+	<Visitation>الزيارات</Visitation>
+	<all_ages>-- كل الأعمار --</all_ages>
+	<all_countries>-- كل الدول --</all_countries>
+	<any_status>-- كل الحالات --</any_status>
+	<all_languages>اللغة</all_languages>
+	<other_language>English</other_language>
+	<confirm_switch_lang>هل تود تغيير لغة الإستخدام؟</confirm_switch_lang>
+	<featured_members>أعضاء مميزون</featured_members>
+	<accept>قبول</accept>
+	<save>حفظ</save>
+	<help>إرشادات</help>
+	<you>أنت</you>
+	<select_msg_type>إختر نوع الرسالة</select_msg_type>
+	<predefined_msg>رسالة موضوعة</predefined_msg>
+	<predefined_msgs>الرسائل الموضوعة بواسطة الموقع</predefined_msgs>
+	<typed_text_msg>رسالة مكتوبة</typed_text_msg>
+	<date_purchased>تاريخ الشراء</date_purchased>
+	<channel>الوسيلة</channel>
+	<price>السعر</price>
+	<currency>العملة</currency>
+	<date_used>تاريخ الإستخدام</date_used>
+	<user>الإستخدام</user>
+	<no_wishers_found><![CDATA[
+		لا يوجد أعضاء أظهروا لك قبولهم وغير متصلين بقبول مشترك.<p>
+		ربما يكون هناك آخرون قبلوا بك ولكنهم اختاروا ألا يظهروا هذا القبول أو أنهم حاليا متصلين بقبول مشترك.
+	]]></no_wishers_found>
+	<no_records_found><![CDATA[
+		لا توجد سجلات
+	]]></no_records_found>
+	<no_groups><![CDATA[
+		لا توجد مجموعات
+	]]></no_groups>
+	<buy_now>إشتر الآن</buy_now>
+	<pay_now>إدفع الآن</pay_now>
+	<copy2clipboard>انسخ في الحافظة</copy2clipboard>
+	<email>ارسل بالبريد الإليكتروني</email>
+	<list>قائمة</list>
+	<results>نتائج</results>
+	<original>أصلي</original>
+	<no_visits>لا زيارات</no_visits>
+	<visited_you>عدد الزيارات لك</visited_you>
+	<your_visits>عدد زياراتك</your_visits>
+	<last_visit>أحدث زيارة</last_visit>
+	<why>لماذا؟</why>
+	<ur_ad_here>ضع إعلانك هنا</ur_ad_here>
+	<most_visitors>أكثر الزيارات</most_visitors>
+	<recent_visitors>أحدث زيارة</recent_visitors>
+	<recent_login>تواجد</recent_login>
+	<recent_members>آخر المشتركين</recent_members>
+	<no_title>(بدون عنوان)</no_title>
+	<not_approved>(تحت المراجعة)</not_approved>
+	<answer>أكتب الإجابة</answer>
+	<answers>إجابات</answers>
+	<browse_questions>اعرض الأسئلة</browse_questions>
+	<question>سؤال</question>
+	<questions>أسئلة</questions>
+	<search_www>ابحث في الإنترنت</search_www>
+	<ads>إعلانـــــات</ads>
+	<color_code>دلالات الألوان</color_code>
+	<under_construction>تحت الإنشاء</under_construction>
+	<date_matched>تاريخ التوفيق</date_matched>
+	<date_declined>تاريخ الإنسحاب</date_declined>
+	<msgs>الرسائل المتبادلة</msgs>
+	<loading>تحميل البيانات ... من فضلك الإنتظار</loading>
+	<searching>جاري البحث ... من فضلك الإنتظار</searching>
+	<search>بحث</search>
+	<std_view>عرض بالتفاصيل</std_view>
+	<tn_view>عرض البوم</tn_view>
+	<edit>تحرير</edit>
+	<change>تعديل</change>
+	<qsearch>ابحث عن</qsearch>
+	<is_accepted>قبـــول؟</is_accepted>
+	<delete_bookmark>حذف علامة</delete_bookmark>
+	<submit>تنفيـــذ</submit>
+	<reset>إعـــادة</reset>
+	<visitors>زائرين</visitors>
+	<visits>زيارات</visits>
+	<wishers>مقبول</wishers>
+	<watchers>علامات</watchers>
+	<avrg_rank>ترتيب</avrg_rank>
+	<close>اغــــلاق</close>
+	<ok>تـــــم</ok>
+	<yes>نعم</yes>
+	<no>لا</no>
+	<decline>Decline</decline>
+	<default_picture>Set Default</default_picture>
+	<cancel>الغاء</cancel>
+	<first>|&lt;</first>
+	<last>&gt;|</last>
+	<of>من</of>
+	<page>صفحة</page>
+	<member>عضو</member>
+	<total>إجمالي</total>
+	<back_to_results>نتائج البحث</back_to_results>
+	<search_results>نتائج البحث</search_results>
+	<remove>Remove</remove>
+	<lname>المميز</lname>
+	<age>العمر</age>
+	<country>الإقامة</country>
+	<origin>بلد الأصل</origin>
+	<date_added>تاريخ الإضافة</date_added>
+	<day>يوم</day>
+	<two_days>يومين</two_days>
+	<days>أيام</days>
+	<hour>ساعة</hour>
+	<hours>ساعة</hours>
+	<within>خلال</within>
+	<TTM>توفيق القبول التالي بعد: </TTM>
+	<after>بعد</after>
+	<week>اسبوع</week>
+	<two_weeks>اسبوعين</two_weeks>
+	<weeks>أسابيع</weeks>
+	<month>شهر</month>
+	<two_months>شهرين</two_months>
+	<months>شهور</months>
+	<time_to_matchbot> موعد %h1%توفيق القبول%h0% القادم
+	</time_to_matchbot>
+	<matching_schedule>يتم التوفيق مرة يوميا</matching_schedule>
+	<inactive_member>عضو غير فعال</inactive_member>
+	<window_title>قبول</window_title>
+	<title>قبول - الخطوة الأولى للزواج</title>
+	<sponsors>هذا الموقع برعاية</sponsors>
+	<credits>هذا الموقع من تطوير</credits>
+	<lang_menu>لغة المستخدم</lang_menu>
+	<visitor>مرحبا بالزائر</visitor>
+	<add_wish>قبول؟</add_wish>
+	<slogan>ومن آياته ان خلق لكم من انفسكم ازواجا لتسكنوا اليها وجعل بينكم مودة ورحمة ان في ذلك لآيات لقوم يتفكرون</slogan>
+	<brief>الخطوة الأولى للزواج</brief>
+	<muslim_web>شبكة المسلم</muslim_web>
+	<welcome>مرحبا</welcome>
+	<thanks>شكرا لك</thanks>
+	<copyright><![CDATA[
+		جميع الحقوق محفوظة &copy; قبول كم 2004-2012
+	]]></copyright>
+	<who_are_we>من نحن؟</who_are_we>
+	<contact_us>اتصل بالموقع</contact_us>
+	<privacy>سياسة السرية</privacy>
+	<feedback>feedback</feedback>
+	<report_bug>بلغ عن خطأ</report_bug>
+	<your_match>لك قبول مشترك مع %u%</your_match>
+	<refresh>تحديث</refresh>
+	<more>المزيد...</more>
+	<show_keyboards>إضغط هنا لإظهار لوحة المفاتيح العربية</show_keyboards>
+	<delete_item>حذف</delete_item>
+	<go_to>اذهب إلى</go_to>
+	<go>إذهب</go>
+	<open>إفتح</open>
+	<moveto>إنتقل</moveto>
+	<browse>إعرض</browse>
+	<select_page>حدد رقم الصفحة</select_page>
+	<mission>الحل العصري للوصول إلى شريك المستقبل</mission>
+	<view_type>شكل العرض</view_type>
+	<search_list>قائمة البحث السريع</search_list>
+	<select>اختار من التالي</select>
+	<clear_filters>حذف جميع الصفات من خصائص البحث</clear_filters>
+	<ru_sure>هل أنت متأكد؟</ru_sure>
+	<mail2friend>ارسل هذا البحث الى صديقك بالبريد الإليكتروني</mail2friend>
+	<group_by>مجموعات حسب</group_by>
+	<group>المجموعة</group>
+	<show_report>عرض تقرير</show_report>
+	<close_report>اغلاق التقرير</close_report>
+	<show_blocked>عرض المحذوفين</show_blocked>
+	<active_search>البحث الحالي</active_search>
+	<search_group>ابحث في هذه المجموعة</search_group>
+	<refine>تنقيح</refine>
+	<full_results>اعرض النتائج</full_results>
+	<self_filters>الخصائص الشخصية</self_filters>
+	<save_search>احفظ خصائص البحث الحالي في قائمة البحث السريع أو في المفضلة</save_search>
+	<active_members_no>عدد الأعضاء</active_members_no>
+	<active_members>الأعضاء الفعالين</active_members>
+	<feedback_help>انطباعك الشخصي يظهر لك في قوائم البحث ولا يقرؤه أحد سواك ولا يراجعه مشرفي الموقع والغرض منه فقط تذكيرك بمن قمت بزيارتهم</feedback_help>
+	<feedback_link>سجل انطباعك الشخصي عن هذا العضو</feedback_link>
+	<religion>الديانة</religion>
+	<rank>أولوية القبول</rank>
+	<downgrade>استخدم الموقع القديم</downgrade>
+</root>

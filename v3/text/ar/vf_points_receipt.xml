@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--TODO: unused -->
+<vf_points_receipt>
+	<html>
+		<title><![CDATA[KOBOOL - request to buy Contact Points: #$V{invoice}]]></title>
+		<body><![CDATA[
+			<div style="direction:rtl;font-size:14px;font-family:Tahoma">
+				A request to buy KOBOOL points via Vodafone Egypt prepaid card was sent on: $V{date} GMT
+				<hr/>
+				Reference Number: $V{invoice}
+				<hr/>
+				Card Number: <span style="font-size:14px;font-weight:bold;text-align:left">$V{card_number}</span><br/>
+				Card Value: $V{amount} EGP<br/>&nbsp;
+				<div style="background:#FFFFCC;border-top:solid 1px orange;font-size:11px;padding:4px">
+					<b>Note:</b> The points are added manually and could take minutes or couple of hours, depends on purchase time.<br/>
+					Hence, we ask you to have some patience until we add the points.<br/>
+					You should recieve a notification email as soon as we add the points to your account.
+				</div>
+				<hr/>
+				Active Member Number: $V{buyer_number}<br/>
+				Login Name: <a target="_blank" href="http://www.kobool.com/#pg=mem&mem=$V{buyer_number}">$V{buyer_name} </a>
+				<hr/>
+				Beneficiary Member Number: $V{user_number}<br/>
+				Login Name: <a target="_blank" href="http://www.kobool.com/#pg=mem&mem=$V{user_number}">$V{user_name} </a>
+				<hr/>
+				Buyer notes:<br/>
+				$V{notes}
+			</div>
+		]]></body>
+	</html>
+	<txt>
+		<body><![CDATA[]]></body>
+		<title><![CDATA[]]></title>
+	</txt>
+</vf_points_receipt>

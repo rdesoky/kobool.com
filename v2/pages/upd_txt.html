@@ -1,0 +1,23 @@
+<div class="pg_header title" data-string="profile:upd_txt.page_title"></div>
+<div id="UpdateText" class="pg_body" style="visibility:hidden">
+	<form name="updateTextFrm" onsubmit="UpdateText.onsubmit(this);return false;">
+		<div><span data-string="profile:profile.main_title"></span>:</div>
+		<div class="attr_editor">
+			<input type="text" name="ad_title"/>
+		</div>
+		<div><span data-string="profile:profile.member_self_desc"></span>:</div>
+		<div class="attr_editor">
+			<textarea name="self_desc"></textarea>
+			<span class="attr_title" data-string="profile:profile.self_desc"></span>
+		</div>
+		<div><span data-string="profile:profile.member_mate_desc"></span>:</div>
+		<div class="attr_editor">
+			<textarea name="mate_desc"></textarea>
+			<span class="attr_title" data-string="profile:profile.mate_desc"></span>
+		</div>
+		<div class="clear_left buttons_bar">
+			<input type="submit" name="save" value="" data-string="str:ok" data-string-attr="value" />
+			<input type="button" value="" data-string="str:cancel" data-string-attr="value" onclick="PgNav.open('update',undef,true)"/>
+		</div>
+	</form>
+</div>

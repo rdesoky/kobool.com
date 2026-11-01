@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<tell>
+		<page_title>اخبر صديق عن الموقع</page_title>
+		<intro></intro>
+		<form_title>نموذج رسالة لصديق لتخبره عن موقع (قبول)</form_title>
+		<sender_name>اسمك</sender_name>
+		<sender_email>بريدك</sender_email>
+		<friend_name>اسم صديقك</friend_name>
+		<friend_email>بريد صديقك</friend_email>
+		<friend_type>مرسل الى</friend_type>
+		<select_type>
+			<option value="1">صديق</option>
+			<option value="2">صديقة</option>
+			<option value="3">مجموعة أصدقاء</option>
+		</select_type>
+		<group_email>ادخل البريد الإليكتروني لكل صديق بفاصلة ; أو , بين كل عنوان</group_email>
+		<personal_msg>اضافة تحب ان تضيفها الى هذه الرسالة</personal_msg>
+		<send>إرسال</send>
+		<self_copy>ارسل نسخة لصندوق بريدك</self_copy>
+		<enter_s_name>فضلا ادخل اسمك</enter_s_name>
+		<enter_s_email>فضلا ادخل عنوان بريدك الإليكتروني</enter_s_email>
+		<enter_f_email>فضلا ادخل عنوان البريد الإليكتروني للصديق</enter_f_email>
+		<enter_g_email>فضلا ادخل عنوان بريد إليكتروني لصديق واحد على الأقل</enter_g_email>
+	<preview>عرض الرسالة </preview>
+	</tell>
+</root>
