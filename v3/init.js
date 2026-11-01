@@ -98,7 +98,7 @@
         upd_pass: '/v3/pages/upd_pass.html',
         upd_pics: '/v3/pages/upd_pics.html',
         upd_txt: '/v3/pages/upd_txt.html',
-        geo: '/cgi-bin/geo.pl'
+        geo: ((window.APP_CONFIG && window.APP_CONFIG.apiBase) || '/cgi-bin/') + 'geo.pl'
     };
 
     // PgVer is no longer needed: string bundles are fetched as JSON.

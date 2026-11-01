@@ -262,7 +262,7 @@ test('validate: an http:// API base is expected and never reported', () => {
     fs.rmSync(dir, { recursive: true, force: true });
 });
 
-test('validate: an https:// API base warns because the hosts are http-only', () => {
+test('validate: an explicit https:// API base warns in favour of a scheme-relative one', () => {
     const os = require('os');
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'kobool-https-'));
     const distShared = path.join(dir, 'shared');
@@ -272,7 +272,68 @@ test('validate: an https:// API base warns because the hosts are http-only', () 
 
     const staging = validate({ env: 'staging', dist: dir });
     assert.ok(!staging.errors.some((e) => /API base/.test(e)), 'https:// must not be an error');
-    assert.ok(staging.warnings.some((w) => /http-only/.test(w)), 'https:// must warn');
+    assert.ok(staging.warnings.some((w) => /scheme-relative/.test(w)), 'https:// must warn');
+
+    fs.rmSync(dir, { recursive: true, force: true });
+});
+
+test('build: rewriteApiBase points hardcoded kpic.pl URLs at the API host', () => {
+    const os = require('os');
+    const { rewriteApiBase } = require(path.join(TOOLS, 'build'));
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'kobool-api-'));
+    const file = path.join(dir, 'page.html');
+    fs.writeFileSync(file, [
+        '<img src="/cgi-bin/kpic.pl?tn=1&amp;id=1&amp;g=1"/>',
+        '<img src="/cgi-bin/kpic.pl?tn=1&amp;id=2&amp;g=0"/>',
+        '<form action="/cgi-bin/upload_pic.pl"></form>',
+        '<a href="/v3/pages/home.html">x</a>'
+    ].join('\n'));
+
+    const changed = rewriteApiBase(dir, '//dev.kobool.com/cgi-bin/');
+    const out = fs.readFileSync(file, 'utf8');
+    fs.rmSync(dir, { recursive: true, force: true });
+
+    assert.strictEqual(changed, 1);
+    assert.match(out, /src="\/\/dev\.kobool\.com\/cgi-bin\/kpic\.pl\?tn=1&amp;id=1&amp;g=1"/);
+    assert.match(out, /src="\/\/dev\.kobool\.com\/cgi-bin\/kpic\.pl\?tn=1&amp;id=2&amp;g=0"/);
+    // The uploader posts into a same-origin iframe, so it must stay local.
+    assert.match(out, /action="\/cgi-bin\/upload_pic\.pl"/);
+    assert.match(out, /href="\/v3\/pages\/home\.html"/);
+});
+
+test('build: rewriteApiBase is a no-op for the same-origin dev base', () => {
+    const os = require('os');
+    const { rewriteApiBase } = require(path.join(TOOLS, 'build'));
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'kobool-api-dev-'));
+    const file = path.join(dir, 'page.html');
+    const html = '<img src="/cgi-bin/kpic.pl?tn=1"/>';
+    fs.writeFileSync(file, html);
+
+    assert.strictEqual(rewriteApiBase(dir, '/cgi-bin/'), 0);
+    assert.strictEqual(fs.readFileSync(file, 'utf8'), html);
+    fs.rmSync(dir, { recursive: true, force: true });
+});
+
+test('validate: a root-absolute /cgi-bin/ URL in a page fragment is an error', () => {
+    const os = require('os');
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'kobool-cgibin-'));
+    fs.mkdirSync(path.join(dir, 'shared'), { recursive: true });
+    fs.writeFileSync(
+        path.join(dir, 'shared', 'config.js'),
+        'window.APP_CONFIG={apiBase:"//dev.kobool.com/cgi-bin/"};'
+    );
+    fs.writeFileSync(path.join(dir, 'index.html'), '<html><head></head><body>hi</body></html>');
+    fs.writeFileSync(path.join(dir, 'page.html'), '<img src="/cgi-bin/kpic.pl?tn=1"/>');
+
+    const res = validate({ env: 'staging', dist: dir });
+    assert.ok(
+        res.errors.some((e) => /Root-absolute API URL/.test(e)),
+        `must error on a root-absolute API URL: ${res.errors}`
+    );
+
+    // The dev build proxies /cgi-bin/ same-origin, so it is valid there.
+    const dev = validate({ env: 'dev', dist: dir });
+    assert.ok(!dev.errors.some((e) => /Root-absolute API URL/.test(e)), 'dev may use /cgi-bin/');
 
     fs.rmSync(dir, { recursive: true, force: true });
 });
@@ -388,6 +449,15 @@ test('smoke: dist builds and validates cleanly', { timeout: 120000 }, () => {
     // (currently dev.kobool.com, scheme-relative).
     const distConfig = fs.readFileSync(path.join(ROOT, 'dist', 'shared', 'config.js'), 'utf8');
     assert.match(distConfig, /\/\/dev\.kobool\.com\/cgi-bin\//);
+
+    // Page fragments must not keep root-absolute /cgi-bin/ URLs: the site
+    // origin serves static files only, so those requests 404.
+    const templates = fs.readFileSync(path.join(ROOT, 'dist', 'v3', 'pages', 'templates.html'), 'utf8');
+    assert.ok(
+        !/["']\/cgi-bin\/kpic\.pl/.test(templates),
+        'templates.html must not reference /cgi-bin/kpic.pl on the site origin'
+    );
+    assert.match(templates, /\/\/dev\.kobool\.com\/cgi-bin\/kpic\.pl/);
 
     // The App Store badge must be present (referenced from index.html).
     assert.ok(

@@ -295,7 +295,7 @@ define(["jquery","kevents","dom-utils","js-promise","utils"], function($, evt, $
 						hitType: 'event',
 						eventCategory: $u.getPageID(),
 						eventAction: 'post',
-						eventLabel: p.scr.substr("/cgi-bin/".length)
+						eventLabel: p.scr.substr(apiBase.length)
 					});
 			}
 

@@ -36,13 +36,13 @@ const DIST = path.join(ROOT, 'dist');
 // dev uses the same-origin prefix, which tools/serve.js proxies to the API
 // host. staging and prod call the API host directly.
 //
-// The scheme is explicit (http://) rather than scheme-relative: dev.kobool.com
-// is http-only, so a scheme-relative base would inherit https on an https page
-// and fail. Switch to https://api.kobool.com once that host is live.
+// The base is scheme-relative (//dev.kobool.com) so it inherits the page's own
+// scheme: http today, https once TLS is terminated in front of the API host.
+// Switch to //api.kobool.com/cgi-bin/ once that host serves the CGI.
 const ENVIRONMENTS = {
     dev: { apiBase: '/cgi-bin/', cname: null },
-    staging: { apiBase: 'http://dev.kobool.com/cgi-bin/', cname: 'staging.kobool.com' },
-    prod: { apiBase: 'http://dev.kobool.com/cgi-bin/', cname: 'www.kobool.com' }
+    staging: { apiBase: '//dev.kobool.com/cgi-bin/', cname: 'staging.kobool.com' },
+    prod: { apiBase: '//dev.kobool.com/cgi-bin/', cname: 'www.kobool.com' }
 };
 
 // Never copied into dist/, regardless of where they appear.
@@ -121,6 +121,47 @@ function rewriteBase(dir, base) {
             for (const pattern of patterns) {
                 after = after.replace(pattern, (match, lead) => lead + base + '/');
             }
+            if (after !== before) {
+                fs.writeFileSync(full, after, 'utf8');
+                changed++;
+            }
+        }
+    };
+    walk(dir);
+    return changed;
+}
+
+/**
+ * Point hardcoded `/cgi-bin/kpic.pl` URLs at the environment's API base.
+ *
+ * Page fragments carry literal `src="/cgi-bin/kpic.pl?..."` attributes, which
+ * resolve against the site's own origin. That origin serves static files only,
+ * so on staging and prod every profile picture 404s. Rewriting the prefix at
+ * build time keeps the fragments readable while sending the requests to the
+ * API host.
+ *
+ * Only kpic.pl is rewritten. The JS modules build their URLs from
+ * APP_CONFIG.apiBase at runtime, and the upload form is left alone because its
+ * iframe callback (window.parent.UpdatePics) cannot cross origins.
+ *
+ * A same-origin base (`/cgi-bin/`, used by dev) is a no-op.
+ */
+function rewriteApiBase(dir, apiBase) {
+    if (!apiBase || apiBase === '/cgi-bin/') return 0;
+    const pattern = /(\b(?:href|src|action)=["'])\/cgi-bin\/(kpic\.pl)/g;
+    let changed = 0;
+
+    const walk = (current) => {
+        for (const entry of fs.readdirSync(current, { withFileTypes: true })) {
+            const full = path.join(current, entry.name);
+            if (entry.isDirectory()) {
+                walk(full);
+                continue;
+            }
+            if (path.extname(entry.name).toLowerCase() !== '.html') continue;
+
+            const before = fs.readFileSync(full, 'utf8');
+            const after = before.replace(pattern, (match, lead, script) => lead + apiBase + script);
             if (after !== before) {
                 fs.writeFileSync(full, after, 'utf8');
                 changed++;
@@ -319,6 +360,12 @@ async function build(options) {
     writeCname(env, options.cname);
 
     // Rewrite before minifying so the minifier sees the final URLs.
+    const apiBase = options.apiBase || ENVIRONMENTS[env].apiBase;
+    const apiRewritten = rewriteApiBase(DIST, apiBase);
+    if (apiRewritten) {
+        console.log(`Rewrote /cgi-bin/ URLs to "${apiBase}" in ${apiRewritten} files`);
+    }
+
     const rewritten = rewriteBase(DIST, options.base || '');
     if (rewritten) {
         console.log(`Rewrote root-absolute URLs to base "${options.base}" in ${rewritten} files`);
@@ -337,4 +384,4 @@ if (require.main === module) {
     });
 }
 
-module.exports = { build, parseArgs, rewriteBase, ENVIRONMENTS, isBlocked };
+module.exports = { build, parseArgs, rewriteBase, rewriteApiBase, ENVIRONMENTS, isBlocked };

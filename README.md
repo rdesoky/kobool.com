@@ -4,9 +4,10 @@ Static frontend for kobool.com. Replaces the PHP-rendered `v2/` and `v3/`
 frontends with pre-built HTML, CSS and JavaScript served from a CDN.
 
 The API is unchanged: every dynamic call still goes to the Perl CGI backend
-under `/cgi-bin/`, now reached cross-origin at `http://dev.kobool.com`. The
-scheme is explicit because that host is http-only. Switch to the production
-API host in `tools/build.js` when it goes live.
+under `/cgi-bin/`, now reached cross-origin at `//dev.kobool.com`. The base is
+scheme-relative so it inherits the page's scheme: http today, https once TLS is
+terminated in front of the API host. Switch to `//api.kobool.com/cgi-bin/` in
+`tools/build.js` once that host serves the CGI.
 
 ## Source
 
@@ -73,8 +74,16 @@ the `CNAME` that claims that domain.
 `--api-base=<url>` overrides the environment's API base:
 
 ```bash
-node tools/build.js --env=staging --api-base=http://dev.kobool.com/cgi-bin/
+node tools/build.js --env=staging --api-base=//dev.kobool.com/cgi-bin/
 ```
+
+The build also rewrites hardcoded `src="/cgi-bin/kpic.pl?..."` attributes in
+the page fragments to the environment's API base. Those fragments are shared by
+every environment, and the site origin serves static files only, so without the
+rewrite every profile picture 404s on staging and production. The picture
+uploader form is deliberately left same-origin: it posts into an iframe whose
+response calls `window.parent.UpdatePics`, which a cross-origin response cannot
+reach.
 
 `npm run serve` proxies `/cgi-bin/` to `http://dev.kobool.com` (override with `KOBOOL_API_TARGET`) so the browser
 sees a single origin during development. Point it elsewhere with
@@ -144,6 +153,8 @@ country and attribute selects no longer need a server round trip.
 - a `CNAME` in a `--base` (GitHub Pages project site) build
 - `data-string` keys missing from both locale bundles
 - unresolved local `href`/`src` references
+- a root-absolute `/cgi-bin/` URL in a staging or production page fragment
+  (the site origin serves static files only, so it would 404)
 - JavaScript syntax errors
 
 ## Deployment
@@ -179,7 +190,8 @@ Consequences to keep in mind:
 
 - Validation expects `http://`. `npm run check` does not report an `http://` API
   base; it warns only if an `https://` base is used, because those hosts have no
-  TLS listener.
+  TLS listener. The built base is scheme-relative (`//dev.kobool.com`), so it
+  follows the page's scheme and needs no change at TLS cutover.
 - Do not re-enable HTTPS enforcement while the API is HTTP-only. It would
   reintroduce the mixed-content block.
 - A `github.io` project site cannot disable HTTPS enforcement at all, which is
@@ -188,35 +200,30 @@ Consequences to keep in mind:
 ### CORS
 
 `staging.kobool.com` and `dev.kobool.com` are different origins, so the API
-must answer with CORS headers. It currently sends none:
+must answer with CORS headers. It does:
 
 ```
 $ curl -D - -H "Origin: http://staging.kobool.com" \
     http://dev.kobool.com/cgi-bin/nav6.pl
 HTTP/1.1 200 OK
-Vary: Accept-Encoding          # no Access-Control-Allow-Origin
+Access-Control-Allow-Origin: http://staging.kobool.com
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Headers: Accept, Authorization, Content-Type, Cookie,
+    Origin, X-Requested-With, X-CSRF-Token, sid
+Access-Control-Max-Age: 86400
 ```
 
-The browser therefore blocks every API call:
+`OPTIONS` preflights for `POST` requests are answered too, so cross-origin
+calls from staging work. If the API host changes, keep this in mind:
 
-```
-Access to XMLHttpRequest at 'http://dev.kobool.com/cgi-bin/logout.pl' from
-origin 'http://staging.kobool.com' has been blocked by CORS policy
-```
-
-The UI still renders — the side menu and pages come from local state — but no
-data loads. Fixing this needs one of:
-
-- **CORS on the API** (preferred): have the CGI backend send
-  `Access-Control-Allow-Origin: http://staging.kobool.com` (and
-  `Access-Control-Allow-Headers: sid, content-type` plus an `OPTIONS` handler
-  for the preflight that `POST` requests trigger).
-- **Same-origin proxy**: serve the API under `staging.kobool.com/cgi-bin/` so
-  the browser sees one origin. `tools/proxy.js` already implements this for
-  local development.
+- The `sid` header must stay in `Access-Control-Allow-Headers`; every request
+  sends it.
+- `Access-Control-Allow-Origin` must echo the site origin, not `*`, because
+  `Access-Control-Allow-Credentials: true` forbids the wildcard.
 
 `npm run serve` proxies `/cgi-bin/` to `http://dev.kobool.com` (override with
-`KOBOOL_API_TARGET`), which is why local development is unaffected.
+`KOBOOL_API_TARGET`) so local development stays same-origin.
 
 ## License
 

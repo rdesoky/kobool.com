@@ -70,7 +70,7 @@
         help: PGS + 'help.html',
         upd_attr: PGS + 'upd_attr.html',
         upd_txt: PGS + 'upd_txt.html',
-        geo: '/cgi-bin/geo.pl'
+        geo: ((global.APP_CONFIG && global.APP_CONFIG.apiBase) || '/cgi-bin/') + 'geo.pl'
     };
 
     global.CssLinks = {

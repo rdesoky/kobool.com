@@ -14,9 +14,10 @@
  *   - missing data-string keys
  *   - JS syntax errors
  *
- * The site is served over http://, so an http:// API base is expected and is
- * not reported. An https:// API base is warned about, because the kobool.com
- * hosts have no TLS listener.
+ * The API base is scheme-relative (//dev.kobool.com/cgi-bin/), so it inherits
+ * the page's own scheme. An explicit https:// base is still warned about: the
+ * TLS listener on dev.kobool.com uses a locally-trusted mkcert certificate,
+ * which browsers reject unless the machine installed the mkcert CA.
  */
 
 const fs = require('fs');
@@ -190,10 +191,10 @@ function validate(options) {
         }
     }
 
-    // 5. The site is served over http:// (staging.kobool.com has HTTPS
-    // enforcement disabled because every kobool.com host is http-only), so an
-    // http:// API base is correct and must not be reported. Only flag the
-    // inverse mistake: an https:// API base on a host that has no TLS.
+    // 5. The API base is scheme-relative, so it follows the page: http on an
+    // http page, https on an https page. An explicit https:// base is flagged
+    // because the API host's certificate is a local mkcert CA, which only
+    // machines that ran `mkcert -install` trust.
     if (env === 'prod' || env === 'staging') {
         const configFile = path.join(distDir, 'shared', 'config.js');
         if (fs.existsSync(configFile)) {
@@ -201,8 +202,31 @@ function validate(options) {
             const m = configContent.match(/apiBase\s*:\s*"(https:\/\/[^"]*)"/);
             if (m) {
                 warnings.push(
-                    `API base "${m[1]}" uses https:// but the kobool.com hosts are http-only; ` +
-                    'requests will fail to connect. Use an http:// API base.'
+                    `API base "${m[1]}" pins https://, but the API host uses a locally-trusted ` +
+                    'mkcert certificate. Use a scheme-relative base (//host/cgi-bin/) so the ' +
+                    'page scheme is inherited.'
+                );
+            }
+        }
+
+        // 5a. The site origin serves static files only, so a root-absolute
+        // /cgi-bin/ URL in a page fragment 404s. The build rewrites these to
+        // the environment's API base; anything left is a missed endpoint.
+        //
+        // Form actions are excluded: the picture uploader posts into a
+        // same-origin iframe whose response calls window.parent.UpdatePics,
+        // which a cross-origin response cannot reach. Moving it to the API
+        // host needs an XHR upload, not a URL rewrite.
+        for (const file of files) {
+            if (path.extname(file).toLowerCase() !== '.html') continue;
+            const content = fs.readFileSync(file, 'utf8');
+            const re = /\b(?:href|src)="(\/cgi-bin\/[^"]*)"/g;
+            let match;
+            while ((match = re.exec(content)) !== null) {
+                errors.push(
+                    `Root-absolute API URL "${match[1]}" in ${rel(file)}: the site origin ` +
+                    'serves static files only, so this request 404s. Build it from ' +
+                    'APP_CONFIG.apiBase instead.'
                 );
             }
         }

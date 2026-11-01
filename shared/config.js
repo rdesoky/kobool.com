@@ -3,12 +3,12 @@
  *
  * The build replaces apiBase in dist/ with environment-specific values:
  *   - dev:     /cgi-bin/ (same origin; tools/serve.js proxies to the API host)
- *   - staging: http://dev.kobool.com/cgi-bin/
- *   - prod:    http://dev.kobool.com/cgi-bin/
+ *   - staging: //dev.kobool.com/cgi-bin/
+ *   - prod:    //dev.kobool.com/cgi-bin/
  *
- * The scheme is explicit because dev.kobool.com is http-only; a
- * scheme-relative base would inherit https on an https page and fail.
- * Switch to https://api.kobool.com once that host is live.
+ * The base is scheme-relative so it inherits the page's scheme: http today,
+ * https once TLS is terminated in front of the API host. Switch to
+ * //api.kobool.com/cgi-bin/ once that host serves the CGI.
  */
 window.APP_CONFIG = {
     apiBase: '/cgi-bin/',
