@@ -185,6 +185,39 @@ Consequences to keep in mind:
 - A `github.io` project site cannot disable HTTPS enforcement at all, which is
   why the site uses the `staging.kobool.com` custom domain instead.
 
+### CORS
+
+`staging.kobool.com` and `dev.kobool.com` are different origins, so the API
+must answer with CORS headers. It currently sends none:
+
+```
+$ curl -D - -H "Origin: http://staging.kobool.com" \
+    http://dev.kobool.com/cgi-bin/nav6.pl
+HTTP/1.1 200 OK
+Vary: Accept-Encoding          # no Access-Control-Allow-Origin
+```
+
+The browser therefore blocks every API call:
+
+```
+Access to XMLHttpRequest at 'http://dev.kobool.com/cgi-bin/logout.pl' from
+origin 'http://staging.kobool.com' has been blocked by CORS policy
+```
+
+The UI still renders — the side menu and pages come from local state — but no
+data loads. Fixing this needs one of:
+
+- **CORS on the API** (preferred): have the CGI backend send
+  `Access-Control-Allow-Origin: http://staging.kobool.com` (and
+  `Access-Control-Allow-Headers: sid, content-type` plus an `OPTIONS` handler
+  for the preflight that `POST` requests trigger).
+- **Same-origin proxy**: serve the API under `staging.kobool.com/cgi-bin/` so
+  the browser sees one origin. `tools/proxy.js` already implements this for
+  local development.
+
+`npm run serve` proxies `/cgi-bin/` to `http://dev.kobool.com` (override with
+`KOBOOL_API_TARGET`), which is why local development is unaffected.
+
 ## License
 
 Proprietary. All rights reserved. See [LICENSE](./LICENSE).
