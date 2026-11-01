@@ -48,7 +48,8 @@ npm run build         # dev build (same-origin /cgi-bin/)
 npm run build:staging # staging build (dev.kobool.com API)
 npm run build:prod    # production build
 npm run check         # validate dist/ before publishing
-npm run serve         # local server on :8080 with a /cgi-bin/ proxy
+npm run serve         # local server on :8080 (next free port if busy) with a
+                      # /cgi-bin/ proxy
 ```
 
 Production and staging are served from a domain root, so URLs are
@@ -87,7 +88,18 @@ reach.
 
 `npm run serve` proxies `/cgi-bin/` to `https://dev.kobool.com` (override with
 `KOBOOL_API_TARGET`) so the browser sees a single origin during development.
-Point it elsewhere with `KOBOOL_API_TARGET=http://localhost:8080`.
+Point it elsewhere with `KOBOOL_API_TARGET=http://localhost:8080`. If port
+8080 is already in use, the server tries the next port (8081, 8082, …) until
+it finds a free one and logs the URL.
+
+The dev proxy skips upstream TLS certificate verification: `dev.kobool.com`
+may resolve to a local API host (e.g. via Docker Desktop) whose certificate is
+signed by a locally-installed CA that Node does not trust by default. Without
+this, every proxied call fails the handshake and returns 502.
+
+The app also detects when it is served from `localhost` / `127.0.0.1` and forces
+the API base back to the same-origin `/cgi-bin/`, so any environment build
+previewed locally stays same-origin and goes through the proxy.
 
 ## How the conversion works
 
@@ -149,7 +161,8 @@ country and attribute selects no longer need a server round trip.
 - `.php`, `.pl`, `.pm`, `.cgi`, `.py`, `.xml`, `.sql`, `.pem`, `.key` files
 - secrets (DB password, RDS host, private keys, AWS key ids)
 - ShareThis and PayPal markers
-- `localhost` / `127.0.0.1` in staging and production builds
+- `localhost` / `127.0.0.1` in staging and production builds (except the
+  intentional host-detection literals in `shared/config.js`)
 - a `CNAME` in a `--base` (GitHub Pages project site) build
 - `data-string` keys missing from both locale bundles
 - unresolved local `href`/`src` references
