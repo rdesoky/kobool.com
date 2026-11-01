@@ -20,6 +20,19 @@ window.APP_CONFIG = {
 };
 
 /**
+ * Local previews (localhost / 127.0.0.1) use the same-origin /cgi-bin/ base so
+ * every API call goes through tools/serve.js's proxy instead of crossing to the
+ * API host. Served from any other host, the built API base stands.
+ */
+(function (global) {
+    'use strict';
+    var host = global.location && global.location.hostname;
+    if (host === 'localhost' || host === '127.0.0.1') {
+        global.APP_CONFIG.apiBase = '/cgi-bin/';
+    }
+})(window);
+
+/**
  * Analytics shim.
  *
  * The legacy modules call ga() unconditionally. When no measurement ID is

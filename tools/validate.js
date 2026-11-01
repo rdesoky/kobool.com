@@ -8,7 +8,8 @@
  * Fails (exit 1) on:
  *   - server-side or secret-bearing files
  *   - deprecated ShareThis / PayPal markers
- *   - localhost URLs in a production build
+ *   - localhost URLs in staging/production builds (the intentional host-detection
+ *     literals in shared/config.js are exempt)
  *   - a CNAME in a subpath (project-site) build
  *   - unresolved local href/src references
  *   - missing data-string keys
@@ -119,7 +120,11 @@ function validate(options) {
         }
 
         if (env === 'prod' || env === 'staging') {
-            if (/localhost|127\.0\.0\.1/.test(content)) {
+            // shared/config.js intentionally checks for localhost and
+            // 127.0.0.1 to route local previews through the same-origin
+            // /cgi-bin/ proxy; those literals are exempt from this rule.
+            const relPath = path.relative(distDir, file).split(path.sep).join('/');
+            if (relPath !== 'shared/config.js' && /localhost|127\.0\.0\.1/.test(content)) {
                 errors.push(`Localhost reference in ${env} build: ${rel(file)}`);
             }
         }
