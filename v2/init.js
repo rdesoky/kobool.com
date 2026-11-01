@@ -532,12 +532,6 @@ var Packages = {
 		,onload:"Decline.onload()"
 		,str:["contact:decline"]
 	},
-	bank_tr:{
-		scripts:[ "CPoints", "KUI" ]
-		,css:["kui","cpoints"]
-		,onload:"BankTr.onload()"
-		,str:["cpoints:bank_tr"]
-	},
 	cp_report:{
 		scripts:[ "CPoints", "CDataViewer", "KUI", "CPointsReport" ]
 		,css:["kui"]
@@ -564,18 +558,6 @@ var Packages = {
 		,css:["kui","cpoints"]
 		,onload:"CPointByPhoneCard.onload()"
 		,str:["cpoints:phone_tr"]
-	},
-	cashu:{
-		scripts:[ "CPoints", "KUI", "CPointsByCashu" ]
-		,css:["kui","cpoints"]
-		,onload:"CPointsByCashu.onload()"
-		,str:["cpoints:ui", "cpoints:cashu"]
-	},
-	cr_cards:{
-		scripts:[ "CPoints", "KUI", "CrCards" ]
-		,css:["kui","cpoints"]
-		,onload:"CrCards.onload()"
-		,str:["cpoints:ui", "cpoints:cr_cards"]
 	},
 	upd_pics:{
 		scripts:[ "UpdatePics", "KUI" ]

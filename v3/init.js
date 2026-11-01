@@ -9,7 +9,7 @@
     'use strict';
 
     var MODULES = [
-        'acc_activate', 'acc_suspend', 'app', 'bank_tr', 'cashu', 'chat', 'check-frame',
+        'acc_activate', 'acc_suspend', 'app', 'chat', 'check-frame',
         'contact', 'cookie', 'cp_buy', 'cp_eula', 'cp_help', 'cp_report', 'cpoints',
         'data-viewer', 'decline', 'declines', 'dom-utils', 'drill', 'e-render', 'featured',
         'feedback', 'forgot', 'home', 'http', 'inline-edit', 'jclass', 'js-promise',
@@ -72,7 +72,6 @@
     window.PgLinks = {
         acc_activate: '/v3/pages/acc_activate.html',
         acc_suspend: '/v3/pages/acc_suspend.html',
-        bank_tr: '/v3/pages/bank_tr.html',
         chat: '/v3/pages/chat.html',
         contact: '/v3/pages/contact.html',
         drill: '/v3/pages/drill.html',

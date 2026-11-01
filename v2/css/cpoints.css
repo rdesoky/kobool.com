@@ -1,16 +1,3 @@
-.cashu_logo{
-	background:url(/images/cashu_refill_cards.jpg) no-repeat center; 
-	height:100px;
-}
-.cr_cards_logo{
-	background:url(/images/cr_cards.gif) no-repeat center; 
-	height:100px;
-}
-.bank_tr_logo{
-	background:url(/images/bank_tr.gif) no-repeat center; 
-	height:100px;
-}
-
 .vf_submit_success_response{
 	border:solid 4px silver;
 	padding:10px;

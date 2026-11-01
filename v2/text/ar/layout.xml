@@ -16,7 +16,6 @@
 		<starred>مميز بنجمة</starred>
 		<payments>تقرير</payments>
 		<pmo>الحوالات البريدية</pmo>
-		<bank_tr>الحوالات البنكية</bank_tr>
 		<manage_cards>رصيدي</manage_cards>
 		<my_questions>اسئلتي</my_questions>
 		<title>أدوات العضوية</title>
@@ -149,11 +148,8 @@
 	<bookmark>ضع علامة</bookmark>
 	<vodafone_title>شراء نقاط اتصال بواسطة التليفون المحمول</vodafone_title>
 	<buy_now_title>وسائل شراء نقاط الإتصال</buy_now_title>
-	<cr_cards_title>شراء نقاط اتصال بواسطة بطاقة ائتمان</cr_cards_title>
-	<cashu_title>شراء نقاط اتصال بواسطة بطاقات كاشيو</cashu_title>
 	<pmo_title>شراء نقاط اتصال بواسطة الحوالات البريدية</pmo_title>
 	<onecard_title>اضافة نقاط اتصال بطاقة قبول</onecard_title>
-	<bank_tr_title>شراء نقاط اتصال بواسطة التحويل البنكي</bank_tr_title>
 	<wunion_title>شراء نقاط اتصال باستخدام ويسترن يونيون</wunion_title>
 	<pos_questions>أسئلة مؤجلة</pos_questions>
 	<mycards>نقاط الإتصال التي قمت بشرائها</mycards>

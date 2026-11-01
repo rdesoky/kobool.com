@@ -54,7 +54,7 @@ define(["jquery", "page-nav", "kui","http", "str-loader","utils","check-frame"],
 
 		renderMethods: function (p) {
 			var root = p.root || _C("div");
-			$.each(["phone_tr"/*, "bank_tr"*/],
+			$.each(["phone_tr"],
 				function (item) {
 					if (!$u.arrFind(p.exclude, item)) {
 						_A(root, "li", {"class": "drill_btn payment_btn btn_" + item},

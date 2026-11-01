@@ -31,8 +31,6 @@
         UpdateEmail: SCR + 'upd_email.js',
         UpdatePassword: SCR + 'upd_pass.js',
         Decline: SCR + 'decline.js',
-        CrCards: SCR + 'cr_cards.js',
-        CPointsByCashu: SCR + 'cashu.js',
         CPointsReport: SCR + 'cp_report.js',
         CPointByPhoneCard: SCR + 'phone_tr.js',
         CPoints: SCR + 'cpoints.js',

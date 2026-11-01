@@ -42,10 +42,7 @@
 			<cp_eula>شروط وقواعد استخدام نقاط الإتصال</cp_eula>
 			<cp_buy>شراء نقاط اتصال</cp_buy>
 			<cp_help>اسئلة شائعة عن نظام النقاط</cp_help>
-			<cashu>شراء نقاط اتصال باستخدام حساب كاشيو</cashu>
 			<phone_tr>شراء نقاط اتصال باستخدام كروت شحن فودافون مصر</phone_tr>
-			<cr_cards>شراء نقاط اتصال باستخدام بطاقة ائتمان</cr_cards>
-			<bank_tr>شراء نقاط اتصال من االسعودية بواسطة ايداع أو تحويل بنكي </bank_tr>
 			<svd_srch>البحث المفضل</svd_srch>
 			<update>تعديلات العضوية</update>
 			<upd_attr>تعديل الصفات الشخصية</upd_attr>
@@ -406,7 +403,6 @@
 		<starred>مميز بنجمة</starred>
 		<payments>تقرير</payments>
 		<pmo>الحوالات البريدية</pmo>
-		<bank_tr>الحوالات البنكية</bank_tr>
 		<manage_cards>رصيدي</manage_cards>
 		<my_questions>اسئلتي</my_questions>
 		<title>أدوات العضوية</title>
@@ -461,11 +457,8 @@
 	<bookmark>ضع علامة</bookmark>
 	<vodafone_title>شراء نقاط اتصال بواسطة التليفون المحمول</vodafone_title>
 	<buy_now_title>وسائل شراء نقاط الإتصال</buy_now_title>
-	<cr_cards_title>شراء نقاط اتصال بواسطة بطاقة ائتمان</cr_cards_title>
-	<cashu_title>شراء نقاط اتصال بواسطة بطاقات كاشيو</cashu_title>
 	<pmo_title>شراء نقاط اتصال بواسطة الحوالات البريدية</pmo_title>
 	<onecard_title>اضافة نقاط اتصال بطاقة قبول</onecard_title>
-	<bank_tr_title>شراء نقاط اتصال بواسطة التحويل البنكي</bank_tr_title>
 	<wunion_title>شراء نقاط اتصال باستخدام ويسترن يونيون</wunion_title>
 	<pos_questions>أسئلة مؤجلة</pos_questions>
 	<mycards>نقاط الإتصال التي قمت بشرائها</mycards>

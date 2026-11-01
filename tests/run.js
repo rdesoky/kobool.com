@@ -239,10 +239,10 @@ test('strings binder: language resolution prefers cookie, falls back to default'
 });
 
 test('proxy: DEFAULT_TARGET points at the current CORS-enabled API host', () => {
-    assert.strictEqual(DEFAULT_TARGET, 'http://dev.kobool.com');
+    assert.strictEqual(DEFAULT_TARGET, 'https://dev.kobool.com');
 });
 
-test('validate: an http:// API base is expected and never reported', () => {
+test('validate: an http:// API base warns because the site is served over https', () => {
     const os = require('os');
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'kobool-mixed-'));
     const distShared = path.join(dir, 'shared');
@@ -250,29 +250,34 @@ test('validate: an http:// API base is expected and never reported', () => {
     fs.writeFileSync(path.join(distShared, 'config.js'), 'window.APP_CONFIG={apiBase:"http://dev.kobool.com/cgi-bin/"};');
     fs.writeFileSync(path.join(dir, 'index.html'), '<html><head></head><body>hi</body></html>');
 
-    // The site is served over http:// (staging.kobool.com has HTTPS
-    // enforcement disabled), so an http:// API base is correct for every
-    // environment and must produce neither an error nor a warning.
-    for (const env of ['dev', 'staging', 'prod']) {
+    // staging.kobool.com redirects http -> https, so the page is https and an
+    // http:// API base would be blocked as mixed active content.
+    for (const env of ['staging', 'prod']) {
         const res = validate({ env, dist: dir });
         assert.ok(!res.errors.some((e) => /API base/.test(e)), `${env} must not error: ${res.errors}`);
-        assert.ok(!res.warnings.some((w) => /API base/.test(w)), `${env} must not warn: ${res.warnings}`);
+        assert.ok(res.warnings.some((w) => /mixed active content/.test(w)), `${env} must warn: ${res.warnings}`);
     }
+
+    // The dev build proxies /cgi-bin/ same-origin, so http:// is fine there.
+    const dev = validate({ env: 'dev', dist: dir });
+    assert.ok(!dev.warnings.some((w) => /API base/.test(w)), 'dev must not warn');
 
     fs.rmSync(dir, { recursive: true, force: true });
 });
 
-test('validate: an explicit https:// API base warns in favour of a scheme-relative one', () => {
+test('validate: a scheme-relative API base is accepted without warnings', () => {
     const os = require('os');
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'kobool-https-'));
     const distShared = path.join(dir, 'shared');
     fs.mkdirSync(distShared, { recursive: true });
-    fs.writeFileSync(path.join(distShared, 'config.js'), 'window.APP_CONFIG={apiBase:"https://api.kobool.com/cgi-bin/"};');
+    fs.writeFileSync(path.join(distShared, 'config.js'), 'window.APP_CONFIG={apiBase:"//dev.kobool.com/cgi-bin/"};');
     fs.writeFileSync(path.join(dir, 'index.html'), '<html><head></head><body>hi</body></html>');
 
-    const staging = validate({ env: 'staging', dist: dir });
-    assert.ok(!staging.errors.some((e) => /API base/.test(e)), 'https:// must not be an error');
-    assert.ok(staging.warnings.some((w) => /scheme-relative/.test(w)), 'https:// must warn');
+    for (const env of ['staging', 'prod']) {
+        const res = validate({ env, dist: dir });
+        assert.ok(!res.errors.some((e) => /API base/.test(e)), `${env} must not error: ${res.errors}`);
+        assert.ok(!res.warnings.some((w) => /API base/.test(w)), `${env} must not warn: ${res.warnings}`);
+    }
 
     fs.rmSync(dir, { recursive: true, force: true });
 });

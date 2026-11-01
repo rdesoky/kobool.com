@@ -43,7 +43,7 @@ var CPoints = {
 	},
 	renderMethods:function(p){
 		var root = p.root || _C("div");
-		Enum(["phone_tr", /*"cashu", "cr_cards", "bank_tr"*/],
+		Enum(["phone_tr"],
 			function(item){
 				if(!U.arrFind(p.exclude,item) ){
 					_A( root, "li", {"class":"drill_btn payment_btn btn_" + item}, [
@@ -151,23 +151,3 @@ var CPointsHelp = {
 		);
 	}
 };
-
-var BankTr = {
-	onload:function(){
-		TopTabs.showTab("Menu.CPoints");
-		TopTabs.select("CP.buy");
-		var root = CPoints.renderLayout( {
-			root:"Contents",
-			title:"cpoints:bank_tr.page_title",
-			page:"bank_tr", 
-			logo:"bank_tr_logo",
-			onfinish:function(info){
-				_E("PointsMemberNumber").innerHTML = info.id;
-				_E("PointsLoginName").innerHTML = info.login_id;
-			}
-		});
-		_A( root,"div",{id:"CPiontsEUALText","class":"pg_body"}, _S("cpoints:bank_tr.contents") ); 
-	}
-};
-
-

@@ -15,9 +15,8 @@
  *   - JS syntax errors
  *
  * The API base is scheme-relative (//dev.kobool.com/cgi-bin/), so it inherits
- * the page's own scheme. An explicit https:// base is still warned about: the
- * TLS listener on dev.kobool.com uses a locally-trusted mkcert certificate,
- * which browsers reject unless the machine installed the mkcert CA.
+ * the page's own scheme. An explicit http:// base is warned about: the site is
+ * served over https, so the browser would block it as mixed active content.
  */
 
 const fs = require('fs');
@@ -191,20 +190,19 @@ function validate(options) {
         }
     }
 
-    // 5. The API base is scheme-relative, so it follows the page: http on an
-    // http page, https on an https page. An explicit https:// base is flagged
-    // because the API host's certificate is a local mkcert CA, which only
-    // machines that ran `mkcert -install` trust.
+    // 5. The site is served over https (staging.kobool.com redirects http ->
+    // https), so an http:// API base would be blocked as mixed active content.
+    // The base must be scheme-relative (//host/cgi-bin/) or https://.
     if (env === 'prod' || env === 'staging') {
         const configFile = path.join(distDir, 'shared', 'config.js');
         if (fs.existsSync(configFile)) {
             const configContent = fs.readFileSync(configFile, 'utf8');
-            const m = configContent.match(/apiBase\s*:\s*"(https:\/\/[^"]*)"/);
+            const m = configContent.match(/apiBase\s*:\s*"(http:\/\/[^"]*)"/);
             if (m) {
                 warnings.push(
-                    `API base "${m[1]}" pins https://, but the API host uses a locally-trusted ` +
-                    'mkcert certificate. Use a scheme-relative base (//host/cgi-bin/) so the ' +
-                    'page scheme is inherited.'
+                    `API base "${m[1]}" pins http://, but the site is served over https; ` +
+                    'the browser blocks it as mixed active content. Use a scheme-relative ' +
+                    'base (//host/cgi-bin/) so the page scheme is inherited.'
                 );
             }
         }

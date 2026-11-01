@@ -5,9 +5,9 @@ frontends with pre-built HTML, CSS and JavaScript served from a CDN.
 
 The API is unchanged: every dynamic call still goes to the Perl CGI backend
 under `/cgi-bin/`, now reached cross-origin at `//dev.kobool.com`. The base is
-scheme-relative so it inherits the page's scheme: http today, https once TLS is
-terminated in front of the API host. Switch to `//api.kobool.com/cgi-bin/` in
-`tools/build.js` once that host serves the CGI.
+scheme-relative so it inherits the page's scheme; both the site and the API
+host serve HTTPS. Switch to `//api.kobool.com/cgi-bin/` in `tools/build.js`
+once that host serves the CGI.
 
 ## Source
 
@@ -68,7 +68,7 @@ does not exist yet". `npm run check` fails a `--base` build that still contains
 a `CNAME`.
 
 The deployed site does **not** use `--base`: it is served from the domain root
-`http://staging.kobool.com/`, so URLs stay root-absolute and the build writes
+`https://staging.kobool.com/`, so URLs stay root-absolute and the build writes
 the `CNAME` that claims that domain.
 
 `--api-base=<url>` overrides the environment's API base:
@@ -85,9 +85,9 @@ uploader form is deliberately left same-origin: it posts into an iframe whose
 response calls `window.parent.UpdatePics`, which a cross-origin response cannot
 reach.
 
-`npm run serve` proxies `/cgi-bin/` to `http://dev.kobool.com` (override with `KOBOOL_API_TARGET`) so the browser
-sees a single origin during development. Point it elsewhere with
-`KOBOOL_API_TARGET=http://localhost:8080`.
+`npm run serve` proxies `/cgi-bin/` to `https://dev.kobool.com` (override with
+`KOBOOL_API_TARGET`) so the browser sees a single origin during development.
+Point it elsewhere with `KOBOOL_API_TARGET=http://localhost:8080`.
 
 ## How the conversion works
 
@@ -163,7 +163,7 @@ country and attribute selects no longer need a server round trip.
 push and pull request. `.github/workflows/deploy.yml` publishes `dist/` to
 GitHub Pages on every push to `main`; a manual dispatch can target production.
 
-The site is served from the domain root `http://staging.kobool.com/`, so the
+The site is served from the domain root `https://staging.kobool.com/`, so the
 build keeps root-absolute URLs and writes `CNAME` (`staging.kobool.com`). No
 `--base` rewrite is used.
 
@@ -171,29 +171,25 @@ Both workflows run on Node 24 and use the `node24` action releases
 (`checkout@v7`, `setup-node@v7`, `upload-artifact@v7`, `configure-pages@v6`,
 `upload-pages-artifact@v5`, `deploy-pages@v5`).
 
-### HTTP, not HTTPS
+### HTTPS
 
-Every `kobool.com` host is HTTP-only, so the Pages site runs with HTTPS
-enforcement **disabled**:
+`staging.kobool.com` is served over HTTPS and redirects `http://` to it:
 
 ```
-GET /repos/{owner}/{repo}/pages
-{"cname":"staging.kobool.com","https_enforced":false,
- "https_certificate":{"state":"approved","domains":["staging.kobool.com"]}}
+$ curl -s -o /dev/null -w '%{http_code} -> %{redirect_url}' http://staging.kobool.com/
+301 -> https://staging.kobool.com/
 ```
 
-`http://staging.kobool.com/` is served directly; there is no redirect to
-`https://`. This is what keeps the `http://dev.kobool.com` API reachable — an
-HTTPS page would block those calls as mixed active content.
+The API host `dev.kobool.com` serves HTTPS too, so the built API base is
+scheme-relative (`//dev.kobool.com/cgi-bin/`) and inherits the page's scheme.
+That keeps the config correct without pinning a scheme.
 
 Consequences to keep in mind:
 
-- Validation expects `http://`. `npm run check` does not report an `http://` API
-  base; it warns only if an `https://` base is used, because those hosts have no
-  TLS listener. The built base is scheme-relative (`//dev.kobool.com`), so it
-  follows the page's scheme and needs no change at TLS cutover.
-- Do not re-enable HTTPS enforcement while the API is HTTP-only. It would
-  reintroduce the mixed-content block.
+- An `http://` API base is a bug: the page is HTTPS, so the browser blocks the
+  request as mixed active content. `npm run check` warns about it.
+- `www.kobool.com` has no HTTPS listener (port 443 times out), so links to the
+  production site must stay `http://`. Do not "upgrade" them.
 - A `github.io` project site cannot disable HTTPS enforcement at all, which is
   why the site uses the `staging.kobool.com` custom domain instead.
 
@@ -203,10 +199,10 @@ Consequences to keep in mind:
 must answer with CORS headers. It does:
 
 ```
-$ curl -D - -H "Origin: http://staging.kobool.com" \
-    http://dev.kobool.com/cgi-bin/nav6.pl
+$ curl -D - -H "Origin: https://staging.kobool.com" \
+    https://dev.kobool.com/cgi-bin/nav6.pl
 HTTP/1.1 200 OK
-Access-Control-Allow-Origin: http://staging.kobool.com
+Access-Control-Allow-Origin: https://staging.kobool.com
 Access-Control-Allow-Credentials: true
 Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
 Access-Control-Allow-Headers: Accept, Authorization, Content-Type, Cookie,
@@ -222,7 +218,7 @@ calls from staging work. If the API host changes, keep this in mind:
 - `Access-Control-Allow-Origin` must echo the site origin, not `*`, because
   `Access-Control-Allow-Credentials: true` forbids the wildcard.
 
-`npm run serve` proxies `/cgi-bin/` to `http://dev.kobool.com` (override with
+`npm run serve` proxies `/cgi-bin/` to `https://dev.kobool.com` (override with
 `KOBOOL_API_TARGET`) so local development stays same-origin.
 
 ## License

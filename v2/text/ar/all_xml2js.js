@@ -13,7 +13,7 @@ var gAllStrings = [
 	"options",		"contact",		"who",			"press",		"stats",
 	"pics",			"activation",	"matching",		"visiting_help","chg_email", 
 	"s_help",		"tell",			"forgot",		"chg_pass",		"kpay",
-	"scr_banner",	"ccards",		"ccards_qa"
+	"scr_banner"
 ];
 
 

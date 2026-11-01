@@ -526,10 +526,6 @@
 
 .payment_btn{width:110px; height:110px;font-size:12pt;}
 .btn_phone_tr{background-image:url(/images/vodafone_cards.png);}
-.btn_cashu{background-image:url(/images/cashu_refill_cards.jpg);}
-.btn_cr_cards{background-image:url(/images/cr_cards.gif);}
-.btn_bank_tr{background-image:url(/images/bank_tr.gif);}
-.btn_paypal{background-image:url(/images/paypal.gif);}
 
 .edit_icon{
 	background-image:url(/images/pencil.gif);

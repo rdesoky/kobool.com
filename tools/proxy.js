@@ -1,10 +1,9 @@
 'use strict';
 
 /**
- * Same-origin proxy for /cgi-bin/* -> http://dev.kobool.com/cgi-bin/*
- * (dev.kobool.com is currently http-served and is the current API host;
- * api.kobool.com is not ready yet. The proxy supports https targets too,
- * so point KOBOOL_API_TARGET at the https URL once TLS is in place.)
+ * Same-origin proxy for /cgi-bin/* -> https://dev.kobool.com/cgi-bin/*
+ * (dev.kobool.com is the current API host and serves https; api.kobool.com
+ * is not ready yet.)
  *
  * Used by tools/serve.js (local development) and by the private admin CLI.
  * Forwards method, Content-Type, sid, status and body. No caching.
@@ -16,7 +15,7 @@ const http = require('http');
 const https = require('https');
 const { URL } = require('url');
 
-const DEFAULT_TARGET = process.env.KOBOOL_API_TARGET || 'http://dev.kobool.com';
+const DEFAULT_TARGET = process.env.KOBOOL_API_TARGET || 'https://dev.kobool.com';
 const FORWARDED_HEADERS = ['content-type', 'sid', 'accept', 'authorization', 'cookie'];
 
 function createProxy(options) {

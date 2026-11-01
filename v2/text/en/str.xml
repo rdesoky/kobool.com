@@ -49,10 +49,7 @@
 			<cp_eula>Contact Points</cp_eula>
 			<cp_buy>Buy Contact Points</cp_buy>
 			<cp_help>Questions and Answers about Contact Points </cp_help>
-			<cashu>Buy Contact Points via CashU</cashu>
 			<phone_tr>Buy Contact Points via Vodafone Egypt Recharge Cards</phone_tr>
-			<cr_cards>Buy Contact Points via Credit Card</cr_cards>
-			<bank_tr>Buy Contact Points via Saudi Bank transfer</bank_tr>
 			<svd_srch>My Searches</svd_srch>
 			<update>Update Profile</update>
 			<upd_attr>Update Personal Information</upd_attr>
@@ -431,7 +428,6 @@ The remaining questions you can send to this member today is: %m%
 		<email>E-mail</email>
 		<contact_cards>Contact points</contact_cards>
 		<pmo>Postal Money Orders</pmo>
-		<bank_tr>Bank transfer</bank_tr>
 		<manage_cards>My Balance</manage_cards>
 		<visitors>Visitors</visitors>
 		<visited>Visited</visited>
@@ -512,11 +508,8 @@ The remaining questions you can send to this member today is: %m%
 	<bookmark>Bookmark</bookmark>
 	<vodafone_title>Buy Contact Points via Vodafone Cash</vodafone_title>
 	<buy_now_title>Contact Points purchase methods</buy_now_title>
-	<cr_cards_title>Buy Contact Points via Credit Card</cr_cards_title>
-	<cashu_title>Buy Contct Points via CashU card</cashu_title>
 	<pmo_title>Buy Contct Points via Postal Money Order</pmo_title>
 	<onecard_title>Buy Contct Points via OneCard</onecard_title>
-	<bank_tr_title>Buy Contct Points via bank transfer</bank_tr_title>
 	<wunion_title>Buy Contct Points via Wester Union</wunion_title>
 	<show_keyboards>Show Arabic Keyboards</show_keyboards>
 	<show_all_questions>Show All Questions</show_all_questions>

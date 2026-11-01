@@ -40,32 +40,8 @@
 	</report>
 	<methods>
 		<page_title>نقاط اتصال : وسائل الشراء</page_title>
-		<cr_cards>بطاقة ائتمان</cr_cards>
 		<phone_tr>كارت شحن فودافون</phone_tr>
-		<cashu>بطاقة كاش يو</cashu>
-		<bank_tr>تحويل أو إيداع بنكي</bank_tr>
 	</methods>
-	<cr_cards>
-		<page_title>نقاط إتصال : شراء بواسطة بطاقة ائتمان</page_title>
-		<intro><![CDATA[ادفع ببطاقة إئتمان:<br/>
-فيزا - ماستر كارد - أمريكان إكسبريس - ديسكفر <br/>
-من أي مكان في العالم.]]></intro>
-		<select_val>اختر	من التالي:</select_val>
-		<val_5>شراء نقطة واحدة بسعر 5 دولار</val_5>
-		<val_10>شراء نقطتين بسعر 10 دولار</val_10>
-		<buy>اشتر الآن</buy>
-	</cr_cards>
-	<cashu>
-		<page_title>نقاط اتصال : شراء بواسطة بطاقات 'كاش يو'</page_title>
-		<intro><![CDATA[
-			استخدم رصيدك في حساب "<a href="http://www.cashu.com?lang=ar" target="_blank">كاش يو</a>" لشراء نقاط الإتصال بسعر 250 كاشيو ( ما يعادل 5 دولارات ) لكل نقطة اتصال.<br/>
-			<a href="http://www.cashu.com?lang=ar" target="_blank">انقر هنا</a> لمعرفة المزيد عن نظام <b>كاش يو</b>.
-		]]></intro>
-		<select_val>اختر عدد النقاط المطلوبة:</select_val>
-		<val_250>نقطة واحدة بسعر 5 دولار</val_250>
-		<val_500>نقطتين بسعر 10 دولار</val_500>
-		<buy>اشتر الآن</buy>
-	</cashu>
 	<phone_tr>
 		<card_num_required>فضلا ادخل رقم كارت شحن فودافون</card_num_required>
 		<email_required>فضلا ادخل عنوان بريدك الإليكتروني</email_required>
@@ -213,71 +189,4 @@
 		]]></contents>
 	</qa>
 
-	<bank_tr>
-		<page_title>نقاط اتصال : شراء بواسطة ايداع او تحويل بنكي</page_title>
-
-		<contents><![CDATA[
-			<div>للمقيمين في السعودية ودول الخليج العربي يمكن شراء نقاط إتصال بتحويل أو ايداع ثمنها الى حسابات بنكية مخصصة لهذا الغرض.</div>
-			<div>أودع أو حول مبلغ <b>5</b> دولار أمريكي أو مايعادله بالعملة المحلية ( <b>18.5</b> ريال سعودي ) لكل نقطة اتصال مطلوب شراؤها.</div>
-			<div class="parag">
-				اودع مباشرة في إحدى فروع البنوك الآتي ذكرها أو بواسطة الصرافات الآلية أو بتحويل بنكي من حسابك من أي بنك محلي إلى أي من الحسابات التالية:
-			</div>
-			<div style="background:#F0F0F0;border-top:solid 1px silver;padding:5px;">
-				<div style="float:left">
-					<a href="javascript:" onclick="window.open('http://www.alrajhibank.com.sa/AR/MainSections/Exchange And Remittance/Tahweel Al Rajhi/', '_blank')">
-					<img src="/images/rajhi.ar.gif" border="0"></a>
-				</div>
-				<div>اسم البنك: <b>الراجحي</b></div>
-				<div>اسم صاحب الحساب: <b>شريف محمد الدسوقي ابراهيم</b></div>
-				<div>رقم الحساب: <b>471608010075083</b></div>
-				<div>فرع:<b>الرحاب, جدة, السعودية</b></div>
-				<div>رقم الفرع: <b>47100</b></div>
-			</div>
-			&nbsp;
-			<div style="background:#F0F0F0;border-top:solid 1px silver;padding:5px;">
-				<div style="float:left">
-					<a href="javascript:" onclick="window.open('http://www.alahli.com/', '_blank')">
-						<img src=/images/ncb_logo.gif border="0"></a>
-				</div>
-				<div>اسم البنك: <b>الأهلي التجاري</b></div>
-				<div>اسم صاحب الحساب: <b>شريف محمد الدسوقي ابراهيم</b></div>
-				<div>رقم الحساب: <b>14162810000101</b></div>
-				<div>فرع:<b>المكرونة, جدة, السعودية</b></div>
-				<div>رقم الفرع: <b>141</b></div>
-			</div>
-			&nbsp;
-			<div style="background:#F0F0F0;border-top:solid 1px silver;padding:5px;">
-				<div style="float:left">
-					<a href="javascript:" onclick="window.open('http://www.samba.com.sa/atm&branches/arabic/index.htm', '_blank')">
-						<img src="/images/samba_logo_ar.gif" border="0">
-					</a>
-				</div>
-				<div>اسم البنك: <b>البنك السعودي الأمريكي (سامبا)</b></div>
-				<div>اسم صاحب الحساب: <b>شريف محمد  الدسوقي ابراهيم</b></div>
-				<div>رقم الحساب: <b>4701731544</b></div>
-				<div><b>جدة, السعودية</b></div>
-			</div>
-
-			<div style='padding-top:5px;padding-bottom:3px'>بعد ذلك إرسل لنا البيانات التالية على عنوان البريد الإليكتروني: <a href='javascript:Mail2Cards()' style="font-weight:bold">cards@kobool.com</a></div>
-
-			<div id="CardsMailBody" style="background:#F0F0F0;border-top:solid 1px silver;padding:5px;">
-				<p>البنك الذي تم التحويل أو الإيداع فيه: ___________________<p/>
-				<p>تاريخ التحويل أو الإيداع: _________<p/>
-				<p>رقم الإيصال أو المرجع: _________<p/>
-				<p>إسم المودع أو المحول: ______________________ <p/> 
-				<p>رقم عضوية موقع قبول: &nbsp;<b><span id="PointsMemberNumber">(لم يتم ادخال رقم عضوية صحيح)</span></b><p/>
-				<p>اسم الدخول لموقع قبول: وهي:&nbsp;<b><span id="PointsLoginName">??</span></b><p/>
-				المبلغ: ________ <p/>
-			</div>
-
-			&nbsp;
-			<div>سيتم اضافة النقاط المطلوبة الي رصيدك في الموقع بإذن الله في خلال 24 ساعة من وصول حوالتك (باستثناء أيام العطلات)</div>
-
-			<div style="padding-top:10px;color:brown">
-				<b>ملحوظة هامة: </b><br/>
-				في كثير من الأحيان عند الإيداع أو التحويل بواسطة الصرافات الآلية يتم ادخال المبلغ بالهللة وليس بالريال.<br/>
-				فضلا تأكد من صحة المبلغ المحول قبل مغادرة ماكينة الصراف.
-			</div>
-		]]></contents>
-	</bank_tr>
 </root>

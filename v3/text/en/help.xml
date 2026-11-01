@@ -160,10 +160,6 @@
 		<Add2MyQ>Add this question to your relevant questions. This will make it easy to post it to other members or to know the answers to it.</Add2MyQ>
 		<RemoveMyQ>Remove this question from your relevant questions</RemoveMyQ>
 	</qa>
-	<ccards>
-		<secure_payment>This payment method is secured via high encryption to enusure that no hackers could steel your personal information.</secure_payment>
-		<cashu_countries>Click here to display the list of countries and cities where Cashu Cards are available and how to get it.</cashu_countries>
-	</ccards>
 	<contact>
 		<predefined_msg_radio><![CDATA[Choose this option to send predefined message set by Kobool.
 			Predefined messages are readable even without using Contact Points.
