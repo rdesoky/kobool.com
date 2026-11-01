@@ -4,7 +4,7 @@ Static frontend for kobool.com. Replaces the PHP-rendered `v2/` and `v3/`
 frontends with pre-built HTML, CSS and JavaScript served from a CDN.
 
 The API is unchanged: every dynamic call still goes to the Perl CGI backend
-under `/cgi-bin/`, now reached cross-origin at `//api.kobool.com` (scheme-relative; http today, https once TLS is terminated).
+under `/cgi-bin/`, now reached cross-origin at `//dev.kobool.com` (scheme-relative; http today, https once TLS is terminated). api.kobool.com is not ready yet; switch there when it goes live.
 
 ## Source
 
@@ -42,7 +42,7 @@ tests/                  unit and smoke tests
 npm install
 npm test              # unit + smoke tests
 npm run build         # dev build (same-origin /cgi-bin/)
-npm run build:staging # staging build (api.kobool.com)
+npm run build:staging # staging build (dev.kobool.com API)
 npm run build:prod    # production build
 npm run check         # validate dist/ before publishing
 npm run serve         # local server on :8080 with a /cgi-bin/ proxy
@@ -57,7 +57,7 @@ node tools/build.js --env=staging --base=/kobool.com
 node tools/validate.js --env=staging --base=/kobool.com
 ```
 
-`npm run serve` proxies `/cgi-bin/` to `http://api.kobool.com` (override with `KOBOOL_API_TARGET`) so the browser
+`npm run serve` proxies `/cgi-bin/` to `http://dev.kobool.com` (override with `KOBOOL_API_TARGET`) so the browser
 sees a single origin during development. Point it elsewhere with
 `KOBOOL_API_TARGET=http://localhost:8080`.
 

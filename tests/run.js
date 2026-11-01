@@ -201,8 +201,8 @@ test('strings binder: language resolution prefers cookie, falls back to default'
     assert.match(src, /supportedLangs: \['ar', 'en'\]/);
 });
 
-test('proxy: DEFAULT_TARGET points at the CORS-enabled API host', () => {
-    assert.strictEqual(DEFAULT_TARGET, 'https://api.kobool.com');
+test('proxy: DEFAULT_TARGET points at the current CORS-enabled API host', () => {
+    assert.strictEqual(DEFAULT_TARGET, 'http://dev.kobool.com');
 });
 
 function mockReqRes(url, headers) {
@@ -247,9 +247,10 @@ test('smoke: dist builds and validates cleanly', { timeout: 120000 }, () => {
         stdio: 'pipe'
     });
 
-    // dist must contain the config pointing at the CORS-enabled API host.
+    // dist must contain the config pointing at the CORS-enabled API host
+    // (currently dev.kobool.com, scheme-relative).
     const distConfig = fs.readFileSync(path.join(ROOT, 'dist', 'shared', 'config.js'), 'utf8');
-    assert.match(distConfig, /https:\/\/api\.kobool\.com\/cgi-bin\//);
+    assert.match(distConfig, /\/\/dev\.kobool\.com\/cgi-bin\//);
 
     // The App Store badge must be present (referenced from index.html).
     assert.ok(
