@@ -358,6 +358,26 @@ test('proxy: non-proxied path returns 404', () => {
     assert.strictEqual(res._status, 404);
 });
 
+test('favicon: the original site icon ships at the site root', () => {
+    // Copied verbatim from the original repo (v1/html.min/favicon.ico) and
+    // served from /favicon.ico, which is where browsers look by default.
+    const icon = path.join(ROOT, 'favicon.ico');
+    assert.ok(fs.existsSync(icon), 'favicon.ico must exist at the repo root');
+
+    const bytes = fs.readFileSync(icon);
+    assert.strictEqual(bytes.length, 1718, 'favicon.ico must be the original file');
+    // ICO header: reserved=0, type=1 (icon), 2 images.
+    assert.strictEqual(bytes.readUInt16LE(0), 0);
+    assert.strictEqual(bytes.readUInt16LE(2), 1);
+    assert.strictEqual(bytes.readUInt16LE(4), 2);
+
+    // Both shells must reference it explicitly.
+    for (const shell of ['index.html', path.join('v2', 'index.html')]) {
+        const html = fs.readFileSync(path.join(ROOT, shell), 'utf8');
+        assert.match(html, /<link rel="icon" href="\/favicon\.ico"/, `${shell} must link the icon`);
+    }
+});
+
 test('smoke: dist builds and validates cleanly', { timeout: 120000 }, () => {
     execFileSync(process.execPath, [path.join(TOOLS, 'build.js'), '--env=prod'], {
         cwd: ROOT,
