@@ -216,10 +216,9 @@ function validate(options) {
         // /cgi-bin/ URL in a page fragment 404s. The build rewrites these to
         // the environment's API base; anything left is a missed endpoint.
         //
-        // Form actions are excluded: the picture uploader posts into a
-        // same-origin iframe whose response calls window.parent.UpdatePics,
-        // which a cross-origin response cannot reach. Moving it to the API
-        // host needs an XHR upload, not a URL rewrite.
+        // Form actions are excluded because the picture uploader no longer
+        // carries a hardcoded action: it uploads via XHR to
+        // APP_CONFIG.apiBase at runtime, so no static URL to rewrite or check.
         for (const file of files) {
             if (path.extname(file).toLowerCase() !== '.html') continue;
             const content = fs.readFileSync(file, 'utf8');

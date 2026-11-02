@@ -73,19 +73,23 @@ var UpdatePics = {
 	},
 	showUploader:function(){
 		var root = _CL("UploadPic");
-		var ifr = _A( root, "iframe", {name:"upload_target", id:"upload_target", style:"height:60px;display:none"} );
 		var frm = _A( root, "form", {
 			"class":"clear_left",
 			name:"uploader",
-			method: "post",
 			enctype: "multipart/form-data", 
-			encoding: "multipart/form-data", 
-			target: "upload_target", 
-			action: Http.cgiBase + "upload_pic.pl"
+			encoding: "multipart/form-data"
 		});
 
 		frm.onsubmit=function(){
-			document.forms.uploader.submt.disabled = true;
+			var form = document.forms.uploader;
+			form.submt.disabled = true;
+			Http.postUpload( Http.cgiBase + "upload_pic.pl", new FormData(form), function(response){
+				UpdatePics.uploadDone(response);
+			}, function(){
+				alert(_S("a.error"));
+				form.submt.disabled = false;
+			});
+			return false;
 		};
 	
 		_A( frm, "input", {type:"file", name:"filename"} ).onchange=function(){

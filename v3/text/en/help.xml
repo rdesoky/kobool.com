@@ -315,6 +315,10 @@
 		<rejected><![CDATA[
 			Unacceptable photo, please remove it.
 		]]></rejected>
+		<under_review><![CDATA[
+			This photo has not been approved yet. It will not be visible to
+			other members until it is reviewed by the supervisor.
+		]]></under_review>
 	</pics>
 	<bookmarks>
 		<delete_item>Remove this member from your Bookmarks.</delete_item>

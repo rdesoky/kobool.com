@@ -183,6 +183,42 @@ var Http = {
 	postCGI: function(scrpt, params, onLoad, onError){
 		return this.post({scr:scrpt, data:params, onload:onLoad, onerror:onError});
 	},
+	postUpload: function(script, formData, onLoad, onError){
+		var req = this.getAJAX();
+		req.open("POST", script, true);
+		req.setRequestHeader("sid", _GC("sid"));
+		req.onreadystatechange = function () {
+			if (req.readyState !== 4) {
+				return;
+			}
+			if (req.status === 200) {
+				var response, text = req.responseText;
+				try {
+					// Some hosts echo the payload as plain JSON.
+					response = JSON.parse(text);
+				} catch (e) {
+					try {
+						// The CGI wraps the JSON in an HTML document whose
+						// body text is the payload (that is how the old
+						// iframe flow handed it to uploadDone).
+						var doc = new DOMParser().parseFromString(text, "text/html");
+						response = JSON.parse(doc.body.textContent.trim());
+					} catch (e2) {
+						if (onError) {
+							onError();
+						}
+						return;
+					}
+				}
+				if (onLoad) {
+					onLoad(response);
+				}
+			} else if (onError) {
+				onError();
+			}
+		};
+		req.send(formData);
+	},
 	post: function(p){
 
 		switch(p.scr){
