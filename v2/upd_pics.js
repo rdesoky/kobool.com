@@ -69,7 +69,12 @@ var UpdatePics = {
 		default:
 			alert(response.status);
 		}
-		document.forms.uploader.submt.disabled = false;
+		if( response.status=="ok_def" || response.status=="ok" ){
+			document.forms.uploader.reset();
+			document.forms.uploader.submt.disabled = true;
+		} else {
+			document.forms.uploader.submt.disabled = false;
+		}
 	},
 	showUploader:function(){
 		var root = _CL("UploadPic");
