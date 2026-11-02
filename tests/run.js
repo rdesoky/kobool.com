@@ -86,6 +86,22 @@ test('string compiler: compileSourceFile outputs deterministically sorted keys',
     fs.rmSync(dir, { recursive: true, force: true });
 });
 
+test('strings: the pics help group covers every album tooltip key', () => {
+    // upd_pics.js shows these as help:pics.* tooltips; a missing key would
+    // render as a raw [help:pics.x] placeholder.
+    const expected = ['under_review', 'rejected', 'cant_be_main', 'move_top', 'delete', 'set_main', 'cancel_main'];
+    for (const lang of ['en', 'ar']) {
+        const compiled = compileSourceFile(path.join(ROOT, 'v3', 'text', lang, 'help.xml'));
+        for (const key of expected) {
+            const value = compiled['pics.' + key];
+            assert.ok(
+                typeof value === 'string' && value.trim().length > 0,
+                `${lang} help:pics.${key} must be present`
+            );
+        }
+    }
+});
+
 test('string compiler: listXmlSources lists only .xml files', () => {
     const dir = fs.mkdtempSync(path.join(require('os').tmpdir(), 'kobool-xml-'));
     fs.writeFileSync(path.join(dir, 'a.xml'), '<root/>');
@@ -301,7 +317,8 @@ test('build: rewriteApiBase points hardcoded kpic.pl URLs at the API host', () =
     assert.strictEqual(changed, 1);
     assert.match(out, /src="\/\/dev\.kobool\.com\/cgi-bin\/kpic\.pl\?tn=1&amp;id=1&amp;g=1"/);
     assert.match(out, /src="\/\/dev\.kobool\.com\/cgi-bin\/kpic\.pl\?tn=1&amp;id=2&amp;g=0"/);
-    // The uploader posts into a same-origin iframe, so it must stay local.
+    // Only kpic.pl URLs are rewritten; the uploader now posts via XHR from
+    // APP_CONFIG.apiBase, so its form carries no static /cgi-bin/ action.
     assert.match(out, /action="\/cgi-bin\/upload_pic\.pl"/);
     assert.match(out, /href="\/v3\/pages\/home\.html"/);
 });
@@ -524,6 +541,16 @@ test('smoke: dist builds and validates cleanly', { timeout: 120000 }, () => {
         'templates.html must not reference /cgi-bin/kpic.pl on the site origin'
     );
     assert.match(templates, /\/\/dev\.kobool\.com\/cgi-bin\/kpic\.pl/);
+
+    // The picture uploader must post via XHR to APP_CONFIG.apiBase: a
+    // root-absolute form action would hit the static site origin (405), and
+    // the old hidden-iframe target cannot receive a cross-origin callback.
+    const updPics = fs.readFileSync(path.join(ROOT, 'dist', 'v3', 'pages', 'upd_pics.html'), 'utf8');
+    assert.ok(
+        !/action="\/cgi-bin\/upload_pic\.pl"/.test(updPics),
+        'upd_pics.html must not carry a root-absolute upload action'
+    );
+    assert.ok(!/upload_target/.test(updPics), 'upd_pics.html must not create an upload iframe');
 
     // The App Store badge must be present (referenced from index.html).
     assert.ok(
