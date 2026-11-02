@@ -48,12 +48,18 @@ define(["jquery", "top-tabs", "page-nav", "http", "kui", "check-frame", "dom-uti
 							SSN.main_pic = _N(response.pid);
 							_SA("ProfilePic", {src: $http.picSRC(SSN.main_pic, SSN.gender, true)});
 						case "ok":
+							module.selectAfterUpload = response.pid != null ? _N(response.pid) : null;
 							module.showAlbum();
 							break;
 						default:
 							alert(response.status);
 					}
-					document.forms.uploader.submt.disabled = false;
+					if (response.status == "ok_def" || response.status == "ok") {
+						document.forms.uploader.reset();
+						document.forms.uploader.submt.disabled = true;
+					} else {
+						document.forms.uploader.submt.disabled = false;
+					}
 				}
 			};
 
@@ -62,6 +68,8 @@ define(["jquery", "top-tabs", "page-nav", "http", "kui", "check-frame", "dom-uti
 			var $tn_frame = $("#AlbumEditor .tn_frame");
 			var $tbar = $("#PicToolbar");
 			var $pic_frame = $("#ImageViewer");
+			var selectAfterUpload = module.selectAfterUpload;
+			module.selectAfterUpload = null;
 
 			$pic_frame.html("");
 			$tbar.html("");
@@ -78,8 +86,13 @@ define(["jquery", "top-tabs", "page-nav", "http", "kui", "check-frame", "dom-uti
 
 					( r.child_list && r.child_list.length ) ? _SH("AlbumEditor") : _HI("AlbumEditor");
 
+					var $selectImg = null;
 					$.each(r.child_list, function (item) {
 						var $img = $("<img>").attr("src",$http.picSRC(item.id, SSN.gender, true)).addClass("tn_frame_pic");
+
+						if (selectAfterUpload != null && item.id == selectAfterUpload) {
+							$selectImg = $img;
+						}
 
 						$tn_frame.append($img);
 
@@ -159,6 +172,13 @@ define(["jquery", "top-tabs", "page-nav", "http", "kui", "check-frame", "dom-uti
 							$pic_frame.html("").append($img_view);
 						});
 					});
+
+					if (selectAfterUpload !== undefined) {
+						var $target = (selectAfterUpload != null && $selectImg) ? $selectImg : $tn_frame.children().first();
+						if ($target.length) {
+							$target.click();
+						}
+					}
 				}
 			});
 		}
