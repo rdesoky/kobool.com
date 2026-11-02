@@ -24,8 +24,8 @@
     </div>
     <hr/>
     <div id="PicUploaderFrame" class="form_frame"><div class="big_font" data-string="pics:pics.add_pic"></div>
-        <div id="UploadPic"><iframe name="upload_target" id="upload_target" style="height:60px;display:none"></iframe>
-            <form class="clear_left" name="uploader" method="post" enctype="multipart/form-data" encoding="multipart/form-data" target="upload_target" action="/cgi-bin/upload_pic.pl">
+        <div id="UploadPic">
+            <form class="clear_left" name="uploader" enctype="multipart/form-data" encoding="multipart/form-data">
                 <input type="file" name="filename">
                 <input type="submit" name="submt" value="" data-string="pics:pics.upload" data-string-attr="value" disabled="true">
             </form>

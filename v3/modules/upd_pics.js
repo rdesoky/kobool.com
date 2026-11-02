@@ -18,7 +18,15 @@ define(["jquery", "top-tabs", "page-nav", "http", "kui", "check-frame", "dom-uti
 			});
 
 			document.forms.uploader.onsubmit = function () {
-				document.forms.uploader.submt.disabled = true;
+				var form = document.forms.uploader;
+				form.submt.disabled = true;
+				$http.postUpload($http.api.upload_pic, new FormData(form), function (response) {
+					window.UpdatePics.uploadDone(response);
+				}, function () {
+					alert(_S("a.error"));
+					form.submt.disabled = false;
+				});
+				return false;
 			};
 
 			document.forms.uploader.filename.onchange = function () {
@@ -34,7 +42,7 @@ define(["jquery", "top-tabs", "page-nav", "http", "kui", "check-frame", "dom-uti
 			this.showAlbum();
 
 			window.UpdatePics = {
-				uploadDone: function (response) {// called from iframe
+				uploadDone: function (response) {// called with the upload response
 					switch (response.status) {
 						case "ok_def":
 							SSN.main_pic = _N(response.pid);
