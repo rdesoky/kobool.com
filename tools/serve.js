@@ -92,6 +92,14 @@ function createServer(options) {
             'Content-Type': MIME[ext] || 'application/octet-stream',
             'Cache-Control': 'no-store'
         });
+        if (ext === '.html') {
+            let html = fs.readFileSync(filePath, 'utf8');
+            if (!html.includes('livereload.js')) {
+                html = html.replace('</body>', '<script src="http://127.0.0.1:35729/livereload.js?snipver=1"></script></body>');
+            }
+            res.end(html);
+            return;
+        }
         fs.createReadStream(filePath).pipe(res);
     });
 }
