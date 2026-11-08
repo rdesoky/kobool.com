@@ -207,6 +207,42 @@ test('build: rewriteBase prefixes only real root-absolute URLs', () => {
     assert.match(out, /content="\/not-a-url"/);
 });
 
+test('build: expandIncludes inlines shared fragments and strips the directive', () => {
+    const os = require('os');
+    const { expandIncludes } = require(path.join(TOOLS, 'build'));
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'kobool-inc-'));
+    fs.mkdirSync(path.join(dir, 'pages'), { recursive: true });
+    fs.writeFileSync(path.join(dir, 'pages', 'frag.html'),
+        '<div id="Inner">x</div>\n<div data-fragment="./nested.html"></div>');
+    fs.writeFileSync(path.join(dir, 'pages', 'nested.html'), '<span>nested</span>');
+    fs.writeFileSync(path.join(dir, 'pages', 'page.html'),
+        '<div class="wrap" data-fragment="/pages/frag.html"></div>');
+
+    const changed = expandIncludes(dir);
+    const out = fs.readFileSync(path.join(dir, 'pages', 'page.html'), 'utf8');
+    fs.rmSync(dir, { recursive: true, force: true });
+
+    assert.strictEqual(changed, 2, 'the page and the nested fragment are both expanded');
+    assert.match(out, /<div class="wrap"><div id="Inner">x<\/div>\n<div><span>nested<\/span><\/div><\/div>/);
+    assert.ok(!/data-fragment/.test(out), 'the directive must not survive into dist');
+});
+
+test('build: expandIncludes fails on a missing or circular fragment', () => {
+    const os = require('os');
+    const { expandIncludes } = require(path.join(TOOLS, 'build'));
+
+    const missing = fs.mkdtempSync(path.join(os.tmpdir(), 'kobool-inc-miss-'));
+    fs.writeFileSync(path.join(missing, 'page.html'), '<div data-fragment="/pages/nope.html"></div>');
+    assert.throws(() => expandIncludes(missing), /Include not found/);
+    fs.rmSync(missing, { recursive: true, force: true });
+
+    const cycle = fs.mkdtempSync(path.join(os.tmpdir(), 'kobool-inc-cycle-'));
+    fs.writeFileSync(path.join(cycle, 'a.html'), '<div data-fragment="/b.html"></div>');
+    fs.writeFileSync(path.join(cycle, 'b.html'), '<div data-fragment="/a.html"></div>');
+    assert.throws(() => expandIncludes(cycle), /Circular include/);
+    fs.rmSync(cycle, { recursive: true, force: true });
+});
+
 test('strings: addQueryParam appends to bare and already-queried URLs', () => {
     const vm = require('vm');
     const code = fs.readFileSync(path.join(ROOT, 'shared', 'strings.js'), 'utf8');

@@ -162,6 +162,16 @@ function validate(options) {
         }
     }
 
+    // 3b. Shared fragments are expanded at build time. A directive that
+    // survives means the page shipped with a hole where the fragment should be.
+    for (const file of files) {
+        if (path.extname(file).toLowerCase() !== '.html') continue;
+        const content = fs.readFileSync(file, 'utf8');
+        if (/\bdata-fragment="[^"]*"/.test(content)) {
+            errors.push(`Unexpanded data-fragment in ${rel(file)}: run npm run build`);
+        }
+    }
+
     // 4. Local link/asset resolution
     for (const file of files) {
         if (path.extname(file).toLowerCase() !== '.html') continue;
