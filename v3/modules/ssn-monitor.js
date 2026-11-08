@@ -2,7 +2,7 @@
  * Created by rdeso_000 on 1/7/2015.
  */
 
-define(["kevents", "kui", "cookie"],function(kevt, kui, cookie){
+define(["kevents", "kui"],function(kevt, kui){
 	return {
 		init:function(){
 			var self = this;
@@ -29,7 +29,7 @@ define(["kevents", "kui", "cookie"],function(kevt, kui, cookie){
 			return (new Date()).getTime();
 		},
 		onSecondTic:function(){
-			var sid = cookie.Get("sid");
+			var sid = _GC("sid");
 
 			if( sid != this.sid ){
 				this.sid = sid;
@@ -41,7 +41,7 @@ define(["kevents", "kui", "cookie"],function(kevt, kui, cookie){
 				this.closeWarning();
 				return;
 			}
-			var elapsed = ( this.currTime() - cookie.nGet("sa") ) / 1000;
+			var elapsed = ( this.currTime() - _GCN("sa") ) / 1000;
 			var tmOut = (60*15) - elapsed ;
 
 			//document.title = _GCN("sa") + " - " + tmOut;
@@ -75,20 +75,15 @@ define(["kevents", "kui", "cookie"],function(kevt, kui, cookie){
 		showWarning:function( tmo ){
 			var self = this;
 
-			this.msg = this.msg || (function(){
-				var d = document.createElement("div");
-				var s = document.createElement("span");
-				s.textContent = "session.auto_end_confirmation";
-				d.appendChild(s);
-				var c = document.createTextNode("0");
-				d.appendChild(c);
-				self.counter = c;
-				return d;
-			})();
+			this.msg = this.msg || _C( "div", {},
+				[	_HS( _C("span"), "session.auto_end_confirmation" ),
+					this.counter=_TXT("0")
+				]
+			);
 
 			this.counter.nodeValue = Math.floor(tmo).toString();
 
-			if( !document.getElementById("EndSession")){
+			if( !_E("EndSession")){
 				kui.question({
 					id:"EndSession",
 					title:"session.auto_end_title",
@@ -107,27 +102,27 @@ define(["kevents", "kui", "cookie"],function(kevt, kui, cookie){
 			}
 		},
 		closeWarning:function(){
-			if( document.getElementById("EndSession") ){
+			if( _E("EndSession") ){
 				require(["popup"],function(popup){
 					popup.close("EndSession");
 				});
 			}
 		},
 		start:function(){
-			this.sid = cookie.Get("sid");
+			this.sid = _GC("sid");
 		},
 		end:function(){
-			this.sid = cookie.Get("sid");
+			this.sid = _GC("sid");
 		},
 		setActivity:function( info ){
-			if( !cookie.Get("sid") ){
+			if( !_GC("sid") ){
 				return;
 			}
 			if( info && info.url && ( info.url.indexOf("chat_ping")>=0 || info.url.indexOf("get_str") >=0 ) ){
 				return;
 			}
 
-			cookie.Set( "sa", this.currTime() );
+			_SC( "sa", this.currTime() );
 
 			this.closeWarning();
 		}
