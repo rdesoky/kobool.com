@@ -1,0 +1,90 @@
+<div id="StepOne">
+	<form id="S1RegForm" name="S1RegForm" class="form_frame" onsubmit="Req('register',function(){Register.onsubmitS1();});return false;">
+		<input type="hidden" name="gender" value="-1"/>
+		<div class="form_title" data-string="profile:register.form_title"></div>
+		<table id="RegRootTable">
+		<tr>
+			<td class="right_align" data-string="profile:register.gender"></td>
+			<td>
+				<table style="border-spacing:0px">
+				<tr>
+					<td class="nowrap">
+						<div class="hmouse" onclick="Req('register',function(){Register.checkGender(0);})">
+							<input type="radio" name="gender_radio" value="0" id="gender_male" onclick="Req('register',function(){Register.onChangeGender();})"><span data-string="profile:select_gender.v0"></span>
+						</div>
+						<div class="hmouse" onclick="Req('register',function(){Register.checkGender(1);})">
+							<input type="radio" name="gender_radio" value="1" id="gender_female" onclick="Req('register',function(){Register.onChangeGender();})"><span data-string="profile:select_gender.v1"></span>
+						</div>
+					</td>
+					<td>
+						<img id="idPreviewPic" height="50" src="/images/space.gif">
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="right_align" data-string="profile:register.login_name"></td>
+			<td>
+				<input type="text" name="lname"  style="width:150px" onblur="Req('register',function(){Register.checkLoginName();})"/>
+			</td>
+		</tr>
+		<tr id="LoginNameRow" style="display:none;">
+			<td colspan="3" style="background:#FFF9D7;border-bottom:solid 1px #E2C822;" id="LoginNameHelp">
+			</td>
+		</tr>
+		<tr>
+			<td class="right_align" data-string="profile:register.password"></td>
+			<td><input type="password" name="pw" style="width:150px"/></td>
+		</tr>
+		<tr>
+			<td class="right_align" data-string="profile:register.email"></td>
+			<td><input type="text" name="email" style="direction:ltr;width:150px"/>
+			<span class="href" onclick="Req('register',function(){Register.showEmailHelp();})" data-string="str:help"></span>
+		</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="right_align"><input id="BtnRegSubmit" type="submit" name="submt"  value="" data-string="profile:register.next" data-string-attr="value" disabled></td>
+		</tr>
+		</table>
+	</form>
+</div>
+
+<div id="StepTwo" style="display:none">
+	<form id="S2RegForm" name="RegS2Form" class="form_frame"
+		onsubmit="Req('register',function(){Register.onsubmitS2();});return false;"
+	>
+		<div class="form_title" data-string="profile:register.form_title"></div>
+		<table>
+		<tr>
+			<td NOWRAP class="right_align" data-string="profile:register.confirm_pw"></td>
+			<td dir="LTR"><input type="password" name="pw"/></td>
+		</tr>
+		<tr>
+			<td NOWRAP class="right_align" data-string="profile:register.retype_email"></td>
+			<td dir="LTR"><input type="text" name="email"/></td>
+		</tr>
+		<tr>
+			<td colspan="2" class="right_align">
+				<input type="submit" name="submt" value="" data-string="profile:register.submit" data-string-attr="value">
+				<input type="button" value="" data-string="str:cancel" data-string-attr="value" onclick="Register.cancelS2()">
+			</td>
+		</tr>
+		</table>
+	</form>
+</div>
+<div id="RegProcessing" style="display:none" data-string="profile:register.processing"></div>
+<div id="RegSuccess" class="box" style="display:none">
+	<div class="form_title" data-string="profile:register.success"></div>
+	<div class="right_align">
+		<input type="button"
+			id="idNext"
+			style="width:100px"
+			onclick="PgNav.open('upd_attr',{wz:1})"
+			value="" data-string="profile:register.next" data-string-attr="value"/>
+	</div>
+</div>
+
+<div id="BlackList" class="form_frame" style="display:none">
+	<div class="form_title" data-string="errors:error.blacklist_member"></div>
+</div>
