@@ -224,6 +224,69 @@ function copyTree(srcDir, destDir, relBase) {
     return count;
 }
 
+/**
+ * Expand shared page fragments declared with `data-fragment`.
+ *
+ * A fragment is a partial page under `v2/pages/` (for example the registration
+ * form used by both home and register). Pages reference it with an empty
+ * element:
+ *
+ *   <div class="indent" data-fragment="/v2/pages/reg_form.html"></div>
+ *
+ * The build replaces the element's content with the fragment, leaves the
+ * wrapper (and its other attributes) in place, and removes the directive so
+ * the published HTML is self-contained. Includes can nest; a missing file or
+ * a cycle fails the build instead of shipping a hole.
+ *
+ * Only leaf elements (empty or whitespace-only content) are supported, which
+ * is all a fragment wrapper needs.
+ */
+function expandIncludes(distDir) {
+    const INCLUDE = /<([a-zA-Z][\w-]*)([^>]*\sdata-fragment="([^"]+)"[^>]*)>\s*<\/\1>/g;
+
+    const expand = (html, file, stack) => html.replace(INCLUDE, (match, tag, attrs, ref) => {
+        const target = ref.startsWith('/')
+            ? path.join(distDir, ref.replace(/^\/+/, ''))
+            : path.resolve(path.dirname(file), ref);
+        const shown = path.relative(distDir, file).split(path.sep).join('/');
+
+        if (!fs.existsSync(target)) {
+            throw new Error(`Include not found: "${ref}" referenced from ${shown}`);
+        }
+        if (stack.indexOf(target) !== -1) {
+            throw new Error(`Circular include: "${ref}" referenced from ${shown}`);
+        }
+
+        const inner = expand(fs.readFileSync(target, 'utf8'), target, stack.concat(target));
+        const wrapper = attrs.replace(/\sdata-fragment="[^"]*"/, '');
+        return `<${tag}${wrapper}>${inner}</${tag}>`;
+    });
+
+    const walk = (dir) => {
+        let changed = 0;
+        for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+            const full = path.join(dir, entry.name);
+            if (entry.isDirectory()) {
+                changed += walk(full);
+                continue;
+            }
+            if (path.extname(entry.name).toLowerCase() !== '.html') continue;
+
+            const before = fs.readFileSync(full, 'utf8');
+            if (before.indexOf('data-fragment=') === -1) continue;
+
+            const after = expand(before, full, [full]);
+            if (after !== before) {
+                fs.writeFileSync(full, after, 'utf8');
+                changed++;
+            }
+        }
+        return changed;
+    };
+
+    return walk(distDir);
+}
+
 function writeConfig(env, apiBaseOverride) {
     const settings = ENVIRONMENTS[env];
     const apiBase = apiBaseOverride || settings.apiBase;
@@ -336,6 +399,13 @@ async function build(options) {
     }
     console.log(`Copied ${copied} static files`);
 
+    // Shared fragments are expanded after the copy so every page in dist/ is
+    // self-contained before URLs are rewritten and the HTML is minified.
+    const expanded = expandIncludes(DIST);
+    if (expanded) {
+        console.log(`Expanded shared fragments in ${expanded} page file(s)`);
+    }
+
     // Compile string bundles. The XML sources live in this repo (v2/text,
     // v3/text) so the published strings are reviewable and editable here;
     // --source only supplies the shared option/country data.
@@ -388,4 +458,4 @@ if (require.main === module) {
     });
 }
 
-module.exports = { build, parseArgs, rewriteBase, rewriteApiBase, ENVIRONMENTS, isBlocked };
+module.exports = { build, parseArgs, rewriteBase, rewriteApiBase, expandIncludes, ENVIRONMENTS, isBlocked };
