@@ -2,7 +2,7 @@
  * Created by rdeso_000 on 1/7/2015.
  */
 
-define(["kevents", "kui"],function(kevt, kui){
+define(["kevents", "kui", "cookie"],function(kevt, kui, cookie){
 	return {
 		init:function(){
 			var self = this;
@@ -29,7 +29,7 @@ define(["kevents", "kui"],function(kevt, kui){
 			return (new Date()).getTime();
 		},
 		onSecondTic:function(){
-			var sid = _GC("sid");
+			var sid = cookie.Get("sid");
 
 			if( sid != this.sid ){
 				this.sid = sid;
@@ -41,7 +41,7 @@ define(["kevents", "kui"],function(kevt, kui){
 				this.closeWarning();
 				return;
 			}
-			var elapsed = ( this.currTime() - _GCN("sa") ) / 1000;
+			var elapsed = ( this.currTime() - cookie.nGet("sa") ) / 1000;
 			var tmOut = (60*15) - elapsed ;
 
 			//document.title = _GCN("sa") + " - " + tmOut;
@@ -75,15 +75,20 @@ define(["kevents", "kui"],function(kevt, kui){
 		showWarning:function( tmo ){
 			var self = this;
 
-			this.msg = this.msg || _C( "div", {},
-				[	_HS( _C("span"), "session.auto_end_confirmation" ),
-					this.counter=_TXT("0")
-				]
-			);
+			this.msg = this.msg || (function(){
+				var d = document.createElement("div");
+				var s = document.createElement("span");
+				s.textContent = "session.auto_end_confirmation";
+				d.appendChild(s);
+				var c = document.createTextNode("0");
+				d.appendChild(c);
+				self.counter = c;
+				return d;
+			})();
 
 			this.counter.nodeValue = Math.floor(tmo).toString();
 
-			if( !_E("EndSession")){
+			if( !document.getElementById("EndSession")){
 				kui.question({
 					id:"EndSession",
 					title:"session.auto_end_title",
@@ -102,27 +107,27 @@ define(["kevents", "kui"],function(kevt, kui){
 			}
 		},
 		closeWarning:function(){
-			if( _E("EndSession") ){
+			if( document.getElementById("EndSession") ){
 				require(["popup"],function(popup){
 					popup.close("EndSession");
 				});
 			}
 		},
 		start:function(){
-			this.sid = _GC("sid");
+			this.sid = cookie.Get("sid");
 		},
 		end:function(){
-			this.sid = _GC("sid");
+			this.sid = cookie.Get("sid");
 		},
 		setActivity:function( info ){
-			if( !_GC("sid") ){
+			if( !cookie.Get("sid") ){
 				return;
 			}
 			if( info && info.url && ( info.url.indexOf("chat_ping")>=0 || info.url.indexOf("get_str") >=0 ) ){
 				return;
 			}
 
-			_SC( "sa", this.currTime() );
+			cookie.Set( "sa", this.currTime() );
 
 			this.closeWarning();
 		}
