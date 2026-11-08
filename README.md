@@ -139,6 +139,20 @@ It handles element content, attribute values, mixed content, and
 `"---" . S("key") . "---"` concatenation. Anything it cannot convert is
 reported and must be finished by hand.
 
+Shared fragments keep repeated markup in one file. A page pulls one in with
+an empty element that names it:
+
+```html
+<div class="indent" data-fragment="/v2/pages/reg_form.html"></div>
+```
+
+`tools/build.js` replaces the element's content with the fragment, keeps the
+wrapper (and its attributes, such as `data-visible-if`), and removes the
+directive, so `dist/` is self-contained. Includes can nest; a missing file or
+an include cycle fails the build, and `npm run check` rejects a build that
+still contains a `data-fragment`. The registration form
+(`v2/pages/reg_form.html`) is shared by the home and register pages this way.
+
 ### Data
 
 `tools/compile-data.js` generates `shared/data/countries.<lang>.json`,
