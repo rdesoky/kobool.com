@@ -1,58 +1,90 @@
-window.onload = function(){
-	Req("init",
-		function(){
-			PgNav.init();
-			WindowEvents.init();
-			ToolTip.init();
-			AppMain();
-		}
-	);
-};
+/*
+ * Register the boot hook with addEventListener instead of assigning
+ * window.onload, so it cannot replace a handler another script installed.
+ */
+(function () {
+	var boot = function(){
+		Req("init",
+			function(){
+				PgNav.init();
+				WindowEvents.init();
+				ToolTip.init();
+				AppMain();
+			}
+		);
+	};
+	if (window.addEventListener) {
+		window.addEventListener("load", boot, false);
+	} else if (window.attachEvent) {
+		window.attachEvent("onload", boot);
+	} else {
+		window.onload = boot;
+	}
+})();
 
+/*
+ * DOM0 properties (document.body.onmouseover = ...) are single-owner: assigning
+ * one silently replaces any handler another script installed. The browser's
+ * element picker and other in-page tooling attach their own listeners at
+ * document start, so v2 must register through addEventListener instead of
+ * claiming the body's global handlers.
+ */
 var WindowEvents = {
+	listen:function(el, name, handler){
+		if(el.addEventListener){
+			el.addEventListener(name, handler, false);
+		}else if(el.attachEvent){
+			el.attachEvent("on" + name, handler);
+		}else{
+			el["on" + name] = handler;
+		}
+	},
 	init:function(){
-		document.body.onmouseup=function(e){
+		WindowEvents.listen(document.body, "mouseup", function(e){
 			KEvents.fire( "mouseUp", {
 					target:_D(e)?e.target : event.srcElement,
 					e:_D(e)?e:event
 				}
 			);
-		};
-		document.body.onmousedown=function(e){
+		});
+		WindowEvents.listen(document.body, "mousedown", function(e){
 			KEvents.fire( "mouseDown", {
 					target:_D(e)?e.target : event.srcElement,
 					e:_D(e)?e:event
 				}
 			);
-		};
-		document.body.onmouseover=function(e){
+		});
+		WindowEvents.listen(document.body, "mouseover", function(e){
 			KEvents.fire( "mouseMotion", {
 					target:_D(e)?e.target : event.srcElement,
 					e:_D(e)?e:event
 				}
 			);
-		};
-		window.onresize = function(){
+		});
+		WindowEvents.listen(window, "resize", function(){
 			KEvents.fire("resizeWindow", {
 				h:document.documentElement.clientHeight,
 				w:document.documentElement.clientWidth
 			});
-		};
-		window.onscroll = function(){
+		});
+		WindowEvents.listen(window, "scroll", function(){
 			KEvents.fire("scrollWindow", {
 				x:window.pageXOffset,
 				y:window.pageYOffset,
 				w:window.innerWidth,
 				h:window.innerHeight
 			});
-		};
+		});
 		window.setInterval(
 			function(){
 				KEvents.fire("SecondTic");
 			},
 			1000
 		);
-		window.onresize();
+		KEvents.fire("resizeWindow", {
+			h:document.documentElement.clientHeight,
+			w:document.documentElement.clientWidth
+		});
 	}
 }
 
@@ -124,7 +156,7 @@ function Req( pID, callback ){
 		}
 		delete Req.listeners[pID];
 	};
-	CSS.loadPackage(pID);
+	KCSS.loadPackage(pID);
 	if( _D(Packages[pID].str) ){
 		RAS( Packages[pID].str, function(){ Scripts.loadPackage( pID, myCallback ); } );
 	}else{
@@ -185,7 +217,15 @@ var _HS = function(el, strID, onload){
 	return el;
 };
 
-var CSS = {//TODO: support callback
+/*
+ * Stylesheet loader.
+ *
+ * Named KCSS, not CSS: a top-level `var CSS` replaces window.CSS, the native
+ * namespace that exposes CSS.escape()/CSS.supports(). Tooling that generates
+ * selectors (devtools element pickers, browser integrations) calls
+ * CSS.escape() in the page, so shadowing it makes every selection fail.
+ */
+var KCSS = {//TODO: support callback
 	loadedCSS:{},
 	loadedPackages:{},
 

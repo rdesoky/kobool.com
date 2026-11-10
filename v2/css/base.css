@@ -9,6 +9,13 @@
 .fixed{
 	position:fixed;
 }
+
+/* Replaces the deprecated <center> wrapper that used to hold the page body.
+   Keeps the same centring the UA stylesheet gave that element. */
+.v2_center{
+	display:block;
+	text-align:center;
+}
 #MDebug, #DLog{
 	position:fixed;
 	right:0px;
@@ -802,6 +809,19 @@ img.small_pic{
 }
 .submenu_line{
 	/*border-top:solid 1px white;*/
+}
+
+/*
+ * The header table (#HeaderLayout) is position:relative and comes later in the
+ * DOM, so it painted over this strip and clipped it to the table's width.
+ * Lift the strip just above the page background but below the header contents
+ * (photo, logo), so it never covers them.
+ */
+.submenu_line{
+	z-index:0;
+}
+#HdrTopMenu, #GuestMenu, #MatchingTimer{
+	z-index:2;
 }
 
 .header_line{

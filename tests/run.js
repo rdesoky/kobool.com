@@ -290,8 +290,8 @@ test('strings binder: language resolution prefers cookie, falls back to default'
     assert.match(src, /supportedLangs: \['ar', 'en'\]/);
 });
 
-test('proxy: DEFAULT_TARGET points at the current CORS-enabled API host', () => {
-    assert.strictEqual(DEFAULT_TARGET, 'https://dev.kobool.com');
+test('proxy: DEFAULT_TARGET points at the current dev API host', () => {
+    assert.strictEqual(DEFAULT_TARGET, 'http://aws.kobool.com');
 });
 
 test('validate: an http:// API base warns because the site is served over https', () => {
@@ -555,6 +555,146 @@ test('favicon: the original site icon ships at the site root', () => {
     for (const shell of ['index.html', path.join('v2', 'index.html')]) {
         const html = fs.readFileSync(path.join(ROOT, shell), 'utf8');
         assert.match(html, /<link rel="icon" href="\/favicon\.ico"/, `${shell} must link the icon`);
+    }
+});
+
+function loadTheme(options) {
+    const vm = require('vm');
+    const opts = options || {};
+    const code = fs.readFileSync(path.join(ROOT, 'shared', 'theme.js'), 'utf8');
+    const attrs = {};
+    const root = {
+        lang: opts.lang || 'en',
+        style: {},
+        getAttribute(name) {
+            if (name === 'lang') return this.lang;
+            return Object.prototype.hasOwnProperty.call(attrs, name) ? attrs[name] : null;
+        },
+        setAttribute(name, value) { attrs[name] = String(value); }
+    };
+    const controls = [];
+    const docListeners = {};
+    const document = {
+        documentElement: root,
+        readyState: 'complete',
+        querySelectorAll(selector) {
+            return selector === '[data-theme-toggle]' ? controls : [];
+        },
+        querySelector() { return null; },
+        addEventListener(type, fn) {
+            (docListeners[type] = docListeners[type] || []).push(fn);
+        }
+    };
+    const localStorage = {
+        value: Object.prototype.hasOwnProperty.call(opts, 'stored') ? opts.stored : null,
+        getItem() { return this.value; },
+        setItem(key, value) { this.value = value; }
+    };
+    const mql = {
+        matches: !!opts.systemDark,
+        addEventListener() {},
+        addListener() {}
+    };
+    const window = {
+        document,
+        localStorage,
+        CustomEvent: function CustomEvent(type, init) {
+            this.type = type;
+            this.detail = init && init.detail;
+        },
+        matchMedia() { return mql; },
+        addEventListener() {},
+        dispatchEvent() {}
+    };
+    const sandbox = { window, document, localStorage, console };
+    sandbox.globalThis = sandbox;
+    vm.createContext(sandbox);
+    vm.runInContext(code, sandbox);
+    return { window, root, attrs, controls, localStorage, docListeners };
+}
+
+test('theme: saved and system preferences resolve to a data-theme attribute', () => {
+    const dark = loadTheme({ stored: 'dark', systemDark: false });
+    assert.strictEqual(dark.attrs['data-theme'], 'dark');
+    assert.strictEqual(dark.attrs['data-theme-mode'], 'dark');
+    assert.strictEqual(dark.window.KTheme.getMode(), 'dark');
+
+    const light = loadTheme({ stored: 'light', systemDark: true });
+    assert.strictEqual(light.attrs['data-theme'], 'light');
+    assert.strictEqual(light.window.KTheme.getMode(), 'light');
+
+    const systemDark = loadTheme({ systemDark: true });
+    assert.strictEqual(systemDark.window.KTheme.getMode(), 'system');
+    assert.strictEqual(systemDark.attrs['data-theme'], 'dark');
+
+    const systemLight = loadTheme({ systemDark: false });
+    assert.strictEqual(systemLight.attrs['data-theme'], 'light');
+
+    // An unknown stored value falls back to following the OS.
+    const invalid = loadTheme({ stored: 'nonsense', systemDark: true });
+    assert.strictEqual(invalid.window.KTheme.getMode(), 'system');
+    assert.strictEqual(invalid.attrs['data-theme'], 'dark');
+});
+
+test('theme: toggling persists an explicit theme and updates the control label', () => {
+    const sandbox = loadTheme({ systemDark: true });
+    const control = {
+        textContent: '',
+        attrs: {},
+        getAttribute(name) {
+            return Object.prototype.hasOwnProperty.call(this.attrs, name) ? this.attrs[name] : null;
+        },
+        setAttribute(name, value) { this.attrs[name] = String(value); },
+        hasAttribute(name) { return Object.prototype.hasOwnProperty.call(this.attrs, name); }
+    };
+    sandbox.controls.push(control);
+
+    // System is dark, so the first click selects light explicitly.
+    assert.strictEqual(sandbox.window.KTheme.toggle(), 'light');
+    assert.strictEqual(sandbox.attrs['data-theme'], 'light');
+    assert.strictEqual(sandbox.attrs['data-theme-mode'], 'light');
+    assert.strictEqual(sandbox.localStorage.value, 'light');
+    assert.strictEqual(control.textContent, 'Dark mode');
+    assert.strictEqual(control.attrs['aria-pressed'], 'false');
+
+    sandbox.window.KTheme.setMode('dark');
+    assert.strictEqual(control.textContent, 'Light mode');
+    assert.strictEqual(control.attrs['aria-pressed'], 'true');
+
+    // The label follows the document language.
+    const arabic = loadTheme({ stored: 'light', systemDark: false, lang: 'ar' });
+    const arabicControl = {
+        textContent: '',
+        attrs: {},
+        getAttribute(name) {
+            return Object.prototype.hasOwnProperty.call(this.attrs, name) ? this.attrs[name] : null;
+        },
+        setAttribute(name, value) { this.attrs[name] = String(value); },
+        hasAttribute(name) { return Object.prototype.hasOwnProperty.call(this.attrs, name); }
+    };
+    arabic.controls.push(arabicControl);
+    arabic.window.KTheme.refresh();
+    assert.strictEqual(arabicControl.textContent, 'الوضع الداكن');
+});
+
+test('theme: both shells load the theme assets before their base CSS', () => {
+    const shells = [
+        { file: 'index.html', base: '/v3/css/base.css' },
+        { file: path.join('v2', 'index.html'), base: '/v2/css/base.css' }
+    ];
+    for (const shell of shells) {
+        const html = fs.readFileSync(path.join(ROOT, shell.file), 'utf8');
+        const jsAt = html.indexOf('/shared/theme.js');
+        const cssAt = html.indexOf('/shared/theme.css');
+        const baseAt = html.indexOf(shell.base);
+
+        assert.ok(jsAt !== -1, `${shell.file} must load shared/theme.js`);
+        assert.ok(cssAt !== -1, `${shell.file} must load shared/theme.css`);
+        assert.ok(baseAt !== -1, `${shell.file} must load its base stylesheet`);
+        assert.ok(jsAt < baseAt, `${shell.file} must apply the theme before base CSS`);
+        assert.ok(jsAt < cssAt, `${shell.file} must apply the theme before the override CSS`);
+        assert.match(html, /data-theme-toggle/, `${shell.file} must expose a theme toggle`);
+        assert.match(html, /name="theme-color"/, `${shell.file} must declare a theme-color`);
     }
 });
 

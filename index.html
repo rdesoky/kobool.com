@@ -6,7 +6,11 @@
     <meta name="description" content="" data-string="str:meta_description" data-string-attr="content"/>
     <meta name="keywords" content="" data-string="str:meta_keywords" data-string-attr="content"/>
     <meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <meta name="theme-color" content="#f0f0f0"/>
     <title data-string="str:title">Kobool</title>
+
+    <!-- Applies the saved/system theme before the first paint. -->
+    <script src="/shared/theme.js"></script>
 
     <link rel="icon" href="/favicon.ico" sizes="16x16"/>
     <link rel="shortcut icon" href="/favicon.ico"/>
@@ -14,6 +18,7 @@
     <link rel="StyleSheet" href="/v3/css/font-awesome.min.css"/>
     <link rel="StyleSheet" href="/v3/css/base.css"/>
     <link rel="StyleSheet" href="/v3/css/kui.css"/>
+    <link rel="StyleSheet" href="/shared/theme.css"/>
 
     <script src="/shared/config.js"></script>
     <script src="/shared/strings.js"></script>
@@ -78,6 +83,7 @@
                 <li id="Menu.ContactUs"><a href="#pg=contact" data-string="str:contact_us">Contact us</a></li>
                 <li id="Menu.Logout" data-on-click="require('kui').onBtnLogout()" data-string="str:a.logout">Logout</li>
                 <li onclick="require(['mem-ui'],function(imem){imem.refreshHeader(true)});return false;" data-string="str:refresh">Refresh</li>
+                <li data-theme-toggle>Dark mode</li>
                 <li data-lang-switch="en" data-visible-if="ar">English</li>
                 <li data-lang-switch="ar" data-visible-if="en">عربي</li>
                 <li id="Menu.OldSite"><a href="/v2/" data-string="str:downgrade">Old site</a></li>
@@ -91,6 +97,7 @@
                 <li id="GuestMenu.qa"><a href="#pg=qa" data-string="str:QandA">Q&amp;A</a></li>
                 <li id="Menu.ContactUs"><a href="#pg=contact" data-string="str:contact_us">Contact us</a></li>
                 <li onclick="require(['mem-ui'],function(imem){imem.refreshHeader(true)});return false;" data-string="str:refresh">Refresh</li>
+                <li data-theme-toggle>Dark mode</li>
                 <li data-lang-switch="en" data-visible-if="ar">English</li>
                 <li data-lang-switch="ar" data-visible-if="en">عربي</li>
                 <li id="GuestMenu.OldSite"><a href="/v2/" data-string="str:downgrade">Old site</a></li>
@@ -123,6 +130,7 @@
         <div>
             <a href="#pg=home" data-string="str:main_menu.home">Home</a>
             | <a href="#pg=contact" data-string="str:footer.contact_us">Contact us</a>
+            | <a href="#" data-theme-toggle>Dark mode</a>
             | <a href="#" data-lang-switch="en" data-visible-if="ar">English</a>
             <a href="#" data-lang-switch="ar" data-visible-if="en">عربي</a>
         </div>

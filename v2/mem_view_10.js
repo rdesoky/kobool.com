@@ -1,7 +1,11 @@
 U.nameSpace("MemVUR");
 MemVUR.vw10 = {
 	render:function(info){
-		var root = DU.create( "div",{'class':"inline vtop light_box mem10view"} );
+		var attrs = {'class':"inline vtop light_box mem10view"};
+		if( _N(info.id) && info.id != 0 && !document.getElementById("Member_"+info.id) ){
+			attrs.id = "Member_" + info.id;
+		}
+		var root = DU.create( "div", attrs );
 
 		var feedback = Feedback.draw(info);
 
