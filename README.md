@@ -86,16 +86,16 @@ uploader form is deliberately left same-origin: it posts into an iframe whose
 response calls `window.parent.UpdatePics`, which a cross-origin response cannot
 reach.
 
-`npm run serve` proxies `/cgi-bin/` to `https://dev.kobool.com` (override with
+`npm run serve` proxies `/cgi-bin/` to `http://aws.kobool.com` (override with
 `KOBOOL_API_TARGET`) so the browser sees a single origin during development.
 Point it elsewhere with `KOBOOL_API_TARGET=http://localhost:8080`. If port
 8080 is already in use, the server tries the next port (8081, 8082, …) until
 it finds a free one and logs the URL.
 
-The dev proxy skips upstream TLS certificate verification: `dev.kobool.com`
-may resolve to a local API host (e.g. via Docker Desktop) whose certificate is
-signed by a locally-installed CA that Node does not trust by default. Without
-this, every proxied call fails the handshake and returns 502.
+The dev proxy skips upstream TLS certificate verification for `https` targets:
+a local API host may present a certificate signed by a locally-installed CA
+that Node does not trust by default. Without this, every proxied call fails the
+handshake and returns 502.
 
 The app also detects when it is served from `localhost` / `127.0.0.1` and forces
 the API base back to the same-origin `/cgi-bin/`, so any environment build
@@ -245,7 +245,7 @@ calls from staging work. If the API host changes, keep this in mind:
 - `Access-Control-Allow-Origin` must echo the site origin, not `*`, because
   `Access-Control-Allow-Credentials: true` forbids the wildcard.
 
-`npm run serve` proxies `/cgi-bin/` to `https://dev.kobool.com` (override with
+`npm run serve` proxies `/cgi-bin/` to `http://aws.kobool.com` (override with
 `KOBOOL_API_TARGET`) so local development stays same-origin.
 
 ## License

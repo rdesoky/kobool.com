@@ -11,9 +11,9 @@
  * If the requested port is already in use, the server increments the port and
  * retries until it finds a free one (default starts at 8080).
  *
- * The proxy skips upstream TLS certificate verification: local API hosts are
- * often signed by a locally-installed CA (e.g. dev.kobool.com resolving to a
- * Docker host) that Node does not trust by default.
+ * The proxy skips upstream TLS certificate verification for https targets:
+ * local API hosts are often signed by a locally-installed CA that Node does
+ * not trust by default.
  */
 
 const http = require('http');

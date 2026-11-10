@@ -1,7 +1,11 @@
 U.nameSpace("MemVUR");
 MemVUR.vw25 = {
 	render:function(inf){
-		var root = _C("div", {"class":"mem_thumb inline vtop"});
+		var attrs = {"class":"mem_thumb inline vtop"};
+		if( _N(inf.id) && inf.id != 0 && !document.getElementById("Member_"+inf.id) ){
+			attrs.id = "Member_" + inf.id;
+		}
+		var root = _C("div", attrs);
 		var tbl = _AT(root,{cellspacing:0},[{"class":"gallery_pic"},{"class":"vtop"}]);
 		var pic_frame = tbl.cols[0];
 		var img = _A( pic_frame,"img",{src:U.picSRC(inf.main_pic,inf.gender,true) } );

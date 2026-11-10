@@ -250,7 +250,7 @@ var PgNav = {
 		_CL("PgHeader");
 		root.className = pageID + "_pg progress_bg";
 		//load page css classes
-		CSS.loadPackage(pageID);
+		KCSS.loadPackage(pageID);
 		
 		var pageURL = PgLinks[pageID] || ( _D(Packages[pageID] ) ? undef : PgLinks["404"] );
 

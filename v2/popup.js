@@ -84,7 +84,11 @@ var DDrop = {
 				ondrag(shiftX,shiftY);
 			}
 		};
-		document.body.ondragover = dragging;
+		if(document.body.addEventListener){
+			document.body.addEventListener("dragover", dragging, false);
+		}else{
+			document.body.ondragover = dragging;
+		}
 		
 		if(!el.addEventListener){
 			el.onmousemove=function(e){

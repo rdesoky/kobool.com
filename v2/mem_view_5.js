@@ -1,7 +1,17 @@
 U.nameSpace("MemVUR");
 MemVUR.vw5 = {
 	render:function(info){
-		var root = DU.create( "div",{'class':"sresult_root"} );
+		/*
+		 * Anchor each result row on the member id, matching the v3 template's
+		 * id="Member_<id>". Without an id here the nearest id ancestor is
+		 * #Contents, several levels up, which starves selector generation
+		 * (devtools element pickers, deep links) of a stable short anchor.
+		 */
+		var attrs = {'class':"sresult_root"};
+		if( _N(info.id) && info.id != 0 && !document.getElementById("Member_"+info.id) ){
+			attrs.id = "Member_" + info.id;
+		}
+		var root = DU.create( "div", attrs );
 		var feedback = Feedback.draw(info);
 
 		var cmd_bar = _C("div", {"class":"sresult_cmd_bar footer_bar"});
