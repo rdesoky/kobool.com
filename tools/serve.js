@@ -40,9 +40,10 @@ const MIME = {
 };
 
 function parseArgs(argv) {
-    const args = { port: 8080, prodApi: false };
+    const args = { port: 8080, prodApi: false, lrPort: 35729 };
     for (const arg of argv.slice(2)) {
         if (arg.startsWith('--port=')) args.port = parseInt(arg.slice(7), 10);
+        else if (arg.startsWith('--lr-port=')) args.lrPort = parseInt(arg.slice(10), 10);
         else if (arg === '--prod-api') args.prodApi = true;
     }
     return args;
@@ -50,6 +51,7 @@ function parseArgs(argv) {
 
 function createServer(options) {
     const root = options.root || path.join(__dirname, '..', 'dist');
+    const lrPort = options.lrPort || 35729;
     const proxy = createProxy({
         target: options.target || DEFAULT_TARGET,
         rejectUnauthorized: false
@@ -95,7 +97,7 @@ function createServer(options) {
         if (ext === '.html') {
             let html = fs.readFileSync(filePath, 'utf8');
             if (!html.includes('livereload.js')) {
-                html = html.replace('</body>', '<script src="http://127.0.0.1:35729/livereload.js?snipver=1"></script></body>');
+                html = html.replace('</body>', `<script src="http://127.0.0.1:${lrPort}/livereload.js?snipver=1"></script></body>`);
             }
             res.end(html);
             return;
@@ -108,7 +110,7 @@ const MAX_PORT = 65535;
 
 if (require.main === module) {
     const args = parseArgs(process.argv);
-    const server = createServer({});
+    const server = createServer({ lrPort: args.lrPort });
     // Print once, whatever attempt ultimately binds (the per-listen callback
     // would fire once per retry).
     server.once('listening', () => {

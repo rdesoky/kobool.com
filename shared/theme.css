@@ -380,8 +380,14 @@ html[data-theme="dark"] .sresult_cmd_bar {
 html[data-theme="dark"] .sum_group_name {
     background-color: var(--kb-surface-2);
     /* Light plus glyph; the original is a dark raster sprite. */
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'><path d='M5 1.5v7M1.5 5h7' stroke='%23a9b3bf' stroke-width='1.6' stroke-linecap='round'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 10 10'><path d='M5 1.5v7M1.5 5h7' stroke='%23a9b3bf' stroke-width='1.6' stroke-linecap='round'/></svg>");
     color: var(--kb-text);
+}
+
+/* v3 paints the summary card container white; it shows through between the
+   group chips and the count cells. */
+html[data-theme="dark"] .summary_list {
+    background-color: var(--kb-surface-2);
 }
 
 html[data-theme="dark"] .sum_group_name:hover,
@@ -777,7 +783,8 @@ html[data-theme="dark"] .drill_btn {
 }
 
 html[data-theme="dark"] .drill_btn:hover {
-    background-color: var(--kb-surface-3);
+    /* Lighter than the surface-3 base so hovering is visible. */
+    background-color: #313c49;
     border-color: var(--kb-link);
 }
 
@@ -967,4 +974,34 @@ html[data-theme="dark"] .online {
 
 html[data-theme="dark"] .shadow {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Filter box chips (search result filter tags): the legacy sheet paints them
+   lightblue with a silver hover and white delete icon, which vanish on dark
+   surfaces. Override with dark-theme colours that keep the chips readable. */
+html[data-theme="dark"] .filter_box {
+    background-color: var(--kb-surface-3);
+    border-color: var(--kb-border);
+}
+
+html[data-theme="dark"] .filter_box:hover {
+    background-color: var(--kb-border-strong);
+    cursor: pointer;
+}
+
+html[data-theme="dark"] .filter_box span.href {
+    color: var(--kb-link);
+}
+
+html[data-theme="dark"] .filter_box span.href:hover {
+    color: #ffffff;
+}
+
+html[data-theme="dark"] .filter_box .del_icon {
+    background-color: var(--kb-surface-2);
+}
+
+html[data-theme="dark"] .del_icon:hover {
+    background-color: var(--kb-border-strong) !important;
+    cursor: pointer;
 }

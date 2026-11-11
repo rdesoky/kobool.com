@@ -1,30 +1,38 @@
 {
   "version": "2.0.0",
   "tasks": [
-    {
-      "label": "Install dependencies",
-      "type": "shell",
-      "command": "npm install",
-      "inAgents": true,
-      "runOptions": { "runOn": "worktreeCreated" }
-    },
-    {
-      "label": "Serve locally (dev)",
-      "type": "shell",
-      "command": "npm run serve",
-      "inAgents": true
-    },
-    {
-      "label": "Run tests",
-      "type": "shell",
-      "command": "npm test",
-      "inAgents": true
-    },
-    {
-      "label": "Build (dev)",
-      "type": "shell",
-      "command": "npm run build",
-      "inAgents": true
-    }
-  ]
+		{
+			"label": "Install dependencies",
+			"type": "shell",
+			"command": "npm install",
+			"inAgents": true,
+			"runOptions": {
+				"runOn": "worktreeCreated"
+			}
+		},
+		{
+			"label": "Serve locally (dev)",
+			"type": "shell",
+			"command": "npm run serve",
+			"inAgents": true
+		},
+		{
+			"label": "Run tests",
+			"type": "shell",
+			"command": "npm test",
+			"inAgents": true
+		},
+		{
+			"label": "Build (dev)",
+			"type": "shell",
+			"command": "npm run build",
+			"inAgents": true
+		},
+		{
+			"label": "Start dev",
+			"type": "shell",
+			"command": "npm start",
+			"inAgents": true
+		}
+	]
 }

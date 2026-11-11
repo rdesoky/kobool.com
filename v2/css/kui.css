@@ -361,6 +361,11 @@
 	background-position:50% 20%;
 }
 
+/* Dark mode: use surface-3 background instead of white */
+html[data-theme="dark"] .drill_btn{
+	background-color:var(--kb-surface-3);
+}
+
 .drill_btn *{
 	vertical-align:bottom;
 	display:inline-block;

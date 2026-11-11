@@ -101,6 +101,11 @@
 	/* text-decoration:underline; */
 }
 
+.attr_bar .attr:hover{
+	background-color:#E3E4D2;
+	color:#11151a;
+}
+
 .result_item>table{
 	width:100%;
 }

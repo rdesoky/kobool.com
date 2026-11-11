@@ -723,6 +723,11 @@ border-radius: 50px;
 	box-shadow: 0 0 3px rgba(0,0,0,.6);
 }
 
+/* Dark mode: use surface-3 background instead of white */
+html[data-theme="dark"] .drill_btn{
+	background-color:var(--kb-surface-3);
+}
+
 .summary_line{
 	/* margin: 1px 0; */
 	/* line-height: 32px; */
@@ -740,6 +745,11 @@ border-radius: 50px;
 .summary_line:hover{
 	background-color: #F6F6F6;
 	cursor:pointer;
+}
+
+/* Dark mode: use surface-3 background instead of bright gray */
+html[data-theme="dark"] .summary_line:hover{
+	background-color:var(--kb-surface-3);
 }
 .sum_group_name{
 	background: url(/images/plus.gif) no-repeat center left 10px;
