@@ -29,6 +29,11 @@
 	text-decoration:underline;
 }
 
+.attr_bar .attr:hover{
+	background-color:#E3E4D2;
+	color:#11151a;
+}
+
 .sresult_cmd_bar{
 	position:absolute;
 	bottom:0px;
