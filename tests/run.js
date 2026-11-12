@@ -698,6 +698,18 @@ test('theme: both shells load the theme assets before their base CSS', () => {
     }
 });
 
+test('layout: both shells provide the featured members side panel mounts', () => {
+    // Both featured-panel modules (v2/kmain.js and v3/modules/featured.js)
+    // toggle #RightSide and append into #RightSideContents. Without those
+    // nodes the panel never renders and the DOM helpers silently no-op.
+    const shells = ['index.html', path.join('v2', 'index.html')];
+    for (const file of shells) {
+        const html = fs.readFileSync(path.join(ROOT, file), 'utf8');
+        assert.match(html, /id="RightSide"/, `${file} must contain the #RightSide container`);
+        assert.match(html, /id="RightSideContents"/, `${file} must contain the #RightSideContents panel`);
+    }
+});
+
 test('smoke: dist builds and validates cleanly', { timeout: 120000 }, () => {
     execFileSync(process.execPath, [path.join(TOOLS, 'build.js'), '--env=prod'], {
         cwd: ROOT,
