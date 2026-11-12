@@ -898,9 +898,19 @@ html[data-theme="dark"] .summary_line:hover{
 	box-shadow: 0 0 2px rgba(100,0,0,1);
 }
 
-.gender_0_icon{ background-image:url(/images/gender_0.gif); }
+/* Gender glyphs are SVG masks tinted with currentColor, so one asset follows
+   the text colour: dark on light, bright on dark. */
+.gender_0_icon{
+	background-color: currentColor;
+	-webkit-mask: url(/images/gender_0.svg) 50% 50% / 16px 16px no-repeat;
+	mask: url(/images/gender_0.svg) 50% 50% / 16px 16px no-repeat;
+}
 
-.gender_1_icon{ background-image:url(/images/gender_1.gif); }
+.gender_1_icon{
+	background-color: currentColor;
+	-webkit-mask: url(/images/gender_1.svg) 50% 50% / 16px 16px no-repeat;
+	mask: url(/images/gender_1.svg) 50% 50% / 16px 16px no-repeat;
+}
 
 .flat_icon{
 	display: inline-block;

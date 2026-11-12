@@ -26,24 +26,39 @@ function build() {
   // If the livereload port is already in use, keep incrementing until a free
   // port is found (same behavior as tools/serve.js).
   //
+  // `noListen` stops livereload from binding immediately, so the retry loop
+  // below owns the bind. Retrying without it leaves a dead WebSocket server
+  // attached to the shared HTTP server, so a later successful attempt adds a
+  // second upgrade handler and the socket is aborted with
+  // "server.handleUpgrade() was called more than once with the same socket".
+  //
   // livereload's listen(callback) reads port/host from this.config, not from
   // arguments, so we update config.port before each attempt and pass a
   // callback to listen() instead.
   let lrPort = 35729;
-  const lr = livereload.createServer({ port: lrPort, host: '127.0.0.1' });
+  const lr = livereload.createServer({
+    port: lrPort,
+    host: '127.0.0.1',
+    noListen: true
+  });
   await new Promise((resolve, reject) => {
     const attempt = () => {
       lr.config.port = lrPort;
-      lr.once('error', (err) => {
+      const onError = (err) => {
         if (err.code === 'EADDRINUSE' && lrPort < MAX_PORT) {
           console.warn(`Livereload port ${lrPort} is in use; trying ${lrPort + 1}`);
           lrPort += 1;
+          if (lr.server) lr.server.close();
           attempt();
         } else {
           reject(err);
         }
+      };
+      lr.once('error', onError);
+      lr.listen(() => {
+        lr.removeListener('error', onError);
+        resolve();
       });
-      lr.listen(resolve);
     };
     attempt();
   });

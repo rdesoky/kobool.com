@@ -67,9 +67,12 @@ html[data-theme="dark"] .href.sel:hover {
     background-color: var(--kb-surface-3);
 }
 
-/* The legacy hover wash is AliceBlue, which reads as a light flash on dark. */
+/* The legacy hover wash is AliceBlue, which reads as a light flash on dark, so
+   hovering only changes the text: links go to the full text colour, which also
+   lifts the muted `.attr` values on member cards. */
 html[data-theme="dark"] .href:hover {
-    background-color: var(--kb-surface-3);
+    background-color: transparent;
+    color: var(--kb-text);
 }
 
 /* Header and menus ------------------------------------------------------- */
@@ -365,6 +368,34 @@ html[data-theme="dark"] .result_item {
     box-shadow: inset 0 0 0 1px var(--kb-border), 0 1px 6px rgba(0, 0, 0, 0.55);
 }
 
+/* v3 qa pages paint the whole answer list white (#QAnswers in v3/css/kui.css).
+   The list is a plain container, so it drops back to the page surface and its
+   card shadow goes with it. */
+html[data-theme="dark"] #QAnswers {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* The question browser (#QList in the v3 qa popup) fills its rows from a
+   #F6F6F6 / white zebra in v3/css/kui.css. Dark mode keeps the container on
+   the surface and only tints every other row, so the list reads as dark. */
+html[data-theme="dark"] #QList {
+    background-color: var(--kb-surface);
+}
+
+html[data-theme="dark"] .browse_question:nth-child(odd),
+html[data-theme="dark"] .browse_question:nth-child(even) {
+    background-color: transparent;
+}
+
+html[data-theme="dark"] .browse_question:nth-child(even) {
+    background-color: var(--kb-surface-2);
+}
+
+html[data-theme="dark"] .browse_question:hover {
+    background-color: var(--kb-surface-3);
+}
+
 html[data-theme="dark"] .answer_result,
 html[data-theme="dark"] #MemViewPanel .self_desc,
 html[data-theme="dark"] #MemViewPanel .mate_desc,
@@ -390,12 +421,21 @@ html[data-theme="dark"] .summary_list {
     background-color: var(--kb-surface-2);
 }
 
-html[data-theme="dark"] .sum_group_name:hover,
-html[data-theme="dark"] .sum_mem_count:hover {
+html[data-theme="dark"] .sum_group_name:hover {
     background-color: #313c49;
 }
 
+/* Keep the green accent while hovering; the shared hover above would otherwise
+   flip the count cell to the neutral chip colour. */
+html[data-theme="dark"] .sum_mem_count:hover {
+    background-color: #24704a;
+}
+
+/* v3 fills the drill count cells with mediumseagreen (v3/css/kui.css), which
+   is bright against the dark surfaces. Keep the green accent but drop it to a
+   deeper shade. */
 html[data-theme="dark"] .sum_mem_count {
+    background-color: #1d5c3c;
     border-color: var(--kb-border) var(--kb-border-strong) var(--kb-border-strong) var(--kb-border);
     color: var(--kb-text);
 }
@@ -430,8 +470,7 @@ html[data-theme="dark"] .visit_heart.visible_acceptance {
 html[data-theme="dark"] .detailedSResult > table td.bottom_actions,
 html[data-theme="dark"] #AttrBar,
 html[data-theme="dark"] .mem10view,
-html[data-theme="dark"] .mem_thumb,
-html[data-theme="dark"] .gallery_pic {
+html[data-theme="dark"] .mem_thumb {
     background-color: var(--kb-surface-2);
 }
 
@@ -705,21 +744,24 @@ html[data-theme="dark"] .results_pic_col {
     background-color: transparent;
 }
 
+/* Profile photos sit on white in light mode; the shells paint the frames
+   #EEEEEE / #F0F0F0 there, which reads as a coloured edge around the
+   thumbnail. */
+.gallery_pic,
+.pic100frame {
+    background-color: #ffffff;
+}
+
+/* Dark mode uses a mid grey instead of pure white so the photo does not glare
+   against the dark surfaces. */
 html[data-theme="dark"] .pic100frame,
 html[data-theme="dark"] .pic50frame,
 html[data-theme="dark"] .pic16frame,
 html[data-theme="dark"] .hdr_profile_pic,
 html[data-theme="dark"] .gallery_pic,
 html[data-theme="dark"] img.no_select {
-    background-color: var(--kb-photo-bg);
+    background-color: #aaaaaa;
     border-color: var(--kb-border);
-}
-
-/* The default profile pictures (kpic.pl?id=0) are dark silhouettes; brighten
-   them so they read against the dark photo backdrop. Real photos (id != 0)
-   are left untouched. */
-html[data-theme="dark"] img.no_select[src*="id=0"] {
-    filter: brightness(1.6);
 }
 
 html[data-theme="dark"] .sort_chk,
@@ -863,6 +905,13 @@ html[data-theme="dark"] .flat_btn:hover {
     border-radius: 3px;
 }
 
+/* Gender glyphs are SVG masks tinted with currentColor (see the shell
+   stylesheets), so the flat-button transparent override above must not win. */
+html[data-theme="dark"] .gender_0_icon,
+html[data-theme="dark"] .gender_1_icon {
+    background-color: currentColor;
+}
+
 html[data-theme="dark"] .hmenu,
 html[data-theme="dark"] .profile_menu,
 html[data-theme="dark"] .popup_list {
@@ -932,6 +981,16 @@ html[data-theme="dark"] #WhyKobool {
     text-shadow: none;
 }
 
+/* The legacy sheets emboss headings and titles with a #CCC drop shadow
+   (v2/css/kui.css, v3/css/kui.css), which reads as a light fringe on dark.
+   Only the shadow is dropped here so link colours survive. */
+html[data-theme="dark"] .login_id,
+html[data-theme="dark"] .a_title,
+html[data-theme="dark"] .question_title > span,
+html[data-theme="dark"] .answer_title > span {
+    text-shadow: none;
+}
+
 html[data-theme="dark"] #Greetings,
 html[data-theme="dark"] .sidenote,
 html[data-theme="dark"] .light_txt,
@@ -943,6 +1002,12 @@ html[data-theme="dark"] .attr,
 html[data-theme="dark"] .attr_bar,
 html[data-theme="dark"] .list_ordinal > span {
     color: var(--kb-text-muted);
+}
+
+/* The legacy sheets wash hovered attribute chips with #F0F0F0, which flashes
+   light on dark. */
+html[data-theme="dark"] .attr:hover {
+    background-color: var(--kb-surface-3);
 }
 
 html[data-theme="dark"] .item_date.new,
