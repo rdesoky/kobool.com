@@ -187,8 +187,10 @@ html[data-theme="dark"] #HeaderLayout #MainLogo:hover {
     background-color: #202831;
 }
 
+/* Transparent rather than omitted: v2's light sheets hardcode a white
+   #Contents background, so the override must still outrank them. */
 html[data-theme="dark"] #Contents {
-    background-color: var(--kb-surface);
+    background-color: transparent;
     border-bottom-color: var(--kb-border);
 }
 
@@ -204,9 +206,19 @@ html[data-theme="dark"] div#GuestMenu a.sel {
     background-color: var(--kb-surface-3);
 }
 
-html[data-theme="dark"] .seltab {
+/* Selected tab buttons get a raised surface. v3's tab controller also puts
+   `seltab` on the tab *panel* (see modules/mem.js selectChild), so panels are
+   excluded here — otherwise the whole content area is painted as a chip. */
+html[data-theme="dark"] .seltab:not(.tab_panel) {
     color: var(--kb-text);
     background-color: var(--kb-surface-3);
+}
+
+/* The legacy `.seltab` rule in base.css paints the selected tab panel white.
+   Clear it so the panel sits on the tabs_root surface instead of showing as a
+   bright block inside the card. */
+html[data-theme="dark"] .tab_panel.seltab {
+    background-color: transparent;
 }
 
 html[data-theme="dark"] #Menu .ctab.seltab,
@@ -836,16 +848,45 @@ html[data-theme="dark"] .total {
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
 }
 
-/* Legacy toolbar glyphs are dark raster images; light them up so they stay
-   visible on the dark chips. Coloured icons are left untouched. */
+/* Legacy toolbar glyphs are dark raster images painted as the element's
+   background. filter:invert() would flip the whole button (beige body, dark
+   text on the "Add Filter" chip), so each glyph gets a light SVG instead:
+   .drill_icon and .plus_icon share /images/search_plus.gif, a plain grey
+   cross; .minus_icon is /images/search_minus.gif, a grey dash. Coloured
+   icons are left untouched. */
 html[data-theme="dark"] .drill_icon,
-html[data-theme="dark"] .plus_icon,
+html[data-theme="dark"] .plus_icon {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><path d='M8 3.5v9M3.5 8h9' stroke='%23a9b3bf' stroke-width='2.4' stroke-linecap='round'/></svg>");
+}
+
+html[data-theme="dark"] .drill_icon:lang(ar) {
+    background-position: center right;
+}
+
 html[data-theme="dark"] .minus_icon {
-    filter: invert(1) brightness(1.2);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><path d='M3.5 8h9' stroke='%23a9b3bf' stroke-width='2.4' stroke-linecap='round'/></svg>");
 }
 
 html[data-theme="dark"] .fav_off {
     filter: brightness(1.9);
+}
+
+/* Pure-black raster glyphs (edit.png, clock.png, progress_small.gif) vanish on
+   the dark surfaces. They are painted as background images on elements that
+   also carry text ("Update", "Later"), so a mask would hide the label — swap
+   in a light SVG background instead. */
+html[data-theme="dark"] .edit_icon {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='%23e6e9ee' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'><path d='M11.5 2.5l2 2L6 12l-3 1 1-3z'/><path d='M2.5 14.5h11'/></svg>");
+}
+
+html[data-theme="dark"] .postpone_icon {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='%23e6e9ee' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'><circle cx='8' cy='8' r='6'/><path d='M8 4.5V8l2.5 1.5'/></svg>");
+}
+
+html[data-theme="dark"] .progress16 {
+    /* Animated GIF spinner; invert keeps the animation and the element is
+       icon-only, so no label is affected. */
+    filter: invert(1) brightness(1.2);
 }
 
 /* Theme toggle ----------------------------------------------------------- */
@@ -906,9 +947,30 @@ html[data-theme="dark"] .flat_btn:hover {
 }
 
 /* Gender glyphs are SVG masks tinted with currentColor (see the shell
-   stylesheets), so the flat-button transparent override above must not win. */
-html[data-theme="dark"] .gender_0_icon,
-html[data-theme="dark"] .gender_1_icon {
+   stylesheets), so the flat-button transparent override above must not win,
+   and the .attr:hover / .flat_btn:hover backgrounds below must not turn the
+   mask-painted glyph dark on hover. The compound selectors outrank the
+   .attr:hover / .flat_btn:hover rules that follow later in this file. */
+html[data-theme="dark"] .attr.gender_0_icon,
+html[data-theme="dark"] .attr.gender_1_icon,
+html[data-theme="dark"] .flat_btn.gender_0_icon,
+html[data-theme="dark"] .flat_btn.gender_1_icon,
+html[data-theme="dark"] .attr.gender_0_icon:hover,
+html[data-theme="dark"] .attr.gender_1_icon:hover,
+html[data-theme="dark"] .flat_btn.gender_0_icon:hover,
+html[data-theme="dark"] .flat_btn.gender_1_icon:hover {
+    background-color: currentColor;
+}
+
+/* Light mode: .attr_bar .attr:hover washes the chip #e3e4d2, which is also the
+   glyph's ink (background-color), so the glyph disappears beige-on-beige.
+   Keep the ink on currentColor — that same rule darkens the label to #11151a,
+   so the glyph turns dark on hover. The html prefix outranks the legacy rule,
+   which is injected after this file. */
+html .attr.gender_0_icon:hover,
+html .attr.gender_1_icon:hover,
+html .flat_btn.gender_0_icon:hover,
+html .flat_btn.gender_1_icon:hover {
     background-color: currentColor;
 }
 
@@ -1005,9 +1067,12 @@ html[data-theme="dark"] .list_ordinal > span {
 }
 
 /* The legacy sheets wash hovered attribute chips with #F0F0F0, which flashes
-   light on dark. */
+   light on dark. The list sheets also darken the label to #11151a on hover,
+   which is unreadable on the dark chip, so lift it back to the full text
+   colour. */
 html[data-theme="dark"] .attr:hover {
     background-color: var(--kb-surface-3);
+    color: var(--kb-text);
 }
 
 html[data-theme="dark"] .item_date.new,
