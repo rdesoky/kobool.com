@@ -359,6 +359,16 @@ html[data-theme="dark"] .dv_header_cell {
     background-color: var(--kb-surface-2);
 }
 
+/* Legacy separators and frames are silver or white, which read as bright lines
+   on the dark surfaces. */
+html[data-theme="dark"] .left_side,
+html[data-theme="dark"] .snapshot_frame,
+html[data-theme="dark"] .bm_box,
+html[data-theme="dark"] .featured_mem,
+html[data-theme="dark"] .svd_srch_item {
+    border-color: var(--kb-border);
+}
+
 html[data-theme="dark"] .dv_table,
 html[data-theme="dark"] .dv_cell {
     background-color: var(--kb-surface);
@@ -378,6 +388,20 @@ html[data-theme="dark"] .sel .dv_cell,
 html[data-theme="dark"] .dv_row.sel:hover .dv_cell {
     background-color: var(--kb-selected);
     color: #ffffff;
+}
+
+/* Contact-point usage chips (#pg=cp_report). The legacy sheet gives every
+   `.puser` a white dotted border and paints the used side LightYellow (v2) or
+   lightgreen (v3), which reads as a bright block on the dark table. */
+html[data-theme="dark"] .puser {
+    border-color: var(--kb-border);
+}
+
+html[data-theme="dark"] .pusage_self .puser.self,
+html[data-theme="dark"] .pusage_mate .puser.mate {
+    border-color: #d2691e;
+    background-color: var(--kb-warning-bg);
+    color: var(--kb-warning-text);
 }
 
 html[data-theme="dark"] .profile_header,
@@ -841,6 +865,7 @@ html[data-theme="dark"] .pg_nav_btn,
 html[data-theme="dark"] .filters_btn {
     background-color: var(--kb-surface-3);
     color: var(--kb-text);
+    border-color: var(--kb-border);
     border-radius: 3px;
     box-shadow: inset 0 0 0 1px var(--kb-border);
 }
@@ -851,6 +876,13 @@ html[data-theme="dark"] .filters_btn:hover {
     background-color: #35404d;
     border-color: var(--kb-border-strong);
     box-shadow: inset 0 0 0 1px var(--kb-border-strong), 0 0 6px rgba(124, 183, 255, 0.25);
+}
+
+/* The legacy active-page marker is an orange border on a pale yellow fill; keep
+   the marker but tint it with the link colour so it reads on the dark surface. */
+html[data-theme="dark"] .btn_active {
+    border-color: var(--kb-link);
+    color: var(--kb-link);
 }
 
 /* Drill filter tiles (v2 #pg=drill) hover to #F0F0F0 in the legacy sheet. */
