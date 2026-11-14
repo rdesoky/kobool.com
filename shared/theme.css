@@ -62,8 +62,18 @@ html[data-theme="dark"] .href {
     color: var(--kb-link);
 }
 
+/* Selected items keep the legacy SteelBlue chip, so their label has to be white
+   rather than the link colour, which is too close to the chip. This covers the
+   side selectors (`.href.sel`) and the v2 header stat links (`#StatsMenu a.sel`).
+   `.menu .sel` is excluded: it has its own orange chip with black text. */
+html[data-theme="dark"] .href.sel,
+html[data-theme="dark"] #StatsMenu a.sel,
+html[data-theme="dark"] .href.sel:hover,
+html[data-theme="dark"] #StatsMenu a.sel:hover {
+    color: #ffffff;
+}
+
 html[data-theme="dark"] .href.sel:hover {
-    color: var(--kb-link);
     background-color: var(--kb-surface-3);
 }
 
