@@ -521,6 +521,13 @@ html[data-theme="dark"] #MTabs .ctab.seltab {
     border-color: var(--kb-border);
 }
 
+/* The tab strip ends with an empty filler <li> that has no `.ctab` class, so it
+   keeps the legacy `white white silver white` border and its silver bottom edge
+   draws a bright rule across the whole strip. */
+html[data-theme="dark"] #MTabs li:not(.ctab) {
+    border-color: transparent;
+}
+
 html[data-theme="dark"] .tn_frame_pic {
     border-color: var(--kb-surface);
 }
