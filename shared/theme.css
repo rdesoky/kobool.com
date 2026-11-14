@@ -252,6 +252,11 @@ html[data-theme="dark"] textarea::placeholder {
     color: #8592a0;
 }
 
+/* The inline memo/answer editor wraps its textarea in a #F6F6F6 frame. */
+html[data-theme="dark"] .i-text-frame {
+    background-color: var(--kb-surface-2);
+}
+
 html[data-theme="dark"] input[type="checkbox"],
 html[data-theme="dark"] input[type="radio"] {
     accent-color: #4c8bf5;
@@ -1008,6 +1013,13 @@ html[data-theme="dark"] .under_review {
     color: var(--kb-warning-text);
 }
 
+/* The photo-privacy explainer is a lightyellow callout in the legacy sheet. */
+html[data-theme="dark"] #PrivacyHelp {
+    background-color: var(--kb-warning-bg);
+    color: var(--kb-warning-text);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
 html[data-theme="dark"] .rejected_text,
 html[data-theme="dark"] .rejected {
     background-color: #4a2028 !important;
@@ -1015,12 +1027,22 @@ html[data-theme="dark"] .rejected {
     color: #ffd9df;
 }
 
+/* Saved searches, answer previews and generic cards share one legacy rule
+   that paints them white. */
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .svd_srch_item,
+html[data-theme="dark"] .answer_simple_result {
+    background-color: var(--kb-surface-2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.45);
+}
+
 html[data-theme="dark"] .svd_srch_item {
     color: var(--kb-link);
 }
 
-html[data-theme="dark"] .svd_srch_item:hover {
-    background-color: var(--kb-surface-2);
+html[data-theme="dark"] .svd_srch_item:hover,
+html[data-theme="dark"] .answer_simple_result:hover {
+    background-color: var(--kb-surface-3);
     color: var(--kb-text);
 }
 
