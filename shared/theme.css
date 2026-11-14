@@ -62,8 +62,18 @@ html[data-theme="dark"] .href {
     color: var(--kb-link);
 }
 
+/* Selected items keep the legacy SteelBlue chip, so their label has to be white
+   rather than the link colour, which is too close to the chip. This covers the
+   side selectors (`.href.sel`) and the v2 header stat links (`#StatsMenu a.sel`).
+   `.menu .sel` is excluded: it has its own orange chip with black text. */
+html[data-theme="dark"] .href.sel,
+html[data-theme="dark"] #StatsMenu a.sel,
+html[data-theme="dark"] .href.sel:hover,
+html[data-theme="dark"] #StatsMenu a.sel:hover {
+    color: #ffffff;
+}
+
 html[data-theme="dark"] .href.sel:hover {
-    color: var(--kb-link);
     background-color: var(--kb-surface-3);
 }
 
@@ -252,6 +262,11 @@ html[data-theme="dark"] textarea::placeholder {
     color: #8592a0;
 }
 
+/* The inline memo/answer editor wraps its textarea in a #F6F6F6 frame. */
+html[data-theme="dark"] .i-text-frame {
+    background-color: var(--kb-surface-2);
+}
+
 html[data-theme="dark"] input[type="checkbox"],
 html[data-theme="dark"] input[type="radio"] {
     accent-color: #4c8bf5;
@@ -344,6 +359,16 @@ html[data-theme="dark"] .dv_header_cell {
     background-color: var(--kb-surface-2);
 }
 
+/* Legacy separators and frames are silver or white, which read as bright lines
+   on the dark surfaces. */
+html[data-theme="dark"] .left_side,
+html[data-theme="dark"] .snapshot_frame,
+html[data-theme="dark"] .bm_box,
+html[data-theme="dark"] .featured_mem,
+html[data-theme="dark"] .svd_srch_item {
+    border-color: var(--kb-border);
+}
+
 html[data-theme="dark"] .dv_table,
 html[data-theme="dark"] .dv_cell {
     background-color: var(--kb-surface);
@@ -363,6 +388,20 @@ html[data-theme="dark"] .sel .dv_cell,
 html[data-theme="dark"] .dv_row.sel:hover .dv_cell {
     background-color: var(--kb-selected);
     color: #ffffff;
+}
+
+/* Contact-point usage chips (#pg=cp_report). The legacy sheet gives every
+   `.puser` a white dotted border and paints the used side LightYellow (v2) or
+   lightgreen (v3), which reads as a bright block on the dark table. */
+html[data-theme="dark"] .puser {
+    border-color: var(--kb-border);
+}
+
+html[data-theme="dark"] .pusage_self .puser.self,
+html[data-theme="dark"] .pusage_mate .puser.mate {
+    border-color: #d2691e;
+    background-color: var(--kb-warning-bg);
+    color: var(--kb-warning-text);
 }
 
 html[data-theme="dark"] .profile_header,
@@ -504,6 +543,13 @@ html[data-theme="dark"] #MTabs .ctab.seltab {
     background-color: var(--kb-surface);
     color: var(--kb-text);
     border-color: var(--kb-border);
+}
+
+/* The tab strip ends with an empty filler <li> that has no `.ctab` class, so it
+   keeps the legacy `white white silver white` border and its silver bottom edge
+   draws a bright rule across the whole strip. */
+html[data-theme="dark"] #MTabs li:not(.ctab) {
+    border-color: transparent;
 }
 
 html[data-theme="dark"] .tn_frame_pic {
@@ -819,6 +865,7 @@ html[data-theme="dark"] .pg_nav_btn,
 html[data-theme="dark"] .filters_btn {
     background-color: var(--kb-surface-3);
     color: var(--kb-text);
+    border-color: var(--kb-border);
     border-radius: 3px;
     box-shadow: inset 0 0 0 1px var(--kb-border);
 }
@@ -829,6 +876,13 @@ html[data-theme="dark"] .filters_btn:hover {
     background-color: #35404d;
     border-color: var(--kb-border-strong);
     box-shadow: inset 0 0 0 1px var(--kb-border-strong), 0 0 6px rgba(124, 183, 255, 0.25);
+}
+
+/* The legacy active-page marker is an orange border on a pale yellow fill; keep
+   the marker but tint it with the link colour so it reads on the dark surface. */
+html[data-theme="dark"] .btn_active {
+    border-color: var(--kb-link);
+    color: var(--kb-link);
 }
 
 /* Drill filter tiles (v2 #pg=drill) hover to #F0F0F0 in the legacy sheet. */
@@ -1008,6 +1062,13 @@ html[data-theme="dark"] .under_review {
     color: var(--kb-warning-text);
 }
 
+/* The photo-privacy explainer is a lightyellow callout in the legacy sheet. */
+html[data-theme="dark"] #PrivacyHelp {
+    background-color: var(--kb-warning-bg);
+    color: var(--kb-warning-text);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
 html[data-theme="dark"] .rejected_text,
 html[data-theme="dark"] .rejected {
     background-color: #4a2028 !important;
@@ -1015,12 +1076,22 @@ html[data-theme="dark"] .rejected {
     color: #ffd9df;
 }
 
+/* Saved searches, answer previews and generic cards share one legacy rule
+   that paints them white. */
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .svd_srch_item,
+html[data-theme="dark"] .answer_simple_result {
+    background-color: var(--kb-surface-2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.45);
+}
+
 html[data-theme="dark"] .svd_srch_item {
     color: var(--kb-link);
 }
 
-html[data-theme="dark"] .svd_srch_item:hover {
-    background-color: var(--kb-surface-2);
+html[data-theme="dark"] .svd_srch_item:hover,
+html[data-theme="dark"] .answer_simple_result:hover {
+    background-color: var(--kb-surface-3);
     color: var(--kb-text);
 }
 
